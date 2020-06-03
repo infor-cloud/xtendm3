@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "just-the-docs.css",
     "dark-mode-preview.css"
   )
-  const buttonCopy = ["Return to the light side", "Preview dark color scheme"]
+  const buttonCopy = ["Light Mode", "Dark Mode"]
   const updateButtonText = function (toggleDarkMode) {
     toggleDarkMode.textContent === buttonCopy[0]
       ? (toggleDarkMode.textContent = buttonCopy[1])
