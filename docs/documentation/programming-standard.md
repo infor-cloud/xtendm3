@@ -5,7 +5,7 @@ parent: Documentation
 nav_order: 2
 ---
 
-# Typography
+# Programming Standard
 {: .no_toc }
 
 ## Table of contents
@@ -15,27 +15,155 @@ nav_order: 2
 {:toc}
 
 ---
+# Extension Types
+To be completed.
 
-## Font stack
+## Trigger Extensions
+To be completed.
 
-By default, Just the Docs uses a native system font stack for sans-serif fonts:
+## Utility Extensions
+To be completed.
 
-```scss
--apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif
-```
+## Transaction Extensions
+To be completed.
 
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxyz
-{: .fs-5 .ls-10 .code-example }
+## Table Extensions
+To be completed.
 
-For monospace type, like code snippets or the `<pre>` element, Just the Docs uses a native system font stack for monospace fonts:
+# Indentation and Formatting
+To be completed.
 
-```scss
-"SFMono-Regular", Menlo, Consolas, Monospace
-```
+# Naming
+To be completed.
 
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxyz
-{: .fs-5 .ls-10 .text-mono .code-example }
+## Extensions
+To be completed.
 
----
+### Trigger Extensions
+To be completed.
+
+### Utility Extensions
+To be completed.
+
+### Transaction Extensions
+To be completed.
+
+### Table Extensions
+To be completed.
+
+## Methods
+To be completed.
+
+## Variables
+To be completed.
+
+# Extension Structure
+To be completed.
+
+## Imports
+To be completed.
+
+## Variables
+To be completed.
+
+## Methods
+To be completed.
+
+## Extension Specific Structure
+To be completed.
+
+### Trigger Extensions
+To be completed.
+
+### Utility Extensions
+To be completed.
+
+### Transaction Extensions
+To be completed.
+
+### Table Extensions
+To be completed.
+
+# Extension Point / Trigger
+To be completed.
+
+## Interactive
+To be completed.
+
+## Batch / Function
+To be completed.
+
+## MI / M3 API
+To be completed.
+
+# Programming Practices
+To be completed.
+
+## Logging
+To be completed.
+
+## Database Access
+To be completed.
+
+### Read Access
+To be completed.
+
+### Write / Update / Delete Access
+To be completed.
+
+## Loops
+To be completed.
+
+## Data Storage
+To be completed.
+
+### In Memory
+To be completed.
+
+### In Customer Extension Table
+To be completed.
+
+### In Dynamic Database
+To be completed.
+
+### In Text/XML/JSON File
+To be completed.
+
+## API Call
+To be completed.
+
+### ION API
+To be completed.
+
+### M3 API
+To be completed.
+
+## Utilities
+To be completed.
+
+## XML / JSON Parsing
+To be completed.
+
+# Testing
+To be completed.
+
+## Local
+To be completed.
+
+## Live
+To be completed.
+
+# Version Controlling
+To be completed.
+
+## Framework
+To be completed.
+
+## Structure
+To be completed.
+
+## Hosting
+To be completed.
+
+# Documentation
+To be completed.
