@@ -12,7 +12,7 @@ permalink: /
 A secure, scalable and upgradable customization tool for M3 in cloud
 {: .fs-6 .fw-300 }
 
-[Get started now](#docs/getting-started.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [Get the SDK](https://github.com/infor-cloud/xtendm3-sdk-java){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get started now](/docs/getting-started.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [Get the SDK](https://github.com/infor-cloud/xtendm3-sdk-java){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
