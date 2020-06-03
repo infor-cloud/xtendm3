@@ -5,8 +5,12 @@ parent: Documentation
 nav_order: 5
 ---
 
-# Typography
+# Approval Requirements
 {: .no_toc }
+
+Checklist for requesting approval for your extensions.
+{: .fs-6 .fw-300 }
+**⚠️ ️️IN PROGRESS, NOT COMPLETE YET ⚠️**
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -16,26 +20,32 @@ nav_order: 5
 
 ---
 
-## Font stack
+## Format
+- [x] Extension is exported.
+- [x] Extension code is provided
+- [x] DynamicDB definition is provided
+- [ ] ...
 
-By default, Just the Docs uses a native system font stack for sans-serif fonts:
+## Documentation
+- [x] Extension is exported.
+- [x] Extension code is provided
+- [x] DynamicDB definition is provided
+- [ ] ...
 
-```scss
--apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif
-```
+## Testing
+- [x] Extension is exported.
+- [x] Extension code is provided
+- [x] DynamicDB definition is provided
+- [ ] ...
 
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxyz
-{: .fs-5 .ls-10 .code-example }
+## Programming Standard
+- [x] Extension is exported.
+- [x] Extension code is provided
+- [x] DynamicDB definition is provided
+- [ ] ...
 
-For monospace type, like code snippets or the `<pre>` element, Just the Docs uses a native system font stack for monospace fonts:
-
-```scss
-"SFMono-Regular", Menlo, Consolas, Monospace
-```
-
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxyz
-{: .fs-5 .ls-10 .text-mono .code-example }
-
----
+## Version Controlling
+- [x] Extension is exported.
+- [x] Extension code is provided
+- [x] DynamicDB definition is provided
+- [ ] ...
