@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Extension API
+title: Method API
 parent: API Specification
 grand_parent: Documentation
 nav_order: 11
@@ -21,9 +21,9 @@ Checklist for requesting approval for your extensions.
 
 ---
 
-**Since**: `0.1.0`  
-**Context**: Any  
-**Category**: Generic  
+**Since**: `0.5.0`  
+**Context**: Batch  
+**Category**: Context Specific  
 ---
 ## Description
 

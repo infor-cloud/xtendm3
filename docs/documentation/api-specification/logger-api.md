@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Method API
+title: Logger API
 parent: API Specification
 grand_parent: Documentation
 nav_order: 3

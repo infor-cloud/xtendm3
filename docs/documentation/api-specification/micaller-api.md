@@ -23,7 +23,7 @@ Checklist for requesting approval for your extensions.
 
 **Since**: `0.1.0`  
 **Context**: Any  
-**Category**: Generic  
+**Category**: Integration  
 ---
 ## Description
 

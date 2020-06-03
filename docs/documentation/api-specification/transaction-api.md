@@ -21,9 +21,9 @@ Checklist for requesting approval for your extensions.
 
 ---
 
-**Since**: `0.1.0`  
-**Context**: Any  
-**Category**: Generic  
+**Since**: `0.12.0`  
+**Context**: API  
+**Category**: Context specific  
 ---
 ## Description
 
