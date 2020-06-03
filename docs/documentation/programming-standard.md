@@ -19,28 +19,7 @@ Guideline for writing secure, optimized and scalable extensions.
 {:toc}
 
 ---
-# Extension Types
-To be completed.
-
-## Trigger Extensions
-To be completed.
-
-## Utility Extensions
-To be completed.
-
-## Transaction Extensions
-To be completed.
-
-## Table Extensions
-To be completed.
-
-# Indentation and Formatting
-To be completed.
-
-# Naming
-To be completed.
-
-## Extensions
+## Extension Types
 To be completed.
 
 ### Trigger Extensions
@@ -55,119 +34,140 @@ To be completed.
 ### Table Extensions
 To be completed.
 
-## Methods
+## Indentation and Formatting
 To be completed.
 
-## Variables
+## Naming
 To be completed.
 
-# Extension Structure
+### Extensions
 To be completed.
 
-## Imports
+#### Trigger Extensions
 To be completed.
 
-## Variables
+#### Utility Extensions
 To be completed.
 
-## Methods
+#### Transaction Extensions
 To be completed.
 
-## Extension Specific Structure
+#### Table Extensions
 To be completed.
 
-### Trigger Extensions
+### Methods
 To be completed.
 
-### Utility Extensions
+### Variables
 To be completed.
 
-### Transaction Extensions
+## Extension Structure
 To be completed.
 
-### Table Extensions
+### Imports
 To be completed.
 
-# Extension Point / Trigger
+### Variables
 To be completed.
 
-## Interactive
+### Methods
 To be completed.
 
-## Batch / Function
+### Extension Specific Structure
 To be completed.
 
-## MI / M3 API
+#### Trigger Extensions
 To be completed.
 
-# Programming Practices
+#### Utility Extensions
 To be completed.
 
-## Logging
+#### Transaction Extensions
 To be completed.
 
-## Database Access
+#### Table Extensions
 To be completed.
 
-### Read Access
+## Extension Point / Trigger
 To be completed.
 
-### Write / Update / Delete Access
+### Interactive
 To be completed.
 
-## Loops
+### Batch / Function
 To be completed.
 
-## Data Storage
+### MI / M3 API
 To be completed.
 
-### In Memory
+## Programming Practices
 To be completed.
 
-### In Customer Extension Table
+### Logging
 To be completed.
 
-### In Dynamic Database
+### Database Access
 To be completed.
 
-### In Text/XML/JSON File
+#### Read Access
 To be completed.
 
-## API Call
+#### Write / Update / Delete Access
 To be completed.
 
-### ION API
+### Loops
 To be completed.
 
-### M3 API
+### Data Storage
 To be completed.
 
-## Utilities
+#### In Memory
 To be completed.
 
-## XML / JSON Parsing
+#### In Customer Extension Table
 To be completed.
 
-# Testing
+#### In Dynamic Database
 To be completed.
 
-## Local
+#### In Text/XML/JSON File
 To be completed.
 
-## Live
+### API Call
 To be completed.
 
-# Version Controlling
+#### ION API
 To be completed.
 
-## Framework
+#### M3 API
 To be completed.
 
-## Structure
+### Utilities
 To be completed.
 
-## Hosting
+### XML / JSON Parsing
 To be completed.
 
-# Documentation
+## Testing
+To be completed.
+
+### Local
+To be completed.
+
+### Live
+To be completed.
+
+## Version Controlling
+To be completed.
+
+### Framework
+To be completed.
+
+### Structure
+To be completed.
+
+### Hosting
+To be completed.
+
+## Documentation
 To be completed.

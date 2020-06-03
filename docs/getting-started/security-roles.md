@@ -5,13 +5,13 @@ parent: Getting Started
 nav_order: 2
 ---
 
-# Security Roles
+## Security Roles
 To work with XtendM3 you should make sure you have the right IFS security roles.
 
-## Required Roles
+### Required Roles
 To access XtendM3 you must have one of the following required roles.
 
-### Managing Extensions
+#### Managing Extensions
 To be able to administrate XtendM3 you should have `M3BE-ExtensionsAdmin` IFS access role. With this role you are able to:
 
 * View Extensions
@@ -21,13 +21,13 @@ To be able to administrate XtendM3 you should have `M3BE-ExtensionsAdmin` IFS ac
 * Activate/Deactivate Extensions
 * Import/Export Extensions
 
-### Viewing Extensions
+#### Viewing Extensions
 To be able to view XtendM3, you should have `M3BE-ExtensionsViewer` IFS access role. With this role you are able to:
 
 * View Extensions
 * Export Extensions
 
-## Optional Roles
+### Optional Roles
 To fully leverage all different tools and be able to develop, troubleshoot and monitor extensions easily we recommend the
 developer to have the following access roles as well:
 
