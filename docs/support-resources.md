@@ -83,7 +83,7 @@ a pull request on the repository.
 ### XtendM3 Version Control Example Repository
 The [XtendM3 Version Control Example Repository](https://github.com/infor-cloud/acme-corp-extensions) illustrates how 
 the extensions can be version controlled in a way that it can be worked and compiled both locally and via CI pipeline. 
-This is also explained more in the [examples section]({{ site.baseurl }}{% link docs/documentation/version-controlling.md %}). 
+This is also explained more in the [version controlling section]({{ site.baseurl }}{% link docs/documentation/version-controlling.md %}). 
 
 ### Mailbox
 XtendM3 also provides a mailbox [xtendm3@infor.com](mailto:xtendm3@infor.com) that can be used if you need additional help. 
