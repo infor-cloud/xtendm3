@@ -32,6 +32,6 @@ To fully leverage all different tools and be able to develop, troubleshoot and m
 developer to have the following access roles as well:
 
 * `M3BE-FndUser` to access M3 Job admin tool and monitor jobs that use the extension
-* `M3BE-LogEnabler` to activate logs on her 
+* `M3BE-LogEnabler` to activate logs on the programs that extension is running on
 * `M3MDP-User` to access MetaData Publisher tool to view source codes and metadata information of M3 BE components
 * `M3BE-FileViewer` to access files that extensions might create
