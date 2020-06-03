@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Configuration
-nav_order: 2
+title: Getting Started
+nav_order: 3
 ---
 
 # Configuration
@@ -77,7 +77,7 @@ color_scheme: "dark"
 
 <script type="text/javascript" src="{{ "/assets/js/dark-mode-preview.js" | absolute_url }}"></script>
 
-See [Customization]({{ site.baseurl }}{% link docs/customization.md %}) for more information.
+See [Customization]({{ site.baseurl }}{% link docs/getting-started.md %}) for more information.
 
 ## Google Analytics
 

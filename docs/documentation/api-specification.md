@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Labels
-parent: UI Components
-nav_order: 3
+title: API Specification
+parent: Documentation
+nav_order: 1
 ---
 
 # Labels

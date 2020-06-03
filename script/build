@@ -5,4 +5,4 @@ gem build xtendm3.gemspec
 
 echo "Cleaning up... \n"
 git add *.gem
-git commit -m 'Bump xtendm3 gem package'
+git commit -m 'Bump just-the-docs gem package'
