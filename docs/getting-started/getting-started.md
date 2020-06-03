@@ -6,5 +6,7 @@ has_children: true
 permalink: docs/getting-started
 ---
 
-Here you can find all the information to get started with XtendM3.
+# Getting Started
+
+Start with your extensions quick and easy.
 {: .fs-6 .fw-300 }
