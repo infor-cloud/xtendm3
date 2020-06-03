@@ -6,8 +6,7 @@ has_children: true
 permalink: docs/examples
 ---
 
-# Typography
-{: .no_toc }
+# Examples
 
 ## Table of contents
 {: .no_toc .text-delta }
