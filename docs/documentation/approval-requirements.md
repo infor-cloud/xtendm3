@@ -10,7 +10,7 @@ nav_order: 5
 
 Checklist for requesting approval for your extensions.
 {: .fs-6 .fw-300 }
-**⚠️ ️️IN PROGRESS, NOT COMPLETE YET ⚠️**
+![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }
