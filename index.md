@@ -16,7 +16,7 @@ A secure, scalable and upgradable customization tool for M3 in cloud
 
 ---
 
-## The what and the why
+## The What and The Why
 XtendM3 is an extensibility tool targeted for modifying and extending M3 Business in M3 Cloud Edition. For M3 there are 
 different extensibility tools e.g. Mongoose, H5 Script, H5 SDK, etc. but the lack of capabilities for changing the 
 business engine logic at realtime was the motivation to create another extensibility tool where realtime modification or 
@@ -26,13 +26,12 @@ extension of the logic is possible.
 
 ## About the project
 
+### XtendM3 
 XtendM3 is a customization tool and service provided by Infor for modifying and extending M3 Business Engine logic in Cloud.
 
+
+### Just the Docs
 This website uses Just the Docs, a documentation theme for jekyll. &copy; 2017-2019 by [Patrick Marsceill](http://patrickmarsceill.com).
-
-### License
-
-Just the Docs is distributed by an [MIT license](https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt).
 
 ### Contributing
 
