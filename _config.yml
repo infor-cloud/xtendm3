@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: XtendM3
 description: Infor XtendM3 documentation
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/xtendm3" # the subpath of your site, e.g. /blog
 url: "https://infor-cloud.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty

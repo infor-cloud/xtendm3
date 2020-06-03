@@ -76,7 +76,7 @@ there is anything that can be improved or fixed. You can do that by creating a p
 
 ### XtendM3 Extension Examples
 The XtendM3 Extension examples are provided on a separate [GitHub repository](https://github.com/infor-cloud/xtendm3-extension-examples) 
-and are documented in the [examples section](/docs/documentation/examples). You are welcome to submit new examples to 
+and are documented in the [examples section]({{ site.baseurl }}{% link docs/documentation/examples.md %}). You are welcome to submit new examples to 
 share with others or correct existing examples if there is anything that needs to be fixed. You can do this by creating 
 a pull request on the repository.
 
