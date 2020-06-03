@@ -55,9 +55,11 @@ The resources below are provided to facilitate and ease the development of Xtend
 the information on 
 
 * Getting Started
+* API Specifications
 * Programming Standard Guideline
 * Approval Requirements Guideline
 * Version Controlling Guideline
+* Examples
 
 This page is thought to connect all of the various XtendM3 resources out there. If any new resources are introduced they
 will be linked and mentioned from this page as well.
@@ -70,9 +72,8 @@ section and not via the community forum. You are welcome to suggest new features
 
 ### XtendM3 SDK
 The XendM3 SDK is provided to help developers work and develop extensions locally rather than using the online editor. 
-You can find the SDK [here on GitHub](https://github.com/infor-cloud/xtendm3-sdk-java). The SDK also provides a wiki 
-that explains the API specification with example of usage in details. Everyone is welcome to contribute to the SDK if 
-there is anything that can be improved or fixed. You can do that by creating a pull request on the SDK repository.
+You can find the SDK [here on GitHub](https://github.com/infor-cloud/xtendm3-sdk-java). Everyone is welcome to contribute 
+to the SDK to help to improve it. You can do that by creating a pull request on the SDK repository.
 
 ### XtendM3 Extension Examples
 The XtendM3 Extension examples are provided on a separate [GitHub repository](https://github.com/infor-cloud/xtendm3-extension-examples) 
