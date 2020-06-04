@@ -30,29 +30,28 @@ This API lets you to work and interact with the database layer of M3 Business En
 to perform create, read, update and delete queries and run them. Any changes done on the database will be directly
 visible to the Business Engine program that the extension is connected to.
 
-### Concepts
 Before starting with the code, to understand the database better it is important to get familiar with the different
 concepts, APIs and tools used to perform an operation on the database. 
 
-#### DatabaseAPI
+### DatabaseAPI
 The main API that is needed to be injected to the extension to perform any database-related operation. All other APIs
 that are stated below will be retrieved from this API and shall not be declared on top of the extension. The DatabaseAPI
 is used to define the operations that will be executed on database.
 
-#### ExpressionFactory / ExpressionFactoryAPI
+### ExpressionFactory / ExpressionFactoryAPI
 An API which provides you the standard M3's `FieldSelection` functionality for database operations. This is used to
 define more advanced filters on fields that may or may not be index fields. Since this API provides the ability to
 perform filtering on non-indexed fields it should then be used sparingly as it might lead to performance penalties.
 
-#### DBAction / DBActionAPI
+### DBAction / DBActionAPI
 A database operation that could be any of create, read, update or delete. The operation contains information about which
 table, index, table fields and filters will be used to execute the operation.
 
-#### DBContainer / DBContainerAPI
+### DBContainer / DBContainerAPI
 A container that contains table fields and values. It is used both for setting the keys before executing the operation
 and also for getting the result after the operation has been executed
 
-#### LockedResult / LockedResultAPI
+### LockedResult / LockedResultAPI
 An extended version of DBContainer which contains a locked record's fields and values and also methods to perform update
 and delete operation on this locked record.
 
