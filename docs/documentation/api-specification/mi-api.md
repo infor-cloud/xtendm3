@@ -22,8 +22,8 @@ Checklist for requesting approval for your extensions.
 ---
 
 **Since**: `0.9.0`  
-**Context**: Any  
-**Category**: XtendM3 API  
+**Context**: XtendM3 API  
+**Category**: Context Specific
 ---
 ## Description
 

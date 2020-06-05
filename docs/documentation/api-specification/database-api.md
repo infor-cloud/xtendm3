@@ -118,7 +118,7 @@ to 2.
 def handleReleasedItems() {
   int currentCompany = (Integer)program.getLDAZD().CONO
   ExpressionFactory expression = database.getExpressionFactory("MITMAS")
-  expression.eq("MMITGR", "EX-GROUP").and(expression.gt("MMCFI1", "2"))
+  expression = expression.eq("MMITGR", "EX-GROUP").and(expression.gt("MMCFI1", "2"))
   DBAction query = database.table("MITMAS").index("20").matching(expression).selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
   DBContainer container = query.getContainer()
   container.set("MMCONO", currentCompany)
