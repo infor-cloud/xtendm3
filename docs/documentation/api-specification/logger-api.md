@@ -26,7 +26,7 @@ Checklist for requesting approval for your extensions.
 **Category**: Generic  
 ---
 ## Description
-This API is provides capabilities for logging information with different severity level from INFO to ERROR. The
+This API is provides capabilities for logging information with different severity level from DEBUG to ERROR. The
 information that is logged can be seen by both Grid admins as well as the user directly in the Ming.le provided that the
 user has access to the M3 Business Engine Jobs and M3 Business Engine Logs from the administration tools.
 
