@@ -23,7 +23,7 @@ Checklist for requesting approval for your extensions.
 ## Format
 - [x] Extension source code
 - [x] Metadata YAML file
-- [x] DynamicDB definition is provided
+- [x] DynamicDB definition
 - [] ...
 
 ## Documentation
