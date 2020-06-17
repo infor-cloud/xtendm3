@@ -21,10 +21,10 @@ Checklist for requesting approval for your extensions.
 ---
 
 ## Format
-- [x] Extension is exported.
-- [x] Extension code is provided
+- [x] Extension source code
+- [x] Metadata YAML file
 - [x] DynamicDB definition is provided
-- [ ] ...
+- [] ...
 
 ## Documentation
 - [x] Extension is exported.
