@@ -35,10 +35,10 @@ Checklist for requesting approval for your extensions.
 - [x] Test data set up instructions if necessary
 
 ## Programming Standard
-- [x] Compatible with Extensions Programming Standard. Following items will be reviewed carefully:
-    - [x] Logging
-    - [x] Direct database access
-    - [x] Number of API calls
+- [x] Compatible with Extensions Programming Standard
+- [x] Detailed review on Logging
+- [x] Detailed review on Direct database access
+- [x] Detailed review on Number of API calls
 
 ## Version Controlling
 - [x] Link to Git repository containing extensions
