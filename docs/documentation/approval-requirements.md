@@ -24,28 +24,21 @@ Checklist for requesting approval for your extensions.
 - [x] Extension source code
 - [x] Metadata YAML file
 - [x] DynamicDB definition
-- [] ...
+- [x] Business Requirement
 
 ## Documentation
-- [x] Extension is exported.
-- [x] Extension code is provided
-- [x] DynamicDB definition 
-- [ ] ...
+- [x] Extension JavaDoc
+- [x] Extension Methods JavaDoc
 
 ## Testing
-- [x] Extension is exported.
-- [x] Extension code is provided
-- [x] DynamicDB definition is provided
-- [ ] ...
+- [x] Test cases
+- [x] Test data set up instructions if necessary
 
 ## Programming Standard
-- [x] Extension is exported.
-- [x] Extension code is provided
-- [x] DynamicDB definition is provided
-- [ ] ...
+- [x] Compatible with Extensions Programming Standard. Following items will be reviewed carefully:
+    - [x] Logging
+    - [x] Direct database access
+    - [x] Number of API calls
 
 ## Version Controlling
-- [x] Extension is exported.
-- [x] Extension code is provided
-- [x] DynamicDB definition is provided
-- [ ] ...
+- [x] Link to Git repository containing extensions
