@@ -29,7 +29,7 @@ Checklist for requesting approval for your extensions.
 ## Documentation
 - [x] Extension is exported.
 - [x] Extension code is provided
-- [x] DynamicDB definition is provided
+- [x] DynamicDB definition 
 - [ ] ...
 
 ## Testing
