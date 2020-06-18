@@ -9,7 +9,7 @@ nav_order: 6
 {: .no_toc }
 
 
-Guideline for securing your extensions using a version control system
+Metadata file for your extensions
 {: .fs-6 .fw-300 }
 ![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
 
