@@ -38,28 +38,89 @@ To be completed.
 To be completed.
 
 ## Naming
-To be completed.
 
 ### Extensions
-To be completed.
+Extension names should be a valid Java class name.
+There is no restriction on extension names and will run with no error when compiled.  However, when creating extensions, these naming conventions should be followed for readability and maintenance:
+
+__Module__  
+`SMS`
+`SLS`
+`EQM`
+`MNT`
+`SRV`
+`RTM`
+`FIC`
+`FIM`
+`MAN`
+`MAI`
+`PDM`
+`PJM`
+`SCP`
+`SCE`
+`PUR`
+
+__Program Type__  
+`IW` Interactive  
+`Fnc` Fnc Batch   
+`Batch` Batch, Autostart batch  
+`MI` MI Batch  
+
+__EXT ID__  
+Specification Document ID  
+
+__Description__  
+- Description should be in UpperCamelCase  
+
+- Try to keep extension description names simple and descriptive  
+- Avoid acronyms of abbreviations unless the word is a common jargon such as CO, DO, MO  
 
 #### Trigger Extensions
-To be completed.
+`Format: <Module>_<Type>_<EXT ID>_<Description>`  
+
+Type | Program | Extension name
+------------ | -------------| -------------  
+Interactive | APS450 | FIM_IW_1784_ValidateInvoice  
+Fnc Batch| APS450Fnc|FIM_Fnc_1784_ValidateInvoice
+Batch| OOLINEPI| SLS_Batch_1784_ValidateCO
+MI Batch| MMS100MI| SCE_MI_1784_ValidateDO
 
 #### Utility Extensions
-To be completed.
+`Format: <Description>Utils`  
+
+DateUtils
 
 #### Transaction Extensions
-To be completed.
+- EXT9XXMI is reserved for standard extensions and should not be used
+- When extending standard API, use same number suffix as standard program  
+OIS100MI - EXT100MI  
+
+- If there are same number suffix for standard API that needs to have extensions, use increment in number suffix  
+MMS100MI - EXT101MI  
 
 #### Table Extensions
-To be completed.
+`Format: EXT<XXX>`  
+- For standard table extension, use EXT<abbr standard table name>  
+OOHEAD - EXTOHD  
+OOLINE - EXTOLN  
+
+- For custom table extension, use EXT<XXX> same suffix as extension API  
+Table - EXT001  
+API - EXT001MI  
 
 ### Methods
-To be completed.
+- Method name should follow Java naming convention for methods  
+- Names should be in lowerCamelCase, using no underscores and starting with a letter  
+- Only alphanumeric characters should be used. Alphanumeric characters include the letters a-z, either upper case or lower case, and the numerals 0-9  
+- Should be simple and descriptive: 
+validateDate, 
+validateType
 
 ### Variables
-To be completed.
+Global variables  
+Local variables
+  
+### Constants
 
 ## Extension Structure
 To be completed.
