@@ -67,15 +67,14 @@ __Module__
 __Program Type__  
 `IW` Interactive  
 `Fnc` Fnc Batch   
-`Batch` Batch, Autostart batch  
+`Batch` Batch, Autostart Batch  
 `MI` MI Batch  
 
 __EXT ID__  
-Specification Document ID  
+Specification/Extension ID  
 
 __Description__  
 - Description should be in UpperCamelCase  
-
 - Try to keep extension description names simple and descriptive  
 - Avoid acronyms of abbreviations unless the word is a common jargon such as CO, DO, MO  
 
