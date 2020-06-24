@@ -4,7 +4,7 @@ title: Programming Standard
 parent: Documentation
 nav_order: 2
 ---
-
+    
 # Programming Standard
 {: .no_toc }
 
@@ -20,22 +20,26 @@ Guideline for writing secure, optimized and scalable extensions.
 
 ---
 ## Extension Types
-To be completed.
+Extension is required to extend any of the following class types:
 
 ### Trigger Extensions
-To be completed.
+ExtendM3Trigger class is used if we need to hook or inject our own code in a specific method in M3 Java through an extension point.
 
 ### Utility Extensions
-To be completed.
+ExtendM3Utility class is used to create an extension program with collection of methods that can be called in other extensions.  
+
+`utility.call(String utility, String method, Object... arguments)`
 
 ### Transaction Extensions
-To be completed.
+ExtendM3Transaction class is used to create custom API transactions.
 
 ### Table Extensions
 To be completed.
 
 ## Indentation and Formatting
-To be completed.
+Tab size: 2  
+Indent size: 2  
+Continuation indent: 4
 
 ## Naming
 
@@ -75,6 +79,7 @@ __Description__
 - Try to keep extension description names simple and descriptive  
 - Avoid acronyms of abbreviations unless the word is a common jargon such as CO, DO, MO  
 
+
 #### Trigger Extensions
 `Format: <Module>_<Type>_<EXT ID>_<Description>`  
 
@@ -108,7 +113,7 @@ OOLINE - EXTOLN
 Table - EXT001  
 API - EXT001MI  
 
-### Methods
+#### Methods
 - Method name should follow Java naming convention for methods  
 - Names should be in lowerCamelCase, using no underscores and starting with a letter  
 - Only alphanumeric characters should be used. Alphanumeric characters include the letters a-z, either upper case or lower case, and the numerals 0-9  
@@ -116,11 +121,11 @@ API - EXT001MI
 validateDate, 
 validateType
 
-### Variables
+#### Variables
 Global variables  
 Local variables
   
-### Constants
+#### Constants
 
 ## Extension Structure
 To be completed.
