@@ -10,7 +10,7 @@ nav_order: 5
 
 Checklist for requesting approval for your extensions.
 {: .fs-6 .fw-300 }
-![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
+Once all the information below is ready and the extension has been tested, send a mail to xtendm3 mailbox  with the attachments mentioned.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -20,14 +20,14 @@ w
 
 ---
 
-## Format
-- [x] Extension source code
-- [x] Metadata YAML file
-- [x] Business Requirement
+## Request Format
+- [x] Extension source code included
+- [x] Metadata YAML file included
+- [x] Business Requirement included
 
 ## Documentation
-- [x] Extension JavaDoc
-- [x] Extension Methods JavaDoc
+- [x] Extension JavaDoc on top of extension classes
+- [x] Extension Methods JavaDoc on top of methods (except for main)
 
 ## Testing
 - [x] Test cases
