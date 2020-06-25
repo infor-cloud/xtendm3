@@ -14,7 +14,6 @@ Once all the information below is ready and the extension has been tested, send 
 
 ## Table of contents
 {: .no_toc .text-delta }
-w
 1. TOC
 {:toc}
 
