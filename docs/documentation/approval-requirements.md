@@ -23,7 +23,6 @@ w
 ## Format
 - [x] Extension source code
 - [x] Metadata YAML file
-- [x] DynamicDB definition
 - [x] Business Requirement
 
 ## Documentation
@@ -36,6 +35,7 @@ w
 
 ## Programming Standard
 - [x] Compatible with Extensions Programming Standard
+- [x] Following naming conventions
 - [x] Detailed review on Logging
 - [x] Detailed review on Direct database access
 - [x] Detailed review on Number of API calls
