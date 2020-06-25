@@ -27,7 +27,7 @@ Metadata file is written in the YAML format with the structure similar to below:
 ```yaml
 metadataVersion: 1
 extensions:
-  - name: ValidateInvoiceDateInteractive.groovy
+  - name: ValidateInvoiceDateInteractive
     triggers:
       - type: METHOD
         program: MMS001
@@ -40,7 +40,7 @@ extensions:
     utilities:
       - NumberUtils
       - DateUtils
-  - name: ValidateInvoiceDateMI.groovy
+  - name: ValidateInvoiceDateMI
     triggers:
       - type: TRANSACTION
         program: MMS200MI
@@ -59,12 +59,12 @@ apis:
           - name: CONO
             description: Company
             length: 3
-            type: NUMERIC
+            type: NUMBER
             mandatory: true
           - name: ITNO
             description: Item Number
             length: 15
-            type: ALPHANUMERIC
+            type: TEXT
             mandatory: true
         outputs:
           - name: ITDS
@@ -74,4 +74,30 @@ apis:
 utilities:
   - name: NumberUtils
   - name: DateUtils
+tables:
+  - name: EXTUSR
+    fields:
+      - name: EXUSID
+        type: TEXT
+        length: 36
+      - name: EXSTAT
+        type: NUMBER
+        length: 1
+        decimals: 0
+      - name: EXNAME
+        type: TEXT
+        length: 50
+    indexes:
+      - name: 00
+        unqiue: true
+        keys:
+          - name: EXUSID
+            order: DESCENDING
+      - name: 10
+        unique: false
+        keys:
+          - name: EXSTAT
+            order: DESCENDING
+          - name: EXUSID
+            order: DESCENDING
 ```
