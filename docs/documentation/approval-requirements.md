@@ -10,7 +10,7 @@ nav_order: 5
 
 Checklist for requesting approval for your extensions.
 {: .fs-6 .fw-300 }
-Once all the information below is ready and the extension has been tested, send a mail to xtendm3 mailbox  with the attachments mentioned.
+Once all the information below is ready and the extension has been tested, send a mail to XtendM3 mailbox  with the attachments mentioned.
 
 ## Table of contents
 {: .no_toc .text-delta }
