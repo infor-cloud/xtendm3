@@ -20,26 +20,29 @@ Guideline for writing secure, optimized and scalable extensions.
 
 ---
 ## Extension Types
-Extension is required to extend any of the following class types:
+Extension can be created in any of the four types:  
 
 ### Trigger Extensions
-ExtendM3Trigger class is used if we need to hook or inject our own code in a specific method in M3 Java through an extension point.
+Trigger extensions are used to hook or inject our own code in a specific method in M3 Java through an extension point. These extensions extend the ExtendM3Trigger class.  
 
 ### Utility Extensions
-ExtendM3Utility class is used to create an extension program with collection of methods that can be called in other extensions.  
+Utility extensions are used to create an extension program with collection of methods that can be called in other extensions. These extensions extend the ExtendM3Utility class.  
 
 `utility.call(String utility, String method, Object... arguments)`
 
 ### Transaction Extensions
-ExtendM3Transaction class is used to create custom API transactions.
+Transaction Extensions are used to create custom M3 API transactions. These extensions extend the ExtendM3Transaction class.  
 
 ### Table Extensions
-To be completed.
+Table Extensions are used to create dynamic table.  In BE 15.x version, this is the equivalent of the MAK custom tables.  It is possible to add columns, assign data types, unique keys, and indices.  
 
 ## Indentation and Formatting
-Tab size: 2  
-Indent size: 2  
-Continuation indent: 4
+Tab size: 2 spaces  
+Indent size: 2 spaces  
+Continuation indent: 4 spaces  
+Charset: utf-8  
+
+XtendM3 uses Groovy programming and ending code lines with semicolons are optional.  
 
 ## Naming
 
@@ -120,83 +123,60 @@ API - EXT001MI
 validateDate, 
 validateType
 
-#### Variables
-Global variables  
-Local variables
-  
-#### Constants
+#### Variables and Constants
+- Variables and constants should follow Java naming convention
+- Variables should be in lowerCamelCase and constants in CAPITAL_CONSTANTS
 
 ## Extension Structure
-To be completed.
+- Global variables and main method are declared at the beginning of the program as compared to M3 Java where these are declared at the end of the program
+`<to add example>`
 
-### Imports
-To be completed.
-
-### Variables
-To be completed.
-
-### Methods
-To be completed.
-
-### Extension Specific Structure
-To be completed.
-
-#### Trigger Extensions
-To be completed.
-
-#### Utility Extensions
-To be completed.
-
-#### Transaction Extensions
-To be completed.
-
-#### Table Extensions
-To be completed.
-
-## Extension Point / Trigger
-To be completed.
-
-### Interactive
-To be completed.
-
-### Batch / Function
-To be completed.
-
-### MI / M3 API
-To be completed.
+### Utility Extensions
+- Utility extensions cannot contain global variables
+- It is not possible to declare and create instance of API in utility extensions, instead API should be passed as parameters in utility methods  `<to add example>`
 
 ## Programming Practices
-To be completed.
-
 ### Logging
-To be completed.
+- LoggerAPI is used for logging messages  
+- It is encouraged to add logs in extensions to help in debugging and troubleshooting issues particularly on non-development environments (TRN, PRD) where there is restriction on modifying extensions  
+- Use proper level of logging – If extension is to be deployed in PRD, it should be limited to DEBUG level. Using INFO/WARNING/ERROR/TRACE on production environment can cause huge log size and impact MT Cloud environment  
+- Avoid logging values of all returned fields in a database query  
+- Logs can be accessed through Administration tool - Business Engine Jobs `<to add screen>`    
+
+#### Log levels
+- warning  
+- error  
+- info  
+- trace  
+- debug
 
 ### Database Access
-To be completed.
-
-#### Read Access
-To be completed.
-
-#### Write / Update / Delete Access
-To be completed.
+- It is recommended to use standard API if transactions are available instead of direct database access on WRITE/UPDATE/DELETE  where the program uses multiple tables to update.  This could cause corrupt data if any on the logic, validation, or database update was missed or incorrectly updated  
+- Make sure when using readLock that it is released at the end of the extension to avoid blocking another program access  
+- When reading table with partial keys, verify that this will not return too many records  
+- When reading table, if possible, specify only the required column fields and avoid selectAllFields on querying tables particularly on tables which contains many fields  
 
 ### Loops
-To be completed.
+- In M3 Java old programming, there are codes such as _while(true)_ and performs multiple _break_ inside the loop. When using while loop, avoid using condition=_true_ and provide condition that will break the loop  
 
 ### Data Storage
-To be completed.
-
 #### In Memory
-To be completed.
+- SessionAPI is used to store information in key-value mapping that can be accessed between multiple extensions in the same session  
+- Make sure to use unique identifier as key names to avoid conflicts with other extensions when adding content to the cache  
+- Reassess when there is too many information that needs to be stored in a session. It may be more practical to add the information using XtendM3 tables instead  
 
 #### In Customer Extension Table
-To be completed.
+- Customer extension table refers to CUGEX1, CUGEX2 and CUGEX3 tables and can be accessed through standard API, CUSEXTMI 
+- Customer extension table should not be used for high volume data and high number of reads, updates, and deletes instead replace with XtendM3 tables  
 
 #### In Dynamic Database
-To be completed.
+- Dynamic Database or XtendM3 table is the equivalent of MAK custom table  
+- Table name uses prefix EXT and can have specific columns and logical keys  
+`to add example`
 
 #### In Text/XML/JSON File
-To be completed.
+- TextFilesAPI is the equivalent of MvxTextFile in M3 Java which can be used to read, write, or delete file  
+` to add example`
 
 ### API Call
 To be completed.
