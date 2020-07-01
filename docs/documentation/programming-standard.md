@@ -176,16 +176,16 @@ validateType
 
 #### In Text/XML/JSON File
 - TextFilesAPI is the equivalent of MvxTextFile in M3 Java which can be used to read, write, or delete file  
-` to add example`
+`to add example`  
 
 ### API Call
-- M3 API can be run using IonAPI and MICallerAPI  
+- M3 API can be run using IonAPI or MICallerAPI  
 - It is preferred to use MICallerAPI which runs M3 API internally in the same layer as business engine instead of having another layer to execute M3 API  
 
 #### ION API
 - ION API provides secure access to M3 API and other registered application APIs through web services
 - When using IonAPI in extension, the response should be parsed [XML/JSON Parsing](https://infor-cloud.github.io/xtendm3/docs/documentation/programming-standard/#xml--json-parsing)  
-- If standard M3 API is not available and an existing interactive program can be used to perform M3 update,  ION API can be used to run Interactive Programming Services (IPS) which wraps the functionality of the program to perform M3 updates  
+- If standard M3 API is not available and an existing interactive program can be used to perform M3 update,  ION API can be used to run IPS(Interactive Programming Services) which wraps the functionality of the program to perform M3 updates  
 
 #### M3 API
 - MICallerAPI is the equivalent of utility program cMICaller in M3 Java  
@@ -198,8 +198,8 @@ validateType
 Extension approval requires submission of approved Unit test and Functional test documents  
 
 ### Local
-- Extensions can be locally tested using (XtendM3 SDK)[https://github.com/infor-cloud/xtendm3-sdk-java] which provides the interfaces for the internal APIs available to XtendM3 Extensions. This SDK can be used to build, test and debug Extensions locally without needing to have any M3 environment up and running  
-- A sample repository (ACME Corp. XtendM3 Extensions)[https://github.com/infor-cloud/acme-corp-extensions] is provided to get you started on setting up project directories for the source codes, test scripts and XtendM3 SDK  
+- Extensions can be locally tested using [XtendM3 SDK](https://github.com/infor-cloud/xtendm3-sdk-java) which provides the interfaces for the internal APIs available to XtendM3 Extensions. This SDK can be used to build, test and debug Extensions locally without needing to have any M3 environment up and running  
+- A sample repository [ACME Corp. XtendM3 Extensions](https://github.com/infor-cloud/acme-corp-extensions) is provided to get you started on setting up project directories for the source codes, test scripts and XtendM3 SDK  
 
 ### Live
 - If the program extension has been activated in the tenant, it automatically runs and the changes to the program are seen by the users.  During unit testing, it is recommended that the extension should execute only for specific users until it is verified working to avoid interrupting other users when running the same program  
@@ -207,17 +207,17 @@ Extension approval requires submission of approved Unit test and Functional test
 `to add example`
 
 ## Version Controlling
-More details are provided at (Version Controlling)[https://infor-cloud.github.io/xtendm3/docs/documentation/version-controlling/] page 
+More details are provided at [Version Controlling](https://infor-cloud.github.io/xtendm3/docs/documentation/version-controlling/) page 
 
 ### Framework
 Git version control system should be used  
 
 ### Structure
-Refer to the example of an (XtendM3 Extension Repository)[https://github.com/infor-cloud/acme-corp-extensions] to version control extensions  
+Refer to the example of an [XtendM3 Extension Repository](https://github.com/infor-cloud/acme-corp-extensions) to version control extensions  
 
 ### Hosting
 Any git provider that the customer prefers GitHub, GitLab, Bitbucket and etc.  
 
 ## Documentation
 - Extension JavaDoc on top of extension classes is required  
-- Extension Methods JavaDoc on top of methods (except for main)   
+- Extension Methods JavaDoc on top of methods (except for main) is recommended   
