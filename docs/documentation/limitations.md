@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Capabilities
+title: Limitations
 parent: Documentation
-nav_order: 1
+nav_order: 2
 ---
 
-# Capabilities
+# Limitations
 {: .no_toc }
 
 
-XtendM3 Capabilities
+XtendM3 Limitations
 {: .fs-6 .fw-300 }
 **️IN PROGRESS, NOT COMPLETE YET**
 
