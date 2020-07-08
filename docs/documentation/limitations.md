@@ -56,12 +56,20 @@ modified by an extension.
 
 ## Expanding
 ### Reference Fields
+TBA, this feature has not been released yet.
 
 ### Database
 
 ### API
+#### Creating new transactions on standard APIs
+It is not possible to define new transactions on the existing standard APIs.
+
+**Workaround**
+Define a new transaction on an XtendM3 API. To find and relate the transaction easier to the standard program you could 
+use the same suffix e.g. for new transactions in OIS100MI you can define EXT100MI API.
 
 ### Batch
+TBA, this feature has not been released yet.
 
 ### Interactive
 
@@ -69,6 +77,11 @@ modified by an extension.
 ### ION API
 
 ### M3 API
+#### Calling CMS100MI/MDBREADMI
+It is not possible to call custom transactions defined in CMS100MI or MDBREADMI. 
+
+**Workaround**
+Perform the query using either direct database access or via calling CMS100MI/MDBREADMI IONAPI as a last resort option.
 
 ### Configurable List & XML
 
