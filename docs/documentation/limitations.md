@@ -29,7 +29,7 @@ It is not possible to call M3 programs from an extension. Only M3 APIs can be ca
 
 ### Interactive
 #### Accessing custom fields from extensions
-If a field is not a standard field and is defined via CMS080, it cannot be accessed from extensions directly as opposed 
+If a field is not a standard field and is defined via CMS080 or by a script, it cannot be accessed from extensions directly as opposed 
 to other standard fields on the screen.
 
 **Workaround**
