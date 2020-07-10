@@ -18,7 +18,7 @@ nav_order: 5
 ## XtendM3 Support
 
 ### APIs
-The XtendM3 APIs are officially supported through normal global support. If there are any issues with the APIs they 
+The XtendM3 framework APIs (not to be mixed with MI programs created with XtendM3) are officially supported through normal global support. If there are any issues with the APIs they 
 should be reported as bugs in the support portal. Discussions and questions on the usage of APIs should be raised in the 
 community forum mentioned [below](#community-forum).
 
