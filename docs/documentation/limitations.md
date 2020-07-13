@@ -26,14 +26,27 @@ It is not possible to call M3 programs from an extension. Only M3 APIs can be ca
 
 ## Extending
 ### Batch/Function
+#### Creating additional fields in field groups e.g. MWPV6
+TBA, this feature has not been released yet.
 
 ### Interactive
+#### Creating UI related components in interactive panels
+For enhancements such as adding new field in OIS100/E, extension will not be able to add textbox or dropdown field.  
+
+**Workaround**
+CMS080 (custom fields) or H5 Script can be used to create UI components.  
+
+XtendM3 does not support creating additional column in subfiles, converting columns to editable fields, addition of selection filters, and adding sorting orders and views.  
+
+**Workaround**
+Some M3 program views can be configured in CRS020/CRS022.  H5 Script can also be used to add columns in subfile panels.  
+
 #### Accessing custom fields from extensions
 If a field is not a standard field and is defined via CMS080 or by a script, it cannot be accessed from extensions directly as opposed 
 to other standard fields on the screen.
 
 **Workaround**
-A H5 script can be used to send the custom field information to XtendM3 API instead.
+H5 script can be used to send the custom field information to XtendM3 API instead.
 
 #### Accessing chosen list option
 Currently, it is not possible to access list option from extensions.
@@ -59,6 +72,9 @@ modified by an extension.
 TBA, this feature has not been released yet.
 
 ### Database
+#### Adding table index for standard tables 
+
+**Workaround** Custom table index for standard tables should be created in CRS021.
 
 ### API
 #### Creating new transactions on standard APIs
