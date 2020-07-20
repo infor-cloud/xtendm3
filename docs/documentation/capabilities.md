@@ -24,25 +24,47 @@ XtendM3 Capabilities
 ## Extending
 ### Batch/Function
 #### Adding or modifying logic inside a batch program through extension points
-It is possible to add specific logic in a standard batch program provided that extension points are existing. By default, batch program is not available in BE Extension tool and needs to be requested.  
+It is possible to add specific logic in a standard batch program provided that extension points are existing. 
+By default, batch program is not available in BE Extension tool and needs to be requested.  
 
 ### Interactive
 #### Adding validation on a standard field
+It is possible to add validation on standard fields through extensions connected to Interactive programs' extension points. 
+
 #### Performing validation before and after standard related options in the screen
+It is possible to perform validation but it is not possible to get the related option that was chosen inside the extension. 
+For use cases where related option is needed, an H5 script can be used to call XtendM3 API instead of hooking an extension 
+to the interactive programs' extension points.
+
 #### Skip or stop performing options update, create, delete, or copy
+It is possible to stop operations by using an extension on PxCHK extension points.
+
 #### Displaying dialog messages to the screen 
+It is possible to show information/warning/error messages on the screen as well as pop up dialogs with Yes/No or Ok/Cancel 
+options to the screen. 
+
 #### Adding default value or overriding value of field on the screen 
+It is possible to set default values for the standard fields by using PxINZ extension points.
 
 ### Transaction
-#### Creating extension APIs - new transaction to get, add, update, or list records
+
 #### Performing specific logic on standard API transaction through extension points
+It is possible to perform specific logic on standard API transactions by creating a trigger extension and hooking it on 
+extension points from standard APIs. Extensions can run before a standard transaction is executed or after a standard transaction has been 
+executed successfully.
 
 ## Expanding
 ### Reference Fields
+TBA. Not released yet.
 
 ### Database
+It is possible to create completely new tables via XtendM3 by creating a Dynamic Table. The access to this table is 
+through extensions and they can be exposed via XtendM3 APIs to the rest of the M3 ecosystem.
 
 ### API
+#### Creating extension APIs - new transaction to get, add, update, or list records
+It is possible to create new APIs and single/multi transactions via XtendM3. In order to create new transaction the 
+extension type should be Transaction when creating it.
 #### Calling extension API from H5 Script and ION API
 If extension API is active, metadata is automatically updated in MRS program and ION API and can be called or used same as a standard API transaction.  
 

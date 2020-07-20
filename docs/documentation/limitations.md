@@ -72,9 +72,16 @@ modified by an extension.
 TBA, this feature has not been released yet.
 
 ### Database
+#### Adding fields to existing standard tables
+It is not possible to add fields to existing tables
+**Workaround** Create new tables by using XtendM3 Dynamic Table
+
 #### Adding table index for standard tables 
 
 **Workaround** Custom table index for standard tables should be created in CRS021.
+
+##### Data Lake synchronization
+The synchronization to datalake is not yet supported but will be in future.
 
 ### API
 #### Creating new transactions on standard APIs
