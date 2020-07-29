@@ -65,25 +65,33 @@ through extensions and they can be exposed via XtendM3 APIs to the rest of the M
 #### Creating extension APIs - new transaction to get, add, update, or list records
 It is possible to create new APIs and single/multi transactions via XtendM3. In order to create new transaction the 
 extension type should be Transaction when creating it.
-#### Calling extension API from H5 Script and ION API
+#### Calling extension API from H5 Script, ION API, IEC Mapper, CMS041
 If extension API is active, metadata is automatically updated in MRS program and ION API and can be called or used same as a standard API transaction.  
 
 ### Batch
+TBA. Not released yet.  
 
 ### Interactive
+Use H5 Scripting and Mashup SDK to create UI elements and use extension API to perform CRUD operations.
 
 ## Integration
 ### ION API
+It is possible to call ION API from extensions. 
 
 ### M3 API
+It is possible to call M3 API from extensions.
 
 ### Configurable List & XML
+TBA. Not released yet.  
 
 ### File Transfer
+It is possible to manage text, csv, json files in MvxFileTransfer directory. 
 
-### Database
+### M3 Database
+It is possible to perform CRUD operations on M3 database.
 
-### Data Lake
+### Data Lake Synchronization
+TBA. Not released yet.
 
 ## Development Tools
 ### Online IDE
