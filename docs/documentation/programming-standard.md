@@ -107,14 +107,15 @@ MMS100MI - EXT101MI
 
 #### Table Extensions
 `Format: EXT<XXX>`  
-- When extending standard table or creating custom table, include the following standard fields:
+- When extending standard table or creating custom table, include the following standard fields  
+
 Column Name | Description | Data Type | Length
------------- | ------------- | ------------- | -------------  
-RGDT | Entry date | Decimal | 8  
-LMDT| Change date | String | 8  
-CHID| Changed by | Decimal | 10  
-RGTM| Entry time | Decimal | 6  
-CHNO| Change number | Decimal | 3  
+------------ | -------------| ------------- | ------------- 
+RGDT | Entry date | Decimal | 8
+LMDT | Change date | String | 8
+CHID | Changed by | Decimal | 10
+RGTM | Entry time | Decimal | 6 
+CHNO | Change number | Decimal | 3
 
 - For standard table extension, use EXT<abbr standard table name>  
 OOHEAD - EXTOHD  
