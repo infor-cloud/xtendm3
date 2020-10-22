@@ -107,6 +107,15 @@ MMS100MI - EXT101MI
 
 #### Table Extensions
 `Format: EXT<XXX>`  
+- When extending standard table or creating custom table, include the following standard fields:
+Column Name | Description | Data Type | Length
+------------ | ------------- | ------------- | -------------  
+RGDT | Entry date | Decimal | 8  
+LMDT| Change date | String | 8  
+CHID| Changed by | Decimal | 10  
+RGTM| Entry time | Decimal | 6  
+CHNO| Change number | Decimal | 3  
+
 - For standard table extension, use EXT<abbr standard table name>  
 OOHEAD - EXTOHD  
 OOLINE - EXTOLN  
@@ -194,6 +203,11 @@ validateType
 - XML response can be processed using Groovy classes [XmlParser and XmlSlurper](https://groovy-lang.org/processing-xml.html)  
 - JSON response can be processed using Groovy class [JsonSlurper](https://groovy-lang.org/json.html)  
 
+### Date and Time
+- Use classes [LocalDate](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/time/LocalDate.html), [LocalTime](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/time/LocalTime.html), [LocalDateTime](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/time/LocalDateTime.html) if required to retrieve current date or manipulate date or time  
+`int entryDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")).toInteger()`  
+`int entryTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HHmmss")).toInteger()`    
+ 
 ## Testing
 Extension approval requires submission of approved Unit test and Functional test documents  
 
