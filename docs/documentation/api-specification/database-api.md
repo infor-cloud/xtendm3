@@ -6,12 +6,8 @@ grand_parent: Documentation
 nav_order: 7
 ---
 
-# Extension API
+# Database API
 {: .no_toc }
-
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
-![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -34,7 +30,7 @@ Before starting with the code, to understand the database better it is important
 concepts, APIs and tools used to perform an operation on the database. 
 
 ### DatabaseAPI
-The main API that is needed to be injected to the extension to perform any database-related operation. All other APIs
+The main API that needs to be injected to the extension to perform any database-related operation. All other APIs
 that are stated below will be retrieved from this API and shall not be declared on top of the extension. The DatabaseAPI
 is used to define the operations that will be executed on database.
 
@@ -58,7 +54,7 @@ and delete operation on this locked record.
 ## Features
 
 ### Create a record
-To create a record 
+To create a record TODO 
 
 ### Read a specific record
 To read a specific record, primary keys or full index keys should be used to lookup the data. The example below
