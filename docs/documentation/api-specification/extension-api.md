@@ -9,9 +9,7 @@ nav_order: 1
 # Extension API
 {: .no_toc }
 
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
-![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
+![](/assets/images/warning-24px.svg)
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -26,7 +24,7 @@ Checklist for requesting approval for your extensions.
 **Category**: Generic  
 ---
 ## Description
-The Extension API provides information regarding the XtendM3 extension that is currently in use. This can be used as a validation in the development of the extension code as there can be other concurrent XtendM3 extensions activated.
+The Extension API provides information regarding the XtendM3 extension that is currently in use. This can be used to retrieve metadata about the current extension and show to the user or use for logging purposes.
 
 ## Features
 ### Get creator
@@ -34,11 +32,20 @@ To retrieve the username of the extension creator.
 
 Example:
 ```groovy
-final ExtensionAPI extension
-final InteractiveAPI interactive
-
-String extCreator = extension.getCreator()
-interactive.showOkDialog("${extCreator} created this extension.")
+public class SampleExtension extends ExtendM3Trigger {
+    private final ExtensionAPI extension
+    private final InteractiveAPI interactive
+    
+    public SampleExtension(ExtensionAPI extension, InteractiveAPI interactive){
+        this.extension = extension
+        this.interactive = interactive
+    }
+    
+    public void main(){
+        String extCreator = extension.getCreator()
+        interactive.showOkDialog("${extCreator} created this extension.")   
+    }
+}
 ```
 
 ### Get LastModifiedBy
@@ -46,11 +53,20 @@ To retrieve the username who last modified the extension.
 
 Example:
 ```groovy 
-final ExtensionAPI extension
-final InteractiveAPI interactive
-
-String extLastModifiedBy = extension.getLastModifiedBy()
-interactive.showOkDialog("${extLastModifiedBy} last modified this extension.")
+public class SampleExtension extends ExtendM3Trigger {
+    private final ExtensionAPI extension
+    private final InteractiveAPI interactive
+    
+    public SampleExtension(ExtensionAPI extension, InteractiveAPI interactive){
+        this.extension = extension
+        this.interactive = interactive
+    }
+    
+    public void main(){
+        String extLastModifiedBy = extension.getLastModifiedBy()
+        interactive.showOkDialog("${extLastModifiedBy} last modified this extension.")
+    }
+}
 ```
 
 ### Get Name
@@ -58,11 +74,20 @@ To retrieve the name of the extension currently being used.
 
 Example:
 ```groovy
-final ExtensionAPI extension
-final InteractiveAPI interactive
-
-String extName = extension.getName()
-interactive.showOkDialog("Current Extension name: ${extName}")
+public class SampleExtension extends ExtendM3Trigger {
+    private final ExtensionAPI extension
+    private final InteractiveAPI interactive
+    
+    public SampleExtension(ExtensionAPI extension, InteractiveAPI interactive){
+        this.extension = extension
+        this.interactive = interactive
+    }
+    
+    public void main(){
+        String extName = extension.getName()
+        interactive.showOkDialog("Current Extension name: ${extName}")
+    }
+}
 ```
 
 
