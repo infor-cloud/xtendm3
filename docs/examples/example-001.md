@@ -37,6 +37,9 @@ between projects and solutions and if there are any issues found, there is only 
 * Calculating difference between two dates
 * Validating date
 
+## Important Note
+Always test the examples for your own solution before using them in production.
+
 ## Materials
 ### Extension Code
 Here's an overview of the utility, the exported file can be downloaded and imported in your own environments.
