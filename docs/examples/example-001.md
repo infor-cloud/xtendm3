@@ -148,7 +148,7 @@ public class DateUtil extends ExtendM3Utility {
 ```
 
 ### Exported Extension
-- [DateUtil.json](https://infor-cloud.github.io/xtendm3/assets/attachments/ex001/DateUtil.json)
+- <a href="https://infor-cloud.github.io/xtendm3/assets/attachments/ex001/DateUtil.json">DateUtil.json</a>
 
 ### See Also
 N/A
