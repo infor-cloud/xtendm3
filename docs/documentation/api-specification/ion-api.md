@@ -48,7 +48,8 @@ public class SampleExtension extends ExtendM3Trigger {
     def endpoint = "/IONAttachment/supportedfile/list"
     def headers = ["Accept": "application/json"]
     def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
-    IonResponse response = ion.post(endpoint, headers, queryParameters)
+    def formParameters = (Map)null // post URL encoded parameters
+    IonResponse response = ion.post(endpoint, headers, queryParameters, formParameters)
     if (response.getError()) {
       logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
       return
@@ -136,7 +137,8 @@ public class SampleExtension extends ExtendM3Trigger {
     def endpoint = "/IONAttachment/supportedfile/list"
     def headers = ["Accept": "application/json"]
     def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
-    IonResponse response = ion.put(endpoint, headers, queryParameters)
+    def formParameters = (Map)null //
+    IonResponse response = ion.put(endpoint, headers, queryParameters, formParameters)
     if (response.getError()) {
       logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
       return
