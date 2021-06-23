@@ -46,7 +46,7 @@ Turnaround time for this process is **5 working days** from the day the request 
 Effective **July 1, 2021**, 
 we will no longer release signed extensions without first being able to bill our time spent for the review and signing.
 
-###Billing Specifics
+### Billing Specifics
 
 We bill 1-2 hours for the review of simple to medium complexity extensions.  
 For complex extensions, it normally takes more time as it requires multiple cycles of review/discussions/revisions so it will be actual time spent that will be charged.  
