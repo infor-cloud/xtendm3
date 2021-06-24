@@ -60,33 +60,44 @@ On high level, budgeting for 5-10% of each extension development effort is enoug
   
 ## Request Format
 ### Request Content
-Copy this form to your mail and answer all questions. This questionaire should be done per extension. So if three extensions are sent in, this will be done for three of them separately but it can be done in one mail.
+Copy this form to your mail and answer all questions.  
+The questionnaire should be answered per extension;  
+Therefore, if there are three extensions sent for review, there should be three separate sections in one email answering the following for each extension:
 
+- Project/Customer Name
+- Developer Name
 - Requirement Description (1 or 2 paragraphs)
 - Solution Description (1 or 2 paragraphss)
-- Module
+- Affected M3 Module (Finance, Procurement, etc.)
 - Is this a new solution?
   - If not, what has been changed or updated?
-- Direct database access?
-  - Is it done on M3 Tables or Dynamic tabels?
-  - If M3 tables
-    - Is there any API for this table?
-      - If yes, why API is not used?
-      - If no, has enhancement request been added?
-    - Are you using indexes to access with keys other than company and division?
-    - Are you using expressions to filter your access? How many records do you estimate to be there if filter is not applied?
-  - If Dynamic tables
-    - Is the dynamic table extending a standard table?
-      - If yes, have all the standard fields been validated to make sure they exist in M3 e.g. order number?
-- Has this solution / extension been tested and functionally approved?
-- Is the repository updated with the correct branches i.e. if it is coming from TST tenant, the tst branch should be updated with these changes and once signed extension for prd is receive, master/prd branch should be updated.
-- Are there any issues or parts that does not follow the guideline which you are asking for exception, if so, why?
-- Have you read the programming standard and made sure the code is compliant with the standard?
-- Have you followed the recommended naming conventions for the extension, methods, variables?
+- Does it implement direct database access?
+  - Is direct access done on M3 Standard Tables or Dynamic (XtendM3) Tables?
+  
+  - If M3 Standard Table direct database access
+    - Is there a standard M3 API for the M3 standard table?
+       - If yes, why was the M3 API not used instead of the direct database access?
+       - If no, was an enhancement request sent to product development to have an M3 API created for the M3 standard table?
+    - Are indexes used to access the tables, using keys other than just the company and division?
+    - Are you using expressions to filter the database access? 
+      How many records are estimated to be retrieved if filter is not applied?
+
+  - If Dynamic (XtendM3) Table direct database access
+    - Is the dynamic table extending an M3 standard table?
+      - If yes, have all the dynamic table fields, that are referenced to M3 standard table fields, been validated to make sure they exist in M3 e.g. Order Number?
+
+- Has this solution / extension been fully tested and functionally approved?
+- Is the repository updated with the correct branches? 
+  i.e. if it is coming from TST tenant, the TST branch should be updated with these changes 
+  And once signed extension for PRD is receive, master/prd branch should be updated.
+- Does the extension solution/codes contain parts that does not follow the guidelines/best practices, for which you are requesting an exception/special approval? 
+If so, why?
+- Have you read the programming standards and made sure the code is compliant with the standards?
+- Have you followed the recommended naming conventions for extensions, methods, variables?
 - Have you documented the extension code?
-- Except for data setup, are there any other configuration or extensions that need to be there for this extension to work? 
-- Is logger used in extension
-  - If yes, is it only using debug level? (Extension will not be approved with any other logger level than debug) 
+- Except for data setup, are there any other configuration or extensions dependencies required to exist for this extension to work?
+- Is logger used in extension?
+   - If yes, is it only using debug level? (Extension will not be approved with any other logger level than debug) 
 
 ### Attachments
 - Exported extension in JSON format
@@ -95,11 +106,12 @@ Copy this form to your mail and answer all questions. This questionaire should b
 ## Recommendation
 Please go through these checklists before sending extension for approval
 
-- [x] Extension JavaDoc on top of extension classes
-- [x] Extension Methods JavaDoc on top of methods (except for main)
-- [x] Testing extension and verifying it works as intended and it handles errors properly
-- [x] Compatible with Extensions Programming Standard
-- [x] Following naming conventions
-- [x] Detailed review on Logging
-- [x] Detailed review on Direct database access
-- [x] Detailed review on Number of API calls
+- [x] Extension JavaDoc has been created on top of the extension classes  
+- [x] Extension Method’s JavaDoc has been created on top of the methods (except for the main() method)  
+- [x] Extensions have been fully tested and verified to be working as intended  
+- [x] Extensions have in place proper error handling logic  
+- [x] Extensions adheres to the Programming Standards  
+- [x] Naming conventions have been followed  
+- [x] Logs have been reviewed in detail  
+- [x] Direct database access have been reviewed in detail  
+- [x] Number of API calls have been reviewed to be efficient  
