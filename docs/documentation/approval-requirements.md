@@ -19,44 +19,6 @@ Once all the information below is ready and the extension has been tested, send 
 
 ---
 
-
-## Review/Signing Process and Billing
-Upon our receipt of the email request containing the extensions, 2-3 consultants will be reviewing the solution and codes.
-Consulting charges applies for this activity, so the consultants who will be reviewing the extensions will be billing their time spent against the project/customer or partner.
-
-Please have this considered/incorporated when solution estimates are created and given to customers.
-
-**For new extensions**, a review will be scheduled;  
-expect to receive a calendar invite for the meeting, whose required attendees would be the developer and the functional consultant; PM is optional.
-
-**For previously reviewed and signed extensions,**  
-if only minor adjustments were done,
-an email will be sent to you with the signed extension;  
-otherwise, a meeting will be scheduled again for the review.
-
-If recommendations are provided during the review,  
-you will be requested to make the necessary revisions in order to comply with the recommendations.  
-Once done, send the corrected extensions again for review and signing.
-
-Once the review is completed and extensions are approved,
-a signed packaged version of the extension will be emailed back to you.
-
-Turnaround time for this process is **5 working days** from the day the request was received with the extensions.
-
-Effective **July 1, 2021**, 
-we will no longer release signed extensions without first being able to bill our time spent for the review and signing.
-
-### Billing Specifics
-
-We bill 1-2 hours for the review of simple to medium complexity extensions.  
-For complex extensions, it normally takes more time as it requires multiple cycles of review/discussions/revisions so it will be actual time spent that will be charged.  
-We go by GDS/COE Manila Offshore Senior Consultant rates, you can check with your Client Partners or Partner Account Manager as to how much this is exactly per hour.  
-
-A recommendation,  
-As per standard practice for our projects, we include the review hours in the work estimates for development of extensions.  
-On high level, budgeting for 5-10% of each extension development effort is enough time for the review/signing.  
-  
-    
   
 ## Request Format
 ### Request Content
@@ -115,3 +77,41 @@ Please go through these checklists before sending extension for approval
 - [x] Logs have been reviewed in detail  
 - [x] Direct database access have been reviewed in detail  
 - [x] Number of API calls have been reviewed to be efficient  
+
+## Review/Signing Process and Billing
+Upon our receipt of the email request containing the extensions, 2-3 consultants will be reviewing the solution and codes.
+Consulting charges applies for this activity, so the consultants who will be reviewing the extensions will be billing their time spent against the project/customer or partner.
+
+Please have this considered/incorporated when solution estimates are created and given to customers.
+
+**For new extensions**, a review will be scheduled;  
+expect to receive a calendar invite for the meeting, whose required attendees would be the developer and the functional consultant; PM is optional.
+
+**For previously reviewed and signed extensions,**  
+if only minor adjustments were done,
+an email will be sent to you with the signed extension;  
+otherwise, a meeting will be scheduled again for the review.
+
+If recommendations are provided during the review,  
+you will be requested to make the necessary revisions in order to comply with the recommendations.  
+Once done, send the corrected extensions again for review and signing.
+
+Once the review is completed and extensions are approved,
+a signed packaged version of the extension will be emailed back to you.
+
+Turnaround time for this process is **5 working days** from the day the request was received with the extensions.
+
+Effective **July 1, 2021**, 
+we will no longer release signed extensions without first being able to bill our time spent for the review and signing.
+
+### Billing Specifics
+
+We bill 1-2 hours for the review of simple to medium complexity extensions.  
+For complex extensions, it normally takes more time as it requires multiple cycles of review/discussions/revisions so it will be actual time spent that will be charged.  
+We go by GDS/COE Manila Offshore Senior Consultant rates, you can check with your Client Partners or Partner Account Manager as to how much this is exactly per hour.  
+
+A recommendation,  
+As per standard practice for our projects, we include the review hours in the work estimates for development of extensions.  
+On high level, budgeting for 5-10% of each extension development effort is enough time for the review/signing.  
+  
+   
