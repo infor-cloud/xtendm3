@@ -67,7 +67,7 @@ Therefore, if there are three extensions sent for review, there should be three 
 - Project/Customer Name
 - Developer Name
 - Requirement Description (1 or 2 paragraphs)
-- Solution Description (1 or 2 paragraphss)
+- Solution Description (1 or 2 paragraphs)
 - Affected M3 Module (Finance, Procurement, etc.)
 - Is this a new solution?
   - If not, what has been changed or updated?
