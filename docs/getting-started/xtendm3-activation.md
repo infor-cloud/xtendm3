@@ -33,13 +33,13 @@ This point is important because for all the projects that require XtendM3 activa
 ## XtendM3 Developer Trainings
 You will need to complete the following steps before you will be allowed to do XtendM3 development work for any project:   
 
-- [x] Go through all XtendM3 courses on Infor Campus<br />
- 1. M3 CE: v2019.10 Introducing XtendM3
- 2. M3 CE: v2019.10 XtendM3 - Technical Configurations
- 3. M3: v2019.10 Using XtendM3 (Cloud Edition)
- 4. M3: v2019.10 Demonstrating XtendM3 (Cloud Edition)
- 5. M3: v2020.001 XtendM3 - Use Cases Walk-through
- 6. M3: v2020.12 XtendM3 Overview and Use Cases
+- [x] Go through all XtendM3 courses on Infor Campus     
+- M3 CE: v2019.10 Introducing XtendM3
+- M3 CE: v2019.10 XtendM3 - Technical Configurations
+- M3: v2019.10 Using XtendM3 (Cloud Edition)
+- M3: v2019.10 Demonstrating XtendM3 (Cloud Edition)
+- M3: v2020.001 XtendM3 - Use Cases Walk-through
+- M3: v2020.12 XtendM3 Overview and Use Cases  
 
 - [x] Watch a recorded onboarding that you will get once you have completed the campus courses  
 
