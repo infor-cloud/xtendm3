@@ -27,7 +27,7 @@ The questionnaire should be answered per extension;
 Therefore, if there are three extensions sent for review, there should be three separate sections in one email answering the following for each extension:
 
 - Project/Customer Name
-- Developer Name
+- Developer Name (Developer needs to have completed the XtendM3 trainings and have been attending the workshops)
 - Requirement Description (1 or 2 paragraphs)
 - Solution Description (1 or 2 paragraphs)
 - Affected M3 Module (Finance, Procurement, etc.)
