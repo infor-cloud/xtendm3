@@ -29,7 +29,7 @@ Kindly email the following information to the XtendM3 mailbox ([xtendm3@infor.co
 2. Who will be developing XtendM3 extensions?  
 Please provide us with the complete contact details of the consultant who is working with you.  
 This point is important because for all the projects that require XtendM3 activation, the consultant designated to work on XtendM3 should have a specialized certification from Infor Campus trainings and should have attended targeted workshops. 
-3.	What is the timeline of moving promoting extensions between different tenants? (e.g. from TST to TRN and then to PRD).  
+3. What is the timeline of moving promoting extensions between different tenants? (e.g. from TST to TRN and then to PRD).  
 
 ## XtendM3 Developer Trainings
 ***Note*** that though customers are allowed access to the Infor Campus training materials, customers are not yet allowed to do XtendM3 development themselves since we are still on controlled availability; therefore the recorded onboarding and workshops mentioned below will not yet be made available to them.
@@ -37,12 +37,12 @@ This point is important because for all the projects that require XtendM3 activa
 You will need to complete the following steps before you will be allowed to do XtendM3 development work for any project:   
 
 - [x] Go through all XtendM3 courses on Infor Campus  
-     - [x] M3 CE: v2019.10 Introducing XtendM3  
-     - [x] M3 CE: v2019.10 XtendM3 - Technical Configurations  
-     - [x] M3: v2019.10 Using XtendM3 (Cloud Edition)  
-     - [x] M3: v2019.10 Demonstrating XtendM3 (Cloud Edition)  
-     - [x] M3: v2020.001 XtendM3 - Use Cases Walk-through  
-     - [x] M3: v2020.12 XtendM3 Overview and Use Cases  
+      1. M3 CE: v2019.10 Introducing XtendM3  
+      2. M3 CE: v2019.10 XtendM3 - Technical Configurations  
+      3. M3: v2019.10 Using XtendM3 (Cloud Edition)  
+      4. M3: v2019.10 Demonstrating XtendM3 (Cloud Edition)  
+      5. M3: v2020.001 XtendM3 - Use Cases Walk-through  
+      6. M3: v2020.12 XtendM3 Overview and Use Cases  
   
   
 - [x] Watch a recorded onboarding that you will get once you have completed the campus courses  
