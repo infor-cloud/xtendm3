@@ -32,9 +32,9 @@ This point is important because for all the projects that require XtendM3 activa
 3. What is the timeline of moving promoting extensions between different tenants? (e.g. from TST to TRN and then to PRD).  
 
 ## XtendM3 Developer Trainings
-Note that though customers are allowed access to the Infor Campus training materials, ***customers are not yet allowed to do XtendM3 development themselves*** since we are still on controlled availability; therefore the recorded onboarding and workshops mentioned below will not yet be made available to them.
+Note that though customers are allowed access to the Infor Campus training materials, **customers are not yet allowed to do XtendM3 development themselves** since we are still on controlled availability; therefore the recorded onboarding and workshops mentioned below will not yet be made available to them.
 
-***You will need to complete the following steps before you will be allowed to do XtendM3 development work for any project:***   
+**You will need to complete the following steps before you will be allowed to do XtendM3 development work for any project:**   
 
 - Go through all XtendM3 courses on Infor Campus
   - M3 CE: v2019.10 Introducing XtendM3  
@@ -46,5 +46,4 @@ Note that though customers are allowed access to the Infor Campus training mater
   
   
 - Watch a recorded onboarding that you will get once you have completed the campus courses  
-
 - Participate actively in bi-weekly workshops which you will receive the invitations to after completion of courses  
