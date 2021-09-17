@@ -6,7 +6,7 @@ grand_parent: Documentation
 nav_order: 2
 ---
 
-# Extension API
+# Program API
 {: .no_toc }
 
 {: .fs-6 .fw-300 }
@@ -29,8 +29,9 @@ The Program API contains APIs that can be used to get information from the curre
 
 ## Features
 
-###getUser
-Returns the current user 
+### getUser
+Returns the current user  
+Example:
 ```groovy
 public class testProgram extends ExtendM3Trigger {
   private final ProgramAPI program
@@ -50,9 +51,9 @@ public class testProgram extends ExtendM3Trigger {
   }
 } 
 ```
-###getTableRecord
-To be able to retrieve a record from a specific table in the program
-
+### getTableRecord
+To be able to retrieve a record from a specific table in the program  
+Example:
 ```groovy
 public class TestProgram extends ExtendM3Trigger {
   private final ProgramAPI program
@@ -77,8 +78,9 @@ public class TestProgram extends ExtendM3Trigger {
 } 
 ```
 
-###LDAZD
-To be able to retrieve fields mapped in LDAZD
+### LDAZD
+To be able to retrieve fields mapped in LDAZD  
+Example:
 ```groovy
 public class testProgram extends ExtendM3Trigger {
   private final ProgramAPI program
@@ -101,8 +103,9 @@ public class testProgram extends ExtendM3Trigger {
   }
 } 
 ```
-###LDAZZ
-To be able to retrieve field mapped in LDAZZ
+### LDAZZ
+To be able to retrieve field mapped in LDAZZ  
+Example:
 ```groovy
 public class testProgram extends ExtendM3Trigger {
   private final ProgramAPI program
