@@ -54,24 +54,17 @@ and delete operation on this locked record.
 ## Features
 
 ### Create a record
-The exaple below illustrates how to create and set a record.
+The example below illustrates how to create and set a record.
 
 Example:
 ```groovy
 public void main() {
-    DBContainer OOHEAD = database.createContainer("OOHEAD")
-    preFetch(OOHEAD)
-    DBAction query = database.table("OOHEAD")
+    DBContainer MITMAS = database.createContainer("MITMAS")
+  
+    DBAction query = database.table("MITMAS")
       .index("00")
-      .selection("OACUNO", "OADIVI", "OAADID", "OACUCD", "OAORDT", "OAAGNT", "OAPYNO", "OACHL1", "OACHL2", "OACHL3", "OACHL4", "OAFRE1", "OADISY", "OAFECN", "OAWCON")
+      .selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT")
       .build();
-    
-    DBContainer OSLOST = database.createContainer("OSLOST")
-    
-    if(query.read(OOHEAD)){
-      setHeaderInfo(OSLOST,OOHEAD)
-      setOrderLineInfo(OSLOST)
-      session.parameters.put("rowToStore", OSLOST)
     }
   }
 ```
