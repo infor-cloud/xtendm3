@@ -45,7 +45,7 @@ table, index, table fields and filters will be used to execute the operation.
 
 ### DBContainer / DBContainerAPI
 A container that contains table fields and values. It is used both for setting the keys before executing the operation
-and also for getting the result after the operation has been executed
+and also for getting the result after the operation has been executed.
 
 ### LockedResult / LockedResultAPI
 An extended version of DBContainer which contains a locked record's fields and values and also methods to perform update
@@ -54,11 +54,32 @@ and delete operation on this locked record.
 ## Features
 
 ### Create a record
-To create a record TODO 
+The exaple below illustrates how to create and set a record.
+
+Example:
+```groovy
+public void main() {
+    DBContainer OOHEAD = database.createContainer("OOHEAD")
+    preFetch(OOHEAD)
+    DBAction query = database.table("OOHEAD")
+      .index("00")
+      .selection("OACUNO", "OADIVI", "OAADID", "OACUCD", "OAORDT", "OAAGNT", "OAPYNO", "OACHL1", "OACHL2", "OACHL3", "OACHL4", "OAFRE1", "OADISY", "OAFECN", "OAWCON")
+      .build();
+    
+    DBContainer OSLOST = database.createContainer("OSLOST")
+    
+    if(query.read(OOHEAD)){
+      setHeaderInfo(OSLOST,OOHEAD)
+      setOrderLineInfo(OSLOST)
+      session.parameters.put("rowToStore", OSLOST)
+    }
+  }
+```
+
 
 ### Read a specific record
 To read a specific record, primary keys or full index keys should be used to lookup the data. The example below
-illustrates how to retrieve an item
+illustrates how to retrieve an item.
 
 Example:
 
@@ -153,7 +174,7 @@ Closure<?> updateCallBack = { LockedResult lockedResult ->
 
 ### Update multiple records
 Updating multiple records is not much different from updating once specific record. The only difference would be the
-method called and the number of keys that are used for reading the records
+method called and the number of keys that are used for reading the records.
 
 Example:
 
