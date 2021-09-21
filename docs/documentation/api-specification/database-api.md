@@ -65,8 +65,19 @@ public void main() {
       .index("00")
       .selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT")
       .build();
+
+    DBContainer container = query.getContainer()
+    container.set("MMITDS", "Sample Item")
+    query.insert(container)
     }
   }
+```
+Or to update the already existing record.
+Example:
+```groovy
+    query.insert(container, { LockedResult existingRecord ->
+    existingRecord.set("MMITDS", "Updated description")
+    existingRecord.update()
 ```
 
 
