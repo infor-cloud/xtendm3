@@ -42,8 +42,8 @@ public class SampleExtension extends ExtendM3Trigger {
     this.logger = logger
   }
 ```
+JSON slurper parses text or reader content into a data structure of lists and maps.
 
-JsonSlurper method for text parsing:
 ```groovy
     JsonSlurper slurper = new JsonSlurper()
     Map parsed = (Map)slurper.parseText(content)
@@ -53,6 +53,30 @@ JsonSlurper method for text parsing:
     }
   }
 }
+```
+Example:
+```groovy
+def content = '''{
+    "DBcont": [
+        {
+            "index": "00",
+            "selection": "MWWHLO",
+        },
+        {
+            "index": "00",
+            "selection": "OBORQT",
+        },
+        {
+            "index": "00",
+            "selection": "OAAGNT",
+        }
+    ]
+}
+'''
+
+
+[{"index" : "00" , "selection" :"MWWHLO"}; {"index" : "00" , "selection" :"OBORQT"}; {"index" : "00" , "selection" :"OAAGNT"}]
+
 ```
 
 ## Features
@@ -81,7 +105,6 @@ This method performs a POST request and returns an ION Response object.
       logger.debug("Expected content from the request but got no content")
       return
     }
-    //JsonSlurper method
 
 ```
 
@@ -108,7 +131,6 @@ This method performs a GET request and returns an ION Response object.
       logger.debug("Expected content from the request but got no content")
       return
     }
-    //JsonSlurper method
 ```
 
 ### PUT method
@@ -135,7 +157,6 @@ This method performs a PUT request and returns an ION Response object.
       logger.debug("Expected content from the request but got no content")
       return
     }
-    //JsonSlurper method
 ```
 
 ### DELETE method
@@ -160,8 +181,6 @@ This method performs a DELETE request and returns an ION Response object.
       logger.debug("Expected content from the request but got no content")
       return
     }
-    //JsonSlurper method
-
 ```
 
 ## Considerations and Guidelines
