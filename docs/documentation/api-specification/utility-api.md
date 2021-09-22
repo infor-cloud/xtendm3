@@ -119,9 +119,7 @@ public class exampleWithUtility extends ExtendM3Trigger {
     this.utility=utility;
   }
   public void main() {
-    String todayDate = utility.call("DateUtil","currentDateY6AsString");
-    String fileDate = interactive.display.fields.WELVDT;
-    interactive.showOkDialog("Hello, today is "+todayDate +" (yy-mm-dd)");
+    interactive.showOkDialog("Hello, today is "+ utility.call("DateUtil","currentDateY6AsString"); +" (yy-mm-dd)");
   }
 }
 ```
@@ -138,9 +136,7 @@ public class exampleWithoutUtility extends ExtendM3Trigger {
     this.interactive=interactive;
   }
   public void main() {
-    String todayDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd"));
-    String fileDate = interactive.display.fields.WELVDT;
-    interactive.showOkDialog("Hello, today is "+todayDate +" (yy-mm-dd)");
+    interactive.showOkDialog("Hello, today is "+ LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd")); +" (yy-mm-dd)");
   }
 }
 ```
