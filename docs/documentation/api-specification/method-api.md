@@ -49,7 +49,7 @@ public class getArgumentExample extends ExtendM3Trigger {
 }
 ```
 
-### getArguments???? TO DO
+### getArguments
 The method receives an array of all arguments from the main method of the designed extension.
 <br>
 Example:
@@ -89,7 +89,7 @@ public class setReturnValueExample extends ExtendM3Trigger {
 
 
 ### getReturnValue
-The method gets the value returned from an overriden method
+The method gets the value returned from an overriden method.
 <br>
 Example:
 
@@ -106,13 +106,24 @@ public class getReturnValueExample extends ExtendM3Trigger {
   }
 }
 ```
-### getOriginalReturnValue ???? TO DO
-The method gets the original value returned from an overriden method
+### getOriginalReturnValue
+Similar to the getReturnValuewith the difference, that it will always get the original value returned from an overriden method.
 <br>
 Example:
 
 ```groovy
+public class getOriginalReturnValueExample extends ExtendM3Trigger {
+  private final MethodAPI method;
+  
+  public getOriginalReturnValueExample(MethodAPI method) {
+    this.method=method;
+  }
+  
+  public void main() {
+     var methodReturnValue = method.getOriginalReturnValue(); //The extracted value from the method depends on the type of value returned by the main extension method. 
+  }
+}
 ```
 
 ## Considerations and Guidelines
-Method API is characterised by operations on the main method of the extension on which it is based. It allows to modify and retreive data from the main method.
+Method API is characterised by operations on the main method of the extension on which it is based. It allows to modify and retreive data from the extension method.
