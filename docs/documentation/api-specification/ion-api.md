@@ -43,39 +43,33 @@ public class SampleExtension extends ExtendM3Trigger {
   }
 ```
 JSON slurper parses text or reader content into a data structure of lists and maps.
-
-```groovy
-    JsonSlurper slurper = new JsonSlurper()
-    Map parsed = (Map)slurper.parseText(content)
-    List<String> fileFormats = (List)parsed.get("SupportedFileFormats")
-    for (String format : fileFormats) {
-      logger.debug("Supporting format: ${format}")
-    }
-  }
-}
-```
 Example:
 ```groovy
-def content = '''{
-    "DBcont": [
-        {
-            "index": "00",
-            "selection": "MWWHLO",
-        },
-        {
-            "index": "00",
-            "selection": "OBORQT",
-        },
-        {
-            "index": "00",
-            "selection": "OAAGNT",
-        }
-    ]
+content = '{ "formats": ["pdf", "xml","xlsm", "jpg"] }'
+JsonSlurper slurper = new JsonSlurper()    
+Map parsed = (Map)slurper.parseText(content)
+List<String> fileFormats = (List)parsed.get("formats")
+for (String format : fileFormats) {
+    println("Supporting format: ${format}")
 }
-'''
+```
+Output:
 
+```groovy
+Supporting format: pdf
+Supporting format: xml
+Supporting format: xlsm
+Supporting format: jpg
+```
+Parsing with JsonSlurper for ION methods:
 
-[{"index" : "00" , "selection" :"MWWHLO"}; {"index" : "00" , "selection" :"OBORQT"}; {"index" : "00" , "selection" :"OAAGNT"}]
+```groovy
+JsonSlurper slurper = new JsonSlurper()
+Map parsed = (Map)slurper.parseText(content)
+List<String> fileFormats = (List)parsed.get("SupportedFileFormats")
+for (String format : fileFormats) {
+  logger.debug("Supporting format: ${format}")
+}
 
 ```
 
@@ -84,27 +78,27 @@ def content = '''{
 This method performs a POST request and returns an ION Response object.
 
 ```groovy
-  @Override
-  void main() {
-    def endpoint = "/IONAttachment/supportedfile/list"
-    def headers = ["Accept": "application/json"]
-    def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
-    def formParameters = (Map)null // post URL encoded parameters
-    IonResponse response = ion.post(endpoint, headers, queryParameters, formParameters)
-    if (response.getError()) {
-      logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
-      return
-    }
-    if (response.getStatusCode() != 200) {
-      logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
-      return
-    }
+@Override
+void main() {
+  def endpoint = "/IONAttachment/supportedfile/list"
+  def headers = ["Accept": "application/json"]
+  def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
+  def formParameters = (Map)null // post URL encoded parameters
+  IonResponse response = ion.post(endpoint, headers, queryParameters, formParameters)
+  if (response.getError()) {
+    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
+    return
+  }
+  if (response.getStatusCode() != 200) {
+    logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
+    return
+  }
 
-    String content = response.getContent()
-    if (content != null) {
-      logger.debug("Expected content from the request but got no content")
-      return
-    }
+  String content = response.getContent()
+  if (content != null) {
+    logger.debug("Expected content from the request but got no content")
+    return
+  }
 
 ```
 
@@ -112,75 +106,75 @@ This method performs a POST request and returns an ION Response object.
 This method performs a GET request and returns an ION Response object.
 
 ```groovy
-  @Override
-  void main() {
-    def endpoint = "/IONAttachment/supportedfile/list"
-    def headers = ["Accept": "application/json"]
-    def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
-    IonResponse response = ion.get(endpoint, headers, queryParameters)
-    if (response.getError()) {
-      logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
-      return
-    }
-    if (response.getStatusCode() != 200) {
-      logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
-      return
-    }
-    String content = response.getContent()
-    if (content != null) {
-      logger.debug("Expected content from the request but got no content")
-      return
-    }
+@Override
+void main() {
+  def endpoint = "/IONAttachment/supportedfile/list"
+  def headers = ["Accept": "application/json"]
+  def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
+  IonResponse response = ion.get(endpoint, headers, queryParameters)
+  if (response.getError()) {
+    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
+    return
+  }
+  if (response.getStatusCode() != 200) {
+    logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
+    return
+  }
+  String content = response.getContent()
+  if (content != null) {
+    logger.debug("Expected content from the request but got no content")
+    return
+  }
 ```
 
 ### PUT method
 This method performs a PUT request and returns an ION Response object.
 ```groovy
-  @Override
-  void main() {
-    def endpoint = "/IONAttachment/supportedfile/list"
-    def headers = ["Accept": "application/json"]
-    def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
-    def formParameters = (Map)null //
-    IonResponse response = ion.put(endpoint, headers, queryParameters, formParameters)
-    if (response.getError()) {
-      logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
-      return
-    }
-    if (response.getStatusCode() != 200) {
-      logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
-      return
-    }
+@Override
+void main() {
+  def endpoint = "/IONAttachment/supportedfile/list"
+  def headers = ["Accept": "application/json"]
+  def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
+  def formParameters = (Map)null //
+  IonResponse response = ion.put(endpoint, headers, queryParameters, formParameters)
+  if (response.getError()) {
+    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
+    return
+  }
+  if (response.getStatusCode() != 200) {
+    logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
+    return
+  }
 
-    String content = response.getContent()
-    if (content != null) {
-      logger.debug("Expected content from the request but got no content")
-      return
-    }
+  String content = response.getContent()
+  if (content != null) {
+    logger.debug("Expected content from the request but got no content")
+    return
+  }
 ```
 
 ### DELETE method
 This method performs a DELETE request and returns an ION Response object.
 ```groovy
-  @Override
-  void main() {
-    def endpoint = "/IONAttachment/supportedfile/list"
-    def headers = ["Accept": "application/json"]
-    def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
-    IonResponse response = ion.delete(endpoint, headers, queryParameters)
-    if (response.getError()) {
-      logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
-      return
-    }
-    if (response.getStatusCode() != 200) {
-      logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
-      return
-    }
-    String content = response.getContent()
-    if (content != null) {
-      logger.debug("Expected content from the request but got no content")
-      return
-    }
+@Override
+void main() {
+  def endpoint = "/IONAttachment/supportedfile/list"
+  def headers = ["Accept": "application/json"]
+  def queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
+  IonResponse response = ion.delete(endpoint, headers, queryParameters)
+  if (response.getError()) {
+    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
+    return
+  }
+  if (response.getStatusCode() != 200) {
+    logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
+    return
+  }
+  String content = response.getContent()
+  if (content != null) {
+    logger.debug("Expected content from the request but got no content")
+    return
+  }
 ```
 
 ## Considerations and Guidelines
