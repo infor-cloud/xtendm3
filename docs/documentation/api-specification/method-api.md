@@ -69,7 +69,7 @@ public class getArgumentsExample extends ExtendM3Trigger {
 ```
 
 ### setReturnValue
-The method sets the return value inside an overriden method. It depends of the value type inside the method.
+The method sets the return value inside an overriden method.
 <br>
 Example:
 
@@ -107,7 +107,7 @@ public class getReturnValueExample extends ExtendM3Trigger {
 }
 ```
 ### getOriginalReturnValue
-Similar to the getReturnValuewith the difference, that it will always get the original value returned from an overriden method.
+Similar to the getReturnValue with the difference, that it will always get the original value returned from an overriden method.
 <br>
 Example:
 
