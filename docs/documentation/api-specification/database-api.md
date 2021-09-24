@@ -69,15 +69,16 @@ public void main() {
     DBContainer container = query.getContainer()
     container.set("MMITDS", "Sample Item")
     query.insert(container)
-    }
   }
 ```
 Or to update the already existing record.
 Example:
+
 ```groovy
     query.insert(container, { LockedResult existingRecord ->
     existingRecord.set("MMITDS", "Updated description")
     existingRecord.update()
+    }
 ```
 
 
