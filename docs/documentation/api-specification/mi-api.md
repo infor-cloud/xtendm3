@@ -32,65 +32,74 @@ MI API allows to write and overwrite parameters sent into transactions. Supports
 ## Features
 
 ### Getting value from data container
-mi.in containes for In values for Transactions. Contained values are already converted to the proper type.
+mi.in containes In values for Transactions. Contained values are already converted to the proper type.
 Takes string key as a parameter and returns value associeted with the key.
 
 Example 1:
 ```groovy
-String raw = mi.in.get(name)
+def <T> Optional<T> getParameter(String name, Class<T> type) {
+    if (type == Double.class) {
+      String raw = mi.in.get(name)
+      if (raw == null || raw.trim().isEmpty()) {
+        return Optional.empty()
+      }
+      return Optional.of((mi.in.get(name) as Double) as T)
+    }
+    return Optional.empty()
+  }
 ```
 <br>
 
 Example 2:
 ```groovy
-  private String whlo;
-  private String itno;
-  private String whsl;
+private String whlo;
+private String itno;
+private String whsl;
 
-  public void main() {
-    whlo = mi.inData.get("WHLO").trim();
-    itno = mi.inData.get("ITNO").trim();
-    whsl = mi.inData.get("WHSL").trim();
-
-  if (!validateInput()) return;
+public void main() {
+  whlo = mi.inData.get("WHLO").trim();
+  itno = mi.inData.get("ITNO").trim();
+  whsl = mi.inData.get("WHSL").trim();
+}
 ```
 
 ### Putting value into data container
 Takes key and associeted with it value as parameters, returns previous value.
 Example 1:
 ```groovy
- public void main() {
-    mi.outData.put("WHLO", "This is WHLO Output#1 for QQS001")
-    mi.outData.put("ITNO", "This is ITNO Output#2 for QQS002")
-    mi.write() 
-  }
+public void main() {
+  mi.outData.put("WHLO", "This is WHLO Output#1 for QQS001")
+  mi.outData.put("ITNO", "This is ITNO Output#2 for QQS002")
+  mi.write() 
+}
 ```
 <br>
 
 Example 2:
 ```groovy
 void main() {
-    mi.outData.put("WHLO", String.valueOf(getParameter("NUMB", Double.class).orElse(null)))
-  }
+  mi.outData.put("WHLO", String.valueOf(getParameter("NUMB", Double.class).orElse(null)))
+}
 ```
 ### Checking date format
 Returns date format as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5
 Example:
 ```groovy
 void main() {
-    return mi.getDateFormat(date1)
+  if mi.getDateFormat(date1) == "YMD8"{
+    return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
   }
+}
 ```
 ### Checking date separator
 Returns date separator as a char.
 Example:
 ```groovy
-void ReadSeparator {
+void ReadSeparator (){
 sep = mi.getDateSeparator() 
 String oldDate = '04-DEC-2012'
 Date date = Date.parse( 'dd-MMM-yyyy', oldDate )
 String newDate = date.format( 'M'{sep}'d'{sep}'yyyy' )
-return newDate
 }
 ```
 
@@ -99,40 +108,47 @@ Returns the amount of remaining records allowed to be written in current transac
 Example:
 ```groovy
 void main() {
-    if mi.getRemainingRecords(whlo)>=2{
-      whsl = mi.inData.get("WHSL")
-    }
+  if mi.getRemainingRecords()>= 2 {
+    for (int i = 0; i < 3; i++) {
+    mi.outData.put("WHLS" + WHSL)
+    mi.write()
   }
+}
 ```
 
 ### Chcecking if there are remaining records
-Returns true if there are still any additional records to be written or false is not
+Returns true if there are still any additional records to be written or false if not.
 Example:
 ```groovy
 void main() {
-    if mi.hasRemainingRecords(whlo) == true
-      whsl = mi.inData.get("WHSL")
-    }
+  if mi.hasRemainingRecords() == true
+    mi.outData.put("MMRI" + SLDQ)
+    mi.write()
   }
+}
 ```
 
 ### Chcecking maximum of possible records
 Returns the maximum amount of possible records to be written as an intiger.
 Example:
 ```groovy
-void main() {
-    return mi.getMaxRecords(whlo)
+public void main() {
+  String WHSL = mi.in.get("WHSL")
+  for (int i = 0; i < mi.getMaxRecords(); i++) {
+    mi.outData.put("WHLS" + WHSL + " " + i)
+    mi.write()
   }
+}
 ```
 
 ### Clearing previous value
-Write response from data present in outData. Clears all values in outData.
+Writes response from data present in outData. Clears all values in outData.
 Example:
 ```groovy
 public void main() {
   mi.outData.put("WHLO","Test")
   mi.write()
-  }
+}
 ```
 
 ### Writting error responses
@@ -143,20 +159,21 @@ String errorCode - code for error which occurred (only supports 2 characters)
 Example 1:
 ```groovy
 boolean validateInput(){
-
-    if (!getWarehouse(whlo)){
-      mi.error("Warehouse " + whlo + " is invalid");
-      return false;
-    }
+  if (!getWarehouse(whlo)){
+    mi.error("Warehouse " + whlo + " is invalid");
+    return false;
+  }
+}
 ```
 <br>
 
 Example 2:
 ```groovy
 def boolean validResponsible(String Responsible){
-    if (Responsible.isEmpty()){
-      mi.error("Responsible must be entered");
-      return false;
-    }
+  if (Responsible.isEmpty()){
+    mi.error("Responsible must be entered");
+    return false;
+  }
+}
 ```
 ## Considerations and Guidelines

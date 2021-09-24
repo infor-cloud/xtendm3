@@ -31,7 +31,7 @@ Transaction API allows to extend MI transactions. Can be used to set, retrieve o
 
 ### Parameters
 For retieving and changing MI transaction buffer or data structure
-Example 1:
+Example:
 ```groovy
 public void main() {
     String SLRORN = transaction.parameters.SLRORN
@@ -40,14 +40,7 @@ public void main() {
       return
     }
 ```
-Example 2:
-```groovy
-void preFetch(DBContainer OSLOST){
-    String POSX = program.LDAZZ.POSX
-    OSLOST.setInt("SLRORX", POSX.isInteger() ? POSX as Integer : 0)
-    OSLOST.set("SLRORX", transaction.parameters.ORNO)
-  }
-```
+
 ### Skip the current transaction
 Example:
 ```groovy
