@@ -6,7 +6,7 @@ grand_parent: Documentation
 nav_order: 8
 ---
 
-# Extension API
+# Session API
 {: .no_toc }
 
 Checklist for requesting approval for your extensions.
@@ -37,6 +37,8 @@ A session is started when a program starts by user interaction i.e. from the men
 as a result of related 
 
 ## Features
+
+Features of this API.
 
 ### Store a value to session
 To store a value to session storage layer you can use the session API method. The parameter name i.e. key can be
