@@ -34,29 +34,7 @@ With the Utility API a specific part of the code is created separately to execut
 ### Utility example
 Utilities can be easily sorted into individual method sets. That makes them easy accessable from all extensions without having to search for specific method or createing it again.
 <br>
-Example 1: simple utility with one method
-
-```groovy
-public class exampleUtili extends ExtendM3Utility {
-  
-  /**
-   * Checks if activeUser has access
-   * @param activeUser logged in User
-   * @param userWithAccess User with access
-   * @return {@code true} if activeUser has access
-   */
-  
-  public boolean checkUser(String activeUser, String userWithAccess) {
-    if(activeUser.equals(userWithAccess)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
-```
-<br>
-Example 2: part of the DateUtil utility (multiple methods related to date operations)
+Example: part of the DateUtil utility (multiple methods related to date operations)
 
 ```groovy
 import java.time.Instant
@@ -101,7 +79,7 @@ The 'Call' method of UtilityAPI is the main method by which operations on previo
 Example: Call method structure
 
 ```groovy
-  utility.call("- Name of the utility -","- Name of the chosen method inside utility -", "stringArgument", IntArgument, ... other arguments depending on the selected method ...);
+  utility.call("- Name of the utility -","- Name of the chosen method inside utility -", objectArgument, ... other arguments depending on the selected method ...);
 ``` 
 
 It is important to know the structure of the chosen method inside the utility.<br>
