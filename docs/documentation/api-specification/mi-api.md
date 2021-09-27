@@ -27,7 +27,7 @@ Checklist for requesting approval for your extensions.
 
 ---
 ## Description
-MI API allows to write and overwrite parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation.  Can be used to abort transaction based on own validation. It is not possible to add extra fields to transactions. Provides error managment. 
+MI API allows to read input and write output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation.  Can be used to abort transaction based on own validation. Provides error managment. 
 
 ## Features
 
@@ -65,6 +65,7 @@ public void main() {
 
 ### Putting value into data container
 Takes key and associeted with it value as parameters, returns previous value.
+
 Example 1:
 ```groovy
 public void main() {
@@ -82,7 +83,8 @@ void main() {
 }
 ```
 ### Checking date format
-Returns date format as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5
+Returns date format as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5.
+
 Example:
 ```groovy
 void main() {
@@ -93,9 +95,10 @@ void main() {
 ```
 ### Checking date separator
 Returns date separator as a char.
+
 Example:
 ```groovy
-void ReadSeparator (){
+void ReadSeparator () {
 sep = mi.getDateSeparator() 
 String oldDate = '04-DEC-2012'
 Date date = Date.parse( 'dd-MMM-yyyy', oldDate )
@@ -105,6 +108,7 @@ String newDate = date.format( 'M'{sep}'d'{sep}'yyyy' )
 
 ### Checking remaining records
 Returns the amount of remaining records allowed to be written in current transaction.
+
 Example:
 ```groovy
 void main() {
@@ -112,16 +116,18 @@ void main() {
     for (int i = 0; i < 3; i++) {
     mi.outData.put("WHLS" + WHSL)
     mi.write()
+    }
   }
 }
 ```
 
 ### Checking if there are remaining records
 Returns true if there are still any additional records to be written or false if not.
+
 Example:
 ```groovy
 void main() {
-  if mi.hasRemainingRecords() == true
+  if mi.hasRemainingRecords() {
     mi.outData.put("MMRI" + SLDQ)
     mi.write()
   }
@@ -129,7 +135,8 @@ void main() {
 ```
 
 ### Checking maximum of possible records
-Returns the maximum amount of possible records to be written as an intiger.
+Returns the maximum amount of possible records to be written as an integer.
+
 Example:
 ```groovy
 public void main() {
@@ -143,6 +150,7 @@ public void main() {
 
 ### Clearing previous value
 Writes response from data present in outData. Clears all values in outData.
+
 Example:
 ```groovy
 public void main() {
@@ -153,12 +161,13 @@ public void main() {
 
 ### Writting error responses
 Writes error responses with parameters:
-String errorMessage - error message to display (only supports 240 characters)
-String field - field error occurred for (only supports 10 characters)
-String errorCode - code for error which occurred (only supports 2 characters)
+String errorMessage - error message to display (only supports 240 characters);
+String field - field error occurred for (only supports 10 characters);
+String errorCode - code for error which occurred (only supports 2 characters).
+
 Example 1:
 ```groovy
-boolean validateInput(){
+boolean validateInput() {
   if (!getWarehouse(whlo)){
     mi.error("Warehouse " + whlo + " is invalid");
     return false;
@@ -169,7 +178,7 @@ boolean validateInput(){
 
 Example 2:
 ```groovy
-def boolean validResponsible(String Responsible){
+def boolean validResponsible(String Responsible) {
   if (Responsible.isEmpty()){
     mi.error("Responsible must be entered");
     return false;
@@ -177,3 +186,4 @@ def boolean validResponsible(String Responsible){
 }
 ```
 ## Considerations and Guidelines
+It is not possible to add extra fields to transaction using MI API.

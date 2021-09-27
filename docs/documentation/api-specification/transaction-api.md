@@ -26,7 +26,7 @@ Checklist for requesting approval for your extensions.
 **Category**: Context specific  
 ---
 ## Description
-Transaction API allows to extend MI transactions. Can be used to set, retrieve or change a parameter and skip current transaction.
+Transaction API allows to extend MI transactions, overwrite parameters. Can be used to set, retrieve or change a parameter and skip current transaction.
 ## Features
 
 ### Parameters
