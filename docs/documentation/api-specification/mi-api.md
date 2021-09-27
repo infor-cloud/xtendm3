@@ -116,7 +116,7 @@ void main() {
 }
 ```
 
-### Chcecking if there are remaining records
+### Checking if there are remaining records
 Returns true if there are still any additional records to be written or false if not.
 Example:
 ```groovy
@@ -128,7 +128,7 @@ void main() {
 }
 ```
 
-### Chcecking maximum of possible records
+### Checking maximum of possible records
 Returns the maximum amount of possible records to be written as an intiger.
 Example:
 ```groovy
