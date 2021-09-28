@@ -46,12 +46,14 @@ public void main() {
 ```
 
 ### Skip the current transaction
+This method takes three string parameters : field, msid, data.
 
 Example:
 ```groovy
-if (!getWarehouse(whlo)){
-    mi.error("Warehouse " + whlo + " does not exist");
-    transaction.abortTransaction()
+public void main() {
+    if (transaction.parameters.USID=="TEST") {
+      transaction.abortTransaction("USID","ER001","ER001");
+    }    
 }
 ```
 
