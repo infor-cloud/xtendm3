@@ -44,7 +44,7 @@ public class getArgumentExample extends ExtendM3Trigger {
   }
   
   public void main() {
-    Object stringArgument = method.getArgument(0)
+    Object argument = method.getArgument(0)
   }
 }
 ```
