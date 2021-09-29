@@ -88,7 +88,7 @@ Returns date format as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5.
 Example:
 ```groovy
 void main() {
-  if mi.getDateFormat(date1) == "YMD8"{
+  if (mi.getDateFormat(date1) == "YMD8"){
     return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
   }
 }
@@ -112,10 +112,10 @@ Returns the amount of remaining records allowed to be written in current transac
 Example:
 ```groovy
 void main() {
-  if mi.getRemainingRecords()>= 2 {
+  if (mi.getRemainingRecords()>= 2) {
     for (int i = 0; i < 3; i++) {
-    mi.outData.put("WHLS" + WHSL)
-    mi.write()
+      mi.outData.put("WHLS" + WHSL)
+      mi.write()
     }
   }
 }
@@ -127,7 +127,7 @@ Returns true if there are still any additional records to be written or false if
 Example:
 ```groovy
 void main() {
-  if mi.hasRemainingRecords() {
+  if (mi.hasRemainingRecords()){
     mi.outData.put("MMRI" + SLDQ)
     mi.write()
   }
