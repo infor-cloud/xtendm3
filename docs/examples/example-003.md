@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Number Utility
+title: Trigger Extension Example
 parent: Examples
 nav_order: 1
 ---
@@ -8,7 +8,7 @@ nav_order: 1
 # Trigger Extension Example
 {: .no_toc }
 
-Working with numbers in XtendM3
+Working with Trigger Extension in XtendM3
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -20,6 +20,8 @@ Working with numbers in XtendM3
 ---
 
 ## Description
+Trigger Extension as the name says, it is an extension which provides to happen with some events inside the program. 
+
 Numbers are used everywhere in M3. They can be in different formats and different data types. Different operations such 
 as conversion between different data types, validation, checking number of digits or decimals, rounding and etc. are usually
 done on numbers. Since these are common operations across all solutions it is recommended to have a utility for the most 
@@ -40,6 +42,14 @@ Always test the examples for your own solution before using them in production.
 
 ## Materials
 ### Step by step implementation
+#### Create new extension button
+#### Extension Type as a trigger extension - executed by a trigger
+#### Complete all inputs + description of them
+#### Skeleton of the extension
+#### Most recent used APIs
+#### Example of trigger extension
+#### funcionality nd description of designed extension
+#### Important notes
 ### Extension Code
 Here's an overview of the utility, the exported file can be downloaded and imported in your own environments.
 
