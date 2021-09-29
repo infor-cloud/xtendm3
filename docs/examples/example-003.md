@@ -20,29 +20,58 @@ Working with Trigger Extension in XtendM3
 ---
 
 ## Description
-Trigger Extension as the name says, it is an extension which provides to happen with some events inside the program. 
+Trigger Extension is a simple type of extension, that consists in the execution of certain procedures in the designed extension, at the designated moment of program operation. It needs an extension point, at which it will be executed and triggerred by M3. It is used to modify orextend M3 Business Logic. Trigger extension can use a lot of useful API, which have various uses depending on the user's needs.
 
-Numbers are used everywhere in M3. They can be in different formats and different data types. Different operations such 
-as conversion between different data types, validation, checking number of digits or decimals, rounding and etc. are usually
-done on numbers. Since these are common operations across all solutions it is recommended to have a utility for the most 
-common operations. In this example we take a closer look at such utility.
 
 ## Use cases
-* Validating numbers in String format
-* Getting number of digits
-* Getting number of decimals
-* Conversion between number string to Integer and double
+* Expanding the programme's functionality
+* Modifications to the operations at a given extension point
+* Allows implementation of functionality without changing the M3 itself at the source code
+
 
 ## Important Note
 Always test the examples for your own solution before using them in production.
 
 ## Step by step implementation
 ### 1. Create new extension button
+After opening the main window with the access to M3, it is needed to enter the Administration Tools section inside the table on the left side of the screen. After that select XtendM3.
+//SCREEN1
+To create new extension it is needed to use the "Create new extension button" as shown on the screen below:
+//SCREEN2
 ### 2. Extension Type as a trigger extension - executed by a trigger
+Opened window displays an option to select the type of extension to be designed. Select "Trigger" as described "Executed by a trigger" and then click next.
+//SCREEN3
 ### 3. Complete all inputs + description of them
+The next window will require to fill in some data:
+- Name of the extension
+- Program name where to implement designed extension
+After clicking "Next" button, another options will be displayed
+- Method of the executed extension point
+- Advice for the extension method
+SCREEN4
+Depending on the selected programe, all sorts of methods can be available in the place for the selected method from modifying access to programmes data to interactively designed messages depending on the event at the extension point
+The example presents udage of interactive pop up window extension inside the program. It is needed to choose the PEINZ from the method panel. MEthod PEINZ means initialization of designed event at the E panel:
+- P as the panel word 
+- E as the name of the Panel
+- INZ as the initialization 
+There are also several methods similar to PEINZ like PEUPD or PECHK. All vary according to the type of method and the panel on which the extension point occurs. All available methods depend on the selected programme.
+The last box describes usage of selected method. It asks if the extension point should be before "PRE" or after "POST" selected method.
+SCREEN5
+After inputting all necessary data click create button
+New extension is created. Now it is time to implement the functionality of the new extension.
+
 ### 4. Skeleton of the extension
+The skeleton of the basic extension is empty. It is only made extended by the ExtendM3Trigger.
+SCREEN6
+
 ### 5. Example of trigger extension and usage of APIs
+It is needed to implement designed for XtendM3 APIs to exploit the full potential of the extension. Several APIs are described in the documentation at the [link](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification) 
+In the first example the [ProgramAPI](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/) and the [InteractiveAPI](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/interactive-api/) are used to create a pop up message about the user and date of the day.
+To implement these APIs it is needed just to include them as new objects inside the constructor of our extension as at below screen:
+SCREEN7
+
 ### 6. Funcionality nd description of designed extension
+
 ### 7. Important notes
 
 ## Extension Code
