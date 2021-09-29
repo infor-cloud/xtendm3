@@ -32,7 +32,7 @@ Transaction API allows to extend MI transactions, overwrite parameters. Can be u
 ## Features
 
 ### Parameters
-For retieving and changing MI transaction buffer or data structure
+For retieving and changing MI transaction buffer or data structure.
 
 Example:
 ```groovy
