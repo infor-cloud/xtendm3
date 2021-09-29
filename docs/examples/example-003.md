@@ -27,10 +27,6 @@ as conversion between different data types, validation, checking number of digit
 done on numbers. Since these are common operations across all solutions it is recommended to have a utility for the most 
 common operations. In this example we take a closer look at such utility.
 
-## Benefit
-Having a utility helps keep the logic in one place and increase maintainability of the code. It also makes it possible to reuse
-between projects and solutions and if there are any issues found, there is only one source that needs to be corrected.
-
 ## Use cases
 * Validating numbers in String format
 * Getting number of digits
@@ -40,17 +36,18 @@ between projects and solutions and if there are any issues found, there is only 
 ## Important Note
 Always test the examples for your own solution before using them in production.
 
-## Materials
-### Step by step implementation
-#### Create new extension button
-#### Extension Type as a trigger extension - executed by a trigger
-#### Complete all inputs + description of them
-#### Skeleton of the extension
-#### Most recent used APIs
-#### Example of trigger extension
-#### funcionality nd description of designed extension
-#### Important notes
-### Extension Code
+
+## Step by step implementation
+### 1. Create new extension button
+### 2. Extension Type as a trigger extension - executed by a trigger
+### 3. Complete all inputs + description of them
+### 4. Skeleton of the extension
+### 5. Most recent used APIs
+### 6. Example of trigger extension
+### 7. funcionality nd description of designed extension
+### 8. Important notes
+
+## Extension Code
 Here's an overview of the utility, the exported file can be downloaded and imported in your own environments.
 
 ```groovy
