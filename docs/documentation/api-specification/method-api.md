@@ -26,7 +26,7 @@ Checklist for requesting approval for your extensions.
 **Category**: Context Specific  
 ---
 ## Description
-The Method API is responsible for obtaining and modifying information on the extension point used in the designed extension. It is needed to know the whole structure and functionality of the extension point implemented in order to exploit the full potential of the Method API. 
+The Method API is responsible for obtaining and modifying information on the extension point in the designed extension. It is needed to know the whole structure and functionality of the implemented method at the extension point in order to exploit the full potential of the Method API. 
 
 ## Features
 
@@ -36,10 +36,10 @@ The method receives the value of an argument at the specific index from the exte
 Example:
 
 ```groovy
-public class getArgumentExample extends ExtendM3Trigger {
+public class GetArgumentExample extends ExtendM3Trigger {
   private final MethodAPI method;
   
-  public getArgumentExample(MethodAPI method) {
+  public GetArgumentExample(MethodAPI method) {
     this.method=method;
   }
   
@@ -55,11 +55,11 @@ The method receives an array of all arguments from the extension point of the de
 Example:
 
 ```groovy
-public class getArgumentsExample extends ExtendM3Trigger {
+public class GetArgumentsExample extends ExtendM3Trigger {
   private final MethodAPI method;
   private final LoggerAPI logger;
   
-  public getArgumentsExample(MethodAPI method, LoggerAPI logger) {
+  public GetArgumentsExample(MethodAPI method, LoggerAPI logger) {
     this.method=method;
     this.logger=logger;
   }
@@ -85,10 +85,10 @@ The method sets the return value inside an overriden method.
 Example:
 
 ```groovy
-public class setReturnValueExample extends ExtendM3Trigger {
+public class SetReturnValueExample extends ExtendM3Trigger {
   private final MethodAPI method;
   
-  public setReturnValueExample(MethodAPI method) {
+  public SetReturnValueExample(MethodAPI method) {
     this.method=method;
   }
   
@@ -105,10 +105,10 @@ The method gets the value returned from an overriden method.
 Example:
 
 ```groovy
-public class getReturnValueExample extends ExtendM3Trigger {
+public class GetReturnValueExample extends ExtendM3Trigger {
   private final MethodAPI method;
   
-  public getReturnValueExample(MethodAPI method) {
+  public GetReturnValueExample(MethodAPI method) {
     this.method=method;
   }
   
@@ -123,10 +123,10 @@ Similar to the getReturnValue with the difference, that it will always get the o
 Example:
 
 ```groovy
-public class getOriginalReturnValueExample extends ExtendM3Trigger {
+public class GetOriginalReturnValueExample extends ExtendM3Trigger {
   private final MethodAPI method;
   
-  public getOriginalReturnValueExample(MethodAPI method) {
+  public GetOriginalReturnValueExample(MethodAPI method) {
     this.method=method;
   }
   
