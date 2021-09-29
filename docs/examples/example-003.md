@@ -36,16 +36,14 @@ common operations. In this example we take a closer look at such utility.
 ## Important Note
 Always test the examples for your own solution before using them in production.
 
-
 ## Step by step implementation
 ### 1. Create new extension button
 ### 2. Extension Type as a trigger extension - executed by a trigger
 ### 3. Complete all inputs + description of them
 ### 4. Skeleton of the extension
-### 5. Most recent used APIs
-### 6. Example of trigger extension
-### 7. funcionality nd description of designed extension
-### 8. Important notes
+### 5. Example of trigger extension and usage of APIs
+### 6. Funcionality nd description of designed extension
+### 7. Important notes
 
 ## Extension Code
 Here's an overview of the utility, the exported file can be downloaded and imported in your own environments.
