@@ -59,15 +59,15 @@ This method deletes the selected file.
 Example:
 
 ```groovy
-public class deleteExample extends ExtendM3Trigger {
+public class DeleteExample extends ExtendM3Trigger {
   private final TextFilesAPI textFiles;
   
-  public deleteExample(TextFilesAPI textFiles) {
+  public DeleteExample(TextFilesAPI textFiles) {
     this.textFiles=textFiles;
   }
+  
   public void main() {
-      textFiles.delete("test.txt");
-    }
+    textFiles.delete("test.txt");
   }
 }
 ```
@@ -78,18 +78,19 @@ The method allows to obtain information about the size of the selected file. The
 Example:
 
 ```groovy
-public class sizeExample extends ExtendM3Trigger {
+public class SizeExample extends ExtendM3Trigger {
   private final InteractiveAPI interactive;
   private final TextFilesAPI textFiles;
   
-  public sizeExample(InteractiveAPI interactive, TextFilesAPI textFiles) {
+  public SizeExample(InteractiveAPI interactive, TextFilesAPI textFiles) {
     this.interactive=interactive;
     this.textFiles=textFiles;
   }
+  
   public void main() {
     String fileName="test.txt";
-      interactive.showOkDialog("Selected file has size of "+textFiles.size(fileName).toString()+"units...")
-    }
+    interactive.showOkDialog("Selected file has size of "+textFiles.size(fileName).toString()+"units...");
+  }
 }
 ```
 ### Exist
@@ -98,16 +99,17 @@ The method checks wheter the file is available in the extension file location. A
 Example:
 
 ```groovy
-public class existExample extends ExtendM3Trigger {
+public class ExistExample extends ExtendM3Trigger {
   private final InteractiveAPI interactive;
   private final TextFilesAPI textFiles;
   
-  public existExample(InteractiveAPI interactive, TextFilesAPI textFiles) {
+  public ExistExample(InteractiveAPI interactive, TextFilesAPI textFiles) {
     this.interactive=interactive;
     this.textFiles=textFiles;
   }
+  
   public void main() {
-    if(textFiles.exists("test.txt")){
+    if(textFiles.exists("test.txt")) {
       interactive.showOkDialog("Hello! The file test.txt does exist!");
     } else {
       interactive.showWarningDialog("Hello! The file test.txt does not exist!");
