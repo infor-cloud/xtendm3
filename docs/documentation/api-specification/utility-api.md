@@ -94,11 +94,11 @@ Utility can be interpreted as a kind of abstract class with fully implemented me
 Example:
 
 ```groovy
-public class exampleWithUtility extends ExtendM3Trigger {
+public class ExampleWithUtility extends ExtendM3Trigger {
   private final InteractiveAPI interactive;
   private final UtilityAPI utility;
   
-  public exampleWithUtility(InteractiveAPI interactive, UtilityAPI utility) {
+  public ExampleWithUtility(InteractiveAPI interactive, UtilityAPI utility) {
     this.interactive=interactive;
     this.utility=utility;
   }
@@ -114,10 +114,10 @@ Example:
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-public class exampleWithoutUtility extends ExtendM3Trigger {
+public class ExampleWithoutUtility extends ExtendM3Trigger {
   private final InteractiveAPI interactive;
   
-  public exampleWithoutUtility(InteractiveAPI interactive) {
+  public ExampleWithoutUtility(InteractiveAPI interactive) {
     this.interactive=interactive;
   }
   public void main() {
