@@ -27,6 +27,34 @@ Checklist for requesting approval for your extensions.
 ---
 ## Description
 
+Transaction API allows to extend MI transactions, overwrite parameters. Can be used to set, retrieve or change a parameter and skip current transaction.
+
 ## Features
+
+### Parameters
+For retieving and changing MI transaction buffer or data structure.
+
+Example:
+```groovy
+public void main() {
+    String SLRORN = transaction.parameters.SLRORN
+    String SLRSCD = transaction.parameters.OAORNO
+    if (SLRORN.isBlank() || SLRSCD.isBlank()) {
+      return
+    }
+}
+```
+
+### Skip the current transaction
+This method takes three string parameters : field, msid, data.
+
+Example:
+```groovy
+public void main() {
+    if (transaction.parameters.USID=="TEST") {
+      transaction.abortTransaction("USID","ER001","ER001");
+    }    
+}
+```
 
 ## Considerations and Guidelines
