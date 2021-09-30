@@ -5,7 +5,7 @@ parent: Examples
 nav_order: 1
 ---
 
-# Trigger Extension Example
+# Trigger Extension
 {: .no_toc }
 
 Working with Trigger Extension in XtendM3
@@ -112,10 +112,13 @@ After that it is possible to run the program with activated extension by using C
 - It is a good practice to use a test compilation of the program just to check if everything is working properly.
 - The convergence of the presented data is entirely coincidental.
 
-## Another trigger extension example
+## Another trigger extension example and short summary
+Second example is a bit more complex. It is based on user access validation and the main point of that extension is to hide choosen data (here places with designation as CA for a given field) inside program. The extension point method is here diffrent that in previous example, it has functionality of specific user authorizastion. Step by step implementation is very similar with the diffrence in chosen method of the extension. Designed code includes a lot of diffrent names that refer to specific data in the database. All extensions are connected to programs and their implemented methods at the extension point. These two things are very important while designing extension with XtendM3.
 
 ## Extension code example
 Here's an overview of the designed extensions, the exported files can be downloaded and imported in your own environments.
+<br>
+Example no.1:
 
 ```groovy
 public class test extends ExtendM3Trigger {
@@ -132,9 +135,64 @@ public class test extends ExtendM3Trigger {
   }
 }
 ```
+<br>
+Example no.2
+
+```groovy
+public class AuthorityCheck extends ExtendM3Trigger {
+    private final ProgramAPI program;
+    private final LoggerAPI logger;
+    private final MethodAPI method;
+    private final DatabaseAPI database;
+
+    public AuthorityCheck(ProgramAPI program, LoggerAPI logger, MethodAPI method, DatabaseAPI database) {
+      this.program = program;
+      this.logger = logger;
+      this.method = method;
+      this.database = database;
+    }
+
+    public void main() {
+      String table = method.getArgument(0);
+      Map<String, String> record = (Map)method.getArgument(1);
+      logger.debug("Checking authorization for table: " + table + " for user ${program.getUser()}" + " and the record: " + record);
+      if (!isEnabled()) {
+        return
+      }
+      if (table == "MITWHL") {
+        method.setReturnValue(isUserAuthorizedToWarehouse(record.MWCSCD));
+      } 
+      if (table == "MITBAL") {
+        def query = database.table("MITWHL").index("00").selection("MWCSCD").build();
+        def container = query.createContainer();
+        container.set("MWCONO", program.LDAZD.CONO);
+        container.set("MWWHLO", record.MBWHLO);
+        if (query.read(container)) {
+          method.setReturnValue(isUserAuthorizedToWarehouse(container.getString("MWCSCD")));
+        }
+      }
+    }
+    
+    private boolean isUserAuthorizedToWarehouse(String country) {
+      // This logic can be expanded to check division or other constraints to decide whether user has access or not
+      if (country == "CA") {
+        return true;
+      }
+      return false;
+    }
+    
+    private boolean isEnabled() {
+      if (program.getUser() != "TESTUSER") {
+        return false;
+      }
+      return true;
+    }
+}
+```
 
 ### Exported Extension
 - [TRIGGER-QQS005-test.json](/assets/attachments/ex001/TRIGGER-QQS005-test.json)
 
 ### See Also
-N/A
+[Extension APIs documentation](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification) (click)<br>
+[Another examples with documentation](https://infor-cloud.github.io/xtendm3/docs/examples) (click)
