@@ -35,9 +35,13 @@ Always test the examples for your own solution before using them in production.
 ## Step by step implementation
 
 ### 1. Open XtendM3 tool 
+<<<<<<< HEAD
 After opening M3 main paige, select Menu on the top left corner. Then select XtendM3 from Administration Tools folder.
 
 <img src="/assets/attachments/ex004/open_xtendm3.png" >
+=======
+<img src="assets/attachments/ex004/open_xtendm3.png" />
+>>>>>>> ac0434870d54b217b7c7d1f42397efc96f266d4f
 
 ### 2. Create new extension button
 To create a new extention select "Create a new extention" button.
