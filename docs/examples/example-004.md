@@ -42,39 +42,60 @@ After opening M3 main paige, select Menu on the top left corner. Then select Xte
 ### 2. Create new extension button
 
 To create a new extention select "Create a new extention" button.
-<img src="/assets/attachments/ex004/create_extention_button.png">
+<img src="/assets/attachments/ex004/create_extention_button.png" width="950">
 
 ### 3. Extension Type as a transaction extension - executed by a transaction
 
-<img src="/assets/attachments/ex004/choose_type.png">
+Opened window displays an option to select the type of extension to be designed. Select "Transaction" and then click next.
+
+<img src="/assets/attachments/ex004/choose_type.png" width="950">
 
 ### 4. Complete all inputs and single/ multi option
 
+Fill in extention information as described:
 Program : Name of an existing or new program where the extention will be created;
 Name: Name of the extention;
 Description: Functionality of the extention; 
 Multi (option): Multi option allows to create multiple records. Otherwise will create a single record.
-
-<img src="/assets/attachments/ex004/create_description.png">
+Then click "Next"
+<img src="/assets/attachments/ex004/create_description.png" width="950">
 
 ### 5. Add input and/ or output field
 
+At this point you can create fields with input or output data by clicking a plus button and filling in the information:
 Name: 4 uppercase character name of the field;
 Type: text/ number;
 Lenght: maximum input lenght;
 Mandatory (option): choose if the input will be mandatory (only for input fields);
 Description: more detailed description of the field.
+Click "Save" to finish 
 
-<img src="/assets/attachments/ex004/add_field_screen.png">
+<img src="/assets/attachments/ex004/add_field_screen.png" width="950">
 
-<img src="/assets/attachments/ex004/add_field_screen2.png">
+<img src="/assets/attachments/ex004/add_field_screen2.png" width="950">
 
 ### 5. Skeleton of the extension
 Created extention will contain default  code template.
 
-<img src="/assets/attachments/ex004/sceleton_extention.png">
+<img src="/assets/attachments/ex004/sceleton_extention.png" width="950">
 
-### 6. Code example of transaction extension
+Over the code field there are several tools with which you can operate on the designed extension.
+<img src="/assets/attachments/ex004/tool_bar.png" width="950">
+
+Listing them from the left side they are used to:
+
+* Enable editing mode
+* Export the code
+* Extra settings to change the parameters of the extension or enable it etc.
+* Delete the extension
+* Information about the extension'
+* Test compile
+* Refresh
+
+### 6. Code example of transaction extension and APIs usage
+To start writting extention code enable editing by clicking "Edit" button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on <p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification">API specification</a></p> click on the link. 
+
+Example below shows usage of <p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/mi-api/">MI API</a></p> and <p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/">Program API</a></p> to display UserID.  
 
 Example 1:
 ```groovy
@@ -92,18 +113,16 @@ public class GetData extends ExtendM3Transaction {
   }
 }
 ```
+To finish save written extention by clicking "Save" button. It is necesary to activate the extention from settings as shown below for it to be exectuted. 
 
-Example 2:
-```groovy
+<img src="/assets/attachments/ex004/activation.png" width="950">
 
-```
-
-### 7. Funcionality and description of designed extension
-
-### 8. Important notes
+### 7. Important notes
+* It is a good practice to use a test compilation of the program just to check if everything is working properly.
+* The convergence of the presented data is entirely coincidental.
 
 ### Exported Extension
-- [NumberUtil.json](https://infor-cloud.github.io/xtendm3/assets/attachments/ex001/DateUtil.json)
+- [Transaction Extantion Example.json](https://infor-cloud.github.io/xtendm3/assets/attachments/ex004/TRANSACTION-EXT042MI-getUser.json)
 
 ### See Also
 N/A
