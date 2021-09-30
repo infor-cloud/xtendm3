@@ -34,7 +34,7 @@ Always test the examples for your own solution before using them in production.
 ## Step by step implementation
 
 ### 1. Open XtendM3 tool 
-<img src="./open_xtendm3.png" />
+<img src="assets/attachments/ex004/open_xtendm3.png" />
 
 ### 2. Create new extension button
 
