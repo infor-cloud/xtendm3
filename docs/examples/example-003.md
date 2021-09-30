@@ -37,15 +37,18 @@ Always test the examples for your own solution before using them in production.
 After opening the main window with the access to M3, it is needed to enter the Administration Tools section inside the table on the left side of the screen. After that select XtendM3.
 <br>
 //SCREEN1
+<img src="/assets/attachments/ex003/1.PNG" width="950">
 <br>
 To create new extension it is needed to use the "Create new extension button" as shown on the screen below:
 <br>
 //SCREEN2
+<img src="/assets/attachments/ex003/2.PNG" width="950">
 <br>
 ### 2. Extension Type as a trigger extension - executed by a trigger
 Opened window displays an option to select the type of extension to be designed. Select "Trigger" as described "Executed by a trigger" and then click next.
 <br>
 //SCREEN3
+<img src="/assets/attachments/ex003/3.PNG" width="950">
 <br>
 ### 3. Complete all inputs + description of them
 The next window will require to fill in some data:
@@ -56,6 +59,7 @@ After clicking "Next" button, another options will be displayed
 - Advice for the extension method
 <br>
 SCREEN4
+<img src="/assets/attachments/ex003/4.PNG" width="950">
 <br>
 Depending on the selected programe, all sorts of methods can be available in the place for the selected method from modifying access to programmes data to interactively designed messages depending on the event at the extension point
 The example presents udage of interactive pop up window extension inside the program. It is needed to choose the PEINZ from the method panel. MEthod PEINZ means initialization of designed event at the E panel:
@@ -66,6 +70,7 @@ There are also several methods similar to PEINZ like PEUPD or PECHK. All vary ac
 The last box describes usage of selected method. It asks if the extension point should be before "PRE" or after "POST" selected method.
 <br>
 SCREEN5
+<img src="/assets/attachments/ex003/5.PNG" width="950">
 <br>
 After inputting all necessary data click create button
 New extension is created. Now it is time to implement the functionality of the new extension.
@@ -74,10 +79,12 @@ New extension is created. Now it is time to implement the functionality of the n
 The skeleton of the basic extension is empty. It is only made extended by the ExtendM3Trigger. Here is the place to implement the new extension.
 <br>
 SCREEN6
+<img src="/assets/attachments/ex003/6.PNG" width="950">
 <br>
 Over the code field there are several tools with which you can operate on the designed extension
 <br>
 SCREEN7
+<img src="/assets/attachments/ex003/7.PNG" width="950">
 <br>
 Listing them from the left side they are used to:
 - enable editing mode
@@ -95,6 +102,7 @@ In the first example the [ProgramAPI](https://infor-cloud.github.io/xtendm3/docs
 To implement these APIs it is needed just to include them as new objects inside the constructor of the extension and implement all the designed functionality of it inside the main() method as at below screen:
 <br>
 SCREEN8
+<img src="/assets/attachments/ex003/8.PNG" width="950">
 <br>
 After implementing functionality it is needed to save the extension. If it is written correctly there should be a message with the proper information with success. In case of error, the appropriate error message will appear and the implementation will not be saved until the error is resolved. After saving an extension it is a good practice to use a test compilation of the program just to check if everything is working properly.
 
@@ -102,10 +110,12 @@ After implementing functionality it is needed to save the extension. If it is wr
 The next step is to activate the extension. It can be activated inside the settings panel of the extension. To activate the extension, the activate slider needs to be turned on. 
 <br>
 SCREEN9
+<img src="/assets/attachments/ex003/9.PNG" width="950">
 <br>
 After that it is possible to run the program with activated extension by using CTRL+R key combination and inputting the name of the program. While the program is running, the new implemented extension can be tested by the user. In this example the message is popped up on the panel E after execution of the extension method.
 <br>
 SCREEN10
+<img src="/assets/attachments/ex003/10.PNG" width="950">
 <br>
 
 
@@ -134,7 +144,7 @@ public class test extends ExtendM3Trigger {
 ```
 
 ### Exported Extension
-- [NumberUtil.json](https://infor-cloud.github.io/xtendm3/assets/attachments/ex001/DateUtil.json)
+- [TRIGGER-QQS005-test.json](/assets/attachments/ex001/TRIGGER-QQS005-test.json)
 
 ### See Also
 N/A
