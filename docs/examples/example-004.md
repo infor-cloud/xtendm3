@@ -96,7 +96,7 @@ Listing them from the left side they are used to:
 ### 7. Code example of transaction extension and APIs usage
 To start writting extention code enable editing by clicking "Edit" button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on <p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification" style ="display : inline">API specification</a></p> click on the link. 
 
-Example below shows usage of<p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/mi-api/" style ="display : inline">MI API</a></p>and<p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/" style ="display : inline">Program API</a></p>to display UserID.  
+Example below shows usage of<p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/mi-api/" style="text-decoration-line: none;">MI API</a></p>and<p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/" style ="display : inline">Program API</a></p>to display UserID.  
 
 Example 1:
 ```groovy
