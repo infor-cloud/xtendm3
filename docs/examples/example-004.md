@@ -52,29 +52,30 @@ Opened window displays an option to select the type of extension to be designed.
 
 ### 4. Complete all inputs and single/ multi option
 
-Fill in extention information as described:
-Program : Name of an existing or new program where the extention will be created;
-Name: Name of the extention;
-Description: Functionality of the extention; 
-Multi (option): Multi option allows to create multiple records. Otherwise will create a single record.
+Fill in extention information as described:<br>
+Program : Name of an existing or new program where the extention will be created;<br>
+Name: Name of the extention;<br>
+Description: Functionality of the extention; <br>
+Multi (option): Multi option allows to create multiple records. Otherwise will create a single record.<br>
 Then click "Next"
+
 <img src="/assets/attachments/ex004/create_description.png" width="950">
 
 ### 5. Add input and/ or output field
 
-At this point you can create fields with input or output data by clicking a plus button and filling in the information:
-Name: 4 uppercase character name of the field;
-Type: text/ number;
-Lenght: maximum input lenght;
-Mandatory (option): choose if the input will be mandatory (only for input fields);
-Description: more detailed description of the field.
+At this point you can create fields with input or output data by clicking a plus button and filling in the information:<br>
+Name: 4 uppercase character name of the field;<br>
+Type: text/ number;<br>
+Lenght: maximum input lenght;<br>
+Mandatory (option): choose if the input will be mandatory (only for input fields);<br>
+Description: more detailed description of the field.<br>
 Click "Save" to finish 
 
 <img src="/assets/attachments/ex004/add_field_screen.png" width="950">
 
-<img src="/assets/attachments/ex004/add_field_screen2.png" width="950">
+<img src="/assets/attachments/ex004/add_filed_screen2.png" width="950">
 
-### 5. Skeleton of the extension
+### 6. Skeleton of the extension
 Created extention will contain default  code template.
 
 <img src="/assets/attachments/ex004/sceleton_extention.png" width="950">
@@ -92,10 +93,10 @@ Listing them from the left side they are used to:
 * Test compile
 * Refresh
 
-### 6. Code example of transaction extension and APIs usage
+### 7. Code example of transaction extension and APIs usage
 To start writting extention code enable editing by clicking "Edit" button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on <p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification">API specification</a></p> click on the link. 
 
-Example below shows usage of <p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/mi-api/">MI API</a></p> and <p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/">Program API</a></p> to display UserID.  
+Example below shows usage of<p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/mi-api/">MI API</a></p>and<p><a href="https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/">Program API</a></p>to display UserID.  
 
 Example 1:
 ```groovy
@@ -117,7 +118,7 @@ To finish save written extention by clicking "Save" button. It is necesary to ac
 
 <img src="/assets/attachments/ex004/activation.png" width="950">
 
-### 7. Important notes
+### 8. Important notes
 * It is a good practice to use a test compilation of the program just to check if everything is working properly.
 * The convergence of the presented data is entirely coincidental.
 
