@@ -41,6 +41,7 @@ After opening M3 main paige, select Menu on the top left corner. Then select Xte
 ### 2. Create new extension button
 
 To create a new extension select "Create a new extension" button.
+
 <img src="/assets/attachments/ex004/create_extension_button.png" width="950">
 
 ### 3. Extension Type as a transaction extension - executed by a transaction
@@ -55,7 +56,7 @@ Fill in extension information as described:<br>
 * Program : Name of an existing or new program where the extension will be created;<br>
 * Name: Name of the extension;<br>
 * Description: Functionality of the extension; <br>
-* Multi (option): Multi option allows to create multiple records. Otherwise will create a single record.<br>
+* Multi (option): Multi option allows to create multiple records. Otherwise will create a single record.
 Then click "Next".
 
 <img src="/assets/attachments/ex004/create_description.png" width="950">
@@ -67,7 +68,7 @@ At this point you can create fields with input or output data by clicking a plus
 * Type: text/ number;<br>
 * Lenght: maximum input lenght;<br>
 * Mandatory (option): choose if the input will be mandatory (only for input fields);<br>
-* Description: more detailed description of the field.<br>
+* Description: more detailed description of the field.
 Click "Save" to finish. 
 
 <img src="/assets/attachments/ex004/add_field_screen.png" width="950">
@@ -80,6 +81,7 @@ Created extension will contain default  code template.
 <img src="/assets/attachments/ex004/sceleton_extension.png" width="950">
 
 Over the code field there are several tools with which you can operate on the designed extension.
+
 <img src="/assets/attachments/ex004/tool_bar.png" width="950">
 
 Listing them from the left side they are used to:
