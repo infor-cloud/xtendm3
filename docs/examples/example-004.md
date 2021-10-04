@@ -43,13 +43,13 @@ After opening M3 main paige, select Menu on the top left corner. Then select Xte
 
 To create a new extension select "Create a new extension" button.
 
-<img src="/../../../assets/attachments/ex004/create_extention_button.png" width="950">
+<img src="../../../assets/attachments/ex004/create_extention_button.png" width="950">
 
 ### 3. Extension Type as a transaction extension - executed by a transaction
 
 Opened window displays an option to select the type of extension to be designed. Select "Transaction" and then click "Next".
 
-<img src="/../../../assets/attachments/ex004/choose_type.png" width="950">
+<img src="../../../assets/attachments/ex004/choose_type.png" width="950">
 
 ### 4. Complete all inputs and single/ multi option
 
@@ -60,7 +60,7 @@ Fill in extension information as described:<br>
 * Multi (option): Multi option allows to create multiple records. Otherwise will create a single record.
 Then click "Next".
 
-<img src="/../../../assets/attachments/ex004/create_description.png" width="950">
+<img src="../../../assets/attachments/ex004/create_description.png" width="950">
 
 ### 5. Add input and/ or output field
 
@@ -72,18 +72,18 @@ At this point you can create fields with input or output data by clicking a plus
 * Description: more detailed description of the field.
 Click "Save" to finish. 
 
-<img src="/../../../assets/attachments/ex004/add_field_screen.png" width="950">
+<img src="../../../assets/attachments/ex004/add_field_screen.png" width="950">
 
-<img src="/../../../assets/attachments/ex004/add_filed_screen2.png" width="950">
+<img src="../../../assets/attachments/ex004/add_filed_screen2.png" width="950">
 
 ### 6. Skeleton of the extension
 Created extension will contain default  code template.
 
-<img src="/../../../assets/attachments/ex004/sceleton_extention.png" width="950">
+<img src="../../../assets/attachments/ex004/sceleton_extention.png" width="950">
 
 Over the code field there are several tools with which you can operate on the designed extension.
 
-<img src="/../../../assets/attachments/ex004/tool_bar.png" width="950">
+<img src="../../../assets/attachments/ex004/tool_bar.png" width="950">
 
 Listing them from the left side they are used to:
 
@@ -100,11 +100,11 @@ To start writting extension code enable editing by clicking "Edit" button. It is
 
 Example below shows usage of [MI API](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/mi-api/) and [Program API](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/)to display UserID.  
 
-<img src="/../../../assets/attachments/ex004/get_data_xtn.png" width="950">
+<img src="../../../assets/attachments/ex004/get_data_xtn.png" width="950">
 
 To finish save written extension by clicking "Save" button. It is necesary to activate the extension from settings as shown below for it to be exectuted. 
 
-<img src="/../../../assets/attachments/ex004/activation.png" width="950">
+<img src="../../../assets/attachments/ex004/activation.png" width="950">
 
 ### 8. Important notes
 * It is a good practice to use a test compilation of the program before running.
