@@ -36,6 +36,7 @@ Always test the examples for your own solution before using them in production.
 ### 1. Open XtendM3 tool
 
 After opening M3 main paige, select Menu on the top left corner. Then select XtendM3 from Administration Tools folder.
+
 <img src="/assets/attachments/ex004/open_xtendm3.png" width="950" >
 
 ### 2. Create new extension button
