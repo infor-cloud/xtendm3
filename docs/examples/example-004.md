@@ -79,7 +79,7 @@ Click "Save" to finish.
 ### 6. Skeleton of the extension
 Created extension will contain default  code template.
 
-<img src="/assets/attachments/ex004/sceleton_extension.png" width="950">
+<img src="/assets/attachments/ex004/sceleton_extention.png" width="950">
 
 Over the code field there are several tools with which you can operate on the designed extension.
 
