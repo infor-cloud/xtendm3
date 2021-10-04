@@ -43,7 +43,7 @@ After opening M3 main paige, select Menu on the top left corner. Then select Xte
 
 To create a new extension select "Create a new extension" button.
 
-<img src="/assets/attachments/ex004/create_extension_button.png" width="950">
+<img src="/assets/attachments/ex004/create_extention_button.png" width="950">
 
 ### 3. Extension Type as a transaction extension - executed by a transaction
 
