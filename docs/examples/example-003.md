@@ -47,20 +47,20 @@ Opened window displays an option to select the type of extension to be designed.
 <br><br>
 <img src="/assets/attachments/ex003/3.PNG" width="950">
 <br>
-### 3. Complete all inputs and description of them
+### 3. Completing all inputs and description of them
 The next window will require to fill in some data:
 - Name of the extension
-- Program name where to implement designed extension
-After clicking "Next" button, another options will be displayed
+- Program name where to implement designed extension <br><br>
+After clicking "Next" button, another options will be displayed <br><br>
 - Method of the extension point
 - Advice for the extension method
 <img src="/assets/attachments/ex003/4.PNG" width="950">
 <br>  
 Depending on the selected programe, a lot of methods can be available concerning operations of the M3 at the extension point.
-The example presents usage of interactive pop up window extension inside the program. It is needed to choose the PEINZ from the method panel. Method PEINZ means initialization of the designed event at the E panel:
-- P as the panel word 
-- E as the name of the Panel
-- INZ as the initialization 
+The example presents usage of interactive pop up window extension inside the program. It is needed to choose the PEINZ from the method panel. Method PEINZ means initialization of the designed event at the E panel: <br> <br>
+- P as the panel word <br>
+- E as the name of the Panel <br>
+- INZ as the initialization <br> <br>
 There are also several methods similar to PEINZ like PEUPD or PECHK. All vary according to the type of method and the panel on which the extension point occurs. All available methods depend on the selected program.
 The last box describes usage of selected method. It asks if the extension point should be before "PRE" or after "POST" selected method.<br><br>
 After inputting all necessary data click create button
