@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Transaction Extension Example
+title: Transaction Extension
 parent: Examples
 nav_order: 1
 ---
 
-# Transaction Extension Example
+# Transaction Extension
 {: .no_toc }
 
 Working with Transaction Extension in XtendM3
@@ -35,7 +35,7 @@ Always test the examples for your own solution before using them in production.
 
 ### 1. Open XtendM3 tool
 
-After opening M3 main paige, select Menu on the top left corner. Then select XtendM3 from Administration Tools folder.
+After opening M3 main page, select Menu on the top left corner. Then select XtendM3 from Administration Tools folder.
 
 <img src="../../../assets/attachments/ex004/open_xtendm3.png" width="950" >
 
@@ -57,7 +57,7 @@ Fill in extension information as described:<br>
 * Program : Name of an existing or new program where the extension will be created;<br>
 * Name: Name of the extension;<br>
 * Description: Functionality of the extension; <br>
-* Multi (option): Multi option allows to create multiple records. Otherwise will create a single record.
+* Multi (option): Multi option allows to return multiple records to the user. Otherwise will return a single record. Multi can be used for API list.
 Then click "Next".
 
 <img src="../../../assets/attachments/ex004/create_description.png" width="950">
