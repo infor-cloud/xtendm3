@@ -115,9 +115,9 @@ After that it is possible to run the program with activated extension by using C
 There are many diffrent uses for a trigger extension, depending on the needs of the project. The assumptions for the implementation of an extension may relate to the data operations in the program, setting the accessibility for users or just to show specific information while performing some actions inside the program. Each assumed functionality must have its place in the program - the extension point, where it will be activated depending on the program. Trigger extensions can be very simple but they also can be much more complex. Step by step implementation is very similar with the diffrence in chosen method of the extension and usage of APIs. Designed code includes a lot of diffrent names that refer to specific data in the database. All extensions are connected to programs and their implemented methods at the extension point. These two things are very important while designing extensions with XtendM3.
 
 ## Extension code example
-Here is an overview of the designed extensions.
+Here is an overview of the designed extension.
 <br>
-Example no.1:
+Example:
 
 ```groovy
 public class test extends ExtendM3Trigger {
