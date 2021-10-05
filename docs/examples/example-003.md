@@ -90,7 +90,7 @@ Listing them from the left side they are used to:
 
 ### 5. Example of trigger extension and usage of APIs
 To start working with code of the new extension, the first thing to do is to enable edit mode. After that it is possible to implement the designed functionality.
-It is recommended to implement created for XtendM3 APIs to exploit the full potential of the extension. Several APIs are described in the documentation at the [link](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification). In the presented example the [ProgramAPI](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/program-api/) and the [InteractiveAPI](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification/interactive-api/) are used to create a pop up message with the welcome text and the information about running program.
+It is recommended to implement created for XtendM3 APIs to exploit the full potential of the extension. Several APIs are described in the documentation at the [link](../../../docs/documentation/api-specification). In the presented example the [ProgramAPI](../../../docs/documentation/api-specification/program-api/) and the [InteractiveAPI](../../../docs/documentation/api-specification/interactive-api/) are used to create a pop up message with the welcome text and the information about running program.
 To implement these APIs it is needed just to include them as new objects inside the constructor of the extension and implement all the designed functionality of it inside the main() method as at below screen:
 <br><br>
 <img src="../../../assets/attachments/ex003/8.PNG" width="950">
@@ -139,5 +139,5 @@ public class test extends ExtendM3Trigger {
 [TRIGGER-QQS005-test.json](../../../assets/attachments/ex001/TRIGGER-QQS005-test.json)
 
 ### See Also
-[Extension APIs documentation](https://infor-cloud.github.io/xtendm3/docs/documentation/api-specification) (click)<br>
-[Another examples with documentation](https://infor-cloud.github.io/xtendm3/docs/examples) (click)
+[Extension APIs documentation](../../../docs/documentation/api-specification) (click)<br>
+[Another examples with documentation](../../../docs/examples) (click)
