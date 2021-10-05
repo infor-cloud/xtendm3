@@ -53,7 +53,7 @@ The next window will require to fill in some data:
 - Program name where to implement designed extension <br><br>
 After clicking "Next" button, another options will be displayed <br><br>
 - Method of the extension point
-- Advice for the extension method
+- Advice for the extension method <br>
 <img src="../../../assets/attachments/ex003/4.PNG" width="950">
 <br>  
 Depending on the selected program, a lot of methods can be available concerning operations of the M3 at the extension point.
