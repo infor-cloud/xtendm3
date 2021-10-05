@@ -42,11 +42,14 @@ To create a new extension press the "Create new extension button" as shown on th
 <br><br>
 <img src="../../../assets/attachments/ex003/2.png" width="950">
 <br>
+
 ### 2. Extension Type as a trigger extension
 Opened window displays an option to select the type of extension to be designed. Select "Trigger" as described "Executed by a trigger" and then click next.
-<br><br>
+
+<br>
 <img src="../../../assets/attachments/ex003/3.PNG" width="950">
 <br>
+
 ### 3. Completing all inputs and description of them
 The next window will require to fill in some data:
 - Name of the extension
@@ -54,7 +57,8 @@ The next window will require to fill in some data:
 After clicking "Next" button, another options will be displayed <br><br>
 - Method of the extension point
 - Advice for the extension method 
-<br><br>
+
+<br>
 <img src="../../../assets/attachments/ex003/4.PNG" width="950">
 <br>  
 Depending on the selected program, a lot of methods can be available concerning operations of the M3 at the extension point.
@@ -66,7 +70,8 @@ There are also several methods similar to PEINZ like PEUPD or PECHK. All vary ac
 The last box describes usage of selected method. It asks if the extension point should be before "PRE" or after "POST" selected method.<br><br>
 After inputting all necessary data click create button
 New extension is created. Now it is time to implement the functionality of the new extension.
-<br><br>
+
+<br>
 <img src="../../../assets/attachments/ex003/5.PNG" width="950">
 <br>  
 
