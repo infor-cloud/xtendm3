@@ -69,7 +69,7 @@ At this point you can create fields with input or output data by clicking a plus
 * Type: text/ number;<br>
 * Lenght: maximum input lenght;<br>
 * Mandatory (option): choose if the input will be mandatory (only for input fields);<br>
-* Description: more detailed description of the field.
+* Description: more detailed description of the field.<br>
 Click "Save" to finish. 
 
 <img src="../../../assets/attachments/ex004/add_field_screen.png" width="950">
