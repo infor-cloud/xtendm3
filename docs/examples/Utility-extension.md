@@ -20,13 +20,12 @@ Working with Utility Extension in XtendM3
 ---
 
 ## Description
-
+Utility Extension is a type of extension where one can create a methodology for optimasation future extensions. Designed utility can be used later without necessity to write the same method multiple times in different extension.
+ Utility extension also eliminates the need of implementing external libraries inside the extensions. Once written utility does not neet to be activated as other extensions. 
 
 ## Use cases
-* Expanding the functionality
-* Modifications to the operation at a given extension point
-* Allows implementation of functionality without changing the M3 itself at the source code
-
+* Keeping common logic in one place and reusing it in multiple extensions
+* Executing form another extensions
 
 ## Important note
 Always test the examples for your own solution before using them in production.
@@ -73,4 +72,20 @@ Listing them from the left side they are used to:
 * Refresh
 
 ### 7. Code example of transaction extension and APIs usage
-To start writting extension code enable editing by clicking “Edit” button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on [API specification]() click on the link.
+To start writting extension code enable editing by clicking “Edit” button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
+
+<img src="../../../assets/attachments/ex004/code_example.png" width="950">
+
+To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be exectuted.
+
+### 8. Important notes
+* It is a good practice to use a test compilation of the program before running.
+* Data presented in the examples is random.
+
+### Exported Extension
+- [Utility Extantion Example.json](../../../assets/attachments/ex004/UTILITY-DateFormat.json)
+
+### See Also
+[More examples](../../../docs/examples)<br>
+[API documentation](../../../docs/documentation)
+
