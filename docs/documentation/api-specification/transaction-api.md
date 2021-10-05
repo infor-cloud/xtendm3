@@ -6,7 +6,7 @@ grand_parent: Documentation
 nav_order: 13
 ---
 
-# Extension API
+# Transaction API
 {: .no_toc }
 
 Checklist for requesting approval for your extensions.
