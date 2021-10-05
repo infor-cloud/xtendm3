@@ -45,21 +45,21 @@ To create a new extension select "Create a new extension" button.
 ### 3. Extension type as a Utility extension
 Opened window displays an option to select the type of extension to be designed. Select "Utility" and then click "Next".
 
-<img src="../../../assets/attachments/ex-util/choose_type.png" width="950">
+<img src="../../../assets/attachments/ext-util/choose_type.png" width="950">
 
 ### 4. Create extension name 
 Input extension name.
 
-<img src="../../../assets/attachments/ex-util/name.png" width="950">
+<img src="../../../assets/attachments/ext-util/name.png" width="950">
 
 ### 5. Skeleton of the extension
 Created extension will contain default code template.
 
-<img src="../../../assets/attachments/ex-util/template.png" width="950">
+<img src="../../../assets/attachments/ext-util/template.png" width="950">
 
 Over the code field there are several tools with which you can operate on the designed extension.
 
-<img src="../../../assets/attachments/ex004/tool_bar.png" width="950">
+<img src="../../../assets/attachments/ext-util/tool_bar_u.png" width="950">
 
 Listing them from the left side they are used to:
 
@@ -74,7 +74,7 @@ Listing them from the left side they are used to:
 ### 7. Code example of transaction extension and APIs usage
 To start writting extension code enable editing by clicking “Edit” button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
 
-<img src="../../../assets/attachments/ex004/code_example.png" width="950">
+<img src="../../../assets/attachments/ext-util/code_example.png" width="950">
 
 To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be exectuted.
 
@@ -83,7 +83,7 @@ To finish save written extension by clicking “Save” button. It is not necesa
 * Data presented in the examples is random.
 
 ### Exported Extension
-- [Utility Extantion Example.json](../../../assets/attachments/ex004/UTILITY-DateFormat.json)
+- [Utility Extantion Example.json](../../../assets/attachments/ext-util/UTILITY-DateFormat.json)
 
 ### See Also
 [More examples](../../../docs/examples)<br>
