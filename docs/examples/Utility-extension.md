@@ -67,7 +67,7 @@ Listing them from the left side they are used to:
 * Export the code
 * Extra settings to change the parameters of the extension or enable it etc.
 * Delete the extension
-* Information about the extension’
+* Information about the extension
 * Test compile
 * Refresh
 
