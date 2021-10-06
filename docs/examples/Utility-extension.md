@@ -73,6 +73,7 @@ Listing them from the left side they are used to:
 
 ### 7. Code example of transaction extension and APIs usage
 To start writting extension code enable editing by clicking “Edit” button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
+Example below shows utility used to date and time formatting that can be called and executed from another extension.
 
 <img src="../../../assets/attachments/ext-util/code_example.png" width="950">
 
