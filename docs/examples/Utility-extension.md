@@ -48,7 +48,7 @@ Opened window displays an option to select the type of extension to be designed.
 <img src="../../../assets/attachments/ext-util/choose_type.png" width="950">
 
 ### 4. Create extension name 
-Input extension name.
+Input extension name. Then select "Create" button.
 
 <img src="../../../assets/attachments/ext-util/name.png" width="950">
 
