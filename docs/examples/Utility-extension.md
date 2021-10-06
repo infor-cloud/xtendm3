@@ -20,12 +20,12 @@ Working with Utility Extension in XtendM3
 ---
 
 ## Description
-Utility Extension is a type of extension where one can create a methodology for optimasation future extensions. Designed utility can be used later without necessity to write the same method multiple times in different extension.
- Utility extension also eliminates the need of implementing external libraries inside the extensions. Once written utility does not neet to be activated as other extensions. 
+Utility Extension is a type of extension where one can create a methodology for optimization of future extensions. Designed utility can be used later without necessity to write the same method multiple times in different extension.
+Utility extension also eliminates the need of implementing external libraries inside the extensions. Once written utility does not neet to be activated as other extensions. 
 
 ## Use cases
 * Keeping common logic in one place and reusing it in multiple extensions
-* Executing form another extensions
+* Executing from another extensions
 
 ## Important note
 Always test the examples for your own solution before using them in production.
@@ -84,7 +84,7 @@ To finish save written extension by clicking “Save” button. It is not necesa
 * Data presented in the examples is random.
 
 ### Exported Extension
-- [Utility Extantion Example.json](../../../assets/attachments/ext-util/UTILITY-DateFormat.json)
+- [Utility Extansion Example.json](../../../assets/attachments/ext-util/UTILITY-DateFormat.json)
 
 ### See Also
 [More examples](../../../docs/examples)<br>
