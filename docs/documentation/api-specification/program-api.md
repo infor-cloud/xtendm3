@@ -31,6 +31,7 @@ The Program API contains APIs that can be used to get information from the curre
 
 ### getUser
 Returns the current user  
+<br>
 Example:
 ```groovy
 public class testProgram extends ExtendM3Trigger {
@@ -53,6 +54,7 @@ public class testProgram extends ExtendM3Trigger {
 ```
 ### getTableRecord
 To be able to retrieve a record from a specific table in the program  
+<br>
 Example:
 ```groovy
 public class TestProgram extends ExtendM3Trigger {
@@ -80,6 +82,7 @@ public class TestProgram extends ExtendM3Trigger {
 
 ### LDAZD
 To be able to retrieve fields mapped in LDAZD  
+<br>
 Example:
 ```groovy
 public class testProgram extends ExtendM3Trigger {
@@ -105,6 +108,7 @@ public class testProgram extends ExtendM3Trigger {
 ```
 ### LDAZZ
 To be able to retrieve field mapped in LDAZZ  
+<br>
 Example:
 ```groovy
 public class testProgram extends ExtendM3Trigger {

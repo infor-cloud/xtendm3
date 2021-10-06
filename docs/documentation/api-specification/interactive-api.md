@@ -6,7 +6,7 @@ grand_parent: Documentation
 nav_order: 10
 ---
 
-# Extension API
+# Interactive API
 {: .no_toc }
 ![](/assets/images/warning-24px.svg)
 ## Table of contents
