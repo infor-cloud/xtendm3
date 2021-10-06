@@ -25,7 +25,7 @@ Working with Batch Extension in XtendM3
 ## Use cases
 * 
 
-## Important Note
+## Important note
 Always test the examples for your own solution before using them in production.
 
 ## Step by step implementation
