@@ -20,13 +20,11 @@ Working with Dynamic Table Extension in XtendM3
 ---
 
 ## Description !!!
-Dynamic Table Extension is a type of extension, that allows user to create a new table inside database, which can be used in data operation. 
+Dynamic Table Extension is a type of extension, that allows user to create a new table inside a database, which can be used in data operation. The dynamic table is more flexible than the regular one. It allows user to use it multiple times from all the programs/extensions, not only inside a single created extension.
 
 ## Use cases !!!
-* Expanding the functionality
-* Modifications to the operation at a given extension point
-* Allows implementation of functionality without changing the M3 itself at the source code
-
+* Expanding the data functionality
+* Flexibility of data usage
 
 ## Important note
 Always test the examples for your own solution before using them in production.
@@ -81,9 +79,11 @@ Listing them from the left side they are used to:
 - add new object
 - delete the object
 
+
+
 ### 4. Description of the dynamic table fields
 
-#### a. Fields
+#### Fields
 Presented table includes all designed fields inside the dynamic table. Fields can be string or decimals - depends on the design of the dynamic table. For the example purpose there are two fields created: the decimal field named EXAGEE
 <br><br>
 <img src="../../../assets/attachments/dynTab/8.png" width="950">
@@ -94,13 +94,13 @@ and the string field named EXNAME
 <br> 
 For later development there will be also created another field named EXUSID which will be used for index and key.
 
-#### b. Indexes
+#### Indexes
 Presented table includes all designed indexes for the dynamic table. Index just needs a name and it can be unique or not - depends on the usage of the field. There will be an index named ID which will be unique - as the name says.
 <br><br>
 <img src="../../../assets/attachments/dynTab/10.png" width="950">
 <br> 
 
-#### c. Keys
+#### Keys
 Presented table includes all designed keys for indexes inside the dynamic table. They can be assigned only for indexes - without the they are unavailable.<br>
 To create a key user has to choose the index, for which the key is designed. 
 
@@ -112,23 +112,26 @@ In the example a choosen index is ID, for which there will be created a key, whi
 <img src="../../../assets/attachments/dynTab/12.png" width="950">
 <br> 
 
-### 5. Example of dynamic table extension !!!
+### 5. Description of the main extension options
+On the previous screens there were some other options visible, with which it is possible to operate on the whole extension. These were:
+- Deploy option - Deploy function makes the table active for all the extensions - it is possible to use it. After deploying, the table cannot be deleted, instead of that, new option is visible. It is a disable, which allows to disble the dynamic table.
+- Refresh option - Refreshes the table after deploying. Before deploying the table, it will clean it.
+- Delete option - function allows to delete the table which name was inputted.
+- Disable option (unvisible) - only available after deploying dynamic table. It disables deployed table.
+- Modify (table description) option (on the right side)
 
-### 6. Activation, Funcionality and description of designed extension !!!
-The next step is to activate the extension. It can be activated inside the settings panel of the extension. To activate the extension, the activate slider needs to be turned on. 
 <br><br>
-<img src="../../../assets/attachments/dynTab/2.png" width="950">
-<br>  
-After that it is possible to run the program with activated extension by using CTRL+R key combination and inputting the name of the program. While the program is running, the new implemented extension can be tested by the user. In this example the message is popped up on the panel E after execution of the extension method.
-<br><br>
-<img src="../../../assets/attachments/dynTab/2.png" width="950">
-<br>
+<img src="../../../assets/attachments/dynTab/13.png" width="950">
+<br> 
+
+### 6. Example of dynamic table extension !!!
+
 
 ### 7. Important notes
 - It is a good practice to use a test compilation of the program just to check if everything is working properly.
 - Data presented in the examples are random.
 
-## Use cases and short summary
+## Use cases and short summary !!!
 
 
 ### See Also
