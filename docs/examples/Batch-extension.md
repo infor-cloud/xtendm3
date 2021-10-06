@@ -42,7 +42,7 @@ To create a new extension select "Create a new extension" button.
 
 <img src="../../../assets/attachments/ex004/create_extention_button.png" width="950">
 
-### 3. Extension Type as a transaction extension - executed by a transaction
+### 3. Extension Type as a Batch extension - executed by a Batch
 Opened window displays an option to select the type of extension to be designed. Select “Batch” and then click “Next”.
 
 <img src="../../../assets/attachments/ex-batch/type.png" width="950">
