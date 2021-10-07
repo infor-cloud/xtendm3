@@ -23,8 +23,8 @@ Working with Utility Extension in XtendM3
 Utility Extension is a type of extension where one can write and reuse the common logic. It is executed from another extension and eliminates the need of implementing external libraries while reusing.
 
 ## Use cases
-* Keeping common logic in one place and reusing it in multiple extensions;
-* Parsing date, messages;
+* Keeping common logic in one place and reusing it in multiple extensions
+* Parsing date, messages 
 * Number formatting, rounding etc.
 
 ## Step by step implementation
@@ -75,17 +75,17 @@ Example below shows utility used to date and time formatting that can be called 
 
 <img src="../../../assets/attachments/ext-util/code_example.png" width="950">
 
-To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be exectuted.
+To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be executed.
 
-### 8. Important notes
-* Always test the examples for your own solution before using them in production.
-* It is a good practice to use a test compilation of the program before running.
-* Data presented in the examples is random.
+## Important notes
+* Always test the examples for your own solution before using them in production
+* It is a good practice to use a test compilation of the program before running
+* Data presented in the examples is random
 
-### Exported Extension
+## Exported Extension
 - [Utility Extension Example.json](../../../assets/attachments/ext-util/UTILITY-DateFormat.json)
 
-### See Also
+## See Also
 [More examples](../../../docs/examples)<br>
 [API documentation](../../../docs/documentation)
 
