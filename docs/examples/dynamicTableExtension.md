@@ -5,7 +5,7 @@ parent: Examples
 nav_order: 1
 ---
 
-# Trigger Extension
+# Dynamic Table Extension
 {: .no_toc }
 
 Working with Dynamic Table Extension in XtendM3
@@ -20,12 +20,14 @@ Working with Dynamic Table Extension in XtendM3
 ---
 
 ## Description
-Dynamic Table Extension is a type of extension, that allows user to create a new table inside a database, which can be used in data operation. It allows user to use it multiple times from all the programs/extensions, not only inside a single created extension. All data can be operated using the [DatabaseAPI]{../../../docs/documentation/api-specification/database-api.md}. Dynamic tables bring flexibility when it comes to CRUD operations and data storage.
+Dynamic Table Extension is a type of extension, that allows user to create a new custom table, which can be used in data operation. User can use it multiple times from all the programs/extensions, not only inside a single created extension. All data can be operated using the [DatabaseAPI](../../../docs/documentation/api-specification/database-api). Dynamic tables bring flexibility when it comes to CRUD operations and data storage.
 
 ## Use cases
 * Expanding the data functionality
 * Flexibility of data usage
 * Data operations
+* Creating custom data model on top of standard M3
+* Storing additional attributes for M3 data in own managed tables
 
 
 ## Step by step implementation
@@ -72,7 +74,7 @@ The second page contains two smaller tables - both are connected to each other. 
 Over the field/index/keys tables there are several tools by which it is possible to operate on the dynamic table.
 
 <br><br>
-<img src="../../../assets/attachments/dynTab/7.png" width="950">
+<img src="../../../assets/attachments/dynTab/7.png">
 <br> 
 
 Listing them from the left side they are used to:
@@ -117,25 +119,23 @@ On the previous screens there were some other options visible, with which it is 
 - Deploy option - Deploy function makes the table active for all the extensions - it is possible to use it. After deploying, the table cannot be deleted, instead of that, new option is visible. It is a disable, which allows to disble the dynamic table.
 - Refresh option - Refreshes the table after deploying. Before deploying the table, it will clean it.
 - Delete option - function allows to delete the table which name was inputted.
-- Disable option (unvisible) - only available after deploying dynamic table. It disables deployed table.
+- Disable option (invisible) - only available after deploying dynamic table. It disables deployed table.
 - Modify (table description) option (on the right side)
 
 <br><br>
 <img src="../../../assets/attachments/dynTab/13.png" width="950">
 <br> 
 
-### 6. Example of dynamic table extension
+## Example of dynamic table extension
+Dynamic table extension gives the opportunity to enhance the efficinency of the data operations, by improved custom created tables and additional data operations. They can be use in many different cases depends of the data's usage needs.
+* It can be created in every moment of designing the extension, even after the extension is completed and there are some data modifications needed. 
+* Icreased flexibility for program data. 
+* Dynamic tables can cooperate with multiple extensions.
 
-
-### 7. Easy data filling !!!
-
-### 7. Important notes
+## Important notes
 - It is a good practice to use a test compilation of the program just to check if everything is working properly.
 - Data presented in the examples are random.
 - Always test the examples for your own solution before using them in production.
 
-## Short summary !!!
-
-
-### See Also
+## See Also
 [Another examples with documentation](../../../docs/examples) (click)
