@@ -6,7 +6,7 @@ grand_parent: Documentation
 nav_order: 3
 ---
 
-# Extension API
+# Logger API
 {: .no_toc }
 
 Checklist for requesting approval for your extensions.
