@@ -23,13 +23,10 @@ Working with Transaction Extension in XtendM3
 Transaction extension is a type of extension where one could create a custom M3 API (MI) Transaction. These custom transactions will behave identically to standard M3 transactions i.e. they have input/output parameters in the same structure as standard APIs and they can be executed through both ION API and M3 Metadata Publisher.
 
 ## Use cases
-* Reading input and writing output data 
+* Reading input and writing output data
 * Retrieving or changing transaction parameters
 * Writing error messages and skipping transactions
 * Building and setting data containers 
-
-## Important Note
-Always test the examples for your own solution before using them in production.
 
 ## Step by step implementation
 
@@ -45,7 +42,7 @@ To create a new extension select "Create a new extension" button.
 
 <img src="../../../assets/attachments/ex004/create_extention_button.png" width="950">
 
-### 3. Extension Type as a transaction extension - executed by a transaction
+### 3. Extension Type as a Transaction extension
 
 Opened window displays an option to select the type of extension to be designed. Select "Transaction" and then click "Next".
 
@@ -54,9 +51,9 @@ Opened window displays an option to select the type of extension to be designed.
 ### 4. Complete all inputs and single/ multi option
 
 Fill in extension information as described:<br>
-* Program : Name of an existing or new program where the extension will be created;<br>
-* Name: Name of the extension;<br>
-* Description: Functionality of the extension; <br>
+* Program : Name of an existing or new program where the extension will be created<br>
+* Name: Name of the extension<br>
+* Description: Functionality of the extension <br>
 * Multi (option): Multi option allows to return multiple records to the user. Otherwise will return a single record. Multi can be used for API list. <br>
 
 Then click "Next".
@@ -69,7 +66,7 @@ At this point you can create fields with input or output data by clicking a plus
 * Name: 4 uppercase character name of the field;<br>
 * Type: text/ number;<br>
 * Lenght: maximum input lenght;<br>
-* Mandatory (option): choose if the input will be mandatory (only for input fields);<br>
+* Mandatory (option): choose if the input will be mandatory (only for input fields)<br>
 * Description: more detailed description of the field.<br>
 
 Click "Save" to finish. 
@@ -108,13 +105,14 @@ To finish save written extension by clicking "Save" button. It is necesary to ac
 
 <img src="../../../assets/attachments/ex004/activation.png" width="950">
 
-### 8. Important notes
-* It is a good practice to use a test compilation of the program before running.
-* Data presented in the examples is random. 
+## Important notes
+* Always test the examples for your own solution before using them in production
+* It is a good practice to use a test compilation of the program before running
+* Data presented in the examples is random
 
-### Exported Extension
-- [Transaction Extantion Example.json](../../../assets/attachments/ex004/TRANSACTION-EXT042MI-getUser.json)
+## Exported Extension
+- [Transaction Extension Example.json](../../../assets/attachments/ex004/TRANSACTION-EXT042MI-getUser.json)
 
-### See Also
+## See Also
 [More examples](../../../docs/examples)<br>
 [API documentation](../../../docs/documentation)
