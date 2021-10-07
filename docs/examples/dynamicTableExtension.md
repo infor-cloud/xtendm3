@@ -19,15 +19,14 @@ Working with Dynamic Table Extension in XtendM3
 
 ---
 
-## Description !!!
-Dynamic Table Extension is a type of extension, that allows user to create a new table inside a database, which can be used in data operation. The dynamic table is more flexible than the regular one. It allows user to use it multiple times from all the programs/extensions, not only inside a single created extension.
+## Description
+Dynamic Table Extension is a type of extension, that allows user to create a new table inside a database, which can be used in data operation. It allows user to use it multiple times from all the programs/extensions, not only inside a single created extension. All data can be operated using the [DatabaseAPI]{../../../docs/documentation/api-specification/database-api.md}. Dynamic tables bring flexibility when it comes to CRUD operations and data storage.
 
-## Use cases !!!
+## Use cases
 * Expanding the data functionality
 * Flexibility of data usage
+* Data operations
 
-## Important note
-Always test the examples for your own solution before using them in production.
 
 ## Step by step implementation
 ### 1. Create new extension
@@ -39,6 +38,7 @@ To create a new extension press the "Create new extension button" as shown on th
 <br><br>
 <img src="../../../assets/attachments/dynTab/2.png" width="950">
 <br>
+
 
 ### 2. Extension Type as a dynamic table extension
 Opened window displays an option to select the type of extension to be designed. Select "Dynamic Table" as described "Custom database table" and then click next.
@@ -54,6 +54,7 @@ The next window will require to fill in the name of the dynamic table. It starts
 <br>  
 
 After putting the name of the dynamic table it it possible to create a table using the "create" button.
+
 
 ### 3. Skeleton of the extension
 Skeleton of the Dynamic Table Extension is quite simple. It contains two bookmarks. At the first one there is a fields table, where it is possible to create fields of dynamic table. 
@@ -78,7 +79,6 @@ Listing them from the left side they are used to:
 - enable editing mode
 - add new object
 - delete the object
-
 
 
 ### 4. Description of the dynamic table fields
@@ -124,14 +124,17 @@ On the previous screens there were some other options visible, with which it is 
 <img src="../../../assets/attachments/dynTab/13.png" width="950">
 <br> 
 
-### 6. Example of dynamic table extension !!!
+### 6. Example of dynamic table extension
 
+
+### 7. Easy data filling !!!
 
 ### 7. Important notes
 - It is a good practice to use a test compilation of the program just to check if everything is working properly.
 - Data presented in the examples are random.
+- Always test the examples for your own solution before using them in production.
 
-## Use cases and short summary !!!
+## Short summary !!!
 
 
 ### See Also
