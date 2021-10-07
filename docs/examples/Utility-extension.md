@@ -20,15 +20,12 @@ Working with Utility Extension in XtendM3
 ---
 
 ## Description
-Utility Extension is a type of extension where one can create a methodology for optimization of future extensions. Designed utility can be used later without necessity to write the same method multiple times in different extension.
-Utility extension also eliminates the need of implementing external libraries inside the extensions. Once written utility does not neet to be activated as other extensions. 
+Utility Extension is a type of extension where one can write and reuse the common logic. It is executed from another extension and eliminates the need of implementing external libraries while reusing.
 
 ## Use cases
-* Keeping common logic in one place and reusing it in multiple extensions
-* Executing from another extensions
-
-## Important note
-Always test the examples for your own solution before using them in production.
+* Keeping common logic in one place and reusing it in multiple extensions;
+* Parsing date, messages;
+* Number formatting, rounding etc.
 
 ## Step by step implementation
 
@@ -65,14 +62,15 @@ Listing them from the left side they are used to:
 
 * Enable editing mode
 * Export the code
-* Extra settings to change the parameters of the extension or enable it etc.
+* Extra settings to change the parameters of the extension or enable it etc. (inactive)
 * Delete the extension
 * Information about the extension
 * Test compile
 * Refresh
 
 ### 7. Code example of transaction extension and APIs usage
-To start writting extension code enable editing by clicking “Edit” button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
+To start writting extension code enable editing by clicking “Edit” button. This extension can be used both with APIs and Trigger extensions. To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
+
 Example below shows utility used to date and time formatting that can be called and executed from another extension.
 
 <img src="../../../assets/attachments/ext-util/code_example.png" width="950">
@@ -80,6 +78,7 @@ Example below shows utility used to date and time formatting that can be called 
 To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be exectuted.
 
 ### 8. Important notes
+* Always test the examples for your own solution before using them in production.
 * It is a good practice to use a test compilation of the program before running.
 * Data presented in the examples is random.
 
