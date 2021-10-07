@@ -84,7 +84,7 @@ To finish save written extension by clicking “Save” button. It is not necesa
 * Data presented in the examples is random.
 
 ### Exported Extension
-- [Utility Extansion Example.json](../../../assets/attachments/ext-util/UTILITY-DateFormat.json)
+- [Utility Extension Example.json](../../../assets/attachments/ext-util/UTILITY-DateFormat.json)
 
 ### See Also
 [More examples](../../../docs/examples)<br>
