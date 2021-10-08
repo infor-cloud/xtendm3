@@ -20,14 +20,13 @@ Working with the Dynamic Tables in XtendM3
 ---
 
 ## Description
-Dynamic Table Extension is a type of extension, that allows user to create a new custom table, which can be used in data operation. User can use it multiple times from all the programs/extensions, not only inside a single created extension. All data can be operated using the [DatabaseAPI](../../../docs/documentation/api-specification/database-api). Dynamic tables bring flexibility when it comes to CRUD operations and data storage by being a user-custom table.
+Dynamic Table Extension is a type of extension, that allows user to create a new custom table, which can be used in data operations. User can use it multiple times from all the programs/extensions, not only inside a single created extension. All data can be operated using the [DatabaseAPI](../../../docs/documentation/api-specification/database-api). Dynamic tables bring flexibility when it comes to CRUD operations and data storage by being a user-custom table.
 
 ## Use cases
 * Expanding the data functionality
-* Flexibility of data usage
-* Data operations
 * Creating custom data model on top of standard M3
 * Storing additional attributes for M3 data in own managed tables
+* Support for storing both master and transactional data
 
 
 ## Step by step implementation
@@ -61,19 +60,19 @@ After putting the name of the dynamic table it it possible to create a table usi
 ### 3. Skeleton of the extension
 Skeleton of the Dynamic Table Extension is quite simple. It contains two bookmarks. At the first one there is a "fields" table, where it is possible to create fields of dynamic table. 
 
-<br><br>
+<br>
 <img src="../../../assets/attachments/dynTab/5.png" width="950">
 <br>  
 
 The second page contains two smaller tables - both are connected to each other. The main one is about indexes and the second one is named "keys". User can create a key for every created index, if it is needed. The key cannot exist without an index.
 
-<br><br>
+<br>
 <img src="../../../assets/attachments/dynTab/6.png" width="950">
 <br>
 
 Over the field/index/keys tables there are several tools by which it is possible to operate on the dynamic table.
 
-<br>
+
 <img src="../../../assets/attachments/dynTab/7.png">
 <br> 
 
@@ -128,12 +127,13 @@ These were:
 - Disable option (invisible) - only available after deploying dynamic table. It disables deployed table.
 - Modify (table description) option (on the right side)
 
+### 6. Deploying new dynamic table
+After preparing new dynamic table, the last thinkg to do is to deploy the table. The deploy option makes the table visible inside extensions. It implements the prepared dynamic table so that it can be used and perform database operations. It is very important to use the deploy option because by that all modifications are being saved. After any further modifications of the table, it needs to be deployed again to see these changes. 
 
-
-## Short summary
+## Example of dynamic table extension
 Dynamic table extension gives the opportunity to enhance the efficinency of the data operations, by posiibility to create custom tables. They can be use in many different cases depends on the data's usage needs.
-* It can be created/modified in every moment of designing the extension, even after the extension is completed and there are some data modifications. 
-* Icreased flexibility for the program data. 
+* It can be created in every moment of designing the extension, even after the extension is completed and there are some data modifications needed. 
+* Increased flexibility for program data. 
 * Dynamic tables can cooperate with multiple extensions.
 
 ## Important notes
