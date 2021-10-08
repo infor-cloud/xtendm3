@@ -33,7 +33,7 @@ Utility Extension is a type of extension where one can write and reuse the commo
 After opening M3 main paige, select Menu on the top left corner. Then select XtendM3 from Administration Tools folder.
 
 <img src="../../../assets/attachments/ex004/open_xtendm3.png" width="950">
-  
+
 ### 2. Create new extension button
 To create a new extension select "Create a new extension" button.
 
@@ -75,7 +75,7 @@ Example below shows utility used to date and time formatting that can be called 
 
 <img src="../../../assets/attachments/ext-util/code_example.png" width="950">
 
-To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be executed.
+To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be exectuted.
 
 ## Important notes
 * Always test the examples for your own solution before using them in production
