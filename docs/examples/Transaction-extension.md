@@ -54,7 +54,7 @@ Fill in extension information as described:<br>
 * Program : Name of an existing or new program where the extension will be created<br>
 * Name: Name of the extension<br>
 * Description: Functionality of the extension <br>
-* Multi (option): Multi option allows to return multiple records to the user. Otherwise will return a single record. Multi can be used for API list. <br>
+* Multi (option): Multi option allows to return multiple records to the user. Otherwise will return a single record. Multi can be used to list APIs. <br>
 
 Then click "Next".
 
