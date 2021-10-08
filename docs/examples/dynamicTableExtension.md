@@ -130,10 +130,10 @@ These were:
 
 
 
-## Example of dynamic table extension
+## Short summary
 Dynamic table extension gives the opportunity to enhance the efficinency of the data operations, by posiibility to create custom tables. They can be use in many different cases depends on the data's usage needs.
-* It can be created in every moment of designing the extension, even after the extension is completed and there are some data modifications needed. 
-* Icreased flexibility for program data. 
+* It can be created/modified in every moment of designing the extension, even after the extension is completed and there are some data modifications. 
+* Icreased flexibility for the program data. 
 * Dynamic tables can cooperate with multiple extensions.
 
 ## Important notes
