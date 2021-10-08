@@ -63,11 +63,11 @@ Then click "Next".
 ### 5. Add input and/ or output field
 
 At this point you can create fields with input or output data by clicking a plus button and filling in the information:<br>
-* Name: 4 uppercase character name of the field;<br>
-* Type: text/ number;<br>
-* Lenght: maximum input lenght;<br>
+* Name: 4 uppercase character name of the field<br>
+* Type: text/ number (select "number" for inserting date field)<br>
+* Lenght: maximum input lenght<br>
 * Mandatory (option): choose if the input will be mandatory (only for input fields)<br>
-* Description: more detailed description of the field.<br>
+* Description: more detailed description of the field<br>
 
 Click "Save" to finish. 
 
@@ -90,14 +90,15 @@ Listing them from the left side they are used to:
 * Export the code
 * Extra settings to change the parameters of the extension or enable it etc.
 * Delete the extension
-* Information about the extension'
+* Information about the extension
 * Test compile
 * Refresh
 
 ### 7. Code example of transaction extension and APIs usage
-To start writting extension code enable editing by clicking "Edit" button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link. 
-
+To start writting extension code enable editing by clicking "Edit" button.
+ 
 Example below shows usage of [MI API](../../../../docs/documentation/api-specification/mi-api.md) and [Program API](../../../../docs/documentation/api-specification/program-api/)to display UserID.  
+To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
 
 <img src="../../../assets/attachments/ex004/get_data_xtn.png" width="950">
 
@@ -107,6 +108,7 @@ To finish save written extension by clicking "Save" button. It is necesary to ac
 
 ## Important notes
 * Always test the examples for your own solution before using them in production
+* Do not use transaction API in Transaction extensions
 * It is a good practice to use a test compilation of the program before running
 * Data presented in the examples is random
 
