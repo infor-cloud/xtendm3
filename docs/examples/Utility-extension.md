@@ -51,6 +51,7 @@ Input extension name. Then select "Create" button.
 
 ### 5. Skeleton of the extension
 Created extension will contain default code template.
+APIs cannot be injected inside the Utility extension, they need to be sent in as an argument.
 
 <img src="../../../assets/attachments/ext-util/template.png" width="950">
 
