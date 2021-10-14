@@ -30,7 +30,7 @@ Utility Extension is a type of extension where one can write and reuse the commo
 ## Step by step implementation
 
 ### 1. Open XtendM3 tool
-After opening M3 main paige, select Menu on the top left corner. Then select XtendM3 from Administration Tools folder.
+After opening M3 main page, select Menu on the top left corner. Then select XtendM3 from Administration Tools folder.
 
 <img src="../../../assets/attachments/ex004/open_xtendm3.png" width="950">
 
