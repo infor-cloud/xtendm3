@@ -76,6 +76,7 @@ Click "Save" to finish.
 <img src="../../../assets/attachments/ex004/add_filed_screen2.png" width="950">
 
 ### 6. Skeleton of the extension
+
 Created extension will contain default  code template.
 
 <img src="../../../assets/attachments/ex004/sceleton_extention.png" width="950">
