@@ -20,10 +20,11 @@ Working with Batch Extension in XtendM3
 ---
 
 ## Description
-
+Batch extension uses standard functionality in M3 Business Logic for long running jobs or scheduled jobs triggered from another extension. It is a custom batch program using API for job calls that is running in the back.
 
 ## Use cases
-* 
+* sessions on schedule
+* token provider
 
 ## Important note
 Always test the examples for your own solution before using them in production.
@@ -72,7 +73,7 @@ Listing them from the left side they are used to:
 * Refresh
 
 ### 7. Code example of transaction extension and APIs usage
-//
+//token provider with scheduled revoke (to do!!)
 
 To finish save written extension by clicking “Save” button. It is not necesary to activate the extension from settings for it to be exectuted.
 
