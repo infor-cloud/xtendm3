@@ -31,8 +31,8 @@ MI API allows to read input and write output parameters sent into transactions. 
 
 ## Features
 
-### Getting value from data container
-mi.in containes In values for Transactions. Contained values are already converted to the proper type.
+### mi.in
+This method allows to get value from data container and containes In values for Transactions. Contained values are already converted to the proper type.
 Takes string key as a parameter and returns value associeted with the key.
 
 Example 1:
@@ -63,8 +63,8 @@ public void main() {
 }
 ```
 
-### Putting value into data container
-Takes key and associeted with it value as parameters, returns previous value.
+### mi.outData
+This method id used to put value into the data container. Takes key and associeted with it value as parameters, returns previous value.
 
 Example 1:
 ```groovy
@@ -82,8 +82,8 @@ void main() {
   mi.outData.put("WHLO", String.valueOf(getParameter("NUMB", Double.class).orElse(null)))
 }
 ```
-### Checking date format
-Returns date format as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5.
+### mi.getDateFormat
+This method checks date format and returns it as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5.
 
 Example:
 ```groovy
@@ -93,7 +93,7 @@ void main() {
   }
 }
 ```
-### Checking date separator
+### mi.getDateSeparator
 Returns date separator as a char.
 
 Example:
@@ -106,7 +106,7 @@ String newDate = date.format( 'M'{sep}'d'{sep}'yyyy' )
 }
 ```
 
-### Checking remaining records
+### mi.getRemainingRecords
 Returns the amount of remaining records allowed to be written in current transaction.
 
 Example:
@@ -121,7 +121,7 @@ void main() {
 }
 ```
 
-### Checking if there are remaining records
+### mi.hasRemainingRecords
 Returns true if there are still any additional records to be written or false if not.
 
 Example:
@@ -134,7 +134,7 @@ void main() {
 }
 ```
 
-### Checking maximum of possible records
+### mi.getMaxRecords
 Returns the maximum amount of possible records to be written as an integer.
 
 Example:
@@ -148,7 +148,7 @@ public void main() {
 }
 ```
 
-### Clearing previous value
+### mi.write
 Writes response from data present in outData. Clears all values in outData.
 
 Example:
@@ -159,7 +159,7 @@ public void main() {
 }
 ```
 
-### Writting error responses
+### mi.error
 Writes error responses with parameters:
 String errorMessage - error message to display (only supports 240 characters);
 String field - field error occurred for (only supports 10 characters);
