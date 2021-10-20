@@ -28,7 +28,7 @@ nav_order: 5
 This API can be used for MI calls in XtendM3
 
 ## Features
-### MI Call
+### call
 There are 2 kinds of MI Call methods to be used: one with parameters and one without
 
 #### 1. Without parameters <br>
@@ -107,7 +107,7 @@ public class TestProgram extends ExtendM3Trigger {
 }  
 ```
 
-### Set List Max Records
+### setListMaxRecords
 This method sets the maximum amount of records to be returned by the MI Caller method when using a list transaction. <br>
 Example:
 ```groovy
@@ -150,7 +150,7 @@ public class TestProgram extends ExtendM3Trigger {
 }  
 ```
 
-### Set Date Format
+### setDateFormat
 The setDateFormat method uses two parameters: character separator and date format. These are the allowed date formats: YMD8, YMD6, MDY6, DMY6, and YWD5. <br>
 Example:
 ```groovy
