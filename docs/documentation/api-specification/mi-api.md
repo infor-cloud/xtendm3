@@ -27,13 +27,13 @@ Checklist for requesting approval for your extensions.
 
 ---
 ## Description
-MI API allows to read input and write output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation.  Can be used to abort transaction based on own validation. Provides error managment. 
+MI API allows to read input and write output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can be used to abort transaction based on own validation and provides error managment. 
 
 ## Features
 
-### Getting value from data container
+### Getting value from the data container
 mi.in containes In values for Transactions. Contained values are already converted to the proper type.
-Takes string key as a parameter and returns value associeted with the key.
+It takes a string key as a parameter and returns value associeted with the key.
 
 Example 1:
 ```groovy
@@ -83,7 +83,7 @@ void main() {
 }
 ```
 ### Checking date format
-Returns date format as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5.
+Returns date format as a string. Possible formats: `YMD8`, `YMD6`, `MDY6`, `DMY6`, `YWD5`.
 
 Example:
 ```groovy
