@@ -25,7 +25,7 @@ nav_order: 2
 **Category**: Generic  
 ---
 ## Description
-The Program API contains APIs that can be used to get information from the current program opened. 
+The Program API contains APIs that can be used to get information from the current program. 
 
 ## Features
 
