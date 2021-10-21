@@ -31,7 +31,7 @@ storage mechanism for an extension storing parameters, calculated values or othe
 pass along these elements into another extension or access it later in the same session.
 
 The scope of this storage is limited to the session, which means that once the session is terminated all stored
-information will be deleted from the memory.
+information will be deleted from memory.
 
 A session is started when a program starts by user interaction i.e. from the menu. Subsequent programs that are started
 as a result of related 
