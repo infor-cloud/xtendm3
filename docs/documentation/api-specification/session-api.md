@@ -40,7 +40,7 @@ as a result of related
 
 Features of this API.
 
-### Store a value to session
+### session.parameters.put
 To store a value to session storage layer you can use the session API method. The parameter name i.e. key can be
 anything. The value can be any object, so it is not limited to primitive types.
 
@@ -50,7 +50,7 @@ double finalSalesPrice = calculateFinalSalesPrice()
 session.parameters.put("salesPrice", finalSalesPrice)
 ```
 
-### Check if a parameter is present in the session
+### session.parameters.get
 To check if a parameter has been stored in the session you can try to retrieve the value and check if it is `null` or do
 it in the Groovy style by just checking the value.
 
