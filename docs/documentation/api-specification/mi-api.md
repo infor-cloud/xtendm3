@@ -160,9 +160,9 @@ public void main() {
 ```
 
 ### mi.error
-Writes error responses with parameters:
-String errorMessage - error message to display (only supports 240 characters);
-String field - field error occurred for (only supports 10 characters);
+Writes error responses with parameters:<br>
+String errorMessage - error message to display (only supports 240 characters);<br>
+String field - field error occurred for (only supports 10 characters);<br>
 String errorCode - code for error which occurred (only supports 2 characters).
 
 Example 1:
