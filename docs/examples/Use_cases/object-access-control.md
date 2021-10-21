@@ -76,9 +76,12 @@ Extension is taking the data from the warehouse table. After that all records in
 
  ```
  
- Some of the warehouses are hidden from the table, so the unauthorized user is not able to use/view this data in the program. Visibiliti of the data and the user authorisation are completely user-modifiable depending on users needs.
+ Some of the warehouses are hidden from the table, so the unauthorized user is not able to use/view this data in the program. Visibility of the data and the user authorisation are completely user-modifiable depending on users needs.
 
  ```groovy
+ 
+     [...]
+     
  private boolean isUserAuthorizedToWarehouse(String country) {
       // This logic can be expanded to check division or other constraints to decide whether user has access or not
       if (country == "CA") {
@@ -87,7 +90,7 @@ Extension is taking the data from the warehouse table. After that all records in
       return false
     }
     
-    // Demo extension - only run for selected users
+    // Demo extension - only run for selected users -> ADMIN here
     private boolean isEnabled() {
       if (program.getUser() != "ADMIN") {
         return false
