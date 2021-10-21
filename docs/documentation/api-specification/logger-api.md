@@ -51,7 +51,7 @@ if (user != "DARTHVADER") {
 This will replace the parameter with its value in the string and it is a better way of handling messages.
 
 ## Considerations and Guidelines
-For debugging, troubleshooting and understanding the runtime flow of extensions, use logger to log important
+For debugging, troubleshooting and understanding the runtime flow of extensions use logger to log important
 actions and contexts in the scripts. Consider following points when using logger API:
 
 * Log messages can be seen by users with M3BE-FndUser or M3BE-FndAdmin IFS roles along with M3BE-LogEnabler. Without
