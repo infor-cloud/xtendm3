@@ -41,7 +41,7 @@ as a result of related
 Features of this API.
 
 ### Store a value to session
-To store a value to a session storage layer you can use the SessionAPI method. The parameter named i.e. key can be
+To store a value to a session storage layer you can use the SessionAPI method. The parameter name i.e. key can be
 anything. Any object can be a value, so it is not limited to primitive types.
 
 Example:
