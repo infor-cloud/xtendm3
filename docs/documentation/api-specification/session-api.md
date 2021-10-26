@@ -26,9 +26,9 @@ Checklist for requesting approval for your extensions.
 **Category**: Storage  
 ---
 ## Description
-Session API provides methods for interacting with current session. One of the main uses of this API is a key-value 
-storage mechanism for an extension storing parameters, calculated values or other information at runtime in memory. It is used to 
-pass along these elements into another extension or access it later in the same session.
+Session API provides methods for interacting with current session. One of the main usages of this API is a a key-value 
+storage mechanism for the extension store parameters, calculated values or other information in runtime in memory to 
+pass along the another extension or access it later on during the same session.
 
 The scope of this storage is limited to the session, which means that once the session is terminated all stored
 information will be deleted from memory.
@@ -41,8 +41,8 @@ as a result of related
 Features of this API.
 
 ### session.parameters.put
-To store a value to a session storage layer you can use the SessionAPI method. The parameter name i.e. key can be
-anything. Any object can be a value, so it is not limited to primitive types.
+To store a value to session storage layer you can use the session API method. The parameter name i.e. key can be
+anything. The value can be any object, so it is not limited to primitive types.
 
 Example:
 ```groovy
