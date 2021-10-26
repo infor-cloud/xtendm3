@@ -27,13 +27,13 @@ Checklist for requesting approval for your extensions.
 
 ---
 ## Description
-MI API allows to read input and write output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can be used to abort transaction based on own validation and provides error managment. 
+MI API allows to read input and write output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can be used to abort transaction based on own validation. Provides error managment. 
 
 ## Features
 
 ### mi.in
 This method allows to get value from data container and containes In values for Transactions. Contained values are already converted to the proper type.
-It takes a string key as a parameter and returns value associeted with the key.
+Takes string key as a parameter and returns value associeted with the key.
 
 Example 1:
 ```groovy
