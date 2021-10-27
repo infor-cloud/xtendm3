@@ -89,7 +89,7 @@ Provided error message is presented below:
 
 <b>List<String> parameters usage
 
-These param. are used in messages which have specifically allocated spaces (&1, &2 etc.) for the use of parameters. To insert less inputs inside message, use empty Strings.
+These parameters are used in messages which have specifically allocated spaces (&1, &2 etc.) for the use of parameters. To insert less inputs inside message, use empty Strings.
 
 ```groovy
   // code sample from the getMessage(String sysComp, String language, String messageId, List<String> parameters) example:
@@ -100,4 +100,4 @@ Provided error message with 2 empty param. is presented below:
 <br><br>
 
 ## Considerations and Guidelines
-Method API is a tool to retrieve an error message from message files and inject it into some program components. It can be used with the [Interactive API](../../../documentation/api-specification/interactive-api), to perform message visibility while running a program. Message API is still in development.
+Method API is a tool to retrieve an error message from message files and inject it into some program components. It can be used with the [Interactive API](../../../documentation/api-specification/interactive-api), to perform message visibility while running a program.
