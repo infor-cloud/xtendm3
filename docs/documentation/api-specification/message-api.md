@@ -25,7 +25,7 @@ nav_order: 3
 ---
 
 ## Description
-Message API is a tool used in a [Trigger type extensions](../../../examples/example-003). This API provides capabilities for receiving information about an error from running program. User using MessageAPI can retrieve an error message by using built in method called getMessage. It allows to combine the error message with another components (ex. [Interactive API](../../../documentation/api-specification/interactive-api) with pop-up window etc.) inside the extension. The result of the Message API is an information extracted from the message file, which is displayed on the screen using other API elements in the extension.
+Message API is a tool used in a [Trigger type extensions](../../../examples/example-003) and [Transaction type extensions](../../../examples/Transaction-extension). This API provides capabilities for receiving information about an error from running program. User using MessageAPI can retrieve an error message by using built in method called getMessage. It allows to combine the error message with another components (ex. [Interactive API](../../../documentation/api-specification/interactive-api) with pop-up window etc.) inside the extension. The result of the Message API is an information extracted from the message file, which is displayed on the screen using other API elements in the extension.
 
 
 ## Features
@@ -79,7 +79,7 @@ public class MessageAPI_TEST extends ExtendM3Trigger {
   }
   
   public void main() {
-    interactive.showOkDialog(message.getMessage("XC00001",[]));  // when the message files don't use param. it is necessary to leve an empty list inside getMessage
+    interactive.showOkDialog(message.getMessage("XC00001",[]));  // when the message files don't use parameters it is necessary to leve an empty list inside getMessage
   }
 }
 ```
@@ -89,13 +89,13 @@ Provided error message is presented below:
 
 <b>List<String> parameters usage
 
-These parameters are used in messages which have specifically allocated spaces (&1, &2 etc.) for the use of parameters. To insert less inputs inside message, use empty Strings.
+Parameters applied inside getMessage constructor are used in messages which have specifically allocated spaces (&1, &2 etc.) for the use of parameters. To insert less inputs inside message, use empty Strings.
 
 ```groovy
   // code sample from the getMessage(String sysComp, String language, String messageId, List<String> parameters) example:
   interactive.showOkDialog(message.getMessage("MVX","GB","CR_0091",["WRX","XTC"]));
 ```
-Provided error message with 2 empty param. is presented below:
+Provided error message with 2 empty parameters is presented below:
 <img src="../../../../assets/attachments/message-api/pop-up_2clear-param.PNG" width="500">
 <br><br>
 
