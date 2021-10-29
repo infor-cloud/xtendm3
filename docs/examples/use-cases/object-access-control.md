@@ -19,65 +19,78 @@ nav_order: 1
 ---
  
 ## Description
-Current structure of Object Access Control in the business engine has some limitations. There is a requirement to be able to deauthorize access to data on a record level in the below context from both the lists and also from the Prompt dialogue box. The authorization is done on a custom criteria in an extension. This use case is a [Trigger extension](../../../examples/example-003), through which a specific access to data has been configured. It is done by applying user validation to the visibility of data inside the program.
+Current structure of Object Access Control in the business engine has some limitations. The purpose of the designed extension is to enhance an easier way to handle data authorization - add users' security layer for chosen objects inside the database. The authorization is done on a custom criteria in an extension. This use case is a Trigger extension, through which a specific access to data has been configured. It is done by applying user validation to the visibility of data inside the program.
  
 ## Step-by-step solution
 This use case is a type of [Trigger extension](../../../examples/example-003). It is needed to apply specific parameters while creating an extension to get all the functionality of the designed method. While creating a new extension, it is needed to input the name of the program as "CRCHKAUTH". After clicking ‘next’ there will be one method available for the new extension - ‘isAuthorizedToAccessRecord’. After creating an extension, the blank page will be ready for implementing users functionality. Designed code is presented in the ‘Use case code’ section below.
  
-## Use case code
+## Source code
 Use case is quite short, but helps understanding of data access for specific users. <br>
 Extension is taking the data from the warehouse table. After that all records inside the table are being mapped.
+
  
 ```groovy
- 
- public void main() {
-      String table = method.getArgument(0)
-      Map<String, String> record = (Map)method.getArgument(1)
-      logger.debug("Checking authorization for table: " + table + " for user ${program.getUser()}" + " and the record: " + record)
- 
-//if statement checks the active user with the required user/users. The last element of that extension is data hiding, in case of lack of proper permissions.
- 
- if (!isEnabled()) {
-        return
-      }
-      if (table == "MITWHL") {
-        method.setReturnValue(isUserAuthorizedToWarehouse(record.MWCSCD))
-      }
-      if (table == "MITBAL") {
-        def query = database.table("MITWHL").index("00").selection("MWCSCD").build()
-        def container = query.createContainer()
-        container.set("MWCONO", program.LDAZD.CONO)
-        container.set("MWWHLO", record.MBWHLO)
-        if (query.read(container)) {
-          method.setReturnValue(isUserAuthorizedToWarehouse(container.getString("MWCSCD")))  
-        }
-      }
- 
-    private boolean isUserAuthorizedToWarehouse(String country) {
-      // This logic can be expanded to check division or other constraints to decide whether user has access or not
-      if (country == "CA") {
-        return true
-      }
-      return false
+public class AuthorityCheck extends ExtendM3Trigger {
+  private final ProgramAPI program
+  private final LoggerAPI logger
+  private final MethodAPI method
+  private final DatabaseAPI database
+
+  public AuthorityCheck(ProgramAPI program, LoggerAPI logger, MethodAPI method, DatabaseAPI database) {
+    this.program = program
+    this.logger = logger
+    this.method = method
+    this.database = database
+  } 
+
+  public void main() {
+    String table = method.getArgument(0)
+    Map<String, String> record = (Map)method.getArgument(1)
+    logger.debug("Checking authorization for table: " + table + " for user ${program.getUser()}" + " and the record: " + record)
+
+    //if statement checks the active user with the required user/users. The last element of that extension is data hiding, in case of lack of proper permissions.
+    if (!isEnabled()) {
+      return;
     }
-   
-    // Demo extension - only run for selected users -> USER here
-    private boolean isEnabled() {
-      if (program.getUser() != "USER") {
-        return false
-      }
-      return true
+    if (table == "MITWHL") {
+      method.setReturnValue(isUserAuthorizedToWarehouse(record.MWCSCD));
     }
-   
- ```
+    if (table == "MITBAL") {
+      def query = database.table("MITWHL").index("00").selection("MWCSCD").build();
+      def container = query.createContainer();
+      container.set("MWCONO", program.LDAZD.CONO);
+      container.set("MWWHLO", record.MBWHLO);
+      if (query.read(container)) {
+        method.setReturnValue(isUserAuthorizedToWarehouse(container.getString("MWCSCD"))); 
+      }
+    }
+  }
  
-Some of the warehouses are hidden from the table, so the unauthorized user is not able to use/view this data in the program. Visibility of the data and the user authorization are completely user-modifiable depending on users needs. This use case can be used while designing some functionality with the data usage, when some data are quite sensitive for the user and they shouldn't be visible for every program user. It can also be modified depending on the specific data which should be validated. 
+  // This logic can be expanded to check division or other constraints to decide whether user has access or not
+  private boolean isUserAuthorizedToWarehouse(String country) {
+    if (country == "CA") {
+      return true;
+    }
+    return false;
+  }
+   
+  // In this example method is being run only for selected users just to show how it works -> USER here is unauthorized, so data will be hidden for him.
+  private boolean isEnabled() {
+    if (program.getUser() != "USER") {
+      return false;
+    }
+    return true;
+  }
+}
+```
+ 
+Some of the warehouses are hidden from the table, so the unauthorized user is not able to use/view this data in the program. Visibility of the data and the user authorization are completely user-modifiable depending on users needs. This use case can be used while designing some functionality with the data usage, when some data are quite sensitive for the user and they shouldn't be visible for every program user. It can also be modified depending on the specific data which should be validated.
  
 ## Use Case
 Programmatic preparations are completed for future extensibility when it is possible to add additional logic into M3 to restrict data rows in both New List Standard Compatible programs and their Derived F4 Prompt Dialogues. An example object has been developed that blocks Warehouse Records from the Warehouse Master list based on the country (or another param of the table) as a restriction value programmed into the extension. 
-
+ 
 Object access control can be used as a base to create other similar extensions for different usage for example if it is needed to create an extension for data visibility based on the country the user is from etc. Many data validations can be based on that example.
-
+ 
 Code presented above can be fully modified, depending on user needs. The most important part of that use case is to make specific values visible for the user of the program. There are many possibilities which data should be hidden and which user should see all data inputted.
  
 ## Short summary
