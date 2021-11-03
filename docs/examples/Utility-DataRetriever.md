@@ -27,9 +27,8 @@ Having a utility helps keep the logic in one place and increase maintainability 
  
  
 ## Use cases
-* Retrieving data from database and data validation
-* Checking if parameter is sent in 
-* Data validation for value sent in as blank, “0”, “?” and text/numeric type
+* Retrieving data from database
+* Checking if parameter is sent in and validation for value sent in as blank, “0”, “?” and text/numeric type
 * Date format validation
 * Additional functionality for extensions
  
@@ -48,7 +47,7 @@ import java.time.format.DateTimeFormatterBuilder
 import java.util.Optional
  
 public class DataRetriveUtil extends ExtendM3Utility {
-  
+
       /**
    * To retrive and validate inputed data
    * @param mi Instance of MI API
