@@ -48,15 +48,7 @@ import java.time.format.DateTimeFormatterBuilder
 import java.util.Optional
  
 public class DataRetriveUtil extends ExtendM3Utility {
- 
-    /*private Optional<Boolean> getField(MIAPI mi, String fieldName) {
-        if(mi.in(fieldName).isPresent()) {
-            return Optional.valueOf(true);
-        } else {
-          return Optional.valueOf(false);
-        }
-    }*/
-   
+  
       /**
    * To retrive and validate inputed data
    * @param mi Instance of MI API
