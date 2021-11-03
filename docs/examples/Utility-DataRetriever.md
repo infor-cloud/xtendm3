@@ -139,12 +139,13 @@ public class DataRetriveUtil extends ExtendM3Utility {
     }
   }
    
-    /**
+  /**
    * To check and convert date into a proper format
    * @param date Inputed date
    * @param format Format of inputed date
    * @return date value in a proper format
    */
+
   private LocalDate convertDate(String date, String format) {
     if ("YMD8".equals(format)) {
       return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"))
