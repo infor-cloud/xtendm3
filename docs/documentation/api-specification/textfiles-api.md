@@ -25,7 +25,7 @@ Checklist for requesting approval for your extensions.
 **Category**: Storage  
 ---
 ## Description
-TextFiles API is used to perform various file processing operations.
+TextFiles API is used to perform various file processing operations. Can be used to open, read and write in files from current and subdirectories as well as list existing folders and files.
  
 ## Features
 ### textFiles.open(String subDirectory)
@@ -35,15 +35,15 @@ Example:
  
 ```groovy
 public void openRecords() {
-textFiles.open(“nameOfSubDirectory”);
+  textFiles.open(“nameOfSubDirectory”);
 	/*
   After applying this method, file access is changed. 
   Now the extension is already in the subDirectory folder, so file operations only affect files in the active subDirectory. 
   */
-textFiles.read("TEXTFILE.txt", "UTF-8", updateTEXTFILE);	
+  textFiles.read("TEXTFILE.txt", "UTF-8", updateTEXTFILE);	
 }
 ```
- 
+
 ### textFiles.read(String fileName, String encoding, Consumer<BufferedReader> readTask)
 This method is responsible for reading data from the selected file and applying it via the corresponding command using the bufferedReader in the extension.
 Parameters:
@@ -81,10 +81,8 @@ void log(String message) {
   textFiles.write(reportName, "UTF-16", true, consumer)
   }
 }
- 
- 
 ```
- 
+
 ### textFiles.delete(String fileName)
 This method deletes the selected file. It takes a name from the file as a parameter.
 <br>
@@ -204,5 +202,5 @@ public class test extends ExtendM3Trigger {
  
  
 ## Considerations and Guidelines
- 
+TextFile API can be used in [Trigger](../../../examples/example-003) and [Transaction](../../../examples/Transaction-extension) type extensions.
 
