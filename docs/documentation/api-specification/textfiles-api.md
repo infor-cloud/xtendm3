@@ -51,26 +51,27 @@ Parameters:
 - String encoding - string representation of the encoding<br>
 - Consumer<BufferedReader> readTask - consumer accepting BufferedReader to read from file
 <br>
+
 Example:
  
 ```groovy
-void readRecords() {
-  List<String> resolveFields(String line) {
-		List<String> list = new ArrayList<>()
-		String[] fields = line.split(resolveDelimiter(line))
-		for(String field : fields) {
-			list.add(field)
-		}
-		return list
-	}
-  Closure<?> readCODEFILE = { BufferedReader reader ->
-    List<String> header = resolveFields(reader.readLine())
-		while((line = reader.readLine()) != null) {
-      reader.println(line)
-    }
-  textFiles.read("CODEFILE.csv", "UTF-16", readCODEFILE)
+List<String> resolveFields(String line) {
+  List<String> list = new ArrayList<>()
+  String[] fields = line.split(resolveDelimiter(line))
+  for(String field : fields) {
+    list.add(field)
+  }
+  return list
+}
+Closure<?> readCODEFILE = { BufferedReader reader ->
+  List<String> header = resolveFields(reader.readLine())
+  while((line = reader.readLine()) != null) {
+    reader.println(line)
   }
 }
+public void readRecords() {
+  textFiles.read("CODEFILE.csv", "UTF-16", readCODEFILE)
+  }
 ```
  
 ### textFiles.write(String fileName, String encoding, boolean append, Consumer<PrintWriter> writeTask)
