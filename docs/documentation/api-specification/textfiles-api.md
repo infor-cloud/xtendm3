@@ -81,6 +81,7 @@ Parameters:
 - String encoding - string representation of the encoding<br>
 - boolean append - if true, append to the contents, otherwise (re)create the file<br>
 - Consumer<PrintWriter> writeTask - consumer accepting PrintWriter to print to file<br>
+
 Example:
  
 ```groovy
