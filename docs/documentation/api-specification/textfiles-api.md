@@ -55,11 +55,22 @@ Example:
  
 ```groovy
 void readRecords() {
-  log("File being read ...")
-  textFiles.read("CODEFILE.csv", "UTF-16", updateCODEFILE)
-  log("CODEFILE record updated ...")
+  List<String> resolveFields(String line) {
+		List<String> list = new ArrayList<>()
+		String[] fields = line.split(resolveDelimiter(line))
+		for(String field : fields) {
+			list.add(field)
+		}
+		return list
+	}
+  Closure<?> readCODEFILE = { BufferedReader reader ->
+    List<String> header = resolveFields(reader.readLine())
+		while((line = reader.readLine()) != null) {
+      reader.println(line)
+    }
+  textFiles.read("CODEFILE.csv", "UTF-16", readCODEFILE)
+  }
 }
- 
 ```
  
 ### textFiles.write(String fileName, String encoding, boolean append, Consumer<PrintWriter> writeTask)
@@ -78,7 +89,7 @@ void log(String message) {
     Closure<?> consumer = { PrintWriter printWriter ->
       printWriter.println(message)
     }
-  textFiles.write(reportName, "UTF-16", true, consumer)
+    textFiles.write(reportName, "UTF-16", true, consumer)
   }
 }
 ```
