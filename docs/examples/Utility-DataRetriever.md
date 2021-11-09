@@ -57,86 +57,26 @@ public class DataRetriveUtil extends ExtendM3Utility {
    * @return value in a proper format
    */
  
-  def <T> Optional<T> getInput(MIAPI mi, String fieldName, Class<T> type, T defaultValue) {
+  def <T> Optional<T> getInput(String field, Class<T> type, T defaultValue) {
     String value = mi.inData.get(field).trim()
     if (value == null || value.isEmpty()) {
       return Optional.ofNullable(defaultValue)
     }
-    if(getField(mi, fieldName)) {
-      if (String.class == type) {
-        validateStringType(mi, fieldName);
-
-      } else if (Integer.class == type) {
-        validateNumericalIntegerType(mi, fieldName);
-      
-      } else if (Long.class == type) {
-        validateNumericalIntegerType(mi, fieldName);
-      
-      } else if (Double.class == type) {
-        validateNumericalDoubleType(mi, fieldName);
-      
-      } else if (BigDecimal.class == type) {
-        validateNumericalDoubleType(mi, fieldName);
-      
-      } else if (LocalDate.class == type) {
-        if (convertDate(mi.inData.get(fieldName).trim(), mi.getDateFormat()) != null)
-        convertDate(mi.inData.get(fieldName).trim(), mi.getDateFormat());
-        else
-        return Optional.empty();
-        
-      } else {
-        return Optional.empty();
-      }
+    T result = null
+    if (String.class == type) {
+      result = "?".equals(value) ? "" : value
+    } else if (Integer.class == type) {
+      result = "?".equals(value) ? 0 : Integer.valueOf(value)
+    } else if (Long.class == type) {
+      result = "?".equals(value) ? 0L : Long.valueOf(value)
+    } else if (Double.class == type) {
+      result = "?".equals(value) ? 0d : Double.valueOf(value)
+    } else if (BigDecimal.class == type) {
+      result = "?".equals(value) ? new BigDecimal("0") : new BigDecimal(value)
+    } else if (LocalDate.class == type) {
+      result = "?".equals(value) ? LocalDate.ofEpochDay(0) : convertDate(value, mi.getDateFormat())
     }
-  }
-   
- 	/**
-   * To check if inputted value of String type is empty or null
-   * @param mi Instance of MI API
-   * @param fieldName Name of the field from which the input will be taken to get information from field
-   * @return (true) - value Optional.of(“”)
-   * @return (false) - inputted value from mi.in.get(...)  
-   */
-
-  public Optional<String> validateStringType(MIAPI mi, String fieldName){
-    if (mi.inData(fieldName).isBlank() || mi.inData(fieldName).equals("?")){
-        return Optional.of("")
-    } else {
-        return Optional.of(mi.in.get(fieldName));
-    }
-  }
- 
-	/**
-   * To check if inputted value of double type is empty or null
-   * @param mi Instance of MI API
-   * @param fieldName Name of the field from which the input will be taken to get information from field
-   * @return (true) - value Optional.of(“”)
-   * @return (false) - inputted value from mi.in.get(...)  
-   */
- 
-  public Optional<String> validateNumericalDoubleType(MIAPI, String fieldName){
-    if (mi.in.get(fieldName).isBlank() || mi.in.get(fieldName).equals("?")){
-        return Optional.of("0.0");
-    } else {
-        return Optional.of(mi.in.get(fieldName).toString());
-    }
-  }
-   
-	/**
-   * To check if inputted value of int type is empty or null
-   * @param mi Instance of MI API
-   * @param fieldName Name of the field from which the input will be taken to get information from field
-   * @return (true) - value Optional.of(“”)
-   * @return (false) - inputted value from mi.in.get(...)  
-   */
- 
-  public Optional<String> validateNumericalIntegerType(MIAPI, String getField){
-    int numField = Integer.parseInt(getField)
-    if (mi.in.get(fieldName).isBlank() || mi.in.get(fieldName).equals("?")){
-        return Optional.of("0")
-    } else {
-        return Optional.of(mi.in.get(fieldName).toString());
-    }
+    return Optional.ofNullable(result)
   }
    
   /**
@@ -161,7 +101,6 @@ public class DataRetriveUtil extends ExtendM3Utility {
     return null
   }
 }
- 
 ```
  
 ### Exported Extension
