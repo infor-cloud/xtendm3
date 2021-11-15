@@ -204,7 +204,7 @@ Extension execution log should now be desplayed in the Business Engine Log. To r
 If executed correclty the output will be visable inside the file.<br>
 Example: <br>
 
- <img src="../../../assets/attachments/ex-batch/Log.png" width="950">
+ <img src="../../../assets/attachments/ex-batch/txtfile.PNG" width="950">
  
 ### 7. Important notes
 * Whenever a user updates the code of an extension through which a batch extension is called, it is necessary to create a new log job related to that batch. Otherwise the batch will not be executed.
