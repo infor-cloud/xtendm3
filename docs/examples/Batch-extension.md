@@ -45,7 +45,7 @@ Opened window displays an option to select the type of extension to be designed.
 <img src="../../../assets/attachments/ex-batch/type.png" width="950">
  
 ### 4. Create extension name
-Input extension name in format "EXT" <nnn> where n is an integer and extension description. Then select the "Create" button.
+Input extension name in format "EXT <nnn&#62;" where n is an integer and extension description. Then select the "Create" button.
  
 <img src="../../../assets/attachments/ex-batch/name_batch.png" width="950">
  
