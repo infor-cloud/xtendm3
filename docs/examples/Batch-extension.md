@@ -213,7 +213,8 @@ Example: <br>
 * Data presented in the examples is random
  
 ### Exported Extension
-.json
+- [BatchExtension.json](../../../assets/attachments/ex-batch/BATCH-EXT002.json)
+- [TransactionExtension.json](../../../assets/attachments/ex-batch/TRANSACTION-EXT919MI-batchTest.json)
  
 ### See Also
 [More examples](../../../docs/examples)
