@@ -11,7 +11,7 @@ nav_order: 13
 
 Checklist for requesting approval for your extensions.
 {: .fs-6 .fw-300 }
-![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
+![](/assets/images/warning-24px.svg)
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -31,7 +31,7 @@ Transaction API allows to extend MI transactions, overwrite parameters. Can be u
 
 ## Features
 
-### Parameters
+### parameters
 For retieving and changing MI transaction buffer or data structure.
 
 Example:
@@ -45,8 +45,8 @@ public void main() {
 }
 ```
 
-### Skip the current transaction
-This method takes three string parameters : field, msid, data.
+### abortTransaction
+This method allows to skip the current transaction and takes three string parameters : field, msid, data.
 
 Example:
 ```groovy
