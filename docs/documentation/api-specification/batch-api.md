@@ -76,7 +76,7 @@ Example:
 }
 ```
 <br>
-The result of the program should be available inside the log file as "Uuid: 2147c32b-4471-48d2-8083-2f28add463d1" (Inputed UUID number if another extension).
+The result of the program should be available inside the log file as "Uuid: 2147c32b-4471-48d2-8083-2f28add463d1" (Inputed UUID number from another extension).
 
 ## Considerations and Guidelines
 It is a very good practice to learn about [Batch Extension](../../../examples/Batch-extension) first to understand the full potential of the Batch API.
