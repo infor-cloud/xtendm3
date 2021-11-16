@@ -23,7 +23,9 @@ Working with Batch Extension in XtendM3
 Batch extension uses standard functionality in M3 Business Logic for long running jobs or scheduled jobs triggered from another extension. It is a custom batch program using API for job calls that is running in the background. It is possible to retrieve UUID data from batch operations using [Batch API](../../../docs/documentation/api-specification/batch-api), which can be also used inside batch extension.
  
 ## Use cases
-* Sessions on schedule
+* Used to run transactions that require no user interaction
+* Can be scheduled on a regular basis for execution
+* Suitable for long running jobs
  
 ## Step by step implementation
  
@@ -190,13 +192,15 @@ To create a new logging job for new Batch extension, just click the 'Add' option
 Basic things to input for executing Batch extension are th program name - which should be exact same as previously created Batch extension, and to see the result into log file, it is needed to make a check inside the 'Log to file' box. Another significant field is 'Number of jobs to start with log configuration' where user can choose, how many times it is possible to execute batch wit the logging job result. The number can be chosen from 1 to 5.
 <br>
 
-Other options of that window depends on user needs.<br>
+<b>Other options of that window depends on user needs.</b><br>
 The last thing to do is to save the logging job. After that new Batch extension can be executed.
 
+<b>Initialization of the transaction extension that has the code implementation to call the batch extension</b><br>
 To test the Batch extension output open MetaData Publisher and select "Test API" button from "M3 API Repository". Then in the left menu select created Transaction extension as the "Program" and method for Batch testing. Then select "Run". In this example as shown below.
 
 <img src="../../../assets/attachments/ex-batch/Meta.png" width="950">
 
+<b>Reading the result file</b><br>
 Extension execution log should now be desplayed in the Business Engine Log. To read Batch output select the log and downlowad is as a text file by clicking top left button "Download selected log file".
 
 <img src="../../../assets/attachments/ex-batch/Log.png" width="950">
@@ -206,20 +210,20 @@ Example: <br>
 
  <img src="../../../assets/attachments/ex-batch/txtfile.PNG" width="950">
  
-### 7. Important notes
+## Important notes
 * Whenever a user updates the code of an extension through which a batch extension is called, it is necessary to create a new log job related to that batch. Otherwise the batch will not be executed.
 * Always test the examples for your own solution before using them in production
 * It is a good practice to use a test compilation of the program before running
 * Data presented in the examples is random
  
-### Exported Extension
+## Exported Extension
 - [BatchExtension.json](../../../assets/attachments/ex-batch/BATCH-EXT002.json)
 - [TransactionExtension.json](../../../assets/attachments/ex-batch/TRANSACTION-EXT919MI-batchTest.json)
  
-### See Also
-[More examples](../../../docs/examples)
-[API documentation](../../../docs/documentation/api-specification)
-[Batch API](../../../docs/documentation/api-specification/batch-api)
+## See Also
+[More examples](../../../docs/examples)<br>
+[API documentation](../../../docs/documentation/api-specification)<br>
+[Batch API](../../../docs/documentation/api-specification/batch-api)<br>
  
  
  
