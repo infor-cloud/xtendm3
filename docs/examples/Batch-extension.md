@@ -176,7 +176,7 @@ Inside the page there is a table and above it there are two options:
 <img src="../../../assets/attachments/ex-batch/sc1.PNG" width="950">
 <br>
 The third option allows user to configurate new logging job, which will be connected to the previously prepared Batch extension.
-Inside opened window for "configure future logging" there will be a small pop-up window with some options and a table inside it. The table allows user to 'Add', 'Edit', 'Remove' logging jobs or 'Refresh' them
+Inside opened window for "configure future logging" there will be a small pop-up window with some options and a table inside it. The table allows user to 'Add', 'Edit', 'Remove' logging jobs or 'Refresh' them.
 
 
 <img src="../../../assets/attachments/ex-batch/sc2.PNG" width="950">
