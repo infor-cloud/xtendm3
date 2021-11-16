@@ -25,8 +25,7 @@ nav_order: 1
 ---
 
 ## Description
-Batch API can be used to work with running Batch extensions in the M3 Business Engine. This API can retrieve a unique ID oo reference ID of running jobs. <br>
-A very good practice is to learn about [Batch Extension](../../../examples/Batch-extension) first to understand the full potential of the Batch API.
+Batch API can be used to work with running Batch extensions in the M3 Business Engine. This API can retrieve a unique ID or reference ID of running jobs.
 
 ## Features
 Usage of Batch API is depended on another API, because Batch is working in the background. In below examples data from Batch extension are being retrieve with usage of Batch API and Logger API.
@@ -80,4 +79,4 @@ Example:
 The result of the program should be available inside the log file as "Uuid: 2147c32b-4471-48d2-8083-2f28add463d1" (Inputed UUID number if another extension).
 
 ## Considerations and Guidelines
-Batch API is a useful tool to retrieve or generate job IDs.
+It is a very good practice to learn about [Batch Extension](../../../examples/Batch-extension) first to understand the full potential of the Batch API.
