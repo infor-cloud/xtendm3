@@ -25,7 +25,7 @@ Checklist for requesting approval for your extensions.
 **Category**: Storage  
 ---
 ## Description
-TextFiles API is used to perform various file processing operations. Can be used to open, read and write in files from current and subdirectories as well as list existing folders and files.
+TextFiles API is used to perform various file processing operations. It can be used to open, read and write in files from current and subdirectories as well as list existing folders and files.
  
 ## Features
 ### textFiles.open(String subDirectory)
@@ -49,7 +49,7 @@ This method is responsible for reading data from the selected file and applying 
 Parameters:
 - String fileName - name of the file<br>
 - String encoding - string representation of the encoding<br>
-- Consumer<BufferedReader> readTask - consumer accepting BufferedReader to read from file
+- Consumer<BufferedReader> readTask - consumer accepting BufferedReader to read from file. BufferedReader is a class which simplifies reading text from a character input stream. It buffers the characters in order to enable efficient reading of text data.
 <br>
 
 Example:
@@ -80,7 +80,7 @@ Parameters:
 - String fileName - name of the file<br>
 - String encoding - string representation of the encoding<br>
 - boolean append - if true, append to the contents, otherwise (re)create the file<br>
-- Consumer<PrintWriter> writeTask - consumer accepting PrintWriter to print to file<br>
+- Consumer<PrintWriter> writeTask - consumer accepting PrintWriter to print to file. PrintWriter class is the implementation of Writer class. It is used to print the formatted representation of objects to the text-output stream.<br>
 
 Example:
  
