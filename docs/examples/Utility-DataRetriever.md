@@ -92,7 +92,7 @@ public class DataRetriveUtil extends ExtendM3Utility {
     } else if ("YMD6".equals(format)) {
       return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyMMdd"))
     } else if ("MDY6".equals(format)) {
-      return LocalDate.parse(date, DateTimeFormatter.ofPattern("MMddyy"))
+      return LocalDate.parse(date, DateTimeFormatter.ofPattern("MMddyy"))git 
     } else if ("DMY6".equals(format)) {
       return LocalDate.parse(date, DateTimeFormatter.ofPattern("ddMMyy"))
     } else if ("YWD5".equals(format)) {
