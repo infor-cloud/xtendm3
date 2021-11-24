@@ -1,20 +1,24 @@
 ---
 layout: default
-title: Templates
-parent: Examples
+title: Trigger extension templates
+parent: Trigger-Ex.-Templates
+grand_parent: Examples
 nav_order: 1
-has_children: true
-permalink: docs/examples/Templates
 ---
-
-# Templates
+ 
+# Trigger extension templates
 {: .no_toc }
 
-Tmeplates of how XtendM3 is used in practice and how they can be used to speed up and facilitate the design of various extensions. This is designed to simplify the process of designing XtendM3 extensions in practice.
+A set of ready-made templates for implementation in trigger type extensions.
 
-{: .fs-6 .fw-300 }
-![](../../../assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
-
+## Table of contents
+{: .no_toc .text-delta }
+ 
+1. TOC
+{:toc}
+ 
+---
+ 
 
  
 ## Important notes
@@ -27,3 +31,4 @@ Tmeplates of how XtendM3 is used in practice and how they can be used to speed u
 - [API documentation](../../../documentation/api-specification)
 - [Use cases](../../../examples/use-cases)
 - [Examples](../../../examples)
+
