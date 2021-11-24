@@ -22,49 +22,7 @@ Working with the Trigger Extensions in XtendM3
 ## Description
 This document contains templates of using different APIs in a Trigger Extension. 
 
-## DataBase API to create a container
-
-```groovy
-public class DatabaseTemplate extends ExtendM3Trigger {
-
-  private final DatabaseAPI database;
-
-  
-  
-  public DatabaseTemplate(DatabaseAPI database) {
-    this.database = database;
-  }
-  public void main() {
-    DBContainer NAME = database.createContainer("NAME")
-  
-    DBAction query = database.table("NAME")
-      .index("00")
-      .selection("ELEM01", "ELEM02", "ELEM03", "ELEM04")
-      .build();
-
-    DBContainer container = query.getContainer()
-    container.set("ELEM01", "Sample Item")
-    query.insert(container)
-  }
-}
-```
-
-## Logger API 
-
-```groovy
-public class LoggerTemplate extends ExtendM3Trigger {
-  private final LoggerAPI logger;
-  
-  public LoggerTemplate(LoggerAPI logger) {
-    this.logger = logger;
-  }
-  
-  public void main() {
-    logger.info("Insert info message here")
-    }
-  }
-}
-```
+##
 
 ## Important notes
 - It is a good practice to use a test compilation of the program just to check if everything is working properly.
