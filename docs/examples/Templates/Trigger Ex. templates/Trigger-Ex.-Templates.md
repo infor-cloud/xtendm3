@@ -9,7 +9,8 @@ nav_order: 1
 # Trigger extension templates
 {: .no_toc }
 
- 
+A set of ready-made templates for implementation in trigger type extensions.
+
 ## Table of contents
 {: .no_toc .text-delta }
  
@@ -18,8 +19,7 @@ nav_order: 1
  
 ---
  
-## Description
-A set of ready-made templates for implementation in trigger type extensions.
+
  
 ## Important notes
 - It is a good practice to use a test compilation of the program just to check if everything is working properly.
