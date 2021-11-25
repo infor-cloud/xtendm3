@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Transaction Extension Templates
-parent: Examples
-nav_order: 1
+parent: Templates
+nav_order: 2
 ---
 
 # Transaction Extension Templates
@@ -21,23 +21,19 @@ Working with the Trransaction Extensions in XtendM3
 
 ## Description
 
-Documentation cointains a template for a Transaction extension with a structure that can be used for creating a new extension using container contruction and setting parameters. 
-Template can be as modified as needed
+Documentation cointains a template for a [Transaction](../../../examples/) extension with a structure that can be used for creating a new extension using container contruction and setting parameters. 
+Template can be as modified as needed.
 
 ```groovy
 public class TransactionTemplate extends ExtendM3Transaction {
   private final MIAPI mi;
   private final DatabaseAPI database;
   private final MICallerAPI miCaller;
-  private final LoggerAPI logger;
-  private final ProgramAPI program;
 
-  public TransactionTemplate(MIAPI mi, DatabaseAPI database, MICallerAPI miCaller, LoggerAPI logger, ProgramAPI program) {
+  public TransactionTemplate(MIAPI mi, DatabaseAPI database, MICallerAPI miCaller) {
     this.mi = mi;
     this.database = database;
     this.miCaller = miCaller;
-    this.logger = logger;
-    this.program = program;
   }
 
   public void main() {
@@ -50,38 +46,39 @@ public class TransactionTemplate extends ExtendM3Transaction {
           return;
         }
 
-        mi.outData.put("CONO", out.get("CONO").trim());
-        mi.outData.put("WHLO", out.get("WHLO").trim());
-        mi.outData.put("DLIX", out.get("DLIX").trim());
-        mi.outData.put("PLSX", out.get("PLSX").trim());
-        mi.outData.put("PISS", out.get("PISS").trim());
+        /* Setting up out data in transaction using MI API
+        Remove .trim on input fields as this causes errors if fields are null
+        */
+        mi.outData.put("OUT1", out.get("OUT1").trim());
+        mi.outData.put("OUT2", out.get("OUT2").trim());
+        mi.outData.put("OUT3", out.get("OUT3").trim());
+        mi.outData.put("OUT4", out.get("OUT4").trim());
+        mi.outData.put("OUT5", out.get("OUT5").trim());
 
-        String zrdn = "";
-        String zcnd = "";
-        if (out.get("RORC").toInteger() == 3) {
-          DBAction query = database.table("MHDISH")
+        //Setting container parameters
+        String out6 = "";
+        String out7 = "";
+        if (out.get("OUT3").toInteger() == 3) {
+          DBAction query = database.table("CONT01")
             .index("00")
-            .selection("OQCONO","OQINOU","OQDLIX","OQRIDN").build();
-          DBContainer MHDISH = query.getContainer();
-          MHDISH.set("OQCONO", out.get("CONO").trim().toInteger());
-          MHDISH.set("OQINOU", 1);
-          MHDISH.set("OQDLIX", out.get("DLIX").trim().toInteger());
-          if(query.read(MHDISH)){
-            zrdn = MHDISH.get("OQRIDN");
-            zcnd = getDeliveryAddressName(zrdn, out);
-          }
+            .selection("OQOUT1","OQOUT2","OQOUT3","OQOUT4").build();
+          DBContainer CONT01 = query.getContainer();
+          CONT01.set("OQOUT1", out.get("OUT1").trim().toInteger());
+          CONT01.set("OQOUT2", 1);
+          CONT01.set("OQOUT3", out.get("OUT3").trim().toInteger());
         }
-        mi.outData.put("ZRDN", zrdn);
-        mi.outData.put("ZCND", zcnd);
+        mi.outData.put("OUT6", out6);
+        mi.outData.put("OUT7", out7);
         mi.write();
     }
 
-    def params = [ "WHLO": mi.inData.get("WHLO"),
-                   "FPIS": mi.inData.get("ZFPI"),
-                   "TPIS": mi.inData.get("ZTPI"),
-                   "FORC": mi.inData.get("ZFOR"),
-                   "TORC": mi.inData.get("ZTOR"),
-                   "FSEQ": mi.inData.get("ZFSE"),
+    // Transaction In Data parametrers
+    def params = [ "OUT2": mi.inData.get("OUT2"),
+                   "IND1": mi.inData.get("PAR1"),
+                   "IND2": mi.inData.get("PAR2"),
+                   "IND3": mi.inData.get("PAR3"),
+                   "IND4": mi.inData.get("PAR4"),
+                   "IND5": mi.inData.get("PAR5"),
 
     ];
     //.error("${params}");
@@ -90,3 +87,13 @@ public class TransactionTemplate extends ExtendM3Transaction {
 
 }
 ```
+## Important notes
+- It is a good practice to use a test compilation of the program just to check if everything is working properly.
+- Data presented in the examples is random.
+- Remember to check the name of created extension while using ready templates/examples
+ 
+ 
+## See also
+- [API documentation](../../../documentation/api-specification)
+- [Use cases](../../../examples/use-cases)
+- [Examples](../../../examples)
