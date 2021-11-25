@@ -23,9 +23,12 @@ Working with the Trigger Extensions in XtendM3
 This document contains templates of using different APIs in a Trigger Extension. 
 //This document contains diffrent templates with usage of a Trigger Extension.
 
+
 ### Check whether program should run
+
 #### Description
-This template allows user to implement code, which can be useful while designing some functionality where it is necessary to check authorization for specific users (or group of users etc.). Program is being executed with checking for duplicates(users) inside the database.
+This template allows user to implement code, which can be useful while designing some functionality where it is necessary to check authorization for specific users (or group of users etc.).
+
 #### Code template
 ```groovy
 class CheckShouldRun extends ExtendM3Trigger {
@@ -43,13 +46,9 @@ class CheckShouldRun extends ExtendM3Trigger {
   }
 
   void main() {
+    // Ckecks if program should run
     if (!shouldRun()) {
       return;
-    }
-    Optional<String> duplicate = getPotentialDuplicate(interactive.display.fields.<fieldNAME1>.toString(),
-      interactive.display.fields.<fieldNAME2>.toString())
-    if (duplicate.isPresent()) {
-      interactive.showCustomError("<fieldNAME1>", "Customer already exists with customer number ${duplicate.get()}")
     }
   }
 
@@ -60,7 +59,7 @@ class CheckShouldRun extends ExtendM3Trigger {
   boolean shouldRun() {
     if (runOnlyForUsers.length != 0) {
       String currentUser = program.LDAZD.get("RESP").toString().trim()
-      boolean authorizedToRun = runOnlyForUsers.contains(currentUser)
+      boolean authorizedToRun = runOnlyForUsers.contains(currentUser) // checkes if currentUser is contained inside the runOnlyForUsers table
       logger.debug("User {$currentUser} authorization check result was ${authorizedToRun}")
       return authorizedToRun
     }
