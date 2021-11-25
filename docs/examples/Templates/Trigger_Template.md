@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Trigger Extension Templates
-parent: Examples
-nav_order: 1
+parent: Templates
+nav_order: 2
 ---
 
 # Trigger Extension Templates
