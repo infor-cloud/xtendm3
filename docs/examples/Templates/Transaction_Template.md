@@ -2,6 +2,7 @@
 layout: default
 title: Transaction Extension Templates
 parent: Templates
+grand_parent: Examples
 nav_order: 2
 ---
 

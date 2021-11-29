@@ -2,6 +2,7 @@
 layout: default
 title: Trigger Extension Templates
 parent: Templates
+grand_parent: Examples
 nav_order: 2
 ---
 
@@ -20,8 +21,7 @@ Working with the Trigger Extensions in XtendM3
 ---
 
 ## Description
-This document contains templates of using different APIs in a Trigger Extension. 
-//This document contains diffrent templates with usage of a Trigger Extension.
+This document contains diffrent templates with usage of a Trigger Extension (with diffrent APIs).
 
 
 ### Check whether program should run
