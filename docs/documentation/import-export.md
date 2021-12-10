@@ -20,3 +20,15 @@ XtendM3 Import and Export of Extensions
 {:toc}
 
 ---
+
+## Description
+It is possible to import and export extensions to XtendM3 environment. 
+
+## Import
+
+## Export
+
+## Important notes
+
+* Files will be overwritten in case of file name conflict. Remember to export previous extension first to save it befor overwriting.
+* Current Import/Export method is not a final version. Still in development.
