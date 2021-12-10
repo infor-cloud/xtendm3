@@ -22,22 +22,26 @@ XtendM3 Import and Export of Extensions
 ---
 
 ## Description
-It is possible to import and export extensions to XtendM3 environment. 
+It is possible to export and import extensions into XtendM3 environment. 
 
 ## Import
-Diffrent types of extensions are being saved in JSON files (typical JSON files or signed JSON files, which are a little bit modified while exporting extension). Importing an extension is possible by using an import button above the code sheet. After clicking that button a proper woindow will open and then user needs to choose an extension which should be imported.
+Different types of extensions are being saved in JSON files (typical JSON files or signed JSON files, which are a little bit modified while exporting extension). Importing an extension is possible by using an import button above the code sheet. After clicking that button a proper woindow will open and then user needs to choose an extension which should be imported.
+
+<img src="../../../assets/attachments/export/import_bttn.PNG" width="950">
 
 <Structure of importing>
 Import feature has improvement of a special interface with which you can check the file before adding it to the workspace (The Review button -> it is redirecting the window to proper sheet with the extension). The main import window contains information about the file such as its creator, date of creation and additionally the message contained - in case of a JSON signed file.
 
-<Diffrent imports for diffrent extensions>
-All imports are different with each other, depending on the type of extension. For example extensions with code input has a code type sheet to check. Dynamic Table has the whole structure of designed table presented in the review window.
+<Different imports for diffrent extensions>
+All imports are different depending on the type of extension. For example extensions with code input has a code type sheet to check. Dynamic Table has the whole structure of designed table presented in the review window.
+
+<img src="../../../assets/attachments/export/import_window.PNG" width="950">
 
 <Name conflicts>
 In case of importing an extension, that name is already included in the list of available extension, it is instantly overriding the older file with the input of imported extension. It is important to create a copy of previous file in case to save some useful data.
 
 ## Export
-Extensions can be exported into a Json or a signed file. To export an extension select the extension from XtendM3 and click the "Export" button from the tool bar above.
+Extensions can be exported into a Json or a Json signed file. To export an extension select the extension from XtendM3 and click the "Export" button from the tool bar above.
 
 <img src="../../../assets/attachments/export/ex_button.PNG" width="950">
 
