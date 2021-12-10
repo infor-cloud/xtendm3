@@ -2,7 +2,7 @@
 layout: default
 title: Import and Export of Extensions
 parent: Documentation
-nav_order: 1
+nav_order: 2
 ---
 
 # Import and Export of Extensions
@@ -11,7 +11,7 @@ nav_order: 1
 
 XtendM3 Import and Export of Extensions
 {: .fs-6 .fw-300 }
-**️IMPORT AND EXPORT METHOD IS STILL IN DEVELOPMENT**
+**️STILL IN DEVELOPMENT**
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -44,5 +44,6 @@ After selecting one of export option, file will be automaticly saved on local di
 
 ## Important notes
 
-* Files will be overwritten in case of file name conflict. Remember to export previous extension first to save it befor overwriting.
+* Files will be overwritten in case of file name conflict. Remember to export previous extension first to save it befor overwriting;
+* Imported extensions are being validated, if not valid an error window will apear;
 * Current Import/Export method is not a final version. Still in development.
