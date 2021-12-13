@@ -30,9 +30,11 @@ Different types of extensions are being saved in JSON files (typical JSON files 
 <img src="../../../assets/attachments/export/import_bttn.PNG" width="950">
 
 <Structure of importing>
+
 Import feature has improvement of a special interface with which you can check the file before adding it to the workspace (The Review button -> it is redirecting the window to proper sheet with the extension). The main import window contains information about the file such as its creator, date of creation and additionally the message contained - in case of a JSON signed file.
 
 <Different imports for diffrent extensions>
+
 All imports are different depending on the type of extension. For example extensions with code input has a code type sheet to check. Dynamic Table has the whole structure of designed table presented in the review window.
 
 <img src="../../../assets/attachments/export/import_window.PNG" width="950">
@@ -54,10 +56,9 @@ Pop up window will aprear with export options.<br>
 
 <img src="../../../assets/attachments/export/window.PNG" width="950">
 
-After selecting one of export option, file will be automaticly saved on local directory.
+After selecting one of export option, file will be automaticly saved on local directory.<br>
 
-
-## Important notes
+### Important notes
 
 * Files will be overwritten in case of file name conflict. Remember to export previous extension first to save it befor overwriting;<br>
 * Imported extensions are being validated, if not valid an error window will apear;<br>
