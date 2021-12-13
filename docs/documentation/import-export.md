@@ -41,14 +41,15 @@ All imports are different depending on the type of extension. For example extens
 In case of importing an extension, that name is already included in the list of available extension, it is instantly overriding the older file with the input of imported extension. It is important to create a copy of previous file in case to save some useful data.
 
 ## Export
+
 Extensions can be exported into a Json or a Json signed file. To export an extension select the extension from XtendM3 and click the "Export" button from the tool bar above.
 
 <img src="../../../assets/attachments/export/ex_button.PNG" width="950">
 
 Pop up window will aprear with export options.<br>
-* Message - Inputted message will be displayed when importing the extension;
-* Export - fetches the latest version of the extension;
-* Local export - exports extension cashed in the web browser;
+* Message - Inputted message will be displayed when importing the extension;<br>
+* Export - fetches the latest version of the extension;<br>
+* Local export - exports extension cashed in the web browser;<br>
 * Signed Export - exports into a signed file.
 
 <img src="../../../assets/attachments/export/window.PNG" width="950">
@@ -58,6 +59,6 @@ After selecting one of export option, file will be automaticly saved on local di
 
 ## Important notes
 
-* Files will be overwritten in case of file name conflict. Remember to export previous extension first to save it befor overwriting;
-* Imported extensions are being validated, if not valid an error window will apear;
+* Files will be overwritten in case of file name conflict. Remember to export previous extension first to save it befor overwriting;<br>
+* Imported extensions are being validated, if not valid an error window will apear;<br>
 * Current Import/Export method is not a final version. Still in development.
