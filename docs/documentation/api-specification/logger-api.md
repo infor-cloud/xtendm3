@@ -27,7 +27,7 @@ Checklist for requesting approval for your extensions.
 ---
 ## Description
 This API is provides capabilities for logging information with different severity level from DEBUG to ERROR. The
-information that is logged can be seen by both Grid admins as well as the user directly in the Ming.le provided that the
+information that is logged can be seen by both network administrators as well as the user directly in the Ming.le portal. The only requirement for viewing these logs is that the
 user has access to the M3 Business Engine Jobs and M3 Business Engine Logs from the administration tools.
 
 
