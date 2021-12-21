@@ -131,7 +131,7 @@ These were:
 After preparing a new dynamic table, the last thing to do is to deploy the table. The deploy option makes the table visible inside extensions. It implements the prepared dynamic table so that it can be used and perform database operations. It is very important to use the deploy option because by doing so, all modifications are being saved. After any further modifications of the table, it needs to be deployed again to see these changes. 
 
 ## Example of dynamic table extension
-Dynamic table extension gives the opportunity to enhance the efficinency of the data operations, by posiibility to create custom tables. They can be use in many different cases depends on the data's usage needs.
+Dynamic table extension gives the opportunity to enhance the efficiency of the data operations, with the posiibility to create custom tables. They can be used in many different cases depending on the data's usage.
 * It can be created in every moment of designing the extension, even after the extension is completed and there are some data modifications needed. 
 * Increased flexibility for program data. 
 * Dynamic tables can cooperate with multiple extensions.
