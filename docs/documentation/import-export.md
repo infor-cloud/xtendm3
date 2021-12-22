@@ -25,7 +25,7 @@ XtendM3 Import and Export of Extensions
 It is possible to export and import extensions into XtendM3 environment. Current methods are still in development and can be updated.
 
 ## Import
-Different types of extensions are being saved in JSON files (typical JSON files or signed JSON files, which are a little bit modified while exporting extension). Importing an extension is possible by using an import button above the code sheet. After clicking that button a proper woindow will open and then user needs to choose an extension which should be imported.
+Different types of extensions are being saved in JSON files (typical JSON files or signed JSON files, which are a little bit modified while exporting extension). Importing an extension is possible by using an import button above the code sheet. After clicking that button a proper window will open and prompt the user to choose an extension which should be imported.
 
 <img src="../../../assets/attachments/export/import_bttn.PNG" width="950">
 
@@ -56,10 +56,10 @@ Pop up window will aprear with export options:<br>
 
 <img src="../../../assets/attachments/export/window.PNG" width="950">
 
-After selecting one of export option, file will be automaticly saved on local directory.<br>
+After selecting one of the export options, the file will be automatically saved on local directory.<br>
 
 ## Important notes
 
 * Files will be overwritten in case of file name conflict. Remember to export previous extension first to save it befor overwriting<br>
-* Imported extensions are being validated, if not valid an error window will apear<br>
+* Imported extensions are being validated, if not valid an error window will appear<br>
 * Current Import/Export method is not a final version. Still in development.
