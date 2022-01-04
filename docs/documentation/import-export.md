@@ -40,7 +40,7 @@ All imports are different depending on the type of extension. For example extens
 <img src="../../../assets/attachments/export/import_window.PNG" width="950">
 
 ### Name conflicts
-In case of importing an extension, that name is already included in the list of available extension, it is instantly overriding the older file with the input of imported extension. It is important to create a copy of previous file in case to save some useful data.<br>
+In case of importing an extension,and that name is already included in the list of available extension, it is instantly overriding the older file with the input of imported extension.Therefore, it is important to create a copy of previous file in case there is some useful data to be saved .<br>
 
 ## Export
 
