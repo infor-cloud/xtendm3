@@ -11,7 +11,7 @@ nav_order: 4
 
 Checklist for requesting approval for your extensions.
 {: .fs-6 .fw-300 }
-![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
+![](/assets/images/warning-24px.svg)
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -103,7 +103,7 @@ public class ExampleWithUtility extends ExtendM3Trigger {
     this.utility=utility;
   }
   public void main() {
-    interactive.showOkDialog("Hello, today is "+ utility.call("DateUtil","currentDateY6AsString"); +" (yy-mm-dd)");
+    interactive.showOkDialog("Hello, today is "+ utility.call("DateUtil","currentDateY6AsString") +" (yy-mm-dd)");
   }
 }
 ```
@@ -121,7 +121,7 @@ public class ExampleWithoutUtility extends ExtendM3Trigger {
     this.interactive=interactive;
   }
   public void main() {
-    interactive.showOkDialog("Hello, today is "+ LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd")); +" (yy-mm-dd)");
+    interactive.showOkDialog("Hello, today is "+ LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd")) +" (yy-mm-dd)");
   }
 }
 ```

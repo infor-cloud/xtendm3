@@ -23,13 +23,10 @@ Working with Transaction Extension in XtendM3
 Transaction extension is a type of extension where one could create a custom M3 API (MI) Transaction. These custom transactions will behave identically to standard M3 transactions i.e. they have input/output parameters in the same structure as standard APIs and they can be executed through both ION API and M3 Metadata Publisher.
 
 ## Use cases
-* Reading input and writing output data 
+* Reading input and writing output data
 * Retrieving or changing transaction parameters
 * Writing error messages and skipping transactions
 * Building and setting data containers 
-
-## Important Note
-Always test the examples for your own solution before using them in production.
 
 ## Step by step implementation
 
@@ -45,7 +42,7 @@ To create a new extension select "Create a new extension" button.
 
 <img src="../../../assets/attachments/ex004/create_extention_button.png" width="950">
 
-### 3. Extension Type as a transaction extension - executed by a transaction
+### 3. Extension Type as a Transaction extension
 
 Opened window displays an option to select the type of extension to be designed. Select "Transaction" and then click "Next".
 
@@ -54,10 +51,10 @@ Opened window displays an option to select the type of extension to be designed.
 ### 4. Complete all inputs and single/ multi option
 
 Fill in extension information as described:<br>
-* Program : Name of an existing or new program where the extension will be created;<br>
-* Name: Name of the extension;<br>
-* Description: Functionality of the extension; <br>
-* Multi (option): Multi option allows to return multiple records to the user. Otherwise will return a single record. Multi can be used for API list. <br>
+* Program : Name of an existing or new program where the extension will be created<br>
+* Name: Name of the extension<br>
+* Description: Functionality of the extension <br>
+* Multi (option): Multi option allows to return multiple records to the user. Otherwise will return a single record. Multi can be used to list APIs. <br>
 
 Then click "Next".
 
@@ -66,11 +63,11 @@ Then click "Next".
 ### 5. Add input and/ or output field
 
 At this point you can create fields with input or output data by clicking a plus button and filling in the information:<br>
-* Name: 4 uppercase character name of the field;<br>
-* Type: text/ number;<br>
-* Lenght: maximum input lenght;<br>
-* Mandatory (option): choose if the input will be mandatory (only for input fields);<br>
-* Description: more detailed description of the field.<br>
+* Name: 4 uppercase character name of the field<br>
+* Type: text/ number (select "number" for inserting date field)<br>
+* Lenght: maximum input lenght<br>
+* Mandatory (option): choose if the input will be mandatory (only for input fields)<br>
+* Description: more detailed description of the field<br>
 
 Click "Save" to finish. 
 
@@ -79,6 +76,7 @@ Click "Save" to finish.
 <img src="../../../assets/attachments/ex004/add_filed_screen2.png" width="950">
 
 ### 6. Skeleton of the extension
+
 Created extension will contain default  code template.
 
 <img src="../../../assets/attachments/ex004/sceleton_extention.png" width="950">
@@ -93,14 +91,15 @@ Listing them from the left side they are used to:
 * Export the code
 * Extra settings to change the parameters of the extension or enable it etc.
 * Delete the extension
-* Information about the extension'
+* Information about the extension
 * Test compile
 * Refresh
 
 ### 7. Code example of transaction extension and APIs usage
-To start writting extension code enable editing by clicking "Edit" button. It is recommended to implement designed for XtendM3 APIs to exploit the full potential of the extension. To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link. 
-
+To start writting extension code enable editing by clicking "Edit" button.
+ 
 Example below shows usage of [MI API](../../../../docs/documentation/api-specification/mi-api.md) and [Program API](../../../../docs/documentation/api-specification/program-api/)to display UserID.  
+To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
 
 <img src="../../../assets/attachments/ex004/get_data_xtn.png" width="950">
 
@@ -108,13 +107,15 @@ To finish save written extension by clicking "Save" button. It is necesary to ac
 
 <img src="../../../assets/attachments/ex004/activation.png" width="950">
 
-### 8. Important notes
-* It is a good practice to use a test compilation of the program before running.
-* Data presented in the examples is random. 
+## Important notes
+* Always test the examples for your own solution before using them in production
+* Do not use transaction API in Transaction extensions
+* It is a good practice to use a test compilation of the program before running
+* Data presented in the examples is random
 
-### Exported Extension
-- [Transaction Extantion Example.json](../../../assets/attachments/ex004/TRANSACTION-EXT042MI-getUser.json)
+## Exported Extension
+- [Transaction Extension Example.json](../../../assets/attachments/ex004/TRANSACTION-EXT042MI-getUser.json)
 
-### See Also
+## See Also
 [More examples](../../../docs/examples)<br>
 [API documentation](../../../docs/documentation)
