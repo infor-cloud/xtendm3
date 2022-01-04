@@ -108,7 +108,7 @@ To create a key user has to choose the index first.
 <br><br>
 <img src="../../../assets/attachments/dynTab/11.png" width="950">
 <br> 
-In the example a choosen index is ID, for which there will be created a key. That key will be ascending.
+In the example the chosen index is ID, for which a key will be created. That key will be ascending.
 <br><br>
 <img src="../../../assets/attachments/dynTab/12.png" width="950">
 <br> 
@@ -128,10 +128,10 @@ These were:
 - Modify (table description) option (on the right side)
 
 ### 6. Deploying new dynamic table
-After preparing new dynamic table, the last thinkg to do is to deploy the table. The deploy option makes the table visible inside extensions. It implements the prepared dynamic table so that it can be used and perform database operations. It is very important to use the deploy option because by that all modifications are being saved. After any further modifications of the table, it needs to be deployed again to see these changes. 
+After preparing a new dynamic table, the last thing to do is to deploy the table. The deploy option makes the table visible inside extensions. It implements the prepared dynamic table so that it can be used and perform database operations. It is very important to use the deploy option because by doing so, all modifications are being saved. After any further modifications of the table, it needs to be deployed again to see these changes. 
 
 ## Example of dynamic table extension
-Dynamic table extension gives the opportunity to enhance the efficinency of the data operations, by possibility to create custom tables. They can be use in many different cases depends on the data's usage needs.
+Dynamic table extensions gives the opportunity to enhance the efficiency of the data operations, with the possibility to create custom tables. They can be used in many different cases depending on the data's usage.
 * It can be created in every moment of designing the extension, even after the extension is completed and there are some data modifications needed. 
 * Increased flexibility for program data. 
 * Dynamic tables can cooperate with multiple extensions.

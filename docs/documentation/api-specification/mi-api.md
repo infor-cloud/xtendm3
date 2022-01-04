@@ -27,7 +27,7 @@ Checklist for requesting approval for your extensions.
 
 ---
 ## Description
-MI API allows to read input and write output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can be used to abort transaction based on own validation. Provides error managment. 
+The MI API allows for reading input parameters and writing output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can for example be used to abort transaction based on own validation. Also Provides error management. 
 
 ## Features
 
@@ -186,4 +186,4 @@ def boolean validResponsible(String Responsible) {
 }
 ```
 ## Considerations and Guidelines
-It is not possible to add extra fields to transaction using MI API.
+It is not possible to add extra fields to transactions using MI API.
