@@ -20,7 +20,7 @@ Working with Batch Extension in XtendM3
 ---
  
 ## Description
-Batch extension uses standard functionality in M3 Business Logic for long running jobs or scheduled jobs triggered from another extension. It is a custom batch program using API for job calls that is running in the background. It is possible to retrieve UUID data from batch operations using [Batch API](../../../docs/documentation/api-specification/batch-api), which can be also used inside batch extension.
+Batch extension uses standard functionality in M3 Business Logic for long running jobs or scheduled jobs triggered from another extension. It is a custom batch program using API for job calls that is running in the background. It is possible to retrieve UUID data from batch operations using [Batch API](../../../docs/documentation/api-specification/batch-api), which can also be used inside batch extension.
  
 ## Use cases
 * Used to run transactions that require no user interaction
@@ -71,8 +71,7 @@ Listing them from the left side they are used to:
 * Refresh
  
 ### 6. Code example of transaction extension and batch execution
-In the example to perform batch extension usage there will be a need to use another type of extension - Transaction extension.
-<br>
+In the example to perform batch extension usage there will be a need to use another type of extension - Transaction extension.<br><br>
 The example can be broken down into five points:
 - Creation of batch extension and its code implementation
 - Creation of transaction extension and its code implementation
