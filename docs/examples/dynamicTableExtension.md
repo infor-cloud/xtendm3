@@ -20,7 +20,7 @@ Working with the Dynamic Tables in XtendM3
 ---
 
 ## Description
-Dynamic Table Extension is a type of extension, that allows user to create a new custom table, which can be used in data operations. User can use it multiple times from all the programs/extensions, not only inside a single created extension. All data can be operated using the [DatabaseAPI](../../../docs/documentation/api-specification/database-api). Dynamic tables bring flexibility when it comes to CRUD operations and data storage by being a user-custom table.
+Dynamic Table Extension is a type of extension, that allows user to create a new custom table, which can be used in data operations. It can be used multiple times from all the programs/extensions, not only inside a single created extension. All data can be operated using the [DatabaseAPI](../../../docs/documentation/api-specification/database-api). Dynamic tables bring flexibility when it comes to CRUD operations and data storage by being a user-custom table.
 
 ## Use cases
 * Expanding the data functionality

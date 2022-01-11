@@ -156,7 +156,7 @@ public class SampleExtension extends ExtendM3Trigger {
 
 ## Considerations and Guidelines
 ### Accessing Custom Fields from Extension
-If a field is not a standard field and is defined via CMS080 or by a script, it cannot be accessed from extensions directly as opposed to other standard fields on the screen.
+If a field is not a standard field and it is defined via CMS080 or by a script, it cannot be accessed from extensions directly as opposed to other standard fields on the screen.
 
 **Workaround** 
  H5 script can be used to send the custom field information to XtendM3 API instead.
