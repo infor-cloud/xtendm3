@@ -27,7 +27,7 @@ nav_order: 1
 The Extension API provides information regarding the XtendM3 extension that is currently in use. This can be used to retrieve metadata about the current extension and show to the user or use for logging purposes.
 
 ## Features
-### Get creator
+### getCreator
 To retrieve the username of the extension creator. 
 
 Example:
@@ -48,7 +48,7 @@ public class SampleExtension extends ExtendM3Trigger {
 }
 ```
 
-### Get LastModifiedBy
+### getLastModifiedBy
 To retrieve the username who last modified the extension.
 
 Example:
@@ -69,7 +69,7 @@ public class SampleExtension extends ExtendM3Trigger {
 }
 ```
 
-### Get Name
+### getName
 To retrieve the name of the extension currently being used.
 
 Example:

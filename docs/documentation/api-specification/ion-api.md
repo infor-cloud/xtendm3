@@ -25,7 +25,7 @@ nav_order: 6
 **Category**: Integration  
 ---
 ## Description
-The ION API can be used to connect to M3 data by using ION API calls. There are several API methods to use the ION API depending on the user's need.
+The ION API can be used to connect to M3 data by using ION API calls. There are several API methods to use the ION API depending on the user needs.
 
 
 Imports and instances for every method:
