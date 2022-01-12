@@ -88,5 +88,6 @@ To finish save written extension by clicking “Save” button. It is not necesa
 
 ## See Also
 [More examples](../../../docs/examples)<br>
-[API documentation](../../../docs/documentation)
+[API documentation](../../../docs/documentation)<br>
+[Utilities](../../../docs/examples/utilities)
 
