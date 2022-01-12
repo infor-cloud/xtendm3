@@ -5,7 +5,7 @@ parent: Examples
 nav_order: 1
 ---
 
-# Date Utility
+# Number Utility
 {: .no_toc }
 
 Working with numbers in XtendM3
