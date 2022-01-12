@@ -156,7 +156,7 @@ Closure<?> releasedItemProcessor = { DBContainer container ->
 ```
 
 ### Update a specific record
-To update an table record, the record must be called and update should be performed in callback Closure.
+To update a table record, the record must be called and update should be performed in callback Closure.
 
 Example:
 
@@ -224,7 +224,7 @@ Closure<?> deleterCallback = { LockedResult lockedResult ->
 
 ## Considerations and Guidelines
 The ability to work with database directly is a very tempting solution. It is extremely flexible and yet quite dangerous
-if it's not handled properly. Keep the following points in mind when working with the DatabaseAPI
+if it is not handled properly. Keep the following points in mind when working with the DatabaseAPI
 
 * Stick to standard M3 APIs when possible, using direct record insert/update you skip all validations that are done by
     M3 which might lead to corrupt data in database

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Number Utility
-parent: Examples
+parent: Utilities
+grand_parent: Examples
 nav_order: 1
 ---
 

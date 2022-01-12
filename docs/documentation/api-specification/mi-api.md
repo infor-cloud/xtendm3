@@ -27,7 +27,7 @@ Checklist for requesting approval for your extensions.
 
 ---
 ## Description
-The MI API allows for reading input parameters and writing output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can be used for example to abort transaction based on own validation. Also provides error management. 
+The MI API allows for reading input parameters and writing output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can for example be used to abort transaction based on own validation. Also Provides error management.
 
 ## Features
 
