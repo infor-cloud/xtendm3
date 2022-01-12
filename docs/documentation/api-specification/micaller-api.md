@@ -29,7 +29,7 @@ This API can be used for MI calls in XtendM3
 
 ## Features
 ### call
-There are two kinds of MI Call methods to be used: one with parameters and one without them
+There are two kinds of MI Call methods to be used: one with parameters and one without them.
 
 #### 1. Without parameters <br>
 Example:

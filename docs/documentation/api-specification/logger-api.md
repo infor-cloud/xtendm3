@@ -26,7 +26,8 @@ Checklist for requesting approval for your extensions.
 **Category**: Generic  
 ---
 ## Description
-This API provides capabilities for logging information of various severity levels from DEBUG to ERROR. The information that is logged can be seen by both network administrators and users directly in the Ming.le portal. The only requirement for viewing these logs is that the user has access to M3 Business Engine Jobs and the M3 Business Engine Logs from administration tools.
+This API is provides capabilities for logging information with different severity level from DEBUG to ERROR. The information that is logged can be seen by both network administrators as well as the user directly in the Ming.le portal. The only requirement for viewing these logs is that the
+user has access to the M3 Business Engine Jobs and M3 Business Engine Logs from the administration tools.
 
 
 ## Features
