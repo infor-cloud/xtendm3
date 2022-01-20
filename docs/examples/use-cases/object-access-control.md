@@ -88,11 +88,6 @@ Some of the warehouses are hidden from the table, so the unauthorized users are 
 
 Some of the warehouses are hidden from the table, so unauthorized users are not able to use/view this data in the program. Visibility of the data and the user authorization are completely user-modifiable depending on user's needs. This example can be useful for designing functionality concerning sensitive data, where some data should be unavailable to some users. It can also be modified depending on the specific data which should be validated.
 
-[10:14 AM] 
-10:14 AM Meeting ended: 14m 40s
-
-
- 
 ## Use Case
 Programmatic preparations are completed for future extensibility when it is possible to add additional logic into M3 to restrict data rows in both New List Standard Compatible programs and their Derived F4 Prompt Dialogues. An example object has been developed that blocks Warehouse Records from the Warehouse Master list based on the country (or another param of the table) as a restriction value programmed into the extension. 
  
