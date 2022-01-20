@@ -197,12 +197,12 @@ The last thing to do is to save the logging job. After that new Batch extension 
 <b>Initialization of the transaction extension that has the code implementation to call the batch extension</b><br>
 To test the Batch extension output open MetaData Publisher and select "Test API" button from "M3 API Repository". Then in the left menu select created Transaction extension as the "Program" and method for Batch testing. Then select "Run". In this example as shown below.
 
-<img src="../../../assets/attachments/ex-batch/Meta.png" width="950">
+<img src="../../../assets/attachments/ex-batch/Meta.PNG" width="950">
 
 <b>Reading the result file</b><br>
 Extension execution log should now be desplayed in the Business Engine Log. To read Batch output select the log and downlowad is as a text file by clicking top left button "Download selected log file".
 
-<img src="../../../assets/attachments/ex-batch/Log.png" width="950">
+<img src="../../../assets/attachments/ex-batch/Log.PNG" width="950">
 
 If executed correclty the output will be visable inside the file.<br>
 Example: <br>
