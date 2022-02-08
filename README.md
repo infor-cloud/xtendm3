@@ -4,6 +4,6 @@
 <br><br>
 <p align="center">
 <h1 align="center">XtendM3</h1>
-<p align="center">A secure, modern, highly capable tool for customizing and extending M3 CE in a scalable.</p>
+<p align="center">A secure, modern, highly capable tool for customizing and extending M3 CE in a scalable way.</p>
 <p align="center"><strong><a href="https://infor-cloud.github.io/xtendm3/">Visit the homepage for more info!</a></strong></p>
 <br><br><br>
