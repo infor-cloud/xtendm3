@@ -113,7 +113,7 @@ Column Name | Description | Data Type | Length
 ------------ | -------------| ------------- | ------------- 
 RGDT | Entry date | Decimal | 8
 LMDT | Change date | String | 8
-CHID | Changed by | Decimal | 10
+CHID | Changed by | String | 10
 RGTM | Entry time | Decimal | 6 
 CHNO | Change number | Decimal | 3
 
