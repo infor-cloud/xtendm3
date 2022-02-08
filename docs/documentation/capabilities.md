@@ -69,7 +69,7 @@ extension type should be Transaction when creating it.
 If extension API is active, metadata is automatically updated in MRS program and ION API and can be called or used same as a standard API transaction.  
 
 ### Batch
-TBA. 
+Section in progress.
 
 ### Interactive
 Use H5 Scripting and Mashup SDK to create UI elements and use extension API to perform CRUD operations.

@@ -94,7 +94,7 @@ Define a new transaction on an XtendM3 API. To find and relate the transaction e
 use the same suffix e.g. for new transactions in OIS100MI you can define EXT100MI API.
 
 ### Batch
-TBA.
+Section in progress.
 
 ### Interactive
 
