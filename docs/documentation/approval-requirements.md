@@ -69,7 +69,7 @@ If so, why?
 ## Mandatory Checklist
 Please go through these checklists before sending extension for approval
 
-- [x] Extensions are stored using a version controlled repository like GitHub, BitBucket, Azure DevOps, or GitLab ([XtendM3 Example of a repository structure](https://github.com/infor-cloud/acme-corp-extensions))
+- [x] Extensions are stored using a version controlled repository like GitHub, BitBucket, Azure DevOps, or GitLab<br/>[XtendM3 Example of a repository structure](https://github.com/infor-cloud/acme-corp-extensions)
 - [x] Extension JavaDoc has been created on top of the extension classes  
 - [x] Extension Method’s JavaDoc has been created on top of the methods (except for the main() method)  
 - [x] Extensions have been fully tested and verified to be working as intended  
