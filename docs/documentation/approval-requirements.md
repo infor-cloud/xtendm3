@@ -69,17 +69,17 @@ If so, why?
 ## Mandatory Checklist
 Please go through these checklists before sending extension for approval
 
-- [x] Extensions are stored using a version controlled repository like GitHub, BitBucket, Azure DevOps, or GitLab
-  - [XtendM3 Example of a repository structure](https://github.com/infor-cloud/acme-corp-extensions)
-- [x] Extension JavaDoc has been created on top of the extension classes  
-- [x] Extension Method’s JavaDoc has been created on top of the methods (except for the main() method)  
-- [x] Extensions have been fully tested and verified to be working as intended  
-- [x] Extensions have in place proper error handling logic  
-- [x] Extensions adheres to the Programming Standards  
-- [x] Naming conventions have been followed  
-- [x] Logs have been reviewed in detail  
-- [x] Direct database access have been reviewed in detail  
-- [x] Number of API calls have been reviewed to be efficient  
+- Extensions are stored using a version controlled repository like GitHub, BitBucket, Azure DevOps, or GitLab
+  - :+1:[XtendM3 Example of a repository structure](https://github.com/infor-cloud/acme-corp-extensions)
+- Extension JavaDoc has been created on top of the extension classes
+- Extension Method’s JavaDoc has been created on top of the methods (except for the main() method)
+- Extensions have been fully tested and verified to be working as intended
+- Extensions have in place proper error handling logic
+- Extensions adheres to the Programming Standards
+- Naming conventions have been followed
+- Logs have been reviewed in detail
+- Direct database access have been reviewed in detail
+- Number of API calls have been reviewed to be efficient
 
 ## Review/Signing Process and Billing
 Upon our receipt of the email request containing the extensions, 2-3 consultants will be reviewing the solution and codes.
