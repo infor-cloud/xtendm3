@@ -11,7 +11,6 @@ nav_order: 4
 
 Guideline for securing your extensions using a version control system
 {: .fs-6 .fw-300 }
-![](/assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -22,7 +21,7 @@ Guideline for securing your extensions using a version control system
 ---
 
 ## Introduction
-XtendM3 Extensions must be version controlled outside of M3 using a Git version control system. This is one of the key 
+XtendM3 Extensions are <b>required</b> to be version controlled outside of M3 <b>using a version control system</b>. This is a <b>mandatory</b> key 
 requirements to approve extensions for deploy to production. Version controlling the extensions help us to
 
 * Have better visibility of what has changed and by whom, to understand the code and troubleshoot it easier later on

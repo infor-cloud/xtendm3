@@ -49,6 +49,7 @@ Therefore, if there are three extensions sent for review, there should be three 
       - If yes, have all the dynamic table fields, that are referenced to M3 standard table fields, been validated to make sure they exist in M3 e.g. Order Number?
 
 - Has this solution / extension been fully tested and functionally approved?
+- Provide link/url to the version controlled repository containing the extensions
 - Is the repository updated with the correct branches? 
   i.e. if it is coming from TST tenant, the TST branch should be updated with these changes 
   And once signed extension for PRD is receive, master/prd branch should be updated.
@@ -63,11 +64,12 @@ If so, why?
 
 ### Attachments
 - Exported extension in JSON format
-- Link to Git repository containing extensions
+- Screenshots of dynamic tables
 
-## Recommendation
+## Mandatory Checklist
 Please go through these checklists before sending extension for approval
 
+- [x] Extensions are stored using a version controlled repository like GitHub, BitBucket, Azure DevOps, or GitLab ([XtendM3 Example of a repository structure](https://github.com/infor-cloud/acme-corp-extensions))
 - [x] Extension JavaDoc has been created on top of the extension classes  
 - [x] Extension Method’s JavaDoc has been created on top of the methods (except for the main() method)  
 - [x] Extensions have been fully tested and verified to be working as intended  
