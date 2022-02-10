@@ -7,6 +7,13 @@ permalink: docs/getting-started
 ---
 
 # Getting Started
-
+{: .no_toc }
 Start with your extensions quick and easy.
 {: .fs-6 .fw-300 }
+
+#####Table of Contents
+* [XtendM3 Activation](xtendm3-activation.md)
+* [Security Roles](security-roles.md)
+* [Version Control System](../documentation/version-controlling.md) 
+  * [XtendM3 Example of a repository](https://github.com/infor-cloud/acme-corp-extensions)
+ * [Review, Approval, and Signing](../documentation/approval-requirements.md)
