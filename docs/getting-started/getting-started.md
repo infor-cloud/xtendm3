@@ -7,11 +7,11 @@ permalink: docs/getting-started
 ---
 
 # Getting Started
-{: .no_toc }
+
 Start with your extensions quick and easy.
 {: .fs-6 .fw-300 }
-
-#####Table of Contents
+{: .no_toc }
+####Table of Contents
 * [XtendM3 Activation](xtendm3-activation.md)
 * [Security Roles](security-roles.md)
 * [Version Control System](../documentation/version-controlling.md) 
