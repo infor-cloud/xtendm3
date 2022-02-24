@@ -111,7 +111,7 @@ we will no longer release signed extensions without first being able to bill our
 
 We bill 1-2 hours for the review of simple to medium complexity extensions.  
 For complex extensions, it normally takes more time as it requires multiple cycles of review/discussions/revisions so it will be actual time spent that will be charged.  
-We go by GDS/COE Manila Offshore Senior Consultant rates, you can check with your Client Partners or Partner Account Manager as to how much this is exactly per hour.  
+We go by GDS/COE Manila Offshore Principal Consultant rates, you can check with your Client Partners or Partner Account Manager as to how much this is exactly per hour.
 
 A recommendation,  
 As per standard practice for our projects, we include the review hours in the work estimates for development of extensions.  
