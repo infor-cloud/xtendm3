@@ -132,10 +132,10 @@ public class batchTest extends ExtendM3Transaction {
     testSHS010MI()
   }
     /*
-     *  SHS010MI is a program which has a method for executing and/or scheduling Batch extension named SchedXM3Job - without calling it - the Batch extension won't be executed.
-     *  It has several mandatory parameter to call the extension point of it, although depending on what scheduling you want to do:
+     *  SHS010MI is a program which has a method for executing and/or scheduling Batch extensions named SchedXM3Job - without calling it - the Batch extension won't be executed.
+     *  It has several mandatory parameters to call the extension point of it, although depending on what scheduling you want to do:
      *  - TX30 - description for the execution or scheduling job (ex. which transaction is being executed - here EXT919MI)
-     *  - XCAT - job schedule category, depends on the SHS050 category data
+     *  - XCAT - job schedule category, depends on the category data available in SHS050
      *  - SCTY - job schedule type. 1 - single execution. 2 - Repetitive. If XNOW is 1, SCTY should be 1. If XNOW is 0, SCTY should be 2
      *  - XNOW - execute now. This parameter should be set to 1 only if you wish to execute the job ones, now. Otherwise this parameter should be set to zero. There are another similar parameters for execution at at specific day and time. As well as scheduling recurring executions. 
      *  - JOB  - name of Batch extension to be executed
