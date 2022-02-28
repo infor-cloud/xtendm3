@@ -20,38 +20,41 @@ Working with Batch Extension in XtendM3
 ---
  
 ## Description
-Batch extension uses standard functionality in M3 Business Logic for long running jobs or scheduled jobs triggered from another extension. It is a custom batch program using API for job calls that is running in the background. It is possible to retrieve UUID data from batch operations using [Batch API](../../../docs/documentation/api-specification/batch-api), which can also be used inside batch extension.
+Batch extensions use standard functionality in M3 Business Logic for long-running jobs or scheduled jobs triggered from another extension. It is a custom Batch program using API for job calls that are running in the background. It is possible to retrieve UUID data from Batch operations using [Batch API](../../../docs/documentation/api-specification/batch-api), which can also be used inside Batch extensions.
  
 ## Use cases
 * Used to run transactions that require no user interaction
 * Can be scheduled on a regular basis for execution
-* Suitable for long running jobs
+* Suitable for long-running jobs
  
 ## Step by step implementation
  
 ### 1. Open XtendM3 tool
  
-After opening M3 main page, select Menu on the top left corner. Then select XtendM3 from the Administration Tools folder.
+After opening M3 main page, select Menu in the top left corner. Then select XtendM3 from the Administration Tools folder.
  
 <img src="../../../assets/attachments/ex004/open_xtendm3.png" width="950" >
  
-### 2. Create new extension button
+### 2. Create a new extension
  
 To create a new extension select the "Create a new extension" button.
  
 <img src="../../../assets/attachments/ex004/create_extention_button.png" width="950">
  
-### 3. Extension Type as a Batch extension - executed by a Batch
-Opened window displays an option to select the type of extension to be designed. Select “Batch” and then click “Next”.
+### 3. Extension Type as a Batch extension
+
+Opened window displays an option to select the type of extension to be created. Select “Batch” and then click “Next”.
  
 <img src="../../../assets/attachments/ex-batch/type.png" width="950">
  
 ### 4. Create extension name
-Input extension name in format "EXT <nnn&#62;" where n is an integer and extension description. Then select the "Create" button.
+
+Input extension name in format "EXTNNN" where N is an integer e.g., EXT001. Then input a description of the program. Lastly, select the "Create" button.
  
 <img src="../../../assets/attachments/ex-batch/name_batch.png" width="950">
  
 ### 5. Skeleton of the extension
+
 Created extension will contain a default code template.
  
 <img src="../../../assets/attachments/ex-batch/template.png" width="950">
@@ -82,7 +85,7 @@ The example can be broken down into five points:
 
 <b> Creation of batch extension and its code implementation </b>
 <br>
-It is the same procedure as presented above. At the point of implementing functionality, the batch extension example will include basic operations using [Logger API](../../../docs/documentation/api-specification/logger-api), just to see inputed result in the log file.
+It is the same procedure as presented above. At the point of implementing functionality, the batch extension example will include basic operations using [Logger API](../../../docs/documentation/api-specification/logger-api), just to see inputted result in the log file.
 <br>
 Batch extension example:
 
@@ -129,14 +132,14 @@ public class batchTest extends ExtendM3Transaction {
     testSHS010MI()
   }
     /*
-     *  SHS010MI is a special extension which has a metohdt for executing Batch extension named SchedXM3Job - without calling it - the Batch extension won't be executed.
-     *  It has several mandatory parametres to call the extension point of it:
-     *  - TX30 - description for running an extension (ex. which transaction is being executed - here EXT919MI)
-     *  - XCAT - job schedule category, depends on the SHS010 category data
-     *  - SCTY - job schedule type
-     *  - XNOW - the time of executing batch. XNOW refers to immediate execution. There are another similar parameters for execution at spcific day, a consistently recurring day,  *           every month or even chosen date.
-     *  - JOB  - name of Batch extension which should be executed
-     *  - UUID - UUID number inputed by user
+     *  SHS010MI is a program which has a method for executing and/or scheduling Batch extension named SchedXM3Job - without calling it - the Batch extension won't be executed.
+     *  It has several mandatory parameter to call the extension point of it, although depending on what scheduling you want to do:
+     *  - TX30 - description for the execution or scheduling job (ex. which transaction is being executed - here EXT919MI)
+     *  - XCAT - job schedule category, depends on the SHS050 category data
+     *  - SCTY - job schedule type. 1 - single execution. 2 - Repetitive. If XNOW is 1, SCTY should be 1. If XNOW is 0, SCTY should be 2
+     *  - XNOW - execute now. This parameter should be set to 1 only if you wish to execute the job ones, now. Otherwise this parameter should be set to zero. There are another similar parameters for execution at at specific day and time. As well as scheduling recurring executions. 
+     *  - JOB  - name of Batch extension to be executed
+     *  - UUID - UUID number. Can be fetched using Batch API. See example above
      */
     void testSHS010MI() {
       logger.info("Testing SHS010MI");
@@ -150,11 +153,12 @@ public class batchTest extends ExtendM3Transaction {
       "JOB": "EXT000".toString(), 
       "UUID": "1eedcd6d-5cb2-43ab-a55b-487658c38f88".toString()];
     miCaller.call("SHS010MI", "SchedXM3Job", params, callback); 
-    // This method is calling SHS010MI to execute with inputed parameters. More info about MICaller API is available in the doc
+    // This method is calling SHS010MI to execute with inputted parameters. More info about MICaller API is available in the doc
   }
 }
 ```
  
+
 To finish, save the written extension by clicking the “Save” button and activate it inside the settings.
 <br>
 
@@ -168,13 +172,13 @@ Inside the page there is a table and above it there are two options:
 - Logging - it is a drop-down box, which has three elements inside it:
     - view log - to have a small preview of chosen log
     - configure logging - to change some options inside chosen log
-    - <b>configure future logging</b> - to create a new log job, which will execute chosen Batch
+    - <b>configure future logging</b> - to create a new log job, which will execute chosen Batch. Not true, you cannot execute or schedule Batch execution from the logger?
 <br>
 
 
 <img src="../../../assets/attachments/ex-batch/sc1.PNG" width="950">
 <br>
-The third option allows user to configurate new logging job, which will be connected to the previously prepared Batch extension.
+The third option allows user to configure new logging job, which will be connected to the previously prepared Batch extension.
 Inside opened window for "configure future logging" there will be a small pop-up window with some options and a table inside it. The table allows user to 'Add', 'Edit', 'Remove' logging jobs or 'Refresh' them.
 
 
@@ -200,11 +204,11 @@ To test the Batch extension output open MetaData Publisher and select "Test API"
 <img src="../../../assets/attachments/ex-batch/Meta.PNG" width="950">
 
 <b>Reading the result file</b><br>
-Extension execution log should now be desplayed in the Business Engine Log. To read Batch output select the log and downlowad is as a text file by clicking top left button "Download selected log file".
+Extension execution log should now be displayed in the Business Engine Log. To read Batch output select the log and download is as a text file by clicking top left button "Download selected log file".
 
 <img src="../../../assets/attachments/ex-batch/Log.PNG" width="950">
 
-If executed correclty the output will be visable inside the file.<br>
+If executed correctly the output will be visible inside the file.<br>
 Example: <br>
 
  <img src="../../../assets/attachments/ex-batch/txtfile.PNG" width="950">
