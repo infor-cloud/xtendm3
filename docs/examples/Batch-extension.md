@@ -99,10 +99,10 @@ public class EXT002 extends ExtendM3Batch {
     this.batch = batch;
   }
   
-  public void main() {  
-      logger.info("Testing EXT002 - executing code - This is the first line of the batch extension");
-      logger.info("Still testing - This is the second line of the batch extension with Uuid-gen:" + batch.getReferenceId().get());
-      logger.info("Line no. 2 uses a Batch API to generate/retireve job UUID number");
+  public void main() { 
+    logger.info("Testing EXT002 - executing code - This is the first line of the batch extension");
+    logger.info("Still testing - This is the second line of the batch extension with Uuid-gen:" + batch.getReferenceId().get());
+    logger.info("Line no. 2 uses a Batch API to generate/retireve job UUID number");
   }
 }
 ```
@@ -131,29 +131,29 @@ public class batchTest extends ExtendM3Transaction {
     logger.info("Running EXT919MI")  // Extra log line for testing whether everything is working properly
     testSHS010MI()
   }
-    /*
-     *  SHS010MI is a program which has a method for executing and/or scheduling Batch extensions named SchedXM3Job - without calling it - the Batch extension won't be executed.
-     *  It has several mandatory parameters to call the extension point of it, although depending on what scheduling you want to do:
-     *  - TX30 - description for the execution or scheduling job (ex. which transaction is being executed - here EXT919MI)
-     *  - XCAT - job schedule category, depends on the category data available in SHS050
-     *  - SCTY - job schedule type. 1 - single execution. 2 - Repetitive. If XNOW is 1, SCTY should be 1. If XNOW is 0, SCTY should be 2
-     *  - XNOW - execute now. This parameter should be set to 1 only if you wish to execute the job ones, now. Otherwise this parameter should be set to zero. There are another similar parameters for execution at at specific day and time. As well as scheduling recurring executions. 
-     *  - JOB  - name of Batch extension to be executed
-     *  - UUID - UUID number. Can be fetched using Batch API. See example above
-     */
-    void testSHS010MI() {
-      logger.info("Testing SHS010MI");
-      Closure<?> callback = {Map<String, String> result ->
-        logger.info("Result is: ${result}");
-      }
+  /*
+   *  SHS010MI is a program which has a method for executing and/or scheduling Batch extensions named SchedXM3Job - without calling it - the Batch extension won't be executed.
+   *  It has several mandatory parameters to call the extension point of it, although depending on what scheduling you want to do:
+   *  - TX30 - description for the execution or scheduling job (ex. which transaction is being executed - here EXT919MI)
+   *  - XCAT - job schedule category, depends on the category data available in SHS050
+   *  - SCTY - job schedule type. 1 - single execution. 2 - Repetitive. If XNOW is 1, SCTY should be 1. If XNOW is 0, SCTY should be 2
+   *  - XNOW - execute now. This parameter should be set to 1 only if you wish to execute the job ones, now. Otherwise this parameter should be set to zero. There are another similar parameters for execution at at specific day and time. As well as scheduling recurring executions. 
+   *  - JOB  - name of Batch extension to be executed
+   *  - UUID - UUID number. Can be fetched using Batch API. See example above
+   */
+  void testSHS010MI() {
+    logger.info("Testing SHS010MI");
+    Closure<?> callback = {Map<String, String> result ->
+      logger.info("Result is: ${result}");
+    }
     def params = ["TX30": "CallingFromEXT919MI", 
-      "XCAT": "010".toString(), 
-      "SCTY": "1".toString(), 
-      "XNOW": "1".toString(), 
-      "JOB": "EXT000".toString(), 
-      "UUID": "1eedcd6d-5cb2-43ab-a55b-487658c38f88".toString()];
-    miCaller.call("SHS010MI", "SchedXM3Job", params, callback); 
+        "XCAT": "010".toString(), 
+        "SCTY": "1".toString(), 
+        "XNOW": "1".toString(), 
+        "JOB": "EXT000".toString(), 
+        "UUID": "1eedcd6d-5cb2-43ab-a55b-487658c38f88".toString()];
     // This method is calling SHS010MI to execute with inputted parameters. More info about MICaller API is available in the doc
+    miCaller.call("SHS010MI", "SchedXM3Job", params, callback);
   }
 }
 ```
@@ -172,13 +172,13 @@ Inside the page there is a table and above it there are two options:
 - Logging - it is a drop-down box, which has three elements inside it:
     - view log - to have a small preview of chosen log
     - configure logging - to change some options inside chosen log
-    - <b>configure future logging</b> - to create a new log job, which will execute chosen Batch. Not true, you cannot execute or schedule Batch execution from the logger?
+    - <b>configure future logging</b> - to create a new log job
 <br>
 
 
 <img src="../../../assets/attachments/ex-batch/sc1.PNG" width="950">
 <br>
-The third option allows user to configure new logging job, which will be connected to the previously prepared Batch extension.
+The third option allows user to configure new logging job, which will be connected to the chosen Batch extension.
 Inside opened window for "configure future logging" there will be a small pop-up window with some options and a table inside it. The table allows user to 'Add', 'Edit', 'Remove' logging jobs or 'Refresh' them.
 
 
@@ -192,7 +192,7 @@ To create a new logging job for new Batch extension, just click the 'Add' option
 
 <img src="../../../assets/attachments/ex-batch/sc4.PNG" width="950">
 <br>
-Basic things to input for executing Batch extension are th program name - which should be exact same as previously created Batch extension, and to see the result into log file, it is needed to make a check inside the 'Log to file' box. Another significant field is 'Number of jobs to start with log configuration' where user can choose, how many times it is possible to execute batch wit the logging job result. The number can be chosen from 1 to 5.
+Basic things to input for executing Batch extension are the program name - which should be exact same as previously created Batch extension, and to see the result into log file, it is needed to make a check inside the 'Log to file' box. Another significant field is 'Number of jobs to start with log configuration' where user can choose, how many times it is possible to execute batch wit the logging job result. The number can be chosen from 1 to 5.
 <br>
 
 <b>Other options of that window depends on user needs.</b><br>
