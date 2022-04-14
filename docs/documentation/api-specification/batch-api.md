@@ -9,7 +9,7 @@ nav_order: 1
 # Batch API
 {: .no_toc }
 
-![](/assets/images/warning-24px.svg)
+**️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -37,18 +37,18 @@ Returns the value of a unique job id for each batch extension execution. The id 
 
 Example:
 ```groovy
-    public class EXT005 extends ExtendM3Batch {
-        private final LoggerAPI logger
-        private final BatchAPI batch
+  public class EXT005 extends ExtendM3Batch {
+    private final LoggerAPI logger
+    private final BatchAPI batch
   
   public EXT005(LoggerAPI logger, BatchAPI batch) {
-        this.logger = logger
-        this.batch = batch
+    this.logger = logger
+    this.batch = batch
   }
   
   public void main() {  
-        logger.info("Uuid:" + batch.getJobId().get()) // batch.getReferenceId().get() if there is a need to retrieve an ID as a String type value for usage
-        // Batch work result is being saved in the Log file
+    logger.info("Uuid:" + batch.getJobId().get()) // batch.getReferenceId().get() if there is a need to retrieve an ID as a String type value for usage
+    // Batch work result is being saved in the Log file
   }
 }
 ```
@@ -56,22 +56,22 @@ Example:
 The result of the program should be available inside the log file as "Uuid: 2147c32b-4471-48d2-8083-2f28add463d1" (Randomly generated UUID number).
 
 ### batch.getReferenceId()
-Returns the value of an optional reference id sent by user when submitting the batch extension. Job ID are in UUID format (ex. 2147c32b-4471-48d2-8083-2f28add463d1). 
+Returns the value of an optional reference id sent by user when submitting the batch extension. Reference IDs are in UUID format (ex. 2147c32b-4471-48d2-8083-2f28add463d1). 
 
 Example:
 ```groovy
-    public class EXT005 extends ExtendM3Batch {
-        private final LoggerAPI logger
-        private final BatchAPI batch
+  public class EXT005 extends ExtendM3Batch {
+    private final LoggerAPI logger
+    private final BatchAPI batch
   
   public EXT005(LoggerAPI logger, BatchAPI batch) {
-        this.logger = logger
-        this.batch = batch
+    this.logger = logger
+    this.batch = batch
   }
   
   public void main() {  
-        logger.info("Uuid:" + batch.getReferenceId()) 
-        // Batch work result is being saved in the Log file
+    logger.info("Uuid:" + batch.getReferenceId()) 
+    // Batch work result is being saved in the Log file
   }
 }
 ```
