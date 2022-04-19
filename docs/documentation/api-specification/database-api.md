@@ -22,8 +22,8 @@ nav_order: 7
 **Category**: Storage  
 ---
 ## Description
-This API lets you to work and interact with the database layer of M3 Business Engine. Using DatabaseAPI it is possible
-to perform create, read, update and delete queries and run them. Any changes done on the database will be directly
+This API allows you to work and interact with the database layer of M3 Business Engine. With the DatabaseAPI it is possible
+to perform create/read/update/delete queries and execute them. Any changes done on the database will be directly
 visible to the Business Engine program that the extension is connected to.
 
 Before starting with the code, to understand the database better it is important to get familiar with the different
@@ -36,12 +36,13 @@ is used to define the operations that will be executed on database.
 
 ### ExpressionFactory / ExpressionFactoryAPI
 An API which provides you the standard M3's `FieldSelection` functionality for database operations. This is used to
-define more advanced filters on fields that may or may not be index fields. Since this API provides the ability to
-perform filtering on non-indexed fields it should then be used sparingly as it might lead to performance penalties.
+define more advanced filters on fields that may or may not be index fields. 
+
+Since this API provides the ability to perform filtering on non-indexed fields, it should be used sparingly as it might lead to performance penalties.
 
 ### DBAction / DBActionAPI
-A database operation that could be any of create, read, update or delete. The operation contains information about which
-table, index, table fields and filters will be used to execute the operation.
+This API is used to create the query which will be used to perform either of the CRUD(create/read/update/delete) operations. 
+Information about which table, index, table fields and possible filters can and should also be defined in this query.
 
 ### DBContainer / DBContainerAPI
 A container that contains table fields and values. It is used both for setting the keys before executing the operation
@@ -58,32 +59,30 @@ The example below illustrates how to create and set a record.
 
 Example:
 ```groovy
-public void main() {
-    DBContainer MITMAS = database.createContainer("MITMAS")
-  
-    DBAction query = database.table("MITMAS")
+public void createTableRecord() {
+    DBAction query = database.table(*TABLE*)
       .index("00")
-      .selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT")
+      .selection(*FIELD1*, *FIELD2*, *FIELD3*)
       .build();
-
-    DBContainer container = query.getContainer()
-    container.set("MMITDS", "Sample Item")
+    DBContainer container = database.createContainer()
+    container.set(*FIELD1*, *DATA*)
     query.insert(container)
   }
 ```
+**Note:** the required parameters for a valid DBAction, or query, are 'table' and 'selection'. E.g. 'DBAction query = database.table("MITMAS").selection("MMCONO")'
+
 Or to update the already existing record.
 Example:
 
 ```groovy
     query.insert(container, { LockedResult existingRecord ->
-    existingRecord.set("MMITDS", "Updated description")
+    existingRecord.set(*FIELD*, *DATA*)
     existingRecord.update()
-    }
+    })
 ```
 
-
 ### Read a specific record
-To read a specific record, primary keys or full index keys should be used to lookup the data. The example below
+To read a specific record, primary keys or full index keys should be used to look up the data. The example below
 illustrates how to retrieve an item.
 
 Example:
@@ -137,10 +136,9 @@ Read all items in current company, status set to 20, item group set to `EX-GROUP
 to 2.
 
 ```groovy
-def handleReleasedItems() {
-  int currentCompany = (Integer)program.getLDAZD().CONO
-  ExpressionFactory expression = database.getExpressionFactory("MITMAS")
-  expression = expression.eq("MMITGR", "EX-GROUP").and(expression.gt("MMCFI1", "2"))
+public void main() {
+  ExpressionFactory expression = database.getExpressionFactory("TABLE")
+  expression = expression.eq("FIELD", "DATA").and(expression.gt("MMCFI1", "2"))
   DBAction query = database.table("MITMAS").index("20").matching(expression).selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
   DBContainer container = query.getContainer()
   container.set("MMCONO", currentCompany)
@@ -152,6 +150,38 @@ Closure<?> releasedItemProcessor = { DBContainer container ->
   String description = container.get("MMITDS")
   String status = container.get("MMSTAT")
   // Use this found record as intended
+}
+```
+
+Example: 
+
+Read two fields from table record, using three other fields in the same record.
+
+```groovy
+public void main() {
+    inKEY1 = mi.inData.get("KEY1") == null? "": mi.inData.get("KEY1").trim();
+    inKEY2 = mi.inData.get("KEY2") == null? "": mi.inData.get("KEY2").trim();
+    inKEY2 = mi.inData.get("KEY3") == null? "": mi.inData.get("KEY3").trim(); 
+    
+    DBAction query = database.table("TABLE").selection("KEY1", 
+            "KEY2", 
+            "KEY3", 
+            "READFIELD1", 
+            "READFIELD2").build();
+    DBContainer container = query.getContainer();
+    container.set("KEY1",inKEY1);
+    container.set("KEY2",inKEY2);
+    container.set("KEY3",inKEY3);
+
+    Closure<?> readCallback = { DBContainer readResult ->
+      if (mi.hasRemainingRecords()) {
+        mi.outData.put("outDATA1", readResult.get("READFIELD1").toString())
+        mi.outData.put("outDATA2", readResult.get("READFIELD2").toString())
+        mi.write()
+      }
+    }
+    query.readAll(container, 3, readCallback)
+  }
 }
 ```
 
@@ -220,7 +250,7 @@ def deprecateItem() {
 Closure<?> deleterCallback = { LockedResult lockedResult ->
   lockedResult.delete()
 }
-````
+```
 
 ## Considerations and Guidelines
 The ability to work with database directly is a very tempting solution. It is extremely flexible and yet quite dangerous
