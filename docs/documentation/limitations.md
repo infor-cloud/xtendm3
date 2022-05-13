@@ -34,34 +34,34 @@ TBA, this feature has not been released yet.
 ### Interactive
 #### Creating UI related components in interactive panels
 For enhancements such as adding new field in OIS100/E, extension will not be able to add textbox or dropdown field.  
-
-**Workaround**
+<br>
+**Workaround** <br>
 CMS080 (custom fields) or H5 Script can be used to create UI components.  
-
+<br>
 XtendM3 does not support creating additional column in subfiles, converting columns to editable fields, addition of selection filters, and adding sorting orders and views.  
-
-**Workaround**
+<br>
+**Workaround** <br>
 Some M3 program views can be configured in CRS020/CRS022.  H5 Script can also be used to add columns in subfile panels.  
 
 #### Accessing custom fields from extensions
 If a field is not a standard field and is defined via CMS080 or by a script, it cannot be accessed from extensions directly as opposed 
 to other standard fields on the screen.
-
-**Workaround**
+<br>
+**Workaround** <br>
 H5 script can be used to send the custom field information to XtendM3 API instead.
 
 #### Accessing chosen list option
 Currently, it is not possible to access list option from extensions.
-
-**Workaround**
+<br>
+**Workaround** <br>
 In order to perform custom validation on the B panel via extensions, you can send the chosen list option along with the 
 record keys to an XtendM3 API instead.
 
 ### Transaction
 #### Adding/Removing input/output parameters for an existing transaction
-It is not possible to add/remove parameters for an existing transaction via XtendM3. 
-
-**Workaround**
+It is not possible to add/remove parameters for an existing transaction via XtendM3.
+<br>
+**Workaround** <br>
 Wrap transaction by defining a new XtendM3 transaction with both standard parameters and the custom ones. Call the API 
 extension and perform additional logic with the new parameters inside the XtendM3 transaction.
 
@@ -75,37 +75,49 @@ TBA, this feature has not been released yet.
 
 ### Database
 #### Adding fields to existing standard tables
-It is not possible to add fields to existing tables
-**Workaround** Create new tables by using XtendM3 Dynamic Table
+It is not possible to add fields to existing tables. 
+<br>
+**Workaround** <br> 
+Create new tables by using XtendM3 Dynamic Table
 
 #### Adding table index for standard tables 
 
-**Workaround** Custom table index for standard tables should be created in CRS021.
-
-##### Data Lake synchronization
-The synchronization to datalake is not yet supported but will be in future.
+**Workaround** <br> 
+Custom table index for standard tables should be created in CRS021.
 
 ### API
 #### Creating new transactions on standard APIs
 It is not possible to define new transactions on the existing standard APIs.
-
-**Workaround**
+<br>
+**Workaround** <br>
 Define a new transaction on an XtendM3 API. To find and relate the transaction easier to the standard program you could 
 use the same suffix e.g. for new transactions in OIS100MI you can define EXT100MI API.
 
-### Batch
+### Batch 
 Section in progress.
 
 ### Interactive
 
+## XtendM3 APIs
+### TransactionAPI
+It is not possible to fetch and work with the input-parameters POST Transaction, using the Transaction API. However, output-parameters are available in POST.
+<br>
+To clarify, PRE Transaction both input- & output-parameters are available. POST Transaction only output-parameters are available. 
+**Workaround** <br>
+Use the SessionAPI instead.
+
 ## Integration
 ### ION API
+It is not possible to call a Transaction Extension, that is inherently calling an ION API, from a MEC Context.
+<br>
+**Workaround** <br>
+No workaround available.
 
 ### M3 API
 #### Calling CMS100MI/MDBREADMI
-It is not possible to call custom transactions defined in CMS100MI or MDBREADMI. 
-
-**Workaround**
+It is not possible to call custom transactions defined in CMS100MI or MDBREADMI.
+<br>
+**Workaround** <br>
 Perform the query using either direct database access or via calling CMS100MI/MDBREADMI IONAPI as a last resort option.
 
 ### Configurable List & XML
