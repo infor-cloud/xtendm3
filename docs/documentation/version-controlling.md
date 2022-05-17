@@ -41,7 +41,15 @@ The recommended branching strategy is to have the `master` as the production bra
 in production and create one branch per each other tenant. Suppose that we have a DEM tenant and a PRD. This means that 
 we will then have one `master` branch and one `dem` branch. Developers will be working on the `dem` branch during development 
 and as soon as it is completely verified, approved and signed it can be merged into `master` i.e. meaning applying changes 
-from `dem` branch to `master` 
+from `dem` branch to `master`
+
+## Github Guide
+Setting up XtendM3 Extensions version control system using Github.
+
+1. Create an account on Github, if you do not already have one
+2. Create an organization on Github, in the customer's name
+3. Add the customer to the organization as an administrator
+4. Create repository from *acme-corp-extensions* template under the created organization, named xtendm3-extensions.
 
 ## Example
 To show an example the below repository is provided as template to generate new projects from and work locally/remotely. 
