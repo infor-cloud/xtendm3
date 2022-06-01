@@ -8,11 +8,6 @@ permalink: docs/examples
 
 # Examples
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
+This section provides example extensions for various extension types, as well as templates.
+{: .fs-6 .fw-300 }
 
