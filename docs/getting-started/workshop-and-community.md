@@ -24,7 +24,7 @@ Last Thursday each month, two workshops are held. Track A between 10-11 CEST, an
 In Microsoft Teams, we have a Team setup named __*XtendM3 Community*__. This Team is used for several things, divided up by channel name these are:
 - Resources, both recordings of the workshop and the slides are uploaded after each workshop
 - Support, general XtendM3 support
-- Feature Requests, XtendM3 specific feature requests can be posted here
+- Feature Requests, XtendM3 specific feature requests
 - Workshop Topic Request, requests for topics to be presented on next Workshop
 
 ## Access to Workshop and Teams Community
