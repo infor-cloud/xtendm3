@@ -9,10 +9,6 @@ nav_order: 8
 # Session API
 {: .no_toc }
 
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -20,11 +16,11 @@ Checklist for requesting approval for your extensions.
 {:toc}
 
 ---
-
 **Since**: `0.2.0`  
 **Context**: Any  
 **Category**: Storage  
 ---
+
 ## Description
 Session API provides methods for interacting with current session. One of the main usages of this API is a a key-value 
 storage mechanism for the extension store parameters, calculated values or other information in runtime in memory to 

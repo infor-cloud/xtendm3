@@ -9,10 +9,6 @@ nav_order: 13
 # Transaction API
 {: .no_toc }
 
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -20,11 +16,11 @@ Checklist for requesting approval for your extensions.
 {:toc}
 
 ---
-
-**Since**: `0.12.0`  
-**Context**: API  
-**Category**: Context specific  
+**Since**: `0.12.0`
+**Context**: API
+**Category**: Context specific
 ---
+
 ## Description
 
 Transaction API allows to extend MI transactions, overwrite parameters. Can be used to set, retrieve or change a parameter and skip current transaction.

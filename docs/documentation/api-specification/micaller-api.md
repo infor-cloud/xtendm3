@@ -9,9 +9,6 @@ nav_order: 5
 # MiCaller API
 {: .no_toc }
 
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -19,11 +16,11 @@ nav_order: 5
 {:toc}
 
 ---
-
 **Since**: `0.1.0`  
 **Context**: Any  
 **Category**: Integration  
 ---
+
 ## Description
 This API can be used for MI calls in XtendM3
 

@@ -11,7 +11,6 @@ nav_order: 1
 
 XtendM3 Capabilities
 {: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }

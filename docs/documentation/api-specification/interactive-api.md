@@ -9,8 +9,6 @@ nav_order: 10
 # Interactive API
 {: .no_toc }
 
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -18,11 +16,11 @@ nav_order: 10
 {:toc}
 
 ---
-
 **Since**: `0.1.0`  
 **Context**: Interactive  
 **Category**: Context Specific  
 ---
+
 ## Description
 The Interactive API provides the capability to display a message in the UI to the user or retrieve data from the displayed form. This API can be used also to alert the user after taking an action. There are templates and custom API methods available to be used to achieve this. 
 

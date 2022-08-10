@@ -11,6 +11,3 @@ permalink: docs/examples/use-cases
 {: .no_toc }
 
 Examples od how XtendM3 is used in practice and help during implementation of designed extensions.
-
-{: .fs-6 .fw-300 }
-![](../../../assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**

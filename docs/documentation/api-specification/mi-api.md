@@ -9,10 +9,6 @@ nav_order: 12
 # MI API
 {: .no_toc }
 
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -20,12 +16,11 @@ Checklist for requesting approval for your extensions.
 {:toc}
 
 ---
-
 **Since**: `0.9.0`  
 **Context**: XtendM3 API  
 **Category**: Context Specific
-
 ---
+
 ## Description
 The MI API allows for reading input parameters and writing output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can for example be used to abort transaction based on own validation. Also Provides error management.
 

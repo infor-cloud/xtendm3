@@ -9,9 +9,6 @@ nav_order: 2
 # Program API
 {: .no_toc }
 
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -19,11 +16,11 @@ nav_order: 2
 {:toc}
 
 ---
-
 **Since**: `0.1.0`  
 **Context**: Any  
 **Category**: Generic  
 ---
+
 ## Description
 The Program API contains APIs that can be used to get information from the current program. 
 

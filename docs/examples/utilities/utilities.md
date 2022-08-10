@@ -11,6 +11,3 @@ permalink: docs/examples/utilities
 {: .no_toc }
 
 A collection of reusable code libraries to improve creation of extensions. Utilities can be used by [Utility API](../../../docs/documentation/api-specification/utility-api).
-
-{: .fs-6 .fw-300 }
-![](../../../assets/images/warning-24px.svg) **️IN PROGRESS, NOT COMPLETE YET**

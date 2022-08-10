@@ -9,10 +9,6 @@ nav_order: 11
 # Method API
 {: .no_toc }
 
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -20,11 +16,11 @@ Checklist for requesting approval for your extensions.
 {:toc}
 
 ---
-
 **Since**: `0.5.0`  
 **Context**: Batch  
 **Category**: Context Specific  
 ---
+
 ## Description
 The Method API is responsible for obtaining and modifying information on the extension point in the designed extension. It is needed to know the whole structure and functionality of the implemented method at the extension point in order to exploit the full potential of the Method API. 
 

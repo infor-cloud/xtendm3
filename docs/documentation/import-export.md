@@ -8,10 +8,8 @@ nav_order: 2
 # Import and Export of Extensions
 {: .no_toc }
 
-
 XtendM3 Import and Export of Extensions
 {: .fs-6 .fw-300 }
-**️STILL IN DEVELOPMENT**
 
 ## Table of contents
 {: .no_toc .text-delta }

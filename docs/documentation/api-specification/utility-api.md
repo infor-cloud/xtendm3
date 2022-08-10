@@ -9,10 +9,6 @@ nav_order: 4
 # Utility API
 {: .no_toc }
 
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -20,11 +16,11 @@ Checklist for requesting approval for your extensions.
 {:toc}
 
 ---
-
 **Since**: `0.7.0`  
 **Context**: Any  
 **Category**: Generic  
 ---
+
 ## Description
 The Utility API allows to create a specific code that can be used more than once. It is useful in case of designing methods/extensions that can be executed multiple times or from diffrent locations in a running session. It is not needed to create multiple pieces of code with the same methodology by using Utility API.
 

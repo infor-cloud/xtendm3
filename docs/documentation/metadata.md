@@ -8,10 +8,8 @@ nav_order: 6
 # Metadata
 {: .no_toc }
 
-
 Metadata file for your extensions
 {: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }

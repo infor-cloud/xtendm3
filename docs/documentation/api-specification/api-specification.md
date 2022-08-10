@@ -13,4 +13,4 @@ permalink: docs/documentation/api-specification
 
 XtendM3 provided APIs help extensions interact with M3 programs and resources.
 {: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
+

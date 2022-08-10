@@ -10,7 +10,6 @@ nav_order: 3
 
 Guideline for writing secure, optimized and scalable extensions.
 {: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -19,6 +18,7 @@ Guideline for writing secure, optimized and scalable extensions.
 {:toc}
 
 ---
+
 ## Extension Types
 Extension can be created in any of the four types:  
 

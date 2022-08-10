@@ -9,8 +9,6 @@ nav_order: 1
 # Extension API
 {: .no_toc }
 
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -18,11 +16,11 @@ nav_order: 1
 {:toc}
 
 ---
-
 **Since**: `0.1.0`  
 **Context**: Any  
 **Category**: Generic  
 ---
+
 ## Description
 The Extension API provides information regarding the XtendM3 extension that is currently in use. This can be used to retrieve metadata about the current extension and show to the user or use for logging purposes.
 

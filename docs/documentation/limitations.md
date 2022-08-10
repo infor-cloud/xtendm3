@@ -8,10 +8,8 @@ nav_order: 2
 # Limitations
 {: .no_toc }
 
-
 XtendM3 Limitations
 {: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -20,18 +18,26 @@ XtendM3 Limitations
 {:toc}
 
 ---
+
 ## General
+General XtendM3 limitations.
+
 ### M3 Program calls
 It is not possible to call M3 programs from an extension. Only M3 APIs can be called from extensions.
 ### Database read on user-defined sorting orders  
 It is not possible to build query on standard tables using user-defined sorting order or index created using CRS021.
 
 ## Extending
+Extension limitations.
+
 ### Batch/Function
+
 #### Creating additional fields in field groups e.g. MWPV6
 TBA, this feature has not been released yet.
 
 ### Interactive
+Interactive specific limitations.
+ 
 #### Creating UI related components in interactive panels
 For enhancements such as adding new field in OIS100/E, extension will not be able to add textbox or dropdown field.  
 <br>
@@ -58,6 +64,8 @@ In order to perform custom validation on the B panel via extensions, you can sen
 record keys to an XtendM3 API instead.
 
 ### Transaction
+Transaction specific limitations.
+
 #### Adding/Removing input/output parameters for an existing transaction
 It is not possible to add/remove parameters for an existing transaction via XtendM3.
 <br>

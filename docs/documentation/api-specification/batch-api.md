@@ -9,8 +9,6 @@ nav_order: 1
 # Batch API
 {: .no_toc }
 
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -18,7 +16,6 @@ nav_order: 1
 {:toc}
 
 ---
-
 **Since**: `0.1.0`  
 **Context**: Any  
 **Category**: Generic  

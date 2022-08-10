@@ -9,9 +9,6 @@ nav_order: 3
 # Message API
 {: .no_toc }
 
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 

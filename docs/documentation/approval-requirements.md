@@ -14,13 +14,15 @@ Once all the information below is ready and the extension has been tested, send 
 
 ## Table of contents
 {: .no_toc .text-delta }
+
 1. TOC
 {:toc}
 
 ---
 
-  
 ## Request Format
+Outlininig the format of XtendM3 extension request. 
+
 ### Request Content
 Copy this form to your mail and answer all questions.  
 The questionnaire should be answered per extension;  
@@ -54,7 +56,7 @@ Therefore, if there are three extensions sent for review, there should be three 
   i.e. if it is coming from TST tenant, the TST branch should be updated with these changes 
   And once signed extension for PRD is receive, master/prd branch should be updated.
 - Does the extension solution/codes contain parts that does not follow the guidelines/best practices, for which you are requesting an exception/special approval? 
-If so, why?
+   - If so, why?
 - Have you read the programming standards and made sure the code is compliant with the standards?
 - Have you followed the recommended naming conventions for extensions, methods, variables?
 - Have you documented the extension code?

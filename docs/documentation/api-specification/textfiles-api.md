@@ -8,22 +8,19 @@ nav_order: 9
  
 # TextFiles API
 {: .no_toc }
- 
-Checklist for requesting approval for your extensions.
-{: .fs-6 .fw-300 }
- 
+
 ## Table of contents
 {: .no_toc .text-delta }
- 
+
 1. TOC
 {:toc}
- 
+
 ---
- 
 **Since**: `0.11.0`  
 **Context**: Any  
 **Category**: Storage  
 ---
+
 ## Description
 TextFiles API is used to perform various file processing operations. It can be used to open, read and write in files from current and subdirectories as well as list existing folders and files.
  

@@ -9,9 +9,6 @@ nav_order: 6
 # ION API
 {: .no_toc }
 
-{: .fs-6 .fw-300 }
-**️IN PROGRESS, NOT COMPLETE YET**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -19,11 +16,11 @@ nav_order: 6
 {:toc}
 
 ---
-
 **Since**: `0.6.0`  
 **Context**: Any  
 **Category**: Integration  
 ---
+
 ## Description
 The ION API can be used to connect to M3 data by using ION API calls. There are several API methods to use the ION API depending on the user needs.
 
