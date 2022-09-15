@@ -46,7 +46,7 @@ class CheckShouldRun extends ExtendM3Trigger {
   }
 
   void main() {
-    // Ckecks if program should run
+    // Checks if program should run
     if (!shouldRun()) {
       return;
     }

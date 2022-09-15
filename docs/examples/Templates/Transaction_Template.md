@@ -3,7 +3,7 @@ layout: default
 title: Transaction Extension Templates
 parent: Templates
 grand_parent: Examples
-nav_order: 2
+nav_order: 1
 ---
 
 # Transaction Extension Templates
@@ -22,8 +22,129 @@ Working with the Trransaction Extensions in XtendM3
 
 ## Description
 
-Documentation cointains a template for a [Transaction](../../../examples/) extension with a structure that can be used for creating a new extension using container contruction and setting parameters. 
-Template can be as modified as needed.
+Documentation cointains templates for various [Transaction](../../../examples/) extensions.<br/> 
+Templates can be as modified as needed.
+
+### CRUD+L Templates
+These templates outline best practices for **C**reate, **R**ead, **U**pdate, **D**elete and **L**ist operations.
+
+#### Create
+Creating, or adding one or several new records to table.
+```groovy
+def create() {
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("FIELD1", "DATA1");
+  container.set("FIELD2", "DATA2");
+  container.set("FIELD3", "DATA3");
+  container.set("FIELD4", "DATA4");
+  query.insert(container);
+}
+```
+
+#### Read
+Reading one or several records from table.
+
+##### Read one record
+```groovy
+def read() {
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("FIELD1", "DATA1");
+  container.set("FIELD2", "DATA2");
+  if(query.read(container)) {
+    String message = container.get("FIELD3");
+    String data = container.get("FIELD4");
+    //Use found record(s) as intended
+  }
+}
+```
+##### Read multiple records
+```groovy
+def multiRead() {
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("FIELD1", "DATA1");
+  query.readAll(container, NUMBERofRECORDS, callback);
+}
+Closure<?> callback = { DBContainer container ->
+  String message = container.get("FIELD3");
+  String data = container.get("FIELD4");
+  //Use found record(s) as intended
+}
+```
+##### Read multiple records with filter
+```groovy
+def filteredMultiRead() {
+  ExpressionFactory expression = database.getExpressionFactory("TABLE");
+  expression = expression.eq("FIELD3", "DATA3").and(expression.lt("FIELD1", "DATA1"));
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .matching(expression)
+    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("FIELD1", "DATA1");
+  query.readAll(container, NUMBERofRECORDS, callback);
+}
+Closure<?> callback = { DBContainer container ->
+  String message = container.get("FIELD3");
+  String data = container.get("FIELD4");
+  //Use found record(s) as intended
+}
+```
+
+#### Update
+Update existing record(s) in table
+```groovy
+def update() {
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("FIELD1", "DATA1");
+  container.set("FIELD2", "DATA2");
+  query.insert(container, { LockedResult updateRecord ->
+    updateRecord.set("FIELD3", "DATA3");
+    updateRecord.update();
+  });
+}
+```
+
+#### Delete
+Delete record(s) from table
+```groovy
+def delete() {
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("FIELD1", "DATA1");
+  container.set("FIELD2", "DATA2");
+  query.readLock(container, callback);
+}
+Closure<?> callback = { LockedResult lockedResult ->
+  lockedResult.delete();
+}
+```
+
+#### List
+List record(s) in table
+
+### Example Transaction extension template
+
+This is a Transaction extension template with a structure that can be used for creating a new extension using container contruction and setting parameters.
 
 ```groovy
 public class TransactionTemplate extends ExtendM3Transaction {
@@ -80,9 +201,7 @@ public class TransactionTemplate extends ExtendM3Transaction {
                    "IND3": mi.inData.get("PAR3"),
                    "IND4": mi.inData.get("PAR4"),
                    "IND5": mi.inData.get("PAR5"),
-
     ];
-    //.error("${params}");
     miCaller.call("MWS420MI", "TransactionTemplate", params, callback);
   }
 
@@ -91,8 +210,7 @@ public class TransactionTemplate extends ExtendM3Transaction {
 ## Important notes
 - It is a good practice to use a test compilation of the program just to check if everything is working properly.
 - Data presented in the examples is random.
-- Remember to check the name of created extension while using ready templates/examples
- 
+- Remember to check the name of created extension while using ready templates/examples. 
  
 ## See also
 - [API documentation](../../../documentation/api-specification)

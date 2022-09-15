@@ -2,7 +2,7 @@
 layout: default
 title: Metadata
 parent: Documentation
-nav_order: 6
+nav_order: 9
 ---
 
 # Metadata

@@ -2,7 +2,7 @@
 layout: default
 title: Version Controlling
 parent: Documentation
-nav_order: 4
+nav_order: 7
 ---
 
 # Version Controlling
