@@ -9,7 +9,7 @@ nav_order: 1
 # Transaction Extension Templates
 {: .no_toc }
 
-Working with the Trransaction Extensions in XtendM3
+Working with the Transaction Extensions in XtendM3
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -25,8 +25,8 @@ Working with the Trransaction Extensions in XtendM3
 Documentation cointains templates for various [Transaction](../../../examples/) extensions.<br/> 
 Templates can be as modified as needed.
 
-### CRUD+L Templates
-These templates outline best practices for **C**reate, **R**ead, **U**pdate, **D**elete and **L**ist operations.
+### CRUD Templates
+These templates outline best practices for **C**reate, **R**ead, **U**pdate and **D**elete operations.
 
 #### Create
 Creating, or adding one or several new records to table.
@@ -138,9 +138,6 @@ Closure<?> callback = { LockedResult lockedResult ->
   lockedResult.delete();
 }
 ```
-
-#### List
-List record(s) in table
 
 ### Example Transaction extension template
 
