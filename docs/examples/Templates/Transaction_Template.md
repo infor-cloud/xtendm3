@@ -156,16 +156,14 @@ public class TransactionTemplate extends ExtendM3Transaction {
   }
 
   public void main() {
-
     def callback = {
       Map <String, String> out ->
-
         if (out.error != null) {
           mi.error(out.errorMessage);
           return;
         }
 
-        /* Setting up out data in transaction using MI API
+        /* Setting up output data in transaction using MI API
         Remove .trim on input fields as this causes errors if fields are null
         */
         mi.outData.put("OUT1", out.get("OUT1").trim());
@@ -199,9 +197,8 @@ public class TransactionTemplate extends ExtendM3Transaction {
                    "IND4": mi.inData.get("PAR4"),
                    "IND5": mi.inData.get("PAR5"),
     ];
-    miCaller.call("MWS420MI", "TransactionTemplate", params, callback);
+    miCaller.call("ABC123MI", "TransactionTemplate", params, callback);
   }
-
 }
 ```
 ## Important notes
