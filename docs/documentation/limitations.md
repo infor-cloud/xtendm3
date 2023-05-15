@@ -148,3 +148,18 @@ Perform the query using either direct database access or via calling CMS100MI/MD
 ### Compile Time
 
 ### Runtime
+
+#### Extension Timeout
+During runtime there is a set timeout for extensions, set by extension type.
+
+**Trigger**
+<br>The timeout for Trigger extensions is five seconds.<br>
+
+**Transaction** 
+<br>The timeout for Transaction extensions is two minutes.<br>
+
+**Batch**
+<br> The timeout for Batch extensions is one hour.<br>
+
+**Utility**
+<br> The timeout for Utility extensions is based on the calling extension type and its timeout.<br>
