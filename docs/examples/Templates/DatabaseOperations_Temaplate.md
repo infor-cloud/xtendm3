@@ -21,7 +21,7 @@ Working with the Database Operations in XtendM3
 ---
 
 ## Description
-This document contains diffrent templates for various database operations.
+This document contains different templates for various database operations.
 
 ### CRUD Templates
 These templates outline best practices for **C**reate, **R**ead, **U**pdate and **D**elete operations.
@@ -39,6 +39,7 @@ def create() {
   container.set("FIELD3", "DATA3");
   container.set("FIELD4", "DATA4");
   query.insert(container);
+  query.write();
 }
 ```
 
@@ -50,7 +51,7 @@ Reading one or several records from table.
 def read() {
   DBAction query = database.table("TABLENAME")
     .index("00")
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
@@ -67,11 +68,11 @@ def read() {
 def multiRead() {
   DBAction query = database.table("TABLENAME")
     .index("00")
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
-  query.readAll(container, NUMBERofRECORDS, callback);
+  query.readAll(container, numberOfKeys, numberOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
   String message = container.get("FIELD3");
@@ -87,11 +88,11 @@ def filteredMultiRead() {
   DBAction query = database.table("TABLENAME")
     .index("00")
     .matching(expression)
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
-  query.readAll(container, NUMBERofRECORDS, callback);
+  query.readAll(container, numberOfKeys, numberOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
   String message = container.get("FIELD3");
@@ -127,6 +128,7 @@ def delete() {
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
   container.set("FIELD2", "DATA2");
+  container.set("FIELD3", "DATA3");
   query.readLock(container, callback);
 }
 Closure<?> callback = { LockedResult lockedResult ->
