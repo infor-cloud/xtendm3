@@ -23,23 +23,35 @@ Setting up and using local XtendM3 workspace
 From your local workspace, you can test-compile, import and activate your extensions using ION APIs.
 
 ### Setup Authorization
-Authorization is done using OAuth 2.0, OAuth 2.0 tokens can be setup from ION API.
+Authorization is done using OAuth 2.0, start setting up new authorization from ION API.
 
 **Add OAuth2.0 credentials**
 * Open the ION API application
 * Navigate to "Authorized Apps"
 * Press the plus button on top of the list
-* Input a name, check type 'Backend Service' and input a description
+* Input a name, check type "Backend Service" and input a description
 * After saving you will be able to download your credentials
   * Download your credentials and open the file using a text editor of your choice
 
 ### Setup Postman
+Using the information from the credentials(.ionapi) file, setup the authorization in Postman.
+
+* Open Postman
+* Create a new request
+* In the request, open the authorization tab
+* Set "Type" to OAuth 2.0 and "Add authorization data to" to "Request Headers"
+* Give the token a name, and fill in the rest of the fields using information from the .ionapi file
+  * Access Token URL = pu + ot
+  * Username = saak
+  * Password = sask
+  * Client ID = ci
+  * Client Secret = cs
+* Press the button on the bottom of the "Configure New Token" page to get a new access token
+*
+
 With authorization setup and ready, we can move on to create the requests in Postman.
 
-**Test-compile**
-* Method: POST
-* URL: https://url.com/M3CEDEVAPPCHE_AX1/M3/extensibility/testCompile/
-* Body:
+**Body template**
 
 
         {
@@ -52,7 +64,7 @@ With authorization setup and ready, we can move on to create the requests in Pos
                   "method": <method>,
                   "advice": <advice>,
                   "active": true/false,
-                  "modified": <last_modified_date>,
+                  "modified": <epoch_last_modified_date>,
                   "modifiedBy": <user>,
                   "sourceUuid": <source_uuid>,
                   "programName": <name_of_be_program>,
@@ -72,7 +84,7 @@ With authorization setup and ready, we can move on to create the requests in Pos
                  "sourceUuid": <source_uuid>,
                  "description": <description>,
                  "active": true/false,
-                 "modified": <last_modified_date>,
+                 "modified": <epoch_last_modified_date>,
                  "modifiedBy": <user>,
                  "utilities": []
               }
@@ -88,7 +100,7 @@ With authorization setup and ready, we can move on to create the requests in Pos
                   "description": <description>,
                   "active": true/false,
                   "multi": true/false,
-                  "modified": <last_modified_date>,
+                  "modified": <epoch_last_modified_date>,
                   "modifiedBy": <user>,
                   "outputFields": [
                     {
@@ -123,11 +135,26 @@ With authorization setup and ready, we can move on to create the requests in Pos
           "sources": {
             <source_uuid>: {
               "uuid": <source_uuid>,
-              "update": <
+              "updated": <epoch_last_modified_date>,
+              "updatedBy": <user>,
+              "created": ,
+              "createdBy": <user>,
+              "apiVersion"
             }
           }
         }
 
 
+**Test-compile**
+* Method: POST
+* URL: https://url.com/M3CEDEVAPPCHE_AX1/M3/extensibility/testCompile/
+* Body: see section 'Body template'
+
 **Import**
-*Step1
+* Step1
+* Step2
+
+**Activate**
+* Step1
+* Step2
+
