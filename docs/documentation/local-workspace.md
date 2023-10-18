@@ -19,8 +19,8 @@ Setting up and using local XtendM3 workspace
 
 ---
 ## ACME Corp Template Repository
-We can start with setting up a local workspace using the ACME Corp Template available here: https://github.com/infor-cloud/acme-corp-extensions. 
-This template should be used for setting up customer repoistories to version control live extensions.
+We can start with setting up a local workspace using the [ACME Corp Template](https://github.com/infor-cloud/acme-corp-extensions) available in the Infor Cloud Github repository.  
+This template should be used for setting up customer repoistories to version control live extensions. 
 
 
 ## Lint and export
@@ -85,6 +85,7 @@ With authorization setup and ready, we can move on to create the requests in Pos
 * Body: no body needed
 * Headers
   * Host: <calculated when request is sent> (usually automatically generated)
+  
 
 **Body Template**
 
