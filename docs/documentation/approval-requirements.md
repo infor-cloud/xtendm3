@@ -2,7 +2,7 @@
 layout: default
 title: Approval Requirements
 parent: Documentation
-nav_order: 8
+nav_order: 10
 ---
 
 # Approval Requirements

@@ -2,7 +2,7 @@
 layout: default
 title: Local XtendM3 workspace
 parent: Documentation
-nav_order: 10
+nav_order: 5
 ---
 
 # Local XtendM3 workspace
@@ -18,6 +18,17 @@ Setting up and using local XtendM3 workspace
 {:toc}
 
 ---
+## ACME Corp Template Repository
+We can start with setting up a local workspace using the ACME Corp Template available here: https://github.com/infor-cloud/acme-corp-extensions. 
+This template should be used for setting up customer repoistories to version control live extensions.
+
+
+## Lint and export
+Using the XtendM3 Maven plugin, you can lint and export your extension locally.
+
+### Setup XtendM3 Maven plugin
+To being setting up your local workspace, you should begin with downloading a few things
+
 
 ## Test-compile, import and activate
 From your local workspace, you can test-compile, import and activate your extensions using ION APIs.
@@ -25,11 +36,11 @@ From your local workspace, you can test-compile, import and activate your extens
 ### Setup Authorization
 Authorization is done using OAuth 2.0, start setting up new authorization from ION API.
 
-**Add OAuth2.0 credentials**
+**Create OAuth2.0 credentials**
 * Open the ION API application
-* Navigate to "Authorized Apps"
+* Navigate to _"Authorized Apps"_
 * Press the plus button on top of the list
-* Input a name, check type "Backend Service" and input a description
+* Input a name, check type _"Backend Service"_ and input a description
 * After saving you will be able to download your credentials
   * Download your credentials and open the file using a text editor of your choice
 
@@ -39,19 +50,43 @@ Using the information from the credentials(.ionapi) file, setup the authorizatio
 * Open Postman
 * Create a new request
 * In the request, open the authorization tab
-* Set "Type" to OAuth 2.0 and "Add authorization data to" to "Request Headers"
-* Give the token a name, and fill in the rest of the fields using information from the .ionapi file
+* Set "Type" to OAuth 2.0 and _"Add authorization data to"_ to _"Request Headers"_
+* Give the token a name, set _"Grant Type"_ to _"Password Credentials"_ and fill in the rest of the fields using information from the downloaded(.ionapi) credentials file
   * Access Token URL = pu + ot
-  * Username = saak
-  * Password = sask
   * Client ID = ci
   * Client Secret = cs
-* Press the button on the bottom of the "Configure New Token" page to get a new access token
-*
+  * Username = saak
+  * Password = sask
+* Press the button on the bottom of the _"Configure New Token"_ page to get a new access token
 
 With authorization setup and ready, we can move on to create the requests in Postman.
 
-**Body template**
+**Test-compile**
+* Method: POST
+* URL: https://**url**>/<**tenantName**>/M3/extensibility/testCompile/
+* Body: see section _"Body Template"_
+* Headers 
+  * Content-Type: application/json
+  * Content-Length: <calculated when request is sent> (usually automatically generated)
+  * Host: <calculated when request is sent> (usually automatically generated)
+
+**Import**
+* Method: POST
+* URL: https://**url**/**tenantName**/M3/extensibility/import/
+* Body: see section _"Body Template"_
+* Headers
+  * Content-Type: application/json
+  * Content-Length: <calculated when request is sent> (usually automatically generated)
+  * Host: <calculated when request is sent> (usually automatically generated)
+
+**Activate**
+* Method: PUT
+* URL: https://**url**/**tenantName**/M3/extensibility/active/<extension-uuid>?active=true
+* Body: no body needed
+* Headers
+  * Host: <calculated when request is sent> (usually automatically generated)
+
+**Body Template**
 
 
         {
@@ -137,24 +172,45 @@ With authorization setup and ready, we can move on to create the requests in Pos
               "uuid": <source_uuid>,
               "updated": <epoch_last_modified_date>,
               "updatedBy": <user>,
-              "created": ,
+              "created": <epoch_created_date>,
               "createdBy": <user>,
-              "apiVersion"
-            }
+              "apiVersion" <apiVersion, e.g. 0.12>,
+              "beVersion": <>,
+              "codeHash": <codeHash, generated during export>,
+              "code": <base64 encoded extension code>,
+            },
+            <source_uuid>: {
+              "uuid": <source_uuid>,
+              "updated": <epoch_last_modified_date>,
+              "updatedBy": <user>,
+              "created": <epoch_created_date>,
+              "createdBy": <user>,
+              "apiVersion" <apiVersion, e.g. 0.12>,
+              "beVersion": <>,
+              "codeHash": <codeHash, generated during export>,
+              "code": <base64 encoded extension code>,
+            },
+            <source_uuid>: {
+              "uuid": <source_uuid>,
+              "updated": <epoch_last_modified_date>,
+              "updatedBy": <user>,
+              "created": <epoch_created_date>,
+              "createdBy": <user>,
+              "apiVersion" <apiVersion, e.g. 0.12>,
+              "beVersion": <>,
+              "codeHash": <codeHash, generated during export>,
+              "code": <base64 encoded extension code>,
+            },
+            <source_uuid>: {
+              "uuid": <source_uuid>,
+              "updated": <epoch_last_modified_date>,
+              "updatedBy": <user>,
+              "created": <epoch_created_date>,
+              "createdBy": <user>,
+              "apiVersion" <apiVersion, e.g. 0.12>,
+              "beVersion": <>,
+              "codeHash": <codeHash, generated during export>,
+              "code": <base64 encoded extension code>,
+            }                        
           }
         }
-
-
-**Test-compile**
-* Method: POST
-* URL: https://url.com/M3CEDEVAPPCHE_AX1/M3/extensibility/testCompile/
-* Body: see section 'Body template'
-
-**Import**
-* Step1
-* Step2
-
-**Activate**
-* Step1
-* Step2
-
