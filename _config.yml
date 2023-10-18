@@ -42,7 +42,7 @@ aux_links:
 footer_content: "Copyright &copy; 2020 Infor. Distributed by an <a href=\"https://raw.githubusercontent.com/infor-cloud/XtendM3/master/LICENSE\">Apache license.</a>"
 
 # Color scheme currently only supports "dark" or nil (default)
-color_scheme: nil
+color_scheme: dark
 
 plugins:
   - jekyll-seo-tag
