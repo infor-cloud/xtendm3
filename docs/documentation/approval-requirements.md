@@ -104,7 +104,7 @@ Once done, send the corrected extensions again for review and signing.
 Once the review is completed and extensions are approved,
 a signed packaged version of the extension will be emailed back to you.
 
-Turnaround time for this process is **5 working days** from the day the request was received with the extensions.
+**SLA is 5 days per up to 20 extensions.** Multiple requests from same customer is not processed in parallel i.e. if 20 is sent in by the first request, the next 20 for the same client will start its SLA after the first 20 are done.
 
 Effective **July 1, 2021**, 
 we will no longer release signed extensions without first being able to bill our time spent for the review and signing.

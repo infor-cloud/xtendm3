@@ -25,12 +25,13 @@ To request early access to XtendM3 contact support.
 
 ## Process
 Kindly email the following information to the XtendM3 mailbox ([xtendm3@infor.com](mailto://xtendm3@infor.com)) for activation request:     
-1. What is the intended usage?  
-2. Who will be developing XtendM3 extensions?  
+1. What is the Customer name/alias and Tenant URL?
+2. What is the intended usage?  
+3. Who will be developing XtendM3 extensions?  
 Please provide us with the complete contact details of the consultant who is working with you.  
 This point is important because for all the projects that require XtendM3 activation, the consultant designated to work on XtendM3 should have a specialized certification from Infor Campus trainings and should have attended targeted workshops. 
-3. What is the timeline of moving promoting extensions between different tenants? (e.g. from TST to TRN and then to PRD).  
-4. Who will be responsible for setting up the Billing/Clarity for the solution review and signing that will be done by the XtendM3 Team? (Project Manager / Client Partner / Account Manager / Partner Account Manager)  
+4. What is the timeline of moving promoting extensions between different tenants? (e.g. from TST to TRN and then to PRD).  
+5. Who will be responsible for setting up the Billing/Clarity for the solution review and signing that will be done by the XtendM3 Team? (Project Manager / Client Partner / Account Manager / Partner Account Manager)  
 
 ## XtendM3 Developer Trainings
 Note that though customers are allowed access to the Infor Campus training materials, **customers are not yet allowed to do XtendM3 development themselves** since we are still on controlled availability; therefore the recorded onboarding and workshops mentioned below will not yet be made available to them.
