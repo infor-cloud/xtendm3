@@ -59,17 +59,15 @@ The example below illustrates how to create and set a record.
 
 Example:
 ```groovy
-public void createTableRecord() {
+void createTableRecord() {
     DBAction query = database.table(*TABLE*)
       .index("00")
-      .selection(*FIELD1*, *FIELD2*, *FIELD3*)
       .build();
-    DBContainer container = database.createContainer()
-    container.set(*FIELD1*, *DATA*)
+    DBContainer container = database.createContainer();
+    container.set(*FIELD*, *DATA*)
     query.insert(container)
   }
 ```
-**Note:** the required parameters for a valid DBAction, or query, are 'table' and 'selection'. E.g. 'DBAction query = database.table("MITMAS").selection("MMCONO")'
 
 Or to update the already existing record.
 Example:
@@ -90,16 +88,23 @@ Example:
 Read an item with the index 00 keys
 
 ```groovy
-int currentCompany = (Integer)program.getLDAZD().CONO
-DBAction query = database.table("MITMAS").index("00").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
-DBContainer container = query.getContainer()
-container.set("MMCONO", currentCompany)
-container.set("MMITNO", "SAMPLE-ITEM")
-if (query.read(container)) {
-  String description = container.get("MMITDS")
-  String status = container.get("MMSTAT")
+void readRecord() {
+  int currentCompany = (Integer)program.getLDAZD().CONO;
+  DBAction query = database.table("MITMAS")
+    .index("00")
+    .selection("MMITDS", "MMSTAT")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("MMCONO", currentCompany);
+  container.set("MMITNO", "SAMPLE-ITEM");
+  if (query.read(container)) {
+    String description = container.get("MMITDS");
+    String status = container.get("MMSTAT");
+  }
 }
 ```
+
+**Note** selection is only needed for read operations. Furthermore, only the fields being read(container.get fields) are needed in the selection. As the example above suggests. 
 
 ### Read multiple records
 To read multiple records a database action should be defined along with a `Closure<?>` that defines how each read record
@@ -110,18 +115,21 @@ Example:
 Read all items with status 20 in a specific company and perform an action on each found record
 
 ```groovy
-def handleReleasedItems() {
-  int currentCompany = (Integer)program.getLDAZD().CONO
-  DBAction query = database.table("MITMAS").index("20").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
-  DBContainer container = query.getContainer()
-  container.set("MMCONO", currentCompany)
-  container.set("MMSTAT", "20")
-  query.readAll(container, 2, releasedItemProcessor)
+void handleReleasedItems() {
+  int currentCompany = (Integer)program.getLDAZD().CONO;
+  DBAction query = database.table("MITMAS")
+    .index("20")
+    .selection("MMITDS", "MMSTAT")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("MMCONO", currentCompany);
+  container.set("MMSTAT", "20");
+  query.readAll(container, 2, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
-  String description = container.get("MMITDS")
-  String status = container.get("MMSTAT")
+  String description = container.get("MMITDS");
+  String status = container.get("MMSTAT");
   // Use this found record as intended
 }
 ```
@@ -137,18 +145,22 @@ to 2.
 
 ```groovy
 public void main() {
-  ExpressionFactory expression = database.getExpressionFactory("TABLE")
-  expression = expression.eq("FIELD", "DATA").and(expression.gt("MMCFI1", "2"))
-  DBAction query = database.table("MITMAS").index("20").matching(expression).selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
-  DBContainer container = query.getContainer()
-  container.set("MMCONO", currentCompany)
-  container.set("MMSTAT", "20")
-  query.readAll(container, 2, releasedItemProcessor)
+  ExpressionFactory expression = database.getExpressionFactory("TABLE");
+  expression = expression.eq("FIELD", "DATA").and(expression.gt("MMCFI1", "2"));
+  DBAction query = database.table("MITMAS")
+    .index("20")
+    .matching(expression)
+    .selection("MMITDS", "MMSTAT")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("MMCONO", currentCompany);
+  container.set("MMSTAT", "20");
+  query.readAll(container, 2, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
-  String description = container.get("MMITDS")
-  String status = container.get("MMSTAT")
+  String description = container.get("MMITDS");
+  String status = container.get("MMSTAT");
   // Use this found record as intended
 }
 ```
@@ -159,29 +171,27 @@ Read two fields from table record, using three other fields in the same record.
 
 ```groovy
 public void main() {
-    inKEY1 = mi.inData.get("KEY1") == null? "": mi.inData.get("KEY1").trim();
-    inKEY2 = mi.inData.get("KEY2") == null? "": mi.inData.get("KEY2").trim();
-    inKEY2 = mi.inData.get("KEY3") == null? "": mi.inData.get("KEY3").trim(); 
-    
-    DBAction query = database.table("TABLE").selection("KEY1", 
-            "KEY2", 
-            "KEY3", 
-            "READFIELD1", 
-            "READFIELD2").build();
-    DBContainer container = query.getContainer();
-    container.set("KEY1",inKEY1);
-    container.set("KEY2",inKEY2);
-    container.set("KEY3",inKEY3);
+  inKEY1 = mi.inData.get("KEY1") == null? "": mi.inData.get("KEY1").trim();
+  inKEY2 = mi.inData.get("KEY2") == null? "": mi.inData.get("KEY2").trim();
+  inKEY2 = mi.inData.get("KEY3") == null? "": mi.inData.get("KEY3").trim(); 
 
-    Closure<?> readCallback = { DBContainer readResult ->
-      if (mi.hasRemainingRecords()) {
-        mi.outData.put("outDATA1", readResult.get("READFIELD1").toString())
-        mi.outData.put("outDATA2", readResult.get("READFIELD2").toString())
-        mi.write()
-      }
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("READFIELD1", "READFIELD2")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("KEY1",inKEY1);
+  container.set("KEY2",inKEY2);
+  container.set("KEY3",inKEY3);
+
+  Closure<?> readCallback = { DBContainer readResult ->
+    if (mi.hasRemainingRecords()) {
+      mi.outData.put("outDATA1", readResult.get("READFIELD1").toString());
+      mi.outData.put("outDATA2", readResult.get("READFIELD2").toString());
+      mi.write();
     }
-    query.readAll(container, 3, readCallback)
   }
+  query.readAll(container, 3, readCallback)
 }
 ```
 
@@ -192,18 +202,20 @@ Example:
 
 Read item and update status to 90
 ```groovy
-def deprecateItem() {
-  int currentCompany = (Integer)program.getLDAZD().CONO
-  DBAction query = database.table("MITMAS").index("00").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
-  DBContainer container = query.getContainer()
-  container.set("MMCONO", currentCompany)
-  container.set("MMITNO", "SAMPLE-ITEM")
-  query.readLock(container, updateCallBack)
+void deprecateItem() {
+  int currentCompany = (Integer)program.getLDAZD().CONO;
+  DBAction query = database.table("MITMAS")
+    .index("00")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("MMCONO", currentCompany);
+  container.set("MMITNO", "SAMPLE-ITEM");
+  query.readLock(container, updateCallBack);
 }
 
 Closure<?> updateCallBack = { LockedResult lockedResult ->
-  lockedResult.set("MMSTAT", "90")
-  lockedResult.update()
+  lockedResult.set("MMSTAT", "90");
+  lockedResult.update();
 }
 ```
 
@@ -215,18 +227,20 @@ Example:
 
 Read all items in with status 20 in a company and set the status to 90 for then
 ```groovy
-def deprecateItems() {
-  int currentCompany = (Integer)program.getLDAZD().CONO
-  DBAction query = database.table("MITMAS").index("20").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
-  DBContainer container = query.getContainer()
-  container.set("MMCONO", currentCompany)
-  container.set("MMSTAT", "20")
-  query.readAllLock(container, 2, updateCallBack)
+void deprecateItems() {
+  int currentCompany = (Integer)program.getLDAZD().CONO;
+  DBAction query = database.table("MITMAS")
+    .index("20")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("MMCONO", currentCompany);
+  container.set("MMSTAT", "20");
+  query.readAllLock(container, 2, updateCallBack);
 }
 
 Closure<?> updateCallBack = { LockedResult lockedResult ->
-  lockedResult.set("MMSTAT", "90")
-  lockedResult.update()
+  lockedResult.set("MMSTAT", "90");
+  lockedResult.update();
 }
 ```
 
@@ -238,17 +252,19 @@ Example:
 
 Delete item with status 90
 ```groovy
-def deprecateItem() {
-  int currentCompany = (Integer)program.getLDAZD().CONO
-  DBAction query = database.table("MITMAS").index("00").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
-  DBContainer container = query.getContainer()
-  container.set("MMCONO", currentCompany)
-  container.set("MMITNO", "SAMPLE-ITEM")
-  query.readLock(container, deleterCallback)
+void deprecateItem() {
+  int currentCompany = (Integer)program.getLDAZD().CONO;
+  DBAction query = database.table("MITMAS")
+    .index("00")
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("MMCONO", currentCompany);
+  container.set("MMITNO", "SAMPLE-ITEM");
+  query.readLock(container, deleterCallback);
 }
 
 Closure<?> deleterCallback = { LockedResult lockedResult ->
-  lockedResult.delete()
+  lockedResult.delete();
 }
 ```
 
