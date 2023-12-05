@@ -56,8 +56,8 @@ public class AuthorityCheck extends ExtendM3Trigger {
       method.setReturnValue(isUserAuthorizedToWarehouse(record.MWCSCD));
     }
     if (table == "MITBAL") {
-      def query = database.table("MITWHL").index("00").selection("MWCSCD").build();
-      def container = query.createContainer();
+      DBAction query = database.table("MITWHL").index("00").selection("MWCSCD").build();
+      DBContainer container = query.createContainer();
       container.set("MWCONO", program.LDAZD.CONO);
       container.set("MWWHLO", record.MBWHLO);
       if (query.read(container)) {

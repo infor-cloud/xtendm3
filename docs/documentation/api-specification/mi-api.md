@@ -26,26 +26,11 @@ The MI API allows for reading input parameters and writing output parameters sen
 
 ## Features
 
-### mi.in
+### mi.inData
 This method allows to get value from data container and containes In values for Transactions. Contained values are already converted to the proper type.
 Takes string key as a parameter and returns value associeted with the key.
 
-Example 1:
-```groovy
-def <T> Optional<T> getParameter(String name, Class<T> type) {
-    if (type == Double.class) {
-      String raw = mi.in.get(name)
-      if (raw == null || raw.trim().isEmpty()) {
-        return Optional.empty()
-      }
-      return Optional.of((mi.in.get(name) as Double) as T)
-    }
-    return Optional.empty()
-  }
-```
-<br>
-
-Example 2:
+Example:
 ```groovy
 private String whlo;
 private String itno;
@@ -166,6 +151,8 @@ boolean validateInput() {
   if (!getWarehouse(whlo)){
     mi.error("Warehouse " + whlo + " is invalid");
     return false;
+  } else {
+    return true;
   }
 }
 ```
@@ -173,10 +160,12 @@ boolean validateInput() {
 
 Example 2:
 ```groovy
-def boolean validResponsible(String Responsible) {
+boolean validResponsible(String Responsible) {
   if (Responsible.isEmpty()){
     mi.error("Responsible must be entered");
     return false;
+  } else {
+    return true;
   }
 }
 ```

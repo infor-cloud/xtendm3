@@ -2,7 +2,7 @@
 layout: default
 title: Batch Scheduling
 parent: Documentation
-nav_order: 2
+nav_order: 3
 ---
 
 # Batch Scheduling
