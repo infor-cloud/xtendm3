@@ -146,7 +146,7 @@ public class batchTest extends ExtendM3Transaction {
     Closure<?> callback = {Map<String, String> result ->
       logger.info("Result is: ${result}");
     }
-    def params = ["TX30": "CallingFromEXT919MI", 
+    Map<String, String> params = ["TX30": "CallingFromEXT919MI", 
         "XCAT": "010".toString(), 
         "SCTY": "1".toString(), 
         "XNOW": "1".toString(), 

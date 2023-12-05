@@ -48,8 +48,7 @@ public class TestProgram extends ExtendM3Trigger {
   
   public void main() {
     String customer = null
-    def callback = {
-    Map<String, String> response ->
+    Closure<?> callback = { Map<String, String> response ->
       logger.info("Response = ${response}")
       if(response.CUNO != null){
         customer = response.CUNO  
@@ -87,14 +86,14 @@ public class TestProgram extends ExtendM3Trigger {
     String DSPpostalcode = interactive.display.fields.WRPONO.toString();
     String DSPtown = interactive.display.fields.WRTOWN.toString();
     
-    def params = [ "SQRY":"CUNM:${DSPname}~ AND CUA1:${DSPaddress} AND PONO:${DSPpostalcode} AND TOWN:{DSPtown}".toString() ] // toString is needed to convert from gstring to string
+    Map<String, String> params = [ "SQRY":"CUNM:${DSPname}~ AND CUA1:${DSPaddress} AND PONO:${DSPpostalcode} AND TOWN:{DSPtown}".toString() ] // toString is needed to convert from gstring to string
     String customer = null
-    def callback = {
-    Map<String, String> response ->
-      logger.info("Response = ${response}")
-      if(response.CUNO != null){
-        customer = response.CUNO  
-      }
+    Closure<?> callback = {
+      Map<String, String> response ->
+        logger.info("Response = ${response}")
+        if(response.CUNO != null){
+          customer = response.CUNO  
+        }
     }
     
     miCaller.call("CRS610MI","SearchCustomer", params, callback)
@@ -129,9 +128,9 @@ public class TestProgram extends ExtendM3Trigger {
     String DSPpostalcode = interactive.display.fields.WRPONO.toString();
     String DSPtown = interactive.display.fields.WRTOWN.toString();
     
-    def params = [ "SQRY":"CUNM:${DSPname}~ AND CUA1:${DSPaddress} AND PONO:${DSPpostalcode} AND TOWN:{DSPtown}".toString() ] // toString is needed to convert from gstring to string
+    Map<String, String> params = [ "SQRY":"CUNM:${DSPname}~ AND CUA1:${DSPaddress} AND PONO:${DSPpostalcode} AND TOWN:{DSPtown}".toString() ] // toString is needed to convert from gstring to string
     String customer = null
-    def callback = {
+    Closure<?> callback = {
     Map<String, String> response ->
       logger.info("Response = ${response}")
       if(response.CUNO != null){
@@ -175,10 +174,9 @@ public class TestProgram extends ExtendM3Trigger {
     String DSPpostalcode = interactive.display.fields.WRPONO.toString();
     String DSPtown = interactive.display.fields.WRTOWN.toString();
     
-    def params = [ "SQRY":"CUNM:${DSPname}~ AND CUA1:${DSPaddress} AND PONO:${DSPpostalcode} AND TOWN:{DSPtown}".toString() ] // toString is needed to convert from gstring to string
+    Map<String, String> params = [ "SQRY":"CUNM:${DSPname}~ AND CUA1:${DSPaddress} AND PONO:${DSPpostalcode} AND TOWN:{DSPtown}".toString() ] // toString is needed to convert from gstring to string
     String customer = null
-    def callback = {
-    Map<String, String> response ->
+    Closure<?> callback = { Map<String, String> response ->
       logger.info("Response = ${response}")
       if(response.CUNO != null){
         customer = response.CUNO  

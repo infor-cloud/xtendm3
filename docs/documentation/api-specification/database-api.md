@@ -110,7 +110,7 @@ Example:
 Read all items with status 20 in a specific company and perform an action on each found record
 
 ```groovy
-def handleReleasedItems() {
+void handleReleasedItems() {
   int currentCompany = (Integer)program.getLDAZD().CONO
   DBAction query = database.table("MITMAS").index("20").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
   DBContainer container = query.getContainer()
@@ -192,7 +192,7 @@ Example:
 
 Read item and update status to 90
 ```groovy
-def deprecateItem() {
+void deprecateItem() {
   int currentCompany = (Integer)program.getLDAZD().CONO
   DBAction query = database.table("MITMAS").index("00").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
   DBContainer container = query.getContainer()
@@ -215,7 +215,7 @@ Example:
 
 Read all items in with status 20 in a company and set the status to 90 for then
 ```groovy
-def deprecateItems() {
+void deprecateItems() {
   int currentCompany = (Integer)program.getLDAZD().CONO
   DBAction query = database.table("MITMAS").index("20").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
   DBContainer container = query.getContainer()
@@ -238,7 +238,7 @@ Example:
 
 Delete item with status 90
 ```groovy
-def deprecateItem() {
+void deprecateItem() {
   int currentCompany = (Integer)program.getLDAZD().CONO
   DBAction query = database.table("MITMAS").index("00").selection("MMCONO", "MMITNO", "MMITDS", "MMSTAT").build()
   DBContainer container = query.getContainer()
