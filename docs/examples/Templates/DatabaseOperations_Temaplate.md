@@ -50,7 +50,7 @@ Reading one or several records from table.
 void read() {
   DBAction query = database.table("TABLENAME")
     .index("00")
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
@@ -67,10 +67,11 @@ void read() {
 void multiRead() {
   DBAction query = database.table("TABLENAME")
     .index("00")
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
+  container.set("FIELD2", "DATA2");
   query.readAll(container, NUMBERofRECORDS, callback);
 }
 Closure<?> callback = { DBContainer container ->
@@ -87,10 +88,11 @@ void filteredMultiRead() {
   DBAction query = database.table("TABLENAME")
     .index("00")
     .matching(expression)
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
+  container.set("FIELD2", "DATA2");
   query.readAll(container, NUMBERofRECORDS, callback);
 }
 Closure<?> callback = { DBContainer container ->
