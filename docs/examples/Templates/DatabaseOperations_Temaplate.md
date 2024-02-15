@@ -72,7 +72,9 @@ void multiRead() {
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
   container.set("FIELD2", "DATA2");
-  query.readAll(container, NUMBERofRECORDS, callback);
+  int nrOfKeys = 2;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();
+  query.readAll(container, nrOfKeys, nrOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
   String message = container.get("FIELD3");
@@ -93,7 +95,9 @@ void filteredMultiRead() {
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
   container.set("FIELD2", "DATA2");
-  query.readAll(container, NUMBERofRECORDS, callback);
+  int nrOfKeys = 2;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();  
+  query.readAll(container, nrOfKeys, nrOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
   String message = container.get("FIELD3");

@@ -47,3 +47,5 @@ Note that though customers are allowed access to the Infor Campus training mater
   - M3: v2020.12 XtendM3 Overview and Use Cases
 - Watch a recorded onboarding that you will get once you have completed the campus courses
 - Participate actively in monthly workshops which you will receive the invitations to after completion of courses
+
+To recieve the invitation to the workshop series and the XtendM3 Community head over to this page [Workshop and Community](../workshop-and-community) and fill in the form.
