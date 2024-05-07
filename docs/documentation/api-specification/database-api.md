@@ -109,6 +109,7 @@ void readRecord() {
 ### Read multiple records
 To read multiple records a database action should be defined along with a `Closure<?>` that defines how each read record
 will be processed/used.
+When reading multiple records, the 'readAll' function including 'pageSize' should be used. 'pageSize' is referred to as 'nrOfRecords' in the examples below.
 
 Example:
 
@@ -136,7 +137,7 @@ Closure<?> releasedItemProcessor = { DBContainer container ->
 
 ### Read with selection
 Database API has support for expressions and filters, to use the feature, an instance of `ExpressionFactory` should be
-retrieved to build the filter and then used to build the DBAction. The rest is identical to a normal operation.
+retrieved to build the filter and then used to build the DBAction. The rest is identical to a normal operation. 
 
 Example:
 
@@ -154,8 +155,10 @@ public void main() {
     .build();
   DBContainer container = query.getContainer();
   container.set("MMCONO", currentCompany);
-  container.set("MMSTAT", "20");
-  query.readAll(container, 2, releasedItemProcessor);
+  container.set("MMSTAT", "20"); 
+  int nrOfKeys = 2;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
+  query.readAll(container, nrOfKeys, nrOfRecords, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
@@ -191,7 +194,9 @@ public void main() {
       mi.write();
     }
   }
-  query.readAll(container, 3, readCallback)
+  int nrOfKeys = 3;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
+  query.readAll(container, nrOfKeys, nrOfRecords, readCallback)
 }
 ```
 
@@ -235,7 +240,9 @@ void deprecateItems() {
   DBContainer container = query.getContainer();
   container.set("MMCONO", currentCompany);
   container.set("MMSTAT", "20");
-  query.readAllLock(container, 2, updateCallBack);
+  int nrOfKeys = 2; 
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();
+  query.readAllLock(container, nrOfKeys, nrOfRecords, updateCallBack);
 }
 
 Closure<?> updateCallBack = { LockedResult lockedResult ->

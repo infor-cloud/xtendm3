@@ -25,7 +25,7 @@ General XtendM3 limitations.
 ### M3 Program calls
 It is not possible to call M3 programs from an extension. Only M3 APIs can be called from extensions.
 
-### Database read on user-defined sorting orders  
+### Database read on user-defined sorting orders
 It is not possible to build query on standard tables using user-defined sorting order or index created using CRS021.
 
 ## Extending
