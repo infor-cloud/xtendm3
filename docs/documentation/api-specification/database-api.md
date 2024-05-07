@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Database API
+title: Database APIs
 parent: API Specification
 grand_parent: Documentation
 nav_order: 7
@@ -67,16 +67,6 @@ void createTableRecord() {
     container.set(*FIELD*, *DATA*)
     query.insert(container)
   }
-```
-
-Or to update the already existing record.
-Example:
-
-```groovy
-    query.insert(container, { LockedResult existingRecord ->
-    existingRecord.set(*FIELD*, *DATA*)
-    existingRecord.update()
-    })
 ```
 
 ### Read a specific record
