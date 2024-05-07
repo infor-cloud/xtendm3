@@ -29,7 +29,7 @@ These templates outline best practices for **C**reate, **R**ead, **U**pdate and 
 #### Create
 Creating, or adding one or several new records to table.
 ```groovy
-def create() {
+void create() {
   DBAction query = database.table("TABLENAME")
     .index("00")
     .build();
@@ -47,10 +47,10 @@ Reading one or several records from table.
 
 ##### Read one record
 ```groovy
-def read() {
+void read() {
   DBAction query = database.table("TABLENAME")
     .index("00")
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
@@ -64,14 +64,17 @@ def read() {
 ```
 ##### Read multiple records
 ```groovy
-def multiRead() {
+void multiRead() {
   DBAction query = database.table("TABLENAME")
     .index("00")
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
-  query.readAll(container, NUMBERofRECORDS, callback);
+  container.set("FIELD2", "DATA2");
+  int nrOfKeys = 2;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();
+  query.readAll(container, nrOfKeys, nrOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
   String message = container.get("FIELD3");
@@ -81,17 +84,20 @@ Closure<?> callback = { DBContainer container ->
 ```
 ##### Read multiple records with filter
 ```groovy
-def filteredMultiRead() {
+void filteredMultiRead() {
   ExpressionFactory expression = database.getExpressionFactory("TABLENAME");
   expression = expression.eq("FIELD3", "DATA3").and(expression.lt("FIELD1", "DATA1"));
   DBAction query = database.table("TABLENAME")
     .index("00")
     .matching(expression)
-    .selection("FIELD1", "FIELD2", "FIELD3", "FIELD4")
+    .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
   container.set("FIELD1", "DATA1");
-  query.readAll(container, NUMBERofRECORDS, callback);
+  container.set("FIELD2", "DATA2");
+  int nrOfKeys = 2;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();  
+  query.readAll(container, nrOfKeys, nrOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
   String message = container.get("FIELD3");
@@ -103,7 +109,7 @@ Closure<?> callback = { DBContainer container ->
 #### Update
 Update existing record(s) in table
 ```groovy
-def update() {
+void update() {
   DBAction query = database.table("TABLENAME")
     .index("00")
     .build();
@@ -120,7 +126,7 @@ def update() {
 #### Delete
 Delete record(s) from table
 ```groovy
-def delete() {
+void delete() {
   DBAction query = database.table("TABLENAME")
     .index("00")
     .build();

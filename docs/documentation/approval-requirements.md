@@ -21,7 +21,7 @@ Once all the information below is ready and the extension has been tested, send 
 ---
 
 ## Request Format
-Outlininig the format of XtendM3 extension request. 
+Outlining the format of XtendM3 extension request.
 
 ### Request Content
 Copy this form to your mail and answer all questions.  
@@ -29,6 +29,7 @@ The questionnaire should be answered per extension;
 Therefore, if there are three extensions sent for review, there should be three separate sections in one email answering the following for each extension:
 
 - Project/Customer Name
+- Project Manager responsible for Billing or Clarity Tasks
 - Developer Name (Developer needs to have completed the XtendM3 trainings and have been attending the workshops)
 - Requirement Description (1 or 2 paragraphs)
 - Solution Description (1 or 2 paragraphs)
@@ -92,7 +93,7 @@ Please have this considered/incorporated when solution estimates are created and
 **For new extensions**, a review will be scheduled;  
 expect to receive a calendar invite for the meeting, whose required attendees would be the developer and the functional consultant; PM is optional.
 
-**For previously reviewed and signed extensions,**  
+**For previously reviewed and signed extensions,**
 if only minor adjustments were done,
 an email will be sent to you with the signed extension;  
 otherwise, a meeting will be scheduled again for the review.
@@ -104,7 +105,7 @@ Once done, send the corrected extensions again for review and signing.
 Once the review is completed and extensions are approved,
 a signed packaged version of the extension will be emailed back to you.
 
-**SLA is 5 days per up to 20 extensions.** Multiple requests from same customer is not processed in parallel i.e. if 20 is sent in by the first request, the next 20 for the same client will start its SLA after the first 20 are done.
+**SLA is 10 days per up to 20 extensions.** Multiple requests from same customer is not processed in parallel i.e. if 20 is sent in by the first request, the next 20 for the same client will start its SLA after the first 20 are done.
 
 Effective **July 1, 2021**, 
 we will no longer release signed extensions without first being able to bill our time spent for the review and signing.

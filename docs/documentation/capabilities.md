@@ -22,33 +22,38 @@ XtendM3 Capabilities
 
 ## Extending
 ### Batch/Function
+Capabilities specific to extended batch & function programs.
+
 #### Adding or modifying logic inside a batch program through extension points
-It is possible to add specific logic in a standard batch program provided that extension points are existing. 
+* It is possible to add specific logic in a standard batch program provided that extension points are existing. 
 By default, batch program is not available in BE Extension tool and needs to be requested.  
 
 ### Interactive
+Capabilities specific to extended interactive programs.
+
 #### Adding validation on a standard field
-It is possible to add validation on standard fields through extensions connected to Interactive programs' extension points. 
+* It is possible to add validation on standard fields through extensions connected to Interactive programs' extension points. 
 
 #### Performing validation before and after standard related options in the screen
-It is possible to perform validation but it is not possible to get the related option that was chosen inside the extension. 
+* It is possible to perform validation but it is not possible to get the related option that was chosen inside the extension. 
 For use cases where related option is needed, an H5 script can be used to call XtendM3 API instead of hooking an extension 
 to the interactive programs' extension points.
 
 #### Skip or stop performing options update, create, delete, or copy
-It is possible to stop operations by using an extension on PxCHK extension points.
+* It is possible to stop operations by using an extension on PxCHK extension points.
 
-#### Displaying dialog messages to the screen 
-It is possible to show information/warning/error messages on the screen as well as pop up dialogs with Yes/No or Ok/Cancel 
+#### Displaying dialog messages to the screen
+* It is possible to show information/warning/error messages on the screen as well as pop up dialogs with Yes/No or Ok/Cancel 
 options to the screen. 
 
-#### Adding default value or overriding value of field on the screen 
-It is possible to set default values for the standard fields by using PxINZ extension points.
+#### Adding default value or overriding value of field on the screen
+* It is possible to set default values for the standard fields by using PxINZ extension points.
 
 ### Transaction
+Capabilities specific to extended standard APIs.
 
 #### Performing specific logic on standard API transaction through extension points
-It is possible to perform specific logic on standard API transactions by creating a trigger extension and hooking it on 
+* It is possible to perform specific logic on standard API transactions by creating a trigger extension and hooking it on 
 extension points from standard APIs. Extensions can run before a standard transaction is executed or after a standard transaction has been 
 executed successfully.
 
@@ -92,14 +97,42 @@ It is possible to perform CRUD operations on M3 database.
 ### Data Lake Synchronization
 TBA. Not released yet.
 
+### Experience Designer
+It is possible to use XtendM3 in Experience Designer. You can add a UI on top of Dynamic Tables, add UI on top of custom XtendM3 APIs and add buttons for other activities like starting a batch job, among other things.<br>
+To learn more, head to _education.infor.com_ and search for "Experience Designer".
+
 ## Development Tools
+Capabilities of various XtendM3 development tools.
+
 ### Online IDE
+Capabilities specific to the online XtendM3 development environment.
+
+#### 
 
 ### Local IDE
-#### API SDK
+Capabilities specific to the local XtendM3 development environment. 
+
+#### XtendM3 SDK
+The XtendM3 SDK provides the interfaces for the internal APIs available to XtendM3 extensions. This SDK can be used to build, test and debug extensions locally without the need for an M3 environment.
 
 #### Maven Plugin
-Not released yet.
+The Maven plugin for XtendM3 can be used to lint and export extensions locally.
+More detailed documentation regarding XtendM3 Local Workspace available [here](../local-workspace).
+* _Lint_
+    * Lint and verify your extensions locally.
+* _Export_
+    * Export your extensions to .json format.
+<br>
+
+#### IONAPIs
+There are three available XtendM3 APIs in ION for test-compiling, importing and activating extensions.
+More detailed documentation regarding XtendM3 Local Workspace available [here](../local-workspace).
+* _Test-compile_
+    * Run the same test-compiler available in the cloud on your local code.
+* _Import_
+    * Import your local extensions to a cloud tenant.
+* _Activate_
+    * Activate your imported extensions.
 
 ## Governance
 ### Compile Time

@@ -39,13 +39,13 @@ Note that though customers are allowed access to the Infor Campus training mater
 **You will need to complete the following steps before you will be allowed to do XtendM3 development work for any project:**   
 
 - Go through all XtendM3 courses on Infor Campus
-  - M3 CE: v2019.10 Introducing XtendM3  
-  - M3 CE: v2019.10 XtendM3 - Technical Configurations  
-  - M3: v2019.10 Using XtendM3 (Cloud Edition)  
-  - M3: v2019.10 Demonstrating XtendM3 (Cloud Edition)  
-  - M3: v2020.001 XtendM3 - Use Cases Walk-through  
-  - M3: v2020.12 XtendM3 Overview and Use Cases  
-  
-  
-- Watch a recorded onboarding that you will get once you have completed the campus courses  
-- Participate actively in bi-weekly workshops which you will receive the invitations to after completion of courses  
+  - M3 CE: v2019.10 Introducing XtendM3
+  - M3 CE: v2019.10 XtendM3 - Technical Configurations
+  - M3: v2019.10 Using XtendM3 (Cloud Edition)
+  - M3: v2019.10 Demonstrating XtendM3 (Cloud Edition)
+  - M3: v2020.001 XtendM3 - Use Cases Walk-through
+  - M3: v2020.12 XtendM3 Overview and Use Cases
+- Watch a recorded onboarding that you will get once you have completed the campus courses
+- Participate actively in monthly workshops which you will receive the invitations to after completion of courses
+
+To recieve the invitation to the workshop series and the XtendM3 Community head over to this page [Workshop and Community](../workshop-and-community) and fill in the form.
