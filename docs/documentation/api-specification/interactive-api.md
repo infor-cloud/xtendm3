@@ -58,7 +58,7 @@ public class SampleExtension extends ExtendM3Trigger {
   public void main() {
     String WHLO = interactive.display.fields.WRWHLO
     if(WHLO == '001'){
-        interactive.display.showOkDialog("You are in warehouse " + WHLO);
+        interactive.showOkDialog("You are in warehouse " + WHLO);
     }
   }
 }
