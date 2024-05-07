@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Database API
+title: Database APIs
 parent: API Specification
 grand_parent: Documentation
 nav_order: 7

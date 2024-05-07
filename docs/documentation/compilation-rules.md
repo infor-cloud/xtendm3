@@ -25,4 +25,6 @@ These methods, declaration and types are strictly forbidden in XtendM3.
 ### Passing classes as parameters
 Creating a Utility method that recieves a class as a parameter is not allowed. 
 Example: 
+```groovy 
 
+```
