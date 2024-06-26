@@ -99,7 +99,7 @@ void readRecord() {
 ### Read multiple records
 To read multiple records a database action should be defined along with a `Closure<?>` that defines how each read record
 will be processed/used.
-When reading multiple records, the 'readAll' function including 'pageSize' should be used. 'pageSize' is referred to as 'nrOfRecords' in the examples below.
+When reading multiple records, the 'readAll' function including 'pageSize' should be used. 'pageSize' is referred to as 'nrOfRecords' in the examples below. Ten thousand records is the recommended maximum value of pageSize. 
 
 Example:
 
@@ -107,6 +107,7 @@ Read all items with status 20 in a specific company and perform an action on eac
 
 ```groovy
 void handleReleasedItems() {
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
   int currentCompany = (Integer)program.getLDAZD().CONO;
   DBAction query = database.table("MITMAS")
     .index("20")
@@ -115,7 +116,7 @@ void handleReleasedItems() {
   DBContainer container = query.getContainer();
   container.set("MMCONO", currentCompany);
   container.set("MMSTAT", "20");
-  query.readAll(container, 2, releasedItemProcessor);
+  query.readAll(container, 2, nrOfRecords, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
@@ -231,8 +232,7 @@ void deprecateItems() {
   container.set("MMCONO", currentCompany);
   container.set("MMSTAT", "20");
   int nrOfKeys = 2; 
-  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();
-  query.readAllLock(container, nrOfKeys, nrOfRecords, updateCallBack);
+  query.readAllLock(container, nrOfKeys, updateCallBack);
 }
 
 Closure<?> updateCallBack = { LockedResult lockedResult ->
