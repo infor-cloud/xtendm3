@@ -67,7 +67,7 @@ Therefore, if there are three extensions sent for review, there should be three 
 
 ### Attachments
 - Exported extension in JSON format
-- Screenshots of dynamic tables
+- Exported dynamic tables in JSON format
 
 ## Mandatory Checklist
 Please go through these checklists before sending extension for approval

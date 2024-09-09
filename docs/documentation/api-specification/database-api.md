@@ -69,16 +69,6 @@ void createTableRecord() {
   }
 ```
 
-Or to update the already existing record.
-Example:
-
-```groovy
-    query.insert(container, { LockedResult existingRecord ->
-    existingRecord.set(*FIELD*, *DATA*)
-    existingRecord.update()
-    })
-```
-
 ### Read a specific record
 To read a specific record, primary keys or full index keys should be used to look up the data. The example below
 illustrates how to retrieve an item.
@@ -109,6 +99,7 @@ void readRecord() {
 ### Read multiple records
 To read multiple records a database action should be defined along with a `Closure<?>` that defines how each read record
 will be processed/used.
+When reading multiple records, the 'readAll' function including 'pageSize' should be used. 'pageSize' is referred to as 'nrOfRecords' in the examples below. Ten thousand records is the recommended maximum value of pageSize. 
 
 Example:
 
@@ -116,6 +107,7 @@ Read all items with status 20 in a specific company and perform an action on eac
 
 ```groovy
 void handleReleasedItems() {
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
   int currentCompany = (Integer)program.getLDAZD().CONO;
   DBAction query = database.table("MITMAS")
     .index("20")
@@ -124,7 +116,7 @@ void handleReleasedItems() {
   DBContainer container = query.getContainer();
   container.set("MMCONO", currentCompany);
   container.set("MMSTAT", "20");
-  query.readAll(container, 2, releasedItemProcessor);
+  query.readAll(container, 2, nrOfRecords, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
@@ -136,7 +128,7 @@ Closure<?> releasedItemProcessor = { DBContainer container ->
 
 ### Read with selection
 Database API has support for expressions and filters, to use the feature, an instance of `ExpressionFactory` should be
-retrieved to build the filter and then used to build the DBAction. The rest is identical to a normal operation.
+retrieved to build the filter and then used to build the DBAction. The rest is identical to a normal operation. 
 
 Example:
 
@@ -154,8 +146,10 @@ public void main() {
     .build();
   DBContainer container = query.getContainer();
   container.set("MMCONO", currentCompany);
-  container.set("MMSTAT", "20");
-  query.readAll(container, 2, releasedItemProcessor);
+  container.set("MMSTAT", "20"); 
+  int nrOfKeys = 2;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
+  query.readAll(container, nrOfKeys, nrOfRecords, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
@@ -191,7 +185,9 @@ public void main() {
       mi.write();
     }
   }
-  query.readAll(container, 3, readCallback)
+  int nrOfKeys = 3;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
+  query.readAll(container, nrOfKeys, nrOfRecords, readCallback)
 }
 ```
 
@@ -235,7 +231,8 @@ void deprecateItems() {
   DBContainer container = query.getContainer();
   container.set("MMCONO", currentCompany);
   container.set("MMSTAT", "20");
-  query.readAllLock(container, 2, updateCallBack);
+  int nrOfKeys = 2; 
+  query.readAllLock(container, nrOfKeys, updateCallBack);
 }
 
 Closure<?> updateCallBack = { LockedResult lockedResult ->
