@@ -132,7 +132,7 @@ Table - EXT001
 API - EXT001MI  
 
 #### Methods
-- Method name should follow Java naming convention for methods  
+- Method name should follow Java naming convention for methods 
 - Names should be in lowerCamelCase, using no underscores and starting with a letter  
 - Only alphanumeric characters should be used. Alphanumeric characters include the letters a-z, either upper case or lower case, and the numerals 0-9  
 - Should be simple and descriptive: 
@@ -140,7 +140,9 @@ validateDate,
 validateType
 
 #### Variables and Constants
-- Variables and constants should follow Java naming convention
+- Variables and constants should be in lowerCamelCase, using no underscores and starting with a letter
+- Only alphanumeric characters should be used. Alphanumeric characters include the letters a-z, either upper case or lower case, and the numerals 0-9
+- should be simple and descriptive: inValidDate, outValidDateType
 - Variables should be in lowerCamelCase and constants in CAPITAL_CONSTANTS
 
 ## Extension Structure
