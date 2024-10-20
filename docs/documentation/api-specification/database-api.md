@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Database APIs
+title: Database API
 parent: API Specification
 grand_parent: Documentation
 nav_order: 7
@@ -85,11 +85,11 @@ void readRecord() {
     .selection("MMITDS", "MMSTAT")
     .build();
   DBContainer container = query.getContainer();
-  container.set("MMCONO", currentCompany);
-  container.set("MMITNO", "SAMPLE-ITEM");
+  container.setInt("MMCONO", currentCompany);
+  container.setString("MMITNO", "SAMPLE-ITEM");
   if (query.read(container)) {
-    String description = container.get("MMITDS");
-    String status = container.get("MMSTAT");
+    String description = container.getString("MMITDS");
+    String status = container.getString("MMSTAT");
   }
 }
 ```
@@ -111,17 +111,17 @@ void handleReleasedItems() {
   int currentCompany = (Integer)program.getLDAZD().CONO;
   DBAction query = database.table("MITMAS")
     .index("20")
-    .selection("MMITDS", "MMSTAT")
+    .selection("MMITDS", "MMITNO")
     .build();
   DBContainer container = query.getContainer();
-  container.set("MMCONO", currentCompany);
-  container.set("MMSTAT", "20");
+  container.setInt("MMCONO", currentCompany);
+  container.setString("MMSTAT", "20");
   query.readAll(container, 2, nrOfRecords, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
-  String description = container.get("MMITDS");
-  String status = container.get("MMSTAT");
+  String description = container.getString("MMITDS");
+  String status = container.getString("MMITNO");
   // Use this found record as intended
 }
 ```
@@ -138,24 +138,23 @@ to 2.
 ```groovy
 public void main() {
   ExpressionFactory expression = database.getExpressionFactory("TABLE");
-  expression = expression.eq("FIELD", "DATA").and(expression.gt("MMCFI1", "2"));
+  expression = expression.eq("MMITGR", "EX-GROUP").and(expression.gt("MMCFI1", "2"));
   DBAction query = database.table("MITMAS")
     .index("20")
     .matching(expression)
-    .selection("MMITDS", "MMSTAT")
+    .selection("MMITDS", "MMITNO")
     .build();
   DBContainer container = query.getContainer();
-  container.set("MMCONO", currentCompany);
-  container.set("MMSTAT", "20"); 
+  container.setInt("MMCONO", currentCompany);
+  container.setString("MMSTAT", "20"); 
   int nrOfKeys = 2;
   int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
   query.readAll(container, nrOfKeys, nrOfRecords, releasedItemProcessor);
 }
 
 Closure<?> releasedItemProcessor = { DBContainer container ->
-  String description = container.get("MMITDS");
-  String status = container.get("MMSTAT");
-  // Use this found record as intended
+  String description = container.getString("MMITDS");
+  String itemNumber = container.getString("MMITNO");
 }
 ```
 
@@ -165,23 +164,23 @@ Read two fields from table record, using three other fields in the same record.
 
 ```groovy
 public void main() {
-  inKEY1 = mi.inData.get("KEY1") == null? "": mi.inData.get("KEY1").trim();
-  inKEY2 = mi.inData.get("KEY2") == null? "": mi.inData.get("KEY2").trim();
-  inKEY2 = mi.inData.get("KEY3") == null? "": mi.inData.get("KEY3").trim(); 
+  inCONO = mi.inData.get("CONO") == null? "": mi.inData.get("CONO").trim();
+  inSTAT = mi.inData.get("STAT") == null? "": mi.inData.get("STAT").trim();
+  inITNO = mi.inData.get("ITNO") == null? "": mi.inData.get("ITNO").trim(); 
 
-  DBAction query = database.table("TABLE")
+  DBAction query = database.table("MITMAS")
     .index("00")
-    .selection("READFIELD1", "READFIELD2")
+    .selection("MMRESP", "MMTPCD")
     .build();
   DBContainer container = query.getContainer();
-  container.set("KEY1",inKEY1);
-  container.set("KEY2",inKEY2);
-  container.set("KEY3",inKEY3);
+  container.set("MMCONO",inCONO);
+  container.set("MMSTAT",inSTAT);
+  container.set("MMITNO",inITNO);
 
   Closure<?> readCallback = { DBContainer readResult ->
     if (mi.hasRemainingRecords()) {
-      mi.outData.put("outDATA1", readResult.get("READFIELD1").toString());
-      mi.outData.put("outDATA2", readResult.get("READFIELD2").toString());
+      mi.outData.put("RESP", readResult.get("MMRESP").toString());
+      mi.outData.put("TPCD", readResult.get("MMTPCD").toString());
       mi.write();
     }
   }
@@ -204,8 +203,8 @@ void deprecateItem() {
     .index("00")
     .build();
   DBContainer container = query.getContainer();
-  container.set("MMCONO", currentCompany);
-  container.set("MMITNO", "SAMPLE-ITEM");
+  container.setInt("MMCONO", currentCompany);
+  container.setString("MMITNO", "123456789123456");
   query.readLock(container, updateCallBack);
 }
 
@@ -221,7 +220,7 @@ method called and the number of keys that are used for reading the records.
 
 Example:
 
-Read all items in with status 20 in a company and set the status to 90 for then
+Read all items in with status 20 in a company and set the status to 90 for them
 ```groovy
 void deprecateItems() {
   int currentCompany = (Integer)program.getLDAZD().CONO;
@@ -229,14 +228,14 @@ void deprecateItems() {
     .index("20")
     .build();
   DBContainer container = query.getContainer();
-  container.set("MMCONO", currentCompany);
-  container.set("MMSTAT", "20");
+  container.setInt("MMCONO", currentCompany);
+  container.setString("MMSTAT", "20");
   int nrOfKeys = 2; 
   query.readAllLock(container, nrOfKeys, updateCallBack);
 }
 
 Closure<?> updateCallBack = { LockedResult lockedResult ->
-  lockedResult.set("MMSTAT", "90");
+  lockedResult.setString("MMSTAT", "90");
   lockedResult.update();
 }
 ```
@@ -247,7 +246,7 @@ call which is replaced with `delete` instead.
 
 Example:
 
-Delete item with status 90
+Delete item(s) with status 90
 ```groovy
 void deprecateItem() {
   int currentCompany = (Integer)program.getLDAZD().CONO;
@@ -255,9 +254,10 @@ void deprecateItem() {
     .index("00")
     .build();
   DBContainer container = query.getContainer();
-  container.set("MMCONO", currentCompany);
-  container.set("MMITNO", "SAMPLE-ITEM");
-  query.readLock(container, deleterCallback);
+  container.setInt("MMCONO", currentCompany);
+  container.setString("MMSTAT", "90");
+  int nrOfKeys = 2;
+  query.readAllLock(container, nrOfKeys, deleterCallback);
 }
 
 Closure<?> deleterCallback = { LockedResult lockedResult ->
@@ -267,17 +267,16 @@ Closure<?> deleterCallback = { LockedResult lockedResult ->
 
 ## Considerations and Guidelines
 The ability to work with database directly is a very tempting solution. It is extremely flexible and yet quite dangerous
-if it is not handled properly. Keep the following points in mind when working with the DatabaseAPI
+if it is not handled properly. Keep the following points in mind when working with the DatabaseAPI:
 
 * Stick to standard M3 APIs when possible, using direct record insert/update you skip all validations that are done by
-    M3 which might lead to corrupt data in database
+    M3 which might lead to corrupt data in the database.
 * If current program is using the table you are performing operations on, the changes will affect the record read by the
     program. This might be intentional in some cases. In some other cases you might retrieve another record while the
-    program was processing the original record and it can lead to undefined behaviour
-* Avoid using ExpressionFactory and matching filters when possible and leverage defined indexes instead
-* Avoid retrieving too many columns, only retrieve the ones you need
+    program was processing the original record and it can lead to undefined behavior.
+* Avoid using ExpressionFactory and matching filters when possible and leverage defined indexes instead.
+* Avoid retrieving too many columns, only retrieve the ones you need.
 * Avoid creating queries that affect large data set. This is not meant to be used for going through thousands of
     records.
 * Avoid performing expensive tasks and calculations while locking a record. Locking a record blocks all other programs
-    in M3 to perform operations on this record
-
+    in M3 to perform operations on this record.

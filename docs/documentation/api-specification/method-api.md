@@ -32,44 +32,29 @@ The method receives the value of an argument at the specific index from the exte
 Example:
 
 ```groovy
-public class GetArgumentExample extends ExtendM3Trigger {
-  private final MethodAPI method;
-  
-  public GetArgumentExample(MethodAPI method) {
-    this.method=method;
-  }
-  
-  public void main() {
-    Object argument = method.getArgument(0)
-  }
+public void GetArgumentExample() {
+  //Specify type for returned argument, String or Integer
+  String argument = method.getArgument(0);
 }
 ```
 
 ### getArguments
 The method receives an array of all arguments from the extension point of the designed extension.
 <br>
-Example:
 
+Example:
 ```groovy
-public class GetArgumentsExample extends ExtendM3Trigger {
-  private final MethodAPI method;
-  private final LoggerAPI logger;
-  
-  public GetArgumentsExample(MethodAPI method, LoggerAPI logger) {
-    this.method=method;
-    this.logger=logger;
-  }
-  
-  public void main() {
-    Object[] array=method.getArguments();
-    int i = 1;
-    if(array==null || array.length == 0) {
-      logger.info("Array is empty, there are no arguments from an extension point.")
-    } else {
-      for(Object arrayElement : array) {
-        logger.info("Argument no.${i} is ${arrayElement.toString()}")
-        i++;
-      }
+public void GetArgumentsExample() {
+  //Object is used as type for the array in this example, because the arguments can be mix of String and Integer
+  //Always strive towards being as specific as possible with types. If all arguments are of type String, use String array
+  Object[] arguments = method.getArguments();
+  int i = 1;
+  if(arguments == null || arguments.length == 0) {
+    logger.info("Array is empty, there are no arguments from an extension point.");
+  } else {
+    for(Object argumentsElement : arguments) {
+      logger.info("Argument no.${i} is ${argumentsElement.toString()}");
+      i++;
     }
   }
 }
@@ -78,57 +63,36 @@ public class GetArgumentsExample extends ExtendM3Trigger {
 ### setReturnValue
 The method sets the return value inside an overriden method.
 <br>
-Example:
 
+Example:
 ```groovy
-public class SetReturnValueExample extends ExtendM3Trigger {
-  private final MethodAPI method;
-  
-  public SetReturnValueExample(MethodAPI method) {
-    this.method=method;
-  }
-  
-  public void main() {
-     method.setReturnValue(true); //In that case extension point has boolean type return, etc.
-  }
+public void SetReturnValueExample() {
+  //In that case extension point has boolean type return, etc.
+  method.setReturnValue(true);
 }
 ```
-
 
 ### getReturnValue
 The method gets the value returned from an overriden method.
 <br>
-Example:
 
+Example:
 ```groovy
-public class GetReturnValueExample extends ExtendM3Trigger {
-  private final MethodAPI method;
-  
-  public GetReturnValueExample(MethodAPI method) {
-    this.method=method;
-  }
-  
-  public void main() {
-     var methodReturnValue = method.getReturnValue(); //The extracted value from the method depends on the type of value returned by the extension point. 
-  }
+public void GetReturnValueExample() {
+  //The extracted value from the method depends on the type of value returned by the extension point.
+  String methodReturnValue = method.getReturnValue();  
 }
 ```
+
 ### getOriginalReturnValue
 Similar to the getReturnValue with the difference, that it will always get the original value returned from an overriden method.
 <br>
-Example:
 
-```groovy
-public class GetOriginalReturnValueExample extends ExtendM3Trigger {
-  private final MethodAPI method;
-  
-  public GetOriginalReturnValueExample(MethodAPI method) {
-    this.method=method;
-  }
-  
-  public void main() {
-     var methodReturnValue = method.getOriginalReturnValue(); //The extracted value from the method depends on the type of value returned by the extension point. 
-  }
+Example:
+```groovy  
+public void GetOriginalReturnValueExample() {
+  //The extracted value from the method depends on the type of value returned by the extension point.
+  String methodReturnValue = method.getOriginalReturnValue();
 }
 ```
 

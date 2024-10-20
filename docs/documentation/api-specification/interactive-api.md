@@ -31,39 +31,23 @@ Field data can be retrieved from the form. This can be used in displaying the me
 
 Example 1
 ```groovy
-public class SampleExtension extends ExtendM3Trigger {
-  private final InteractiveAPI interactive
-  
-  public SampleExtension(ExtensionAPI extension, InteractiveAPI interactive) {
-    this.interactive = interactive
-  }
-  
-  public void main() {
-    //Select field WWCUNO from UI
-    String CUNO = interactive.display.fields.WWCUNO
-    if(CUNO == null) return
+public void RetrieveUIField() {
+  //Select field WWCUNO from UI
+  String CUNO = interactive.display.fields.WWCUNO;
+  if(CUNO == null) {
+    return;
   }
 }
 ```
 
 Example 2
 ```groovy
-public class SampleExtension extends ExtendM3Trigger {
-  private final InteractiveAPI interactive
-  
-  public SampleExtension(InteractiveAPI interactive) {
-    this.interactive = interactive
-  }
-  
-  public void main() {
-    String WHLO = interactive.display.fields.WRWHLO
-    if(WHLO == '001'){
-        interactive.showOkDialog("You are in warehouse " + WHLO);
-    }
+public void RetrieveUIField() {
+  String WHLO = interactive.display.fields.WRWHLO;
+  if(WHLO == '001') {
+    interactive.showOkDialog("You are in warehouse " + WHLO);
   }
 }
-
-
 ```
 
 
@@ -72,48 +56,24 @@ Shows message to the user with a variety of ways to be displayed.
 
 Example 1:
 ```groovy
-public class SampleExtension extends ExtendM3Trigger {
-  private final InteractiveAPI interactive
-  
-  public SampleExtension(InteractiveAPI interactive) {
-    this.interactive = interactive
-  }
-  
-  public void main() {
-    interactive.showOkDialog("Customer Number: " + interactive.display.fields.WWCUNO)
-  }
+public void DisplayMessage() {
+  interactive.showOkDialog("Customer Number: " + interactive.display.fields.WWCUNO);
 }
 ``` 
 
 Example 2:
 ```groovy
-public class SampleExtension extends ExtendM3Trigger {
-  private final InteractiveAPI interactive
-  
-  public SampleExtension(InteractiveAPI interactive) {
-    this.interactive = interactive
-  }
-  
-  public void main() {
-    interactive.showWarningDialog("Customer Number: " + interactive.display.fields.WWCUNO)
-  }
+public void DisplayMessage() {
+  interactive.showWarningDialog("Customer Number: " + interactive.display.fields.WWCUNO);
 }
 ```
 
 Example 3:
 ```groovy
-public class CubaldoTest extends ExtendM3Trigger {
-  private final InteractiveAPI interactive
-  
-  public CubaldoTest(InteractiveAPI interactive) {
-    this.interactive = interactive
-  }
-  
-  public void main() {
-    String STAT = interactive.display.fields.WWSTAT
-    if(STAT != "10"){
-      interactive.showError("WCO0101", interactive.display.fields.WWSTAT)  
-    }
+public void DisplayMessage() {
+  String STAT = interactive.display.fields.WWSTAT;
+  if(STAT != "10") {
+    interactive.showError("WCO0101", interactive.display.fields.WWSTAT);
   }
 }
 ```
@@ -123,34 +83,19 @@ Show messages using custom messages instead of preset messages from M3
 
 Example 1:
 ```groovy
-public class SampleExtension extends ExtendM3Trigger {
-  private final InteractiveAPI interactive
-  
-  public SampleExtension(InteractiveAPI interactive) {
-    this.interactive = interactive
-  }
-  
-  public void main() {
-    String STAT = interactive.display.fields.WWSTAT
-    if(STAT != "30"){
-      interactive.showCustomError("WWSTAT", "Record can only be processed with status greater than 40")  
-    }
+public void DisplayCustomMessage() {
+  String STAT = interactive.display.fields.WWSTAT;
+  if(STAT != "30") {
+    interactive.showCustomError("WWSTAT", "Record can only be processed with status greater than 40");
   }
 }
 ```
 
 Example 2:
 ```groovy
-public class SampleExtension extends ExtendM3Trigger {
-  private final InteractiveAPI interactive
-  
-  public SampleExtension(ProgramAPI program, ExtensionAPI extension, InteractiveAPI interactive) {
-    this.interactive = interactive
-  }
-  
-  public void main() {
-    interactive.showCustomInfo("Record with Item Number: " + interactive.display.fields.WWITNO + " is has been sent to process.")
-  }
+public void DisplayCustomMessage() {
+  String ITNO = interactive.display.fields.WWITNO;
+  interactive.showCustomInfo("Record with Item Number: " + ITNO + " is has been sent to process.");
 }
 ```
 

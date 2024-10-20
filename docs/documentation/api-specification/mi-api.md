@@ -36,7 +36,7 @@ private String whlo;
 private String itno;
 private String whsl;
 
-public void main() {
+void inData() {
   whlo = mi.inData.get("WHLO").trim();
   itno = mi.inData.get("ITNO").trim();
   whsl = mi.inData.get("WHSL").trim();
@@ -48,18 +48,19 @@ This method id used to put value into the data container. Takes key and associet
 
 Example 1:
 ```groovy
-public void main() {
-  mi.outData.put("WHLO", "This is WHLO Output#1 for QQS001")
-  mi.outData.put("ITNO", "This is ITNO Output#2 for QQS002")
-  mi.write() 
+void outData() {
+  mi.outData.put("WHLO", "This is WHLO Output#1 for QQS001");
+  mi.outData.put("ITNO", "This is ITNO Output#2 for QQS002");
+  mi.write();
 }
 ```
 <br>
 
 Example 2:
 ```groovy
-void main() {
-  mi.outData.put("WHLO", String.valueOf(getParameter("NUMB", Double.class).orElse(null)))
+void outData() {
+  mi.outData.put("WHLO", String.valueOf(getParameter("NUMB", Double.class).orElse(null)));
+  mi.write();
 }
 ```
 ### mi.getDateFormat
@@ -67,9 +68,9 @@ This method checks date format and returns it as a string. Possible formats: YMD
 
 Example:
 ```groovy
-void main() {
+void getDateFormat() {
   if (mi.getDateFormat(date1) == "YMD8"){
-    return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
+    return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
   }
 }
 ```
@@ -78,11 +79,10 @@ Returns date separator as a char.
 
 Example:
 ```groovy
-void ReadSeparator () {
-sep = mi.getDateSeparator() 
-String oldDate = '04-DEC-2012'
-Date date = Date.parse( 'dd-MMM-yyyy', oldDate )
-String newDate = date.format( 'M'{sep}'d'{sep}'yyyy' )
+void getDateSeparator () {
+  char sep = mi.getDateSeparator().toString();
+  String oldDate = '04-DEC-2012'
+  String newDate = oldDate.replace("-", sep.toString());
 }
 ```
 
@@ -91,7 +91,7 @@ Returns the amount of remaining records allowed to be written in current transac
 
 Example:
 ```groovy
-void main() {
+void getRemainingRecords() {
   if (mi.getRemainingRecords()>= 2) {
     for (int i = 0; i < 3; i++) {
       mi.outData.put("WHLS" + WHSL)
@@ -106,7 +106,7 @@ Returns true if there are still any additional records to be written or false if
 
 Example:
 ```groovy
-void main() {
+void hasRemainingRecords() {
   if (mi.hasRemainingRecords()){
     mi.outData.put("MMRI" + SLDQ)
     mi.write()
@@ -119,7 +119,7 @@ Returns the maximum amount of possible records to be written as an integer.
 
 Example:
 ```groovy
-public void main() {
+void getMaxRecords() {
   String WHSL = mi.in.get("WHSL")
   for (int i = 0; i < mi.getMaxRecords(); i++) {
     mi.outData.put("WHLS" + WHSL + " " + i)
@@ -133,7 +133,7 @@ Writes response from data present in outData. Clears all values in outData.
 
 Example:
 ```groovy
-public void main() {
+void writeRecord() {
   mi.outData.put("WHLO","Test")
   mi.write()
 }
@@ -141,14 +141,14 @@ public void main() {
 
 ### mi.error
 Writes error responses with parameters:<br>
-String errorMessage - error message to display (only supports 240 characters);<br>
-String field - field error occurred for (only supports 10 characters);<br>
-String errorCode - code for error which occurred (only supports 2 characters).
+- String errorMessage - error message to display (only supports 240 characters)<br>
+- String field - field error occurred for (only supports 10 characters)<br>
+- String errorCode - code for error which occurred (only supports 2 characters)
 
 Example 1:
 ```groovy
 boolean validateInput() {
-  if (!getWarehouse(whlo)){
+  if (!getWarehouse(whlo)) {
     mi.error("Warehouse " + whlo + " is invalid");
     return false;
   } else {
@@ -160,8 +160,8 @@ boolean validateInput() {
 
 Example 2:
 ```groovy
-boolean validResponsible(String Responsible) {
-  if (Responsible.isEmpty()){
+boolean validResponsible(String responsible) {
+  if (responsible.isEmpty()) {
     mi.error("Responsible must be entered");
     return false;
   } else {

@@ -2,7 +2,7 @@
 layout: default
 title: Programming Standard
 parent: Documentation
-nav_order: 8
+nav_order: 2
 ---
     
 # Programming Standard
@@ -18,6 +18,21 @@ Guideline for writing secure, optimized and scalable extensions.
 {:toc}
 
 ---
+
+## Importance of programming standards
+Programming standards refer to a set of guidelines and best practices that outline how code should be written, organized, and formatted. These standards are crucial for several reasons:
+
+- Ensures that code is written in a consistent manner, making it easier for future developers to read, understand, and maintain extensions. When code follows a uniform style, other developers can quickly get up to speed, and easily navigate through the code without confusion.
+
+- As projects grow, maintaining code can become a significant challenge. Adhering to programming standards helps in creating a clean and organized codebase, which in turn makes it easier to identify and fix bugs, add new features, and refactor existing code without introducing new issues.
+
+- In a team environment, multiple developers often work on the same project. Programming standards facilitate smoother collaboration by ensuring everyone follows the same set of rules. This reduces the likelihood of conflicts and issues, thereby streamlining the development process.
+
+- Programming standards make the code review process more efficient. Reviewers can focus on the logic and functionality of the code rather than spending time on stylistic issues. This leads to more thorough and productive code reviews, ultimately improving the overall code quality.
+
+- Well-documented code is essential for long-term project success. Programming standards often include requirements for comments and documentation, ensuring that the code is self-explanatory and easy to understand. This is particularly important for future developers who may need to work on the code long after the original authors have moved on.
+
+In conclusion, programming standards are an essential aspect of software development that contribute to the consistency, maintainability, and quality of the code. By adhering to these standards, developmeners can produce more reliable and efficient extensions ultimately leading to better outcomes for both developers and end-users.
 
 ## Extension Types
 There are five types of extensions, below is a short description of each type.
@@ -45,7 +60,8 @@ Indent size: 2 spaces
 Continuation indent: 4 spaces
 Charset: utf-8  
 
-XtendM3 uses Groovy programming and ending code lines with semicolons are optional.  
+XtendM3 uses Groovy programming and ending code lines with semicolons are optional.<br>
+It is however recommended to stick to one standard within one extension, for easier readability. 
 
 ## Naming
 
@@ -130,6 +146,12 @@ OOLINE - EXTOLN
 - For custom table extension, use EXT<XXX> same suffix as extension API  
 Table - EXT001  
 API - EXT001MI  
+
+- Custom extension tables should contain homogenous data type. Generic tables are not allowed. I.e., if the table contain 'Items' as primary data, the table should not have 'Warehouses' as alternative primary data. 
+
+- Custom extension field names should to denote what the column is for, rather than trying to describe the type/length or generic nature of them.
+
+- Generic column names will not be accepted even though the actual columns might have been used correctly for a specific purpose and not in a generic way. The reason is to avoid misunderstandings, because generic tables are not going to be allowed.
 
 #### Methods
 - Method name should follow Java naming convention for methods  
@@ -299,8 +321,8 @@ Extension approval requires submission of approved Unit test and Functional test
 - A sample repository [ACME Corp. XtendM3 Extensions](https://github.com/infor-cloud/acme-corp-extensions) is provided to get you started on setting up project directories for the source codes, test scripts and XtendM3 SDK  
 
 ### Live
-- If the program extension has been activated in the tenant, it automatically runs and the changes to the program are seen by the users.  During unit testing, it is recommended that the extension should execute only for specific users until it is verified working to avoid interrupting other users when running the same program  
-- Provided is an example of validating extension to run for specific user/s  
+- In the case that the program is a Trigger type extension, it automatically runs and the changes to the program are seen by the users as long as the extension is activated. During unit testing, it is recommended that the extension should execute only for specific users until it is verified to be working in order to avoid interrupting other users running the same program.<br>
+Provided is an example of validating extension to run for specific user(s):
   ```groovy
   private boolean isEnabled() {
     if (program.getUser()  != "USERNAME") {
@@ -310,20 +332,25 @@ Extension approval requires submission of approved Unit test and Functional test
     }
   ```
 
+- API or Transaction extensions can be tested via Metadata Publisher.
+
+- Similarly to Transactions, Batch extensions can be tested via Metadata Publisher and SHS010MI.
+
 ## Version Controlling
-More details are provided at [Version Controlling](https://infor-cloud.github.io/xtendm3/docs/documentation/version-controlling/) page 
+More details are provided at [Version Controlling](https://infor-cloud.github.io/xtendm3/docs/documentation/version-controlling/).
 
 ### Framework
-Git version control system should be used  
+Git version control system should be used.  
 
 ### Structure
-Refer to the example of an [XtendM3 Extension Repository](https://github.com/infor-cloud/acme-corp-extensions) to version control extensions  
+Refer to the example of an [XtendM3 Extension Repository](https://github.com/infor-cloud/acme-corp-extensions) to version control extensions. 
 
 ### Hosting
-Any git provider that the customer prefers GitHub, GitLab, Bitbucket and etc.  
+Any Git provider that the customer prefers GitHub, GitLab, Bitbucket and etc.  
 
-## Documentation
+### Code Documentation
 - Extension JavaDoc on top of extension classes is required
+- Extension Methods JavaDoc on top of methods (except for main) is recommended
   - Example:
 
   ```groovy
@@ -341,6 +368,60 @@ Any git provider that the customer prefers GitHub, GitLab, Bitbucket and etc.
    Revision Author         2022-02-02       1.1              Outlining what's been updated
    Revision Author         2022-03-03       1.2              In the current revision
   ******************************************************************************************/
+  public class transactionName extends ExtendM3Transaction {
+    private final LoggerAPI logger;
+    private final MIAPI mi;
+    private final DatabaseAPI database;
+
+    /*
+     * Transaction EXT000MI/transactionName Interface
+     * @param logger - Infor Logging Interface
+     * @param mi - Infor MI Interface
+     * @param database - Infor Database Interface
+     */
+    public transactionName(LoggerAPI logger, MIAPI mi, DatabaseAPI database) {
+      this.logger = logger;
+      this.mi = mi;
+      this.database = database;
+    }
+
+    public void main() {
+      create();
+    }
+
+    /*
+     * Create new record in table
+     */
+     void create() {
+      // code
+     }
+  }
   ```
 
-- Extension Methods JavaDoc on top of methods (except for main) is recommended
+## Review Comments
+Common comments brought up during review.
+
+* **Field Validation**<br>
+There should always be validation present for standard M3 fields and date fields.
+
+* **Line endings**<br>
+In an extension there should be consistent use of semicolons, either no semicolons or semicolons on all line endings.
+
+* **Imports**<br>
+Make sure no unused imports are present.
+
+* **Indentation**<br>
+For readability, indentation should be consistent throughout the code.<br>
+See 'Indentation and Formatting' section above.
+
+* **Method Comments**<br>
+Every method(except main) in an extension should have a comment describing the funtionality, it is recommended to comment in JavaDoc style(see above section).
+
+* **Program Header**<br>
+Every extension requires a program header which include the name, type, script author, date, description and revision history(see above section). Remember to update the revision history when updating an existing extension.
+
+* **Table Description**<br>
+Every Dynamic Table should incldude a descritpion.
+
+* **Variable and Method naming**<br>
+Names of variables and methods should be in **lowerCamelCase**.

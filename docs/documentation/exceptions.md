@@ -2,7 +2,7 @@
 layout: default
 title: Exceptions
 parent: Documentation
-nav_order: 4
+nav_order: 5
 ---
 
 # Exceptions
@@ -43,7 +43,7 @@ Example code for catching generic Java exceptions.<br/>
 *NumberFormatException*
 ```groovy 
 String aString = null;
-Integer anInteger = "10";
+Integer anInteger = 10;
 try {
   anInteger = aString.toInteger(); 
 } catch(NumberFormatException e) {
@@ -82,4 +82,4 @@ MI response exceptions are used for throwing exceptions from Transaction context
 Can be thrown with just a *String message*. Alternatively a *String field* and *String errorCode* can be added for additional verbosity.  
 
 **Adaptive exception**<br/>
-The *AdaptiveShortCircuitException* can be thrown from any given XtendM3 context and will adapt to the context of execution. 
+The *AdaptiveShortCircuitException* can be thrown from any given XtendM3 context and will adapt to the context of execution.

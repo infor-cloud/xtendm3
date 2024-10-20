@@ -22,18 +22,17 @@ nav_order: 8
 ---
 
 ## Description
-Session API provides methods for interacting with current session. One of the main usages of this API is a a key-value 
+Session API provides methods for interacting with the current session. One of the main usages of this API is a a key-value 
 storage mechanism for the extension store parameters, calculated values or other information in runtime in memory to 
-pass along the another extension or access it later on during the same session.
+pass along to another extension or access it later on during the same session.
 
 The scope of this storage is limited to the session, which means that once the session is terminated all stored
 information will be deleted from memory.
 
 A session is started when a program starts by user interaction i.e. from the menu. Subsequent programs that are started
-as a result of related 
+as a result of related program are part of that session. 
 
 ## Features
-
 Features of this API.
 
 ### session.parameters.put
@@ -42,30 +41,22 @@ anything. The value can be any object, so it is not limited to primitive types.
 
 Example:
 ```groovy
-double finalSalesPrice = calculateFinalSalesPrice()
-session.parameters.put("salesPrice", finalSalesPrice)
+double finalSalesPrice = calculateFinalSalesPrice();
+session.parameters.put("salesPrice", finalSalesPrice);
 ```
 
 ### session.parameters.get
 To check if a parameter has been stored in the session you can try to retrieve the value and check if it is `null` or do
 it in the Groovy style by just checking the value.
 
-Example 1:
+Example:
 ```groovy
 if (session.parameters.get("salesPrice") == null) {
-  double finalSalesPrice = calculateFinalSalesPrice()
-  session.parameters.put("salesPrice", finalSalesPrice)
-}
-```
-
-Example 2:
-```groovy
-if (session.parameters.get("salesPrice")) {
-  double finalSalesPrice = calculateFinalSalesPrice()
-  session.parameters.put("salesPrice", finalSalesPrice)
+  double finalSalesPrice = calculateFinalSalesPrice();
+  session.parameters.put("salesPrice", finalSalesPrice);
 }
 ```
 
 ## Considerations and Guidelines
 Although the size limit of this storage is undocumented, it should be used with considerations. Storing too much
-information in this layer should be avoided and moved to database instead.
+information in this layer should be avoided and moved to the database layer instead.

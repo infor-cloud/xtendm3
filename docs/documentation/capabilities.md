@@ -2,12 +2,11 @@
 layout: default
 title: Capabilities
 parent: Documentation
-nav_order: 6
+nav_order: 7
 ---
 
 # Capabilities
 {: .no_toc }
-
 
 XtendM3 Capabilities
 {: .fs-6 .fw-300 }
@@ -69,30 +68,32 @@ through extensions and they can be exposed via XtendM3 APIs to the rest of the M
 #### Creating extension APIs - new transaction to get, add, update, or list records
 It is possible to create new APIs and single/multi transactions via XtendM3. In order to create new transaction the 
 extension type should be Transaction when creating it.
+
 #### Calling extension API from H5 Script, ION API, IEC Mapper, CMS041
 If extension API is active, metadata is automatically updated in MRS program and ION API and can be called or used same as a standard API transaction.  
 
 ### Batch
-Section in progress.
+Batch extensions have the longest time out of all extension types, one hour. This makes Batch type extensions a good candidate for doing longer calculations.<br>
+These extensions can also be scheduled to execute, more information available [here](../batch-scheduling).
 
 ### Interactive
-Use H5 Scripting and Mashup SDK to create UI elements and use extension API to perform CRUD operations.
+Use H5 Scripting and Mashup SDK to create UI elements and use extension APIs to perform CRUD operations.
 
 ## Integration
 ### ION API
-It is possible to call ION API from extensions. 
+ION APIs can be called from XtendM3 extensions using the [ION API](../api-specification/ion-api).
 
 ### M3 API
-It is possible to call M3 API from extensions.
+APIs available in M3 can be called from XtendM3 extensions using the [MICaller API](../api-specification/micaller-api).
 
 ### Configurable List & XML
-TBA. Not released yet.  
+TBA. Not released yet.
 
 ### File Transfer
-It is possible to manage text, csv, json files in MvxFileTransfer directory. 
+It is possible to manage text, csv, json files in MvxFileTransfer directory using the [TextFiles API](../api-specification/textfiles-api).
 
 ### M3 Database
-It is possible to perform CRUD operations on M3 database.
+It is possible to perform CRUD operations on M3 database using the [Database API](../api-specification/database-api).
 
 ### Data Lake Synchronization
 TBA. Not released yet.
@@ -107,7 +108,11 @@ Capabilities of various XtendM3 development tools.
 ### Online IDE
 Capabilities specific to the online XtendM3 development environment.
 
-#### 
+#### Test Compile
+Test compile your extension with XtendM3s specific compilation rules.
+
+#### Duplicate
+Create a copy of your extension with a new name and/or market.
 
 ### Local IDE
 Capabilities specific to the local XtendM3 development environment. 
@@ -135,6 +140,9 @@ More detailed documentation regarding XtendM3 Local Workspace available [here](.
     * Activate your imported extensions.
 
 ## Governance
+XtendM3 governance.
+
 ### Compile Time
+
 
 ### Runtime

@@ -47,10 +47,8 @@ This method allows to skip the current transaction and takes three string parame
 Example:
 ```groovy
 public void main() {
-    if (transaction.parameters.USID=="TEST") {
+    if (transaction.parameters.USID == "TEST") {
       transaction.abortTransaction("USID","ER001","ER001");
     }    
 }
 ```
-
-## Considerations and Guidelines

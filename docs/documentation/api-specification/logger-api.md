@@ -22,25 +22,42 @@ nav_order: 3
 ---
 
 ## Description
-This API is provides capabilities for logging information with different severity level from DEBUG to ERROR. The information that is logged can be seen by both network administrators as well as the user directly in the Ming.le portal. The only requirement for viewing these logs is that the
-user has access to the M3 Business Engine Jobs and M3 Business Engine Logs from the administration tools.
-
+This API provides capabilities for logging information with different severity level from DEBUG to ERROR. <br>
+The information that is logged can be seen by both network administrators as well as the user directly in the Ming.le portal. <br>
+The only requirement for viewing these logs is that the user has access to the M3 Business Engine Jobs and M3 Business Engine Logs from the administration tools.
 
 ## Features
+Logging API contains various features, or levels to send logs to.<br>
+The log count is per program execution.<br>
+Logs have a soft limit of 1000 lines and a hard limit of 2000 lines. All severity levels except DEBUG and TRACE count towards the soft limit, after soft limit has been surpassed all subsequent logs will be forwarded to DEBUG.<br>
+<br>
+**Examples:**<br>
+The program starts writing to INFO severity level, after 1000 written lines the logs are written to DEBUG severity level until the sum of the two reach 2000 lines.<br>
+The program starts writing to TRACE severity level, after 2000 written lines no more logs are written.<br>
+<br>
+**Exception**<br>
+In the case that 'Future Logging' has been selected for a job, with option 'Log to File', the soft limit is increased to 10000 records and the hard limit to 20000 records.
 
-### Logging information
+### Severity Levels
+* INFO: Soft limit, 1000 lines
+* WARN: Soft limit, 1000 lines
+* ERROR: Soft limit, 1000 lines
+* DEBUG: Hard limit, 2000 lines
+* TRACE: Hard limit, 2000 lines
+
+### Example Code
 To log a message, simply use the method corresponding to the level you would like to use. For example to write with INFO
-level you can write
+level you can write:
 ```groovy
-logger.info("Extension started")
+logger.info("Extension started");
 ```
 
 You can also use the Groovy string (aka _gstring_) to perform string manipulation and replace parameter values in messages
-as followed
+as followed:
 ```groovy
-String user = program.getUser()
-if (user != "DARTHVADER") {
-  logger.warn("Extension cannot be run for ${user}, only Darth Vader is allowed!")
+String user = program.getUser();
+if (user != "USERNAME") {
+  logger.warn("Extension cannot be run for ${user}, only 'USERNAME' is allowed!");
 }
 ```
 
