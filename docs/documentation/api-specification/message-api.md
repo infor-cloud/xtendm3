@@ -22,16 +22,14 @@ nav_order: 3
 ---
 
 ## Description
-Message API is a tool used in a [Trigger type extensions](../../../examples/example-003) and [Transaction type extensions](../../../examples/Transaction-extension). This API provides capabilities for receiving information about an error from running program. User using MessageAPI can retrieve an error message by using built in method called getMessage. It allows to combine the error message with another components (ex. [Interactive API](../../../documentation/api-specification/interactive-api) with pop-up window etc.) inside the extension. The result of the Message API is an information extracted from the message file, which is displayed on the screen using other API elements in the extension.
+Message API is a tool used in [Trigger type extensions](../../../examples/example-003) and [Transaction type extensions](../../../examples/Transaction-extension). This API provides capabilities for retrieving information about an error from running program. User using the Message API can retrieve an error message by using built in method called getMessage. It allows to combine the error message with other components (ex. [Interactive API](../../../documentation/api-specification/interactive-api) with pop-up window etc.) inside the extension. The result is information extracted from the message file, which is displayed on the screen using other API elements in the extension.
 
 
 ## Features
+It retrieves an error message from the error files into the component of the running program. There are two ways to use the getMessage method:
+<br>
 
 ### getMessage
-It retrieves an error message from the error files into the component of the running program. There are two ways to use the getMessage method:
-<br><br>
-
-#### getMessage(String sysComp, String language, String messageId, List<String> parameters)
 - String sysComp - System component for the specific market (M) - ex. for Poland is MPL (M-PL)
 - String language - Language code (language of specific message, for example GB. It works depends on the programmed messages)
 - String messageId - Message Id from the message files
@@ -58,7 +56,7 @@ Provided error message is presented below:
 <img src="../../../../assets/attachments/message-api/pop-up_4param.PNG" width="500">
 <br><br>
 
-#### getMessage(String messageId, List<String> parameters)
+### getMessage
 - String messageId - Message Id from the message files
 - List<String> parameters - List with parameters (max. 4 inside list) to insert into a message
 <br>
@@ -97,4 +95,4 @@ Provided error message with 2 empty parameters is presented below:
 <br><br>
 
 ## Considerations and Guidelines
-Method API is a tool to retrieve an error message from message files and inject it into some program components. It can be used with the [Interactive API](../../../documentation/api-specification/interactive-api), to perform message visibility while running a program.
+Message API is a tool to retrieve error messages from message files and inject it into some program components. It can be used with the [Interactive API](../../../documentation/api-specification/interactive-api), to perform message visibility while running a program.

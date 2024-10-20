@@ -2,7 +2,7 @@
 layout: default
 title: Local XtendM3 Workspace
 parent: Documentation
-nav_order: 5
+nav_order: 6
 ---
 
 # Local XtendM3 Workspace
@@ -100,129 +100,129 @@ Using the information from the credentials(.ionapi) file, setup the authorizatio
 #### Body Template
 
 ```json
-        {
-          "programModules": {
-            <name_of_be_program>: {
-              "program": <name_of_be_program>,
-              "triggers": {
-                <trigger_extension_name>: {
-                  "name": <trigger_extension_name>,
-                  "method": <method>,
-                  "advice": <advice>,
-                  "active": true/false,
-                  "modified": <epoch_last_modified_date>,
-                  "modifiedBy": <user>,
-                  "sourceUuid": <source_uuid>,
-                  "programName": <name_of_be_program>,
-                  "utilities": [],
-                  "type": "METHOD",
-                  "priority": <priority>
-                }
-              },
-              "transactions": {},
-              "batches": {}
-            },
-            <name_of_batch_program>: {
-              "program": <name_of_transaction_program>,
-              "triggers": {},
-              "transactions": {},
-              "batches": {
-                 "sourceUuid": <source_uuid>,
-                 "description": <description>,
-                 "active": true/false,
-                 "modified": <epoch_last_modified_date>,
-                 "modifiedBy": <user>,
-                 "utilities": []
-              }
-            },
-            <name_of_transaction_program>: {
-              "program": <name_of_transaction_program>,
-              "triggers": [],
-              "transactions": {
-                <name_of_transaction>: {
-                  "sourceUuid": <source_uuid>,
-                  "name": <name_of_transaction>,
-                  "program": <name_of_transaction_program>,
-                  "description": <description>,
-                  "active": true/false,
-                  "multi": true/false,
-                  "modified": <epoch_last_modified_date>,
-                  "modifiedBy": <user>,
-                  "outputFields": [
-                    {
-                      "name": <field_name>,
-                      "description": <field_description>,
-                      "length": <field_length>,
-                      "mandatory": <true/false>,
-                      "type": <A/N>
-                    }
-                  ],
-                  "inputFields": [
-                    {
-                      "name": <field_name>,
-                      "description": <field_description>,
-                      "length": <field_length>,
-                      "mandatory": <true/false>,
-                      "type": <A/N>
-                    }
-                  ],
-                  "utilities": []
-                }
-              },
-              "batches": {}
-            }
-          },
-          "utilities": {
-            <utility_name>: {
-              "name": <utility_name>,
-              "sourceUuid": <source_uuid>
-            }
-          },
-          "sources": {
-            <source_uuid>: {
-              "uuid": <source_uuid>,
-              "updated": <epoch_last_modified_date>,
-              "updatedBy": <user>,
-              "created": <epoch_created_date>,
-              "createdBy": <user>,
-              "apiVersion" <apiVersion, e.g. 0.12>,
-              "beVersion": <>,
-              "codeHash": <codeHash, generated during export>,
-              "code": <base64 encoded extension code>,
-            },
-            <source_uuid>: {
-              "uuid": <source_uuid>,
-              "updated": <epoch_last_modified_date>,
-              "updatedBy": <user>,
-              "created": <epoch_created_date>,
-              "createdBy": <user>,
-              "apiVersion" <apiVersion, e.g. 0.12>,
-              "beVersion": <>,
-              "codeHash": <codeHash, generated during export>,
-              "code": <base64 encoded extension code>,
-            },
-            <source_uuid>: {
-              "uuid": <source_uuid>,
-              "updated": <epoch_last_modified_date>,
-              "updatedBy": <user>,
-              "created": <epoch_created_date>,
-              "createdBy": <user>,
-              "apiVersion" <apiVersion, e.g. 0.12>,
-              "beVersion": <>,
-              "codeHash": <codeHash, generated during export>,
-              "code": <base64 encoded extension code>,
-            },
-            <source_uuid>: {
-              "uuid": <source_uuid>,
-              "updated": <epoch_last_modified_date>,
-              "updatedBy": <user>,
-              "created": <epoch_created_date>,
-              "createdBy": <user>,
-              "apiVersion" <apiVersion, e.g. 0.12>,
-              "beVersion": <>,
-              "codeHash": <codeHash, generated during export>,
-              "code": <base64 encoded extension code>,
-            }            
-          }
+{
+  "programModules": {
+    <name_of_be_program>: {
+      "program": <name_of_be_program>,
+      "triggers": {
+        <trigger_extension_name>: {
+          "name": <trigger_extension_name>,
+          "method": <method>,
+          "advice": <advice>,
+          "active": true/false,
+          "modified": <epoch_last_modified_date>,
+          "modifiedBy": <user>,
+          "sourceUuid": <source_uuid>,
+          "programName": <name_of_be_program>,
+          "utilities": [],
+          "type": "METHOD",
+          "priority": <priority>
         }
+      },
+      "transactions": {},
+      "batches": {}
+    },
+    <name_of_batch_program>: {
+      "program": <name_of_program>,
+      "triggers": {},
+      "transactions": {},
+      "batches": {
+        "sourceUuid": <source_uuid>,
+        "description": <description>,
+        "active": true/false,
+        "modified": <epoch_last_modified_date>,
+        "modifiedBy": <user>,
+        "utilities": []
+      }
+    },
+    <name_of_transaction_program>: {
+      "program": <name_of_transaction_program>,
+      "triggers": [],
+      "transactions": {
+        <name_of_transaction>: {
+          "sourceUuid": <source_uuid>,
+          "name": <name_of_transaction>,
+          "program": <name_of_transaction_program>,
+          "description": <description>,
+          "active": true/false,
+          "multi": true/false,
+          "modified": <epoch_last_modified_date>,
+          "modifiedBy": <user>,
+          "outputFields": [
+            {
+              "name": <field_name>,
+              "description": <field_description>,
+              "length": <field_length>,
+              "mandatory": <true/false>,
+              "type": <A/N>
+            }
+          ],
+          "inputFields": [
+            {
+              "name": <field_name>,
+              "description": <field_description>,
+              "length": <field_length>,
+              "mandatory": <true/false>,
+              "type": <A/N>
+            }
+          ],
+          "utilities": []
+        }
+      },
+      "batches": {}
+    }
+  },
+  "utilities": {
+    <utility_name>: {
+      "name": <utility_name>,
+      "sourceUuid": <source_uuid>
+    }
+  },
+  "sources": {
+    <source_uuid>: {
+      "uuid": <source_uuid>,
+      "updated": <epoch_last_modified_date>,
+      "updatedBy": <user>,
+      "created": <epoch_created_date>,
+      "createdBy": <user>,
+      "apiVersion" <apiVersion, e.g. 0.12>,
+      "beVersion": <>,
+      "codeHash": <codeHash, generated during export>,
+      "code": <base64 encoded extension code>,
+    },
+    <source_uuid>: {
+      "uuid": <source_uuid>,
+      "updated": <epoch_last_modified_date>,
+      "updatedBy": <user>,
+      "created": <epoch_created_date>,
+      "createdBy": <user>,
+      "apiVersion" <apiVersion, e.g. 0.12>,
+      "beVersion": <>,
+      "codeHash": <codeHash, generated during export>,
+      "code": <base64 encoded extension code>,
+    },
+    <source_uuid>: {
+      "uuid": <source_uuid>,
+      "updated": <epoch_last_modified_date>,
+      "updatedBy": <user>,
+      "created": <epoch_created_date>,
+      "createdBy": <user>,
+      "apiVersion" <apiVersion, e.g. 0.12>,
+      "beVersion": <>,
+      "codeHash": <codeHash, generated during export>,
+      "code": <base64 encoded extension code>,
+    },
+    <source_uuid>: {
+      "uuid": <source_uuid>,
+      "updated": <epoch_last_modified_date>,
+      "updatedBy": <user>,
+      "created": <epoch_created_date>,
+      "createdBy": <user>,
+      "apiVersion" <apiVersion, e.g. 0.12>,
+      "beVersion": <>,
+      "codeHash": <codeHash, generated during export>,
+      "code": <base64 encoded extension code>,
+    }            
+  }
+}
 ```

@@ -33,25 +33,15 @@ The following exceptions are only available to throw from interactive contexts.
 Code example:
 
 ```groovy
-public class testingExceptionAPI extends ExtendM3Trigger {
-  private final ExceptionAPI exception;
-  private final MessageAPI message;
-
-  public testingExceptionAPI(ExceptionAPI exception, MessageAPI message) {
-    this.exception = exception;
-	  this.message = message;
-  }
-
-  public void main() {
-    String customMessage = "Failed to perform task, exception thrown";
-		String messageId = message.getMessage("XC00001",[]);
+void testingExceptionAPI() {
+	String customMessage = "Failed to perform task, exception thrown";
+	String messageId = message.getMessage("XC00001",[]);
     if(!doWork()) {
     	exception.throwShowOkDialogException(customMessage);
     }
-		if(!doOtherWork()) {
-			exception.throwShowInfoException(messageId);
-		}
-  }
+	if(!doOtherWork()) {
+		exception.throwShowInfoException(messageId);
+	}
 }
 ```
 
@@ -112,32 +102,22 @@ These exceptions are for throwing exceptions from Transaction contexts, to indic
 
 Code example:
 ```groovy
-public class testingExceptionAPI extends ExtendM3Transaction {
-	private final MIAPI mi;
-	private final ExceptionAPI exception;
-
-	public testingExceptionAPI(MIAPI mi, ExceptionAPI exception) {
-		this.mi = mi;
-		this.exception = exception;
+public void main() {
+	int salesPrice = mi.inData.get("INSAPR");
+	int basePrice = mi.inData.get("INAIPR");
+	validateData(salesPrice, basePrice);
+	int profitMargin = salesPrice - basePrice;
+	mi.inData.set("OUTPM");
+	if(!mi.write()) {
+		String message = "Failed to write MI out parameter";
+		exception.throwErrorMIResponseException(message);
 	}
+}
 
-	public void main() {
-		int salesPrice = mi.inData.get("INSAPR");
-		int basePrice = mi.inData.get("INAIPR");
-		validateData(salesPrice, basePrice);
-		int profitMargin = salesPrice - basePrice;
-		mi.inData.set("OUTPM");
-		if(!mi.write()) {
-			String message = "Failed to write MI out parameter";
-			exception.throwErrorMIResponseException(message);
-		}
-	}
-
-	private void validateData(int param1, int param2) {
-		if(param1 == 0 || param2 == 0) {
-			String message = "One or both of the given parameters have value zero.";
-			exception.throwErrorMIResponseException(message);
-		}
+private void validateData(int param1, int param2) {
+	if(param1 == 0 || param2 == 0) {
+		String message = "One or both of the given parameters have value zero.";
+		exception.throwErrorMIResponseException(message);
 	}
 }
 ```

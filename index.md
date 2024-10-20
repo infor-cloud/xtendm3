@@ -27,7 +27,7 @@ extension of the logic is possible.
 ## About the project
 
 ### XtendM3 
-XtendM3 is a customization tool and service provided by Infor for modifying and extending M3 Business Engine logic in Cloud.
+XtendM3 is a customization tool and service provided by Infor for modifying and extending M3 Business Engine logic in the Cloud.
 
 
 ### Just the Docs

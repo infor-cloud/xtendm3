@@ -90,5 +90,4 @@ public class SampleExtension extends ExtendM3Trigger {
 
 
 ## Considerations and Guidelines
-### Creator updated when importing extensions
 When an extension is created, the getCreator() method will return the original creator of the extension. However, when the extension is imported to a different tenant/environment, the user who uploaded the extension will now become the new creator.

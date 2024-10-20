@@ -2,7 +2,7 @@
 layout: default
 title: Batch Scheduling
 parent: Documentation
-nav_order: 3
+nav_order: 4
 ---
 
 # Batch Scheduling
@@ -20,7 +20,7 @@ Scheduling XtendM3 Batch Extensions
 ---
 
 ## SHS010/SHS010MI
-SHS010, or SHS010MI for the non-interactive version, is the scheduler for XtendM3 Batch Extensions. It works in a similar fashion to SHS050, which is used to schedule M3 Batch Jobs, and in the background also schedules executions through this.
+SHS010, or SHS010MI for the non-interactive version, is the scheduler for XtendM3 Batch Extensions. It works in a similar fashion to SHS050, which is used to schedule M3 Batch Jobs. SHS010/SHS010MI schedules executions via SHS050.
 
 ### Available parameters
 This section lists the available SHS010MI parameters. 

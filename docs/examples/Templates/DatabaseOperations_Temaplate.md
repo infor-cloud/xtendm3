@@ -34,10 +34,10 @@ void create() {
     .index("00")
     .build();
   DBContainer container = query.getContainer();
-  container.set("FIELD1", "DATA1");
-  container.set("FIELD2", "DATA2");
-  container.set("FIELD3", "DATA3");
-  container.set("FIELD4", "DATA4");
+  container.setString("FIELD1", "DATA1");
+  container.setString("FIELD2", "DATA2");
+  container.setInt("FIELD3", 3);
+  container.setChar("FIELD4", '4');
   query.insert(container);
 }
 ```
@@ -53,11 +53,11 @@ void read() {
     .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
-  container.set("FIELD1", "DATA1");
-  container.set("FIELD2", "DATA2");
+  container.setString("FIELD1", "DATA1");
+  container.setDouble("FIELD2", 2.0);
   if(query.read(container)) {
-    String message = container.get("FIELD3");
-    String data = container.get("FIELD4");
+    String message = container.getString("FIELD3");
+    Character character = container.getDouble("FIELD4");
     //Use found record(s) as intended
   }
 }
@@ -70,15 +70,17 @@ void multiRead() {
     .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
-  container.set("FIELD1", "DATA1");
-  container.set("FIELD2", "DATA2");
+  container.setString("FIELD1", "DATA1");
+  container.setInt("FIELD2", 2);
   int nrOfKeys = 2;
   int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();
   query.readAll(container, nrOfKeys, nrOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
-  String message = container.get("FIELD3");
-  String data = container.get("FIELD4");
+  String message = container.getString("FIELD3");
+  Integer data = container.getInt("FIELD4");
+    //Note: Integer can store null value, while int can store null value,
+      // keep that in mind while designing your extension  
   //Use found record(s) as intended
 }
 ```
@@ -93,15 +95,17 @@ void filteredMultiRead() {
     .selection("FIELD3", "FIELD4")
     .build();
   DBContainer container = query.getContainer();
-  container.set("FIELD1", "DATA1");
-  container.set("FIELD2", "DATA2");
+  container.setString("FIELD1", "DATA1");
+  container.setInt("FIELD2", 2);
   int nrOfKeys = 2;
   int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();  
   query.readAll(container, nrOfKeys, nrOfRecords, callback);
 }
 Closure<?> callback = { DBContainer container ->
-  String message = container.get("FIELD3");
-  String data = container.get("FIELD4");
+  String message = container.getString("FIELD3");
+  Integer data = container.getInt("FIELD4");
+    //Note: 'Integer' can store null value, while 'int' cannnot.
+      // Keep that in mind while designing your extension
   //Use found record(s) as intended
 }
 ```
@@ -114,10 +118,10 @@ void update() {
     .index("00")
     .build();
   DBContainer container = query.getContainer();
-  container.set("FIELD1", "DATA1");
-  container.set("FIELD2", "DATA2");
+  container.setString("FIELD1", "DATA1");
+  container.setInt("FIELD2", 2);
   query.insert(container, { LockedResult updateRecord ->
-    updateRecord.set("FIELD3", "DATA3");
+    updateRecord.setChar("FIELD3", '3');
     updateRecord.update();
   });
 }
@@ -131,8 +135,8 @@ void delete() {
     .index("00")
     .build();
   DBContainer container = query.getContainer();
-  container.set("FIELD1", "DATA1");
-  container.set("FIELD2", "DATA2");
+  container.setString("FIELD1", "DATA1");
+  container.setInt("FIELD2", 2);
   query.readLock(container, callback);
 }
 Closure<?> callback = { LockedResult lockedResult ->

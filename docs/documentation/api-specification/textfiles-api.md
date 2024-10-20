@@ -25,8 +25,8 @@ nav_order: 9
 TextFiles API is used to perform various file processing operations. It can be used to open, read and write in files from current and subdirectories as well as list existing folders and files.
  
 ## Features
-### textFiles.open(String subDirectory)
-This method allows the user to open a subDirectory. This can be used when trying to access a file located in another location. Takes name of the subDirectory as a parameter.
+### textFiles.open
+This method allows the user to open a sub directory. This can be used when trying to access a file located in another location. Takes name of the sub directory as a parameter.
 <br>
 Example:
  
@@ -41,7 +41,7 @@ public void openRecords() {
 }
 ```
 
-### textFiles.read(String fileName, String encoding, Consumer<BufferedReader> readTask)
+### textFiles.read
 This method is responsible for reading data from the selected file and applying it via the corresponding command using the bufferedReader in the extension.
 Parameters:
 - String fileName - name of the file<br>
@@ -53,25 +53,25 @@ Example:
  
 ```groovy
 List<String> resolveFields(String line) {
-  List<String> list = new ArrayList<>()
-  String[] fields = line.split(resolveDelimiter(line))
+  List<String> list = new ArrayList<>();
+  String[] fields = line.split(resolveDelimiter(line));
   for(String field : fields) {
-    list.add(field)
+    list.add(field);
   }
-  return list
+  return list;
 }
 Closure<?> readCODEFILE = { BufferedReader reader ->
-  List<String> header = resolveFields(reader.readLine())
+  List<String> header = resolveFields(reader.readLine());
   while((line = reader.readLine()) != null) {
-    reader.println(line)
+    reader.println(line);
   }
 }
 public void readRecords() {
-  textFiles.read("CODEFILE.csv", "UTF-16", readCODEFILE)
-  }
+  textFiles.read("CODEFILE.csv", "UTF-16", readCODEFILE);
+}
 ```
  
-### textFiles.write(String fileName, String encoding, boolean append, Consumer<PrintWriter> writeTask)
+### textFiles.write
 This method allows data to be written inside the selected file.
 Parameters:
 - String fileName - name of the file<br>
@@ -83,129 +83,82 @@ Example:
  
 ```groovy
 void log(String message) {
-  message = LocalDateTime.now().toString() + " " + XtendM3
-  if (mi.in.get("TEST") == 1) {
-    Closure<?> consumer = { PrintWriter printWriter ->
-      printWriter.println(message)
-    }
-    textFiles.write(reportName, "UTF-16", true, consumer)
+  message = LocalDateTime.now().toString() + " " + XtendM3;
+  Closure<?> consumer = { PrintWriter printWriter ->
+    printWriter.println(message)M
   }
+  textFiles.write(reportName, "UTF-16", true, consumer);
 }
 ```
 
-### textFiles.delete(String fileName)
-This method deletes the selected file. It takes a name from the file as a parameter.
+### textFiles.delete
+This method deletes the selected file. It takes the file name as parameter, in String format.
 <br>
 Example:
  
 ```groovy
-public class DeleteExample extends ExtendM3Trigger {
-  private final TextFilesAPI textFiles;
- 
-  public DeleteExample(TextFilesAPI textFiles) {
-    this.textFiles=textFiles;
-  }
- 
-  public void main() {
-    textFiles.delete("test.txt");
-  }
+public void DeleteExample() {
+  textFiles.delete("test.txt");
 }
 ```
  
-### textFiles.size(String fileName)
+### textFiles.size
 This method allows to obtain information about the size of the selected file. The size is displayed as a number of the long type and the units are bytes.
 <br>
 Example:
  
-```groovy
-public class SizeExample extends ExtendM3Trigger {
-  private final InteractiveAPI interactive;
-  private final TextFilesAPI textFiles;
- 
-  public SizeExample(InteractiveAPI interactive, TextFilesAPI textFiles) {
-    this.interactive=interactive;
-    this.textFiles=textFiles;
-  }
- 
-  public void main() {
-    String fileName="test.txt";
-    interactive.showOkDialog("Selected file has size of "+textFiles.size(fileName).toString()+"units...");
-  }
+```groovy 
+public void SizeExample() {
+  String fileName="test.txt";
+  interactive.showOkDialog("Selected file has size of "+textFiles.size(fileName).toString()+"units...");
 }
 ```
-### textFiles.exists(String fileName)
+### textFiles.exists
 The method checks if the file is available in the extension file location. A boolean true/false value is returned depending on available files.
 <br>
 Example:
  
-```groovy
-public class ExistExample extends ExtendM3Trigger {
-  private final InteractiveAPI interactive;
-  private final TextFilesAPI textFiles;
- 
-  public ExistExample(InteractiveAPI interactive, TextFilesAPI textFiles) {
-    this.interactive=interactive;
-    this.textFiles=textFiles;
-  }
- 
-  public void main() {
-    if(textFiles.exists("test.txt")) {
-      interactive.showOkDialog("Hello! The file test.txt does exist!");
-    } else {
-      interactive.showWarningDialog("Hello! The file test.txt does not exist!");
-    }
-  }
+```groovy 
+public void ExistExample() {
+  if(textFiles.exists("test.txt")) {
+    interactive.showOkDialog("Hello! The file test.txt does exist!");
+  } else {
+    interactive.showWarningDialog("Hello! The file test.txt does not exist!");
 }
 ```
  
-### textFiles.listFiles()
+### textFiles.listFiles
 The method lists all files at the extension directory.
 <br>
 Example:
  
 ```groovy
-public class test extends ExtendM3Trigger {
-  private final TextFilesAPI textFiles;
+public void ListFiles() {
+  textFiles.open("config_data");
+  StringBuilder sb = new StringBuilder();
+  Iterator<String> list = textFiles.listFiles();
 
-  public test(TextFilesAPI textFiles) {
-    this.textFiles=textFiles;
-  }
-
-  public void main() {
-    textFiles.open("config_data");
-    StringBuilder sb = new StringBuilder();
-    Iterator<String> list = textFiles.listFiles();
-
-    for (String element : list) {
+  for (String element : list) {
     sb.append(element);
     sb.append(" ");
-    }
   }
 }
 ```
  
-### textFiles.listFolders()
+### textFiles.listFolders
 The method lists all folders at the extension directory.
 <br>
 Example:
  
 ```groovy
-public class test extends ExtendM3Trigger {
-  private final TextFilesAPI textFiles;
-
-  public test(TextFilesAPI textFiles) {
-    this.textFiles=textFiles;
-  }
-
-  public void main() {
-    textFiles.open("config_data");
-    StringBuilder sb = new StringBuilder();
-    Iterator<String> list = textFiles.listFolders();
+public void ListFolders() {
+  textFiles.open("config_data");
+  StringBuilder sb = new StringBuilder();
+  Iterator<String> list = textFiles.listFolders();
       
-    for (String element : list) {
-      sb.append(element);
-      sb.append(" ");
-    }
+  for (String element : list) {
+    sb.append(element);
+    sb.append(" ");
   }
 }
 ```

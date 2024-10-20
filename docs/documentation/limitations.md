@@ -2,7 +2,7 @@
 layout: default
 title: Limitations
 parent: Documentation
-nav_order: 7
+nav_order: 8
 ---
 
 # Limitations
@@ -154,36 +154,8 @@ Limitations to the XtendM3 APIs.
     Perform the query using either direct database access or via calling CMS100MI/MDBREADMI IONAPI as a last resort option.
 <br>
 
-### Configurable List & XML
-
-### File Transfer
-
-### Database
-
-### Data Lake
-
-## Development Tools
-Limitations to the XtendM3 development tools.
-
-### Online IDE
-
-
-### Local IDE
-Limitations specific to XtendM3 development in a local IDE.
-
-#### API SDK
-
-#### Maven Plugin
-
-
 ## Governance
 Governance limitations.
-
-### Compile Time
-Compile time limitations.
-
-### Runtime
-Runtime limitations. 
 
 #### Timeouts
 * Trigger extensions: _five seconds_.
