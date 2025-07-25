@@ -45,6 +45,11 @@ Outlining the format of an XtendM3 extension request.
 ### Request Content
 {: .no_toc }
 
+Copy this form to your mail and answer all questions.
+Email subject format: [Project Name] [XtendM3 Extension Name].
+The questionnaire should be answered per extension;  
+Therefore, if there are three extensions sent for review, there should be three separate sections in one email answering the following for each extension:
+
 #### Submit separate requests for new extensions and previously signed extensions. ####
 {: .no_toc }
 
