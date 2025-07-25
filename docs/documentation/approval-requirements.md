@@ -24,7 +24,8 @@ Once all the information below is ready and the extension has been tested, send 
 Outlining the format of XtendM3 extension request.
 
 ### Request Content
-Copy this form to your mail and answer all questions.  
+Copy this form to your mail and answer all questions.
+Email subject format: [Project Name] [XtendM3 Extension Name]
 The questionnaire should be answered per extension;  
 Therefore, if there are three extensions sent for review, there should be three separate sections in one email answering the following for each extension:
 
