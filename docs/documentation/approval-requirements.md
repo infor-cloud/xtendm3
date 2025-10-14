@@ -30,6 +30,7 @@ The questionnaire should be answered per extension;
 Therefore, if there are three extensions sent for review, there should be three separate sections in one email answering the following for each extension:
 
 - Project/Customer Name
+- Planned Go Live Date
 - Project Manager responsible for Billing or Clarity Tasks
 - Clarity Project ID or Infor Services Work Order Number (attach signed SWO)
 - Developer Name (Developer needs to have completed the XtendM3 trainings and have been attending the workshops)
