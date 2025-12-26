@@ -19,7 +19,8 @@ Once all the information below is ready and the extension has been tested, send 
 {:toc}
 
 ---
-> ⚠️ Effective **January 2026**, Infor-certified developers are required to attach the Amazon Q code review results when submitting XtendM3 review requests to xtendm3@infor.com.
+{: .highlight }
+⚠️ Effective **January 2026**, Infor-certified developers are required to attach the Amazon Q code review results when submitting XtendM3 review requests to xtendm3@infor.com.
 Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
 [Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/sites/M3TechnicalGDS/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=E7qsDq&ovuser=457d5685%2D0467%2D4d05%2Db23b%2D8f817adda47c%2CJeanMarie%2ECarreon%40infor%2Ecom&CID=b9d0eb6d%2D3c33%2D4cea%2Db5d4%2D3b148d48d699&cidOR=SPO&FolderCTID=0x0120000195727F2E06FD4C91686EE5706E6D37&id=%2Fsites%2FM3TechnicalGDS%2FShared%20Documents%2FGeneral%2FGenAI%2FAmazon%20Q%20Xtendm3%20Review)
 
