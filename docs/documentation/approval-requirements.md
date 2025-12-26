@@ -100,10 +100,6 @@ Please go through these checklists before sending extension for approval
 - Direct database access have been reviewed in detail
 - Number of API calls have been reviewed to be efficient
 
-## Review/Signing Process and Billing
-Upon our receipt of the email request containing the extensions, 2-3 consultants will be reviewing the solution and codes.
-Consulting charges applies for this activity, so the consultants who will be reviewing the extensions will be billing their time spent against the project/customer or partner.
-
 ## XtendM3 Review and Signing Process
 
 The diagram below illustrates the XtendM3 review, feedback, approval, and signing process
@@ -130,6 +126,10 @@ Once done, send the corrected extensions again for review and signing.
 
 Once the review is completed and extensions are approved,
 a signed packaged version of the extension will be emailed back to you.
+
+## Review/Signing Process and Billing
+Upon our receipt of the email request containing the extensions, 2-3 consultants will be reviewing the solution and codes.
+Consulting charges applies for this activity, so the consultants who will be reviewing the extensions will be billing their time spent against the project/customer or partner.
 
 Effective **July 1, 2021**, 
 we will no longer release signed extensions without first being able to bill our time spent for the review and signing.
