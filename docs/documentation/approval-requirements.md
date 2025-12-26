@@ -85,6 +85,9 @@ Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
 
 For partners, it is recommended to run a code review using their available AI-assisted code review tools.
 
+**Disclaimer:**
+AI-generated code review results are intended to assist developers and should not be considered definitive. Developers are responsible for reviewing, validating, and applying judgment to the findings, as AI tools may not be 100% accurate or context-aware.
+
 ## Mandatory Checklist
 Please go through these checklists before sending extension for approval
 
