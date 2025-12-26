@@ -2,7 +2,7 @@
 layout: default
 title: Approval Requirements
 parent: Documentation
-nav_order: 11
+nav_order: 12
 ---
 
 # Approval Requirements
@@ -19,6 +19,9 @@ Once all the information below is ready and the extension has been tested, send 
 {:toc}
 
 ---
+> ⚠️ Effective **January 2026**, Infor-certified developers are required to attach the Amazon Q code review results when submitting XtendM3 review requests to xtendm3@infor.com.
+Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
+[Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/sites/M3TechnicalGDS/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=E7qsDq&ovuser=457d5685%2D0467%2D4d05%2Db23b%2D8f817adda47c%2CJeanMarie%2ECarreon%40infor%2Ecom&CID=b9d0eb6d%2D3c33%2D4cea%2Db5d4%2D3b148d48d699&cidOR=SPO&FolderCTID=0x0120000195727F2E06FD4C91686EE5706E6D37&id=%2Fsites%2FM3TechnicalGDS%2FShared%20Documents%2FGeneral%2FGenAI%2FAmazon%20Q%20Xtendm3%20Review)
 
 ## Request Format
 Outlining the format of XtendM3 extension request.
@@ -71,6 +74,13 @@ Therefore, if there are three extensions sent for review, there should be three 
 ### Attachments
 - Exported extension in JSON format
 - Exported dynamic tables in JSON format
+- Amazon Q code review results (Mandatory for Infor-certified developers)
+
+Effective **January 2026**, Infor-certified developers are required to attach the Amazon Q code review results when submitting XtendM3 review requests to xtendm3@infor.com.
+Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
+[Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/sites/M3TechnicalGDS/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=E7qsDq&ovuser=457d5685%2D0467%2D4d05%2Db23b%2D8f817adda47c%2CJeanMarie%2ECarreon%40infor%2Ecom&CID=b9d0eb6d%2D3c33%2D4cea%2Db5d4%2D3b148d48d699&cidOR=SPO&FolderCTID=0x0120000195727F2E06FD4C91686EE5706E6D37&id=%2Fsites%2FM3TechnicalGDS%2FShared%20Documents%2FGeneral%2FGenAI%2FAmazon%20Q%20Xtendm3%20Review)
+
+For partners, it is recommended to run a code review using their available AI-assisted code review tools.
 
 ## Mandatory Checklist
 Please go through these checklists before sending extension for approval
@@ -91,15 +101,25 @@ Please go through these checklists before sending extension for approval
 Upon our receipt of the email request containing the extensions, 2-3 consultants will be reviewing the solution and codes.
 Consulting charges applies for this activity, so the consultants who will be reviewing the extensions will be billing their time spent against the project/customer or partner.
 
-Please have this considered/incorporated when solution estimates are created and given to customers.
+## XtendM3 Review and Signing Process
+
+The diagram below illustrates the XtendM3 review, feedback, approval, and signing process
+for new requests and changes to previously signed extensions.
+
+<img src="../../../assets/attachments/approval-requirements/review-and-signing-process.png" />
+
+Please have the SLA considered/incorporated when solution estimates are created and given to customers.
 
 **For new extensions**, a review will be scheduled;  
 expect to receive a calendar invite for the meeting, whose required attendees would be the developer and the functional consultant; PM is optional.
 
+**The SLA for new extension requests is 10 days per up to 20 extensions.** Multiple requests from same customer is not processed in parallel i.e. if 20 is sent in by the first request, the next 20 for the same client will start its SLA after the first 20 are done.
+
 **For previously reviewed and signed extensions,**
 if only minor adjustments were done,
-an email will be sent to you with the signed extension;  
-otherwise, a meeting will be scheduled again for the review.
+an email will be sent to you with the signed extension; otherwise, a meeting will be scheduled again for the review.
+
+**The SLA for reviewing previously signed extensions is 48 hours.**
 
 If recommendations are provided during the review,  
 you will be requested to make the necessary revisions in order to comply with the recommendations.  
@@ -107,8 +127,6 @@ Once done, send the corrected extensions again for review and signing.
 
 Once the review is completed and extensions are approved,
 a signed packaged version of the extension will be emailed back to you.
-
-**SLA is 10 days per up to 20 extensions.** Multiple requests from same customer is not processed in parallel i.e. if 20 is sent in by the first request, the next 20 for the same client will start its SLA after the first 20 are done.
 
 Effective **July 1, 2021**, 
 we will no longer release signed extensions without first being able to bill our time spent for the review and signing.
