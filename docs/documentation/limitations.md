@@ -89,7 +89,7 @@ modified by an extension.
 TBA, this feature has not been released yet.
 
 ### Database
-Limitations specific to Dynamic Tables.
+* Total number of records read from the database is 10,000 for the entire extension. 
 
 #### Adding fields to existing standard tables
 * It is not possible to add fields to existing tables. 

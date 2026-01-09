@@ -99,7 +99,9 @@ void readRecord() {
 ### Read multiple records
 To read multiple records a database action should be defined along with a `Closure<?>` that defines how each read record
 will be processed/used.
-When reading multiple records, the 'readAll' function including 'pageSize' should be used. 'pageSize' is referred to as 'nrOfRecords' in the examples below. Ten thousand records is the recommended maximum value of pageSize. 
+When reading multiple records, the 'readAll' function including 'pageSize' should be used. 'pageSize' is referred to as 'nrOfRecords' in the examples below. 
+
+**Note** Ten thousand records is the maximum count of records read from the database. 
 
 Example:
 
@@ -230,14 +232,28 @@ void deprecateItems() {
   DBContainer container = query.getContainer();
   container.setInt("MMCONO", currentCompany);
   container.setString("MMSTAT", "20");
-  int nrOfKeys = 2; 
-  query.readAllLock(container, nrOfKeys, updateCallBack);
+  query.readAll(container, nrOfKeys, 200, resultHandler);
 }
 
-Closure<?> updateCallBack = { LockedResult lockedResult ->
-  lockedResult.setString("MMSTAT", "90");
-  lockedResult.update();
+
+Closure<?> resultHandler = { DBContainer data ->
+      DBAction query = database.table("MITMAS").index("00").build()
+      DBContainer container = query.getContainer()
+      container.setInt("MMCONO", currentCompany);
+      container.setString("MMITNO", data.get("MMITNO"));
+      query.readLock(container, updateCallback)
+    }       
+  }
+
+  
+//Update fields from MI input parameters
+Closure<?> updateCallback = { LockedResult lockedResult ->
+     lockedResult.setString("MMSTAT", "90");
+     lockedResult.update();
 }
+
+
+
 ```
 
 ### Delete record(s)
@@ -251,15 +267,25 @@ Delete item(s) with status 90
 void deprecateItem() {
   int currentCompany = (Integer)program.getLDAZD().CONO;
   DBAction query = database.table("MITMAS")
-    .index("00")
+    .index("20")
     .build();
   DBContainer container = query.getContainer();
   container.setInt("MMCONO", currentCompany);
-  container.setString("MMSTAT", "90");
-  int nrOfKeys = 2;
-  query.readAllLock(container, nrOfKeys, deleterCallback);
+  container.setString("MMSTAT", "20");
+  query.readAll(container, nrOfKeys, 200,  resultHandler);
 }
 
+
+Closure<?> resultHandler = { DBContainer data ->
+      DBAction query = database.table("MITMAS").index("00").build()
+      DBContainer container = query.getContainer()
+      container.setInt("MMCONO", currentCompany);
+      container.setString("MMITNO", data.get("MMITNO"));
+      query.readLock(container, deleterCallback)
+    }       
+  }
+
+  
 Closure<?> deleterCallback = { LockedResult lockedResult ->
   lockedResult.delete();
 }

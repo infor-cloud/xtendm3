@@ -228,7 +228,7 @@ validateType
 - It is recommended to use standard APIs if transactions are available instead of direct database access on WRITE/UPDATE/DELETE where the program uses multiple tables to update. This could cause corrupt data if any on the logic, validation, or database update was missed or incorrectly updated  
 - Make sure when using readLock that it is released at the end of the extension to avoid blocking another program access  
 - When reading table with partial keys, verify that this will not return too many records. Include _nrOfRecords_ parameter when performing _readAll_ API calls
-  - It is not allowed read more than 10,000 records per read. If there is a need to read more than 10,000 records, contact the review team with a good reasoning as to why it's needed
+  - It is not allowed read more than 10,000 records per extension. If there is a need to read more than 10,000 records, contact the review team with a good reasoning as to why it's needed
 - When reading table, if possible, specify only the required column fields and avoid selectAllFields on querying tables particularly on tables which contains many fields  
 
 ### Loops
