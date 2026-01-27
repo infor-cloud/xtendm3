@@ -37,8 +37,8 @@ Therefore, if there are three extensions sent for review, there should be three 
 
 - Project/Customer Name
 - Planned Go Live Date
-- Project Manager responsible for Billing or Clarity Tasks
-- Clarity Project ID or Infor Services Work Order Number (attach signed SWO)
+- Project Manager responsible for Billing or Certinia Tasks
+- Certinia Project ID or Infor Services Work Order Number (attach signed SWO)
 - Developer Name (Developer needs to have completed the XtendM3 trainings and have been attending the workshops)
 - Requirement Description (1 or 2 paragraphs)
 - Solution Description (1 or 2 paragraphs)
