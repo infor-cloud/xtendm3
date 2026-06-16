@@ -1,14 +1,14 @@
-\---
+---
 
 layout: default
 title: Approval Requirements
 parent: Documentation
-nav\_order: 12
+nav_order: 12
 ---
 
 # Approval Requirements
 
-{: .no\_toc }
+{: .no_toc }
 
 <div style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107;">
 ⚠️ Effective <strong>July 1, 2026</strong>, Requests for XtendM3 review and XtendM3 activation must be created in ServiceNow.</div>
@@ -21,12 +21,12 @@ Once all required information is prepared and the extension has passed functiona
 
 ## Table of contents
 
-{: .no\_toc .text-delta }
+{: .no_toc .text-delta }
 
 1. TOC
 {:toc}
 
-\---
+---
 
 
 <div style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107;">
