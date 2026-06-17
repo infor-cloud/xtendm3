@@ -37,7 +37,8 @@ Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
 
 Outlining the format of an XtendM3 extension request.
 
-### Request Content {: .no_toc }
+### Request Content
+{: .no_toc }
 
 #### Submit separate requests for new extensions and previously signed extensions. ####
 
@@ -56,7 +57,8 @@ The questionnaire must include one detailed section per extension. Therefore, if
 
 ## Detail
 
-### Requirement Description (1 or 2 paragraphs) {: .no_toc }
+### Requirement Description (1 or 2 paragraphs)
+{: .no_toc }
 
 * Solution Description (1 or 2 paragraphs)
 * Affected M3 Module (Finance, Procurement, etc.)
@@ -93,7 +95,8 @@ The questionnaire must include one detailed section per extension. Therefore, if
   * If yes, is it only using debug level? (The extension will not be approved if any logger level other than debug is used)
 * Have the AI recommendations / feedback been addressed? If no, why?
 
-### Attachments {: .no_toc }
+### Attachments
+{: .no_toc }
 
 * Exported extension in JSON format
 * Exported dynamic tables in JSON format
@@ -163,7 +166,8 @@ Consulting charges apply for this activity, so the consultants who will be revie
 Effective **July 1, 2021**,
 we will no longer release signed extensions without first billing our time spent for the review and signing.
 
-### Billing Specifics  {: .no_toc }
+### Billing Specifics
+{: .no_toc }
 
 We bill 1-2 hours per review of simple to medium complexity extensions.<br>
 For complex extensions, it normally takes more time as it requires multiple cycles of review/discussions/revisions so the actual time spent will be charged.<br>
