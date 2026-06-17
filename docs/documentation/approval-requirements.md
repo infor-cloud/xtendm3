@@ -47,20 +47,18 @@ Copy this form into your ticket and complete all sections. Tickets with incomple
 
 The questionnaire must include one detailed section per extension. Therefore, if three extensions are submitted for review, provide three separate detailed sections—one for each extension.
 
-## Header
+### Header
 
 * Project/Customer Name
 * Planned Go Live Date
 * **( Mandatory )** Project Manager responsible for billing or Certinia project and tasks
 * **( Mandatory )** Certinia Project ID or Infor Services Work Order Number (attach signed SWO)
-  Secure a Certinia Project ID from the Project or Infor Client Partner or Customer Success Manager
+  <br />Secure a Certinia Project ID from the Project or Infor Client Partner or Customer Success Manager
 * Developer Name and email address (The developer must have completed the XtendM3 training and attended the workshops)
 
-## Detail
+### Detail
 
-### Requirement Description (1 or 2 paragraphs)
-{: .no_toc }
-
+* Requirement Description (1 or 2 paragraphs)
 * Solution Description (1 or 2 paragraphs)
 * Affected M3 Module (Finance, Procurement, etc.)
 * Is this a new extension? (Yes/ Previously Signed)
