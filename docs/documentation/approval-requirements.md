@@ -114,7 +114,8 @@ AI-generated code review results are intended to assist developers and should no
 
 ## Mandatory Checklist
 
-#### Please go through these checklists before sending the extension for approval {: .no_toc }
+#### Please go through these checklists before sending the extension for approval
+{: .no_toc }
 
 * Certinia Project ID or Infor Services Work Order Number (attach signed SWO)
 * Extensions are stored using a version-controlled repository like GitHub, BitBucket, Azure DevOps, or GitLab
