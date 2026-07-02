@@ -43,7 +43,7 @@ Outlining the format of an XtendM3 extension request.
 #### Submit separate requests for new extensions and previously signed extensions. ####
 {: .no_toc }
 
-Copy this form into your ticket and complete all sections. Tickets with incomplete information will be returned to the ticket owner for completion.
+Copy this form into the Description field of your ticket and complete all sections. Tickets with incomplete information will be returned to the ticket owner for completion.
 
 The questionnaire must include one detailed section per extension. Therefore, if three extensions are submitted for review, provide three separate detailed sections—one for each extension.
 
