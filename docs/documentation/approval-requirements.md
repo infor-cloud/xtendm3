@@ -43,9 +43,8 @@ Outlining the format of an XtendM3 extension request.
 #### Submit separate requests for new extensions and previously signed extensions. ####
 {: .no_toc }
 
-Copy this form into the Description field of your ticket and complete all sections. Tickets with incomplete information will be returned to the ticket owner for completion.
-
-The questionnaire must include one detailed section per extension. Therefore, if three extensions are submitted for review, provide three separate detailed sections—one for each extension.
+* Attach a Microsoft Word or PDF document containing the completed form to the ticket. Tickets with incomplete information will be returned to the ticket owner for completion.
+* Provide one detailed questionnaire section for each extension submitted. For example, if three extensions are submitted for review, include three separate detailed sections—one for each extension.
 
 ### Header
 
@@ -97,10 +96,11 @@ The questionnaire must include one detailed section per extension. Therefore, if
 ### Attachments
 {: .no_toc }
 
+* Approval form (Microsoft Word or PDF document)
 * Exported extension in JSON format
-* Exported dynamic tables in JSON format
-* Amazon Q code review results (Mandatory for Infor-certified developers), or any AI equivalent code review results
-* All attachments must be consolidated into a single ZIP file named using the submission date.
+* Exported dynamic tables in JSON format 
+* Amazon Q code review results (Mandatory for Infor-certified developers), or any AI equivalent code review results 
+* All attachments must be consolidated into a single ZIP file named using the submission date e.g. 20260701.zip
 
 Effective **January 2026**, Infor-certified developers are required to attach the Amazon Q code review results when submitting XtendM3 review requests.
 Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
