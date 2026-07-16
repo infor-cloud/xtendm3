@@ -16,7 +16,7 @@ nav_order: 12
 Checklist for requesting approval for your extensions.
 {: .fs-6 .fw-300 }
 
-Once all required information is prepared and the mandatory checklist is completed, create a new ServiceNow ticket under Sold Product: **XtendM3 Review ONLY – do not use for P1**.
+Once all required information is prepared and the mandatory checklist is completed, create a new ServiceNow ticket under the **customer's account** and select Sold Product: **XtendM3 Review ONLY – Do Not Use for P1**.
 
 ## Table of contents
 {: .no_toc .text-delta }
