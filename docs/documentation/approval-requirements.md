@@ -30,7 +30,7 @@ Once all required information is prepared and the mandatory checklist is complet
 </div>
 <br />
 Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
-[Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/:f:/r/sites/XtendM3Community/Shared%2520Documents/General/Amazon%2520Q%2520XtendM3%2520Review?csf=1&web=1&e=WQtWHN)
+[Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/:f:/r/sites/XtendM3Community/Shared%20Documents/General/Amazon%20Q%20XtendM3%20Review?d=w3022b1156afc4fcca2ef83fc15d15b2e&csf=1&web=1&e=GbnV1e)
 <br />
 
 ## Request Format
@@ -104,7 +104,7 @@ Outlining the format of an XtendM3 extension request.
 
 Effective **January 2026**, Infor-certified developers are required to attach the Amazon Q code review results when submitting XtendM3 review requests.
 Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
-[Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/:f:/r/sites/XtendM3Community/Shared%2520Documents/General/Amazon%2520Q%2520XtendM3%2520Review?csf=1&web=1&e=WQtWHN)
+[Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/:f:/r/sites/XtendM3Community/Shared%20Documents/General/Amazon%20Q%20XtendM3%20Review?d=w3022b1156afc4fcca2ef83fc15d15b2e&csf=1&web=1&e=GbnV1e)
 
 For partners, a similar code review using their available AI-assisted code review tools is also required.
 
