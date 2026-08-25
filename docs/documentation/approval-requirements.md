@@ -33,6 +33,11 @@ Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
 [Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/:f:/r/sites/XtendM3Community/Shared%20Documents/General/Amazon%20Q%20XtendM3%20Review?d=w3022b1156afc4fcca2ef83fc15d15b2e&csf=1&web=1&e=GbnV1e)
 <br />
 
+## Go-Live Support ##
+{: .no_toc }
+
+If you require support during your go-live period, please refer to the [**Go-Live Support**](golive-support.md) page for support requirements, lead time, coverage options, billing information, and instructions for submitting a Go-Live Support request.
+
 ## Request Format
 
 Outlining the format of an XtendM3 extension request.
