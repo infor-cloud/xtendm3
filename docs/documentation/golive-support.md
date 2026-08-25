@@ -9,13 +9,6 @@ nav_order: 13
 # Go-Live Support
 {: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-   {:toc}
-
----
 Go-Live Support must be requested **at least two months before the requested support period.** This allows the team to plan and mobilize the appropriate resources for the requested coverage dates.
 
 During the agreed Go-Live Support period, the team will provide a **24-hour SLA** to review and provide feedback on:
