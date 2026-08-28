@@ -28,3 +28,28 @@ For non-standby weekend coverage requests, the team will bill a **minimum of fou
 ## Requesting Go-Live Support
 
 To request Go-Live Support, please email [Reylan.Reyes@infor.com](mailto:Reylan.Reyes@infor.com) and [Jhoana.Lopez@infor.com](mailto:Jhoana.Lopez@infor.com).
+
+## Request Format
+{: .no_toc }
+
+Outlining the format of Go-Live support request.
+
+### Subject
+{: .no_toc }
+
+Go-Live Support Request – **[Project]** – **[Go-Live Date]**<br>
+Go-Live Support Request – ABC – Oct 15, 2026<br>
+
+### Details
+{: .no_toc }
+
+* **Project/Customer Name:** ABC Project<br>
+* **Go-Live Date:** October 15, 2026<br>
+* **Requested Support Period:** October 15–17, 2026<br>
+* **Coverage Time:** 8:00 AM–6:00 PM<br>
+* **Time Zone:** EST<br>
+* **Coverage Type:** Non-standby weekend<br>
+* **Expected Go-Live Activity:** Production deployment and post-deployment validation<br>
+* **Primary contact:** Name / Email<br>
+* **Number of Extension Objects in Scope:** 20<br>
+* **Certinia Project ID or Infor Services Work Order Number (attach signed SWO)**:<br>
