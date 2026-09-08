@@ -10,7 +10,7 @@ nav_order: 12
 {: .no_toc }
 
 <div style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107;">
-⚠️ Effective <strong>July 1, 2026</strong>, Requests for XtendM3 review and XtendM3 activation must be created in ServiceNow. </div>
+⚠️ Effective <strong>July 1, 2026</strong>, Requests for XtendM3 review and XtendM3 activation must be created in ServiceNow / Concierge / Infor Customer Portal. </div>
 
 <br />
 Checklist for requesting approval for your extensions.
