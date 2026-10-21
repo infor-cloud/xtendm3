@@ -30,13 +30,26 @@ Templates can be as modified as needed.
 This is a Transaction extension template with a structure that can be used for creating a new extension using container contruction and setting parameters.
 
 ```groovy
+/****************************************************************************************
+Extension Name: EXT000MI/TransactionTemplate
+Type: Transaction
+Date: 2022-02-22
+Description: Example XtendM3 Transaction
+
+Revision History:
+Name                  Date              Version              Description of Change
+Filip Hakansson       2022-02-22        1.0                  First version
+******************************************************************************************/
+
 public class TransactionTemplate extends ExtendM3Transaction {
   private final MIAPI mi;
+  private final LoggerAPI logger;
   private final DatabaseAPI database;
   private final MICallerAPI miCaller;
 
-  public TransactionTemplate(MIAPI mi, DatabaseAPI database, MICallerAPI miCaller) {
+  public TransactionTemplate(MIAPI mi, LoggerAPI logger, DatabaseAPI database, MICallerAPI miCaller) {
     this.mi = mi;
+    this.logger = logger;
     this.database = database;
     this.miCaller = miCaller;
   }
@@ -44,8 +57,10 @@ public class TransactionTemplate extends ExtendM3Transaction {
   public void main() {
 
     Closure<?> callback = { Map <String, String> out ->
+      logger.debug("Start of MWS420MI callback function");
       if (out.error != null) {
         mi.error(out.errorMessage);
+        logger.debug("Call returned error: " + out.)
         return;
       }
 

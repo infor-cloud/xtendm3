@@ -16,7 +16,7 @@ nav_order: 2
 {:toc}
 
 ---
-**Since**: `0.5.0`  
+**Since**: `0.5`  
 **Context**: Any  
 **Category**: Storage  
 ---
@@ -330,12 +330,12 @@ The ability to work with database directly is a very tempting solution. It is ex
 if it is not handled properly. Keep the following points in mind when working with the DatabaseAPI:
 
 * Stick to standard M3 APIs when possible, using direct record insert/update you skip all validations that are done by
-    M3 which might lead to corrupt data in the database.
-* If current program is using the table you are performing operations on, the changes will affect the record read by the
+    M3 which might lead to corrupt data in the database
+* If the current program is using the table you are performing operations on, the changes will affect the record read by the
     program. This might be intentional in some cases. In some other cases you might retrieve another record while the
-    program was processing the original record and it can lead to undefined behavior.
-* Avoid using ExpressionFactory and matching filters when possible and leverage defined indexes instead.
-* Avoid retrieving too many columns, only retrieve the ones you need.
+    program was processing the original record and it can lead to unexpected behaviour
+* Avoid using ExpressionFactory and matching filters when possible and leverage defined indexes instead
+* Avoid retrieving too many columns, only retrieve the ones needed
 * Avoid creating queries that affect large data set. This is not meant to be used for going through thousands of
     records.
 * Avoid performing expensive tasks and calculations while locking a record. Locking a record blocks all other programs
