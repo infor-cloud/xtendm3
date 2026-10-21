@@ -26,7 +26,7 @@ The Exception API is used to throw various XtendM3 specific exceptions, as an al
 This API can be injected into any extension type. But interactive exceptions can only be thrown in interactive contexts.
 
 ## Features
-Listing each API and its features.
+Features available for the Exception API.
 
 ### Interactive Exceptions
 The following exceptions are only available to throw from interactive contexts. 

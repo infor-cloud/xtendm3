@@ -16,13 +16,12 @@ nav_order: 15
 {:toc}
 
 ---
-**Since**: `0.12.0`
-**Context**: API
+**Since**: `0.12` <br>
+**Context**: API <br>
 **Category**: Context specific
 ---
 
 ## Description
-
 Transaction API allows to extend MI transactions, overwrite parameters. Can be used to set, retrieve or change a parameter and skip current transaction.
 
 ## Features

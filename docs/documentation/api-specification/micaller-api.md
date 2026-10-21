@@ -16,17 +16,19 @@ nav_order: 11
 {:toc}
 
 ---
-**Since**: `0.1.0`  
-**Context**: Any  
+**Since**: `0.1` <br>
+**Context**: Any <br>
 **Category**: Integration  
 ---
 
 ## Description
-This API can be used for MI calls in XtendM3.
+This API is used for making MI calls from XtendM3 programs.
 
-## Features
-### Call Transaction
-There are two kinds of MI Call methods to be used: one with parameters and one without them.
+## Methods
+Methods available for the MICaller API.
+
+### call()
+There are two kinds of MI call methods to be used: one with parameters and one without them.
 
 1. Without parameters:
 
@@ -88,7 +90,7 @@ Closure<?> callback = {
 miCaller.call("CRS610MI","SearchCustomer", params, callback);  
 ```
 
-### setListMaxRecords
+### setListMaxRecords()
 This method sets the maximum amount of records to be returned by the MI Caller method when using a transaction list. <br>
 Example:
 ```groovy
@@ -111,7 +113,7 @@ miCaller.setListMaxRecords(1);
 miCaller.call("CRS610MI","SearchCustomer", params, callback);  
 ```
 
-### setDateFormat
+### setDateFormat()
 The setDateFormat method uses two parameters: character separator and date format. These are the allowed date formats: `YMD8`, `YMD6`, `MDY6`, `DMY6`, and `YWD5`. <br>
 Example:
 ```groovy

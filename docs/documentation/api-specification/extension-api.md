@@ -24,7 +24,9 @@ nav_order: 4
 ## Description
 The Extension API provides information regarding the extension that is currently in use. This can be used to retrieve metadata about the current extension to show the user, or use for logging purposes.
 
-## Features
+## Methods
+Methods available for the Extension API.
+
 ### getCreator()
 Retrieve the username of who created the current extension. 
 

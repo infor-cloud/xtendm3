@@ -16,8 +16,8 @@ nav_order: 6
 {:toc}
 
 ---
-**Since**: `0.6.0`  
-**Context**: Any  
+**Since**: `0.6` <br>
+**Context**: Any <br>
 **Category**: Integration  
 ---
 

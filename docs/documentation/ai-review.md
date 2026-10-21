@@ -23,7 +23,8 @@ Running the extension through AI review for submission is not required, but high
 
 ## Using the tool
 The AI Review is accessed directly from the XtendM3 code editor. Open the extension you want to review, then click the **AI Review** button(far right) in the editor toolbar. The results appear in a panel below the editor without leaving the page. <br>
-Link to a markdown document containing the AI review ruleset: https://inforonline.sharepoint.com/:t:/r/sites/XtendM3Community/Shared%20Documents/General/Amazon%20Q%20XtendM3%20Review/Xtendm3_standard_ruleset.md?d=w203c319d747b458da55ecead77f9f9d0&csf=1&web=1&e=6RmN3G
+[Link](https://inforonline.sharepoint.com/:t:/r/sites/XtendM3Community/Shared%20Documents/General/Amazon%20Q%20XtendM3%20Review/Xtendm3_standard_ruleset.md?d=w203c319d747b458da55ecead77f9f9d0&csf=1&web=1&e=6RmN3G) to a markdown document containing the AI review ruleset.
+
 
 ---
 

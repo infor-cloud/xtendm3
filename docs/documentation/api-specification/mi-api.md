@@ -16,17 +16,18 @@ nav_order: 10
 {:toc}
 
 ---
-**Since**: `0.9.0`  
-**Context**: XtendM3 API  
+**Since**: `0.9` <br>
+**Context**: XtendM3 API <br>
 **Category**: Context Specific
 ---
 
 ## Description
 The MI API allows for reading input parameters and writing output parameters sent into transactions. Supports both single and multiple transactions, custom logic and validation. It can for example be used to abort transaction based on own validation. Also Provides error management.
 
-## Features
+## Methods
+Methods available for the MI API.
 
-### mi.inData
+### mi.inData()
 This method allows to get value from data container and containes In values for Transactions. Contained values are already converted to the proper type.
 Takes string key as a parameter and returns value associeted with the key.
 
@@ -43,7 +44,7 @@ void inData() {
 }
 ```
 
-### mi.outData
+### mi.outData()
 This method id used to put value into the data container. Takes key and associeted with it value as parameters, returns previous value.
 
 Example 1:
@@ -63,7 +64,7 @@ void outData() {
   mi.write();
 }
 ```
-### mi.getDateFormat
+### mi.getDateFormat()
 This method checks date format and returns it as a string. Possible formats: YMD8, YMD6, MDY6, DMY6, YWD5.
 
 Example:
@@ -74,7 +75,7 @@ void getDateFormat() {
   }
 }
 ```
-### mi.getDateSeparator
+### mi.getDateSeparator()
 Returns date separator as a char.
 
 Example:
@@ -86,7 +87,7 @@ void getDateSeparator () {
 }
 ```
 
-### mi.getRemainingRecords
+### mi.getRemainingRecords()
 Returns the amount of remaining records allowed to be written in current transaction.
 
 Example:
@@ -101,7 +102,7 @@ void getRemainingRecords() {
 }
 ```
 
-### mi.hasRemainingRecords
+### mi.hasRemainingRecords()
 Returns true if there are still any additional records to be written or false if not.
 
 Example:
@@ -114,7 +115,7 @@ void hasRemainingRecords() {
 }
 ```
 
-### mi.getMaxRecords
+### mi.getMaxRecords()
 Returns the maximum amount of possible records to be written as an integer.
 
 Example:
@@ -128,7 +129,7 @@ void getMaxRecords() {
 }
 ```
 
-### mi.write
+### mi.write()
 Writes response from data present in outData. Clears all values in outData.
 
 Example:
@@ -139,7 +140,7 @@ void writeRecord() {
 }
 ```
 
-### mi.error
+### mi.error()
 Writes error responses with parameters:<br>
 - String errorMessage - error message to display (only supports 240 characters)<br>
 - String field - field error occurred for (only supports 10 characters)<br>
@@ -170,7 +171,7 @@ boolean validResponsible(String responsible) {
 }
 ```
 
-### mi.getPositionKey & mi.sendPositionKey
+### mi.getPositionKey() & mi.sendPositionKey()
 Methods used to implement pagination into your extension.<br>
 'getPositionKey' is used to fetch the position key from the request.<br>
 'sendPositionKey' is used to write the output position key to the response.<br>

@@ -329,8 +329,8 @@ Closure<?> deleterCallback = { LockedResult lockedResult ->
 The ability to work with database directly is a very tempting solution. It is extremely flexible and yet quite dangerous
 if it is not handled properly. Keep the following points in mind when working with the DatabaseAPI:
 
-* Stick to standard M3 APIs when possible, using direct record insert/update you skip all validations that are done by
-    M3 which might lead to corrupt data in the database
+* Stick to standard M3 APIs when possible, using direct record insert/update all validations that are done by
+    M3 are skipped which might lead to corrupt data in the database
 * If the current program is using the table you are performing operations on, the changes will affect the record read by the
     program. This might be intentional in some cases. In some other cases you might retrieve another record while the
     program was processing the original record and it can lead to unexpected behaviour
