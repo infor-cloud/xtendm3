@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
-description: "A secure, scalable and upgradable customization tool for M3 in cloud"
+description: "A secure, scalable and upgradable customization tool for M3 in the cloud"
 permalink: /
 ---
 
@@ -19,11 +19,16 @@ A secure, scalable and upgradable customization tool for M3 in cloud
 ## The What and The Why
 XtendM3 is an extensibility tool targeted for modifying and extending M3 Business Engine in M3 Cloud Edition. For M3 there are 
 different extensibility tools e.g. Mongoose, H5 Script, H5 SDK, etc. but the lack of capabilities for changing the 
-business engine logic at realtime was the motivation to create another extensibility tool where realtime modification or 
+Business Engine logic at realtime was the motivation to create another extensibility tool where realtime modification or 
 extension of the logic is possible.
 
----
+## Navigation
+- [Getting Started & Process](docs/getting-started)
+- [API Specification & Documentation](docs/documentation)
+- [Guides & Use Cases](docs/examples)
+- [Support & Resources](support-resources)
 
+<!--
 ## About the project
 
 ### XtendM3 
@@ -47,3 +52,4 @@ email, or any other method with the owners of this repository before making a ch
   </li>
 {% endfor %}
 </ul>
+-->

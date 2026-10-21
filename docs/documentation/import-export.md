@@ -2,7 +2,7 @@
 layout: default
 title: Import and Export of Extensions
 parent: Documentation
-nav_order: 3
+nav_order: 8
 ---
 
 # Import and Export of Extensions

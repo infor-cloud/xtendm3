@@ -2,7 +2,7 @@
 layout: default
 title: Programming Standard
 parent: Documentation
-nav_order: 2
+nav_order: 12
 ---
     
 # Programming Standard
@@ -154,15 +154,17 @@ API - EXT001MI
 - Generic column names will not be accepted even though the actual columns might have been used correctly for a specific purpose and not in a generic way. The reason is to avoid misunderstandings, because generic tables are not going to be allowed.
 
 #### Methods
-- Method name should follow Java naming convention for methods  
-- Names should be in lowerCamelCase, using no underscores and starting with a letter  
+- Method name should follow Java naming convention for methods
+- Names should be in lowerCamelCase, using no underscores and starting with a letter
 - Only alphanumeric characters should be used. Alphanumeric characters include the letters a-z, either upper case or lower case, and the numerals 0-9  
 - Should be simple and descriptive: 
 validateDate, 
 validateType
 
 #### Variables and Constants
-- Variables and constants should follow Java naming convention
+- Variables and constants should be in lowerCamelCase, using no underscores and starting with a letter
+- Only alphanumeric characters should be used. Alphanumeric characters include the letters a-z, either upper or lower case, and the numerals 0-9
+- Variables should be simple and descriptive: 'inValidDate', 'outValidDateType'
 - Variables should be in lowerCamelCase and constants in CAPITAL_CONSTANTS
 
 ## Extension Structure
@@ -210,18 +212,18 @@ validateType
 ## Programming Practices
 ### Logging
 - LoggerAPI is used for logging messages  
-- It is encouraged to add logs in extensions to help in debugging and troubleshooting issues particularly on non-development environments (TRN, PRD) where there is restriction on modifying extensions  
-- Use proper level of logging – If extension is to be deployed in PRD, it should be limited to DEBUG level. Using INFO/WARNING/ERROR/TRACE on production environment can cause huge log size and impact MT Cloud environment  
+- It is encouraged to add logs in extensions to help in debugging and troubleshooting issues, particularly on non-development environments where there are restrictions on modifying extensions  
+- Use proper level of logging – Extension deployed in PRD are limited to DEBUG level. Using INFO/WARNING/ERROR/TRACE in production environments can cause huge log sizes and impact performance  
 - Avoid logging values of all returned fields in a database query  
 - Logs can be accessed through Administration tool - Business Engine Jobs
 
 <img src="../../../assets/attachments/programming-standard/businessEngineJobsLogging.PNG" width="950">
 
 #### Log levels
-- warning  
-- error  
-- info  
-- trace  
+- warning
+- error
+- info
+- trace
 - debug
 
 ### Database Access
@@ -306,12 +308,32 @@ validateType
 
 ### Date and Time
 - Use classes [LocalDate](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/time/LocalDate.html), [LocalTime](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/time/LocalTime.html), [LocalDateTime](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/time/LocalDateTime.html) if required to retrieve current date or manipulate date or time  
-`int entryDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")).toInteger()`  
+`int entryDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")).toInteger()`
 `int entryTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HHmmss")).toInteger()`
 
 ### Variable Types
 - It is not allowed to use *__def__* statements in XtendM3, the type should be known
   - If the type is unknown, use *__Object__*
+
+## JSON File Standards
+
+### Description Requirements
+- `description` value must not be blank
+- `description` value must be concise and descriptive
+- Abbriviations of usual terms like: CO, PO, etc. are valid since character length is limited
+- Generic descriptions like "test" or "list" should be more descriptive
+- `name` value should not be the same as `description` value
+
+### Field Standards
+- User-defined fields such as: UDN1, UDNx, UCA1, UCAx should be checked if used as generic field in a table
+- EXT9XXMI is reserved for standard extensions and should not be used
+- Required fields for table extensions: CONO, DIVI, RGDT, RGTM, LMDT, CHNO, CHID
+- Generic fields are not allowed (e.g., COA1, COA2 or OBV1, OBV2 or UDF1, UDF2) for XtendM3 Tables with prefix EXT
+
+## Groovy File Standards
+
+### Naming Conventions
+- **Method Names**: lowerCamelCase, no underscores, start with letter
  
 ## Testing
 Extension approval requires submission of approved Unit test and Functional test documents    

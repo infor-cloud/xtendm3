@@ -3,7 +3,7 @@ layout: default
 title: TextFiles API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 9
+nav_order: 14
 ---
  
 # TextFiles API
@@ -16,8 +16,8 @@ nav_order: 9
 {:toc}
 
 ---
-**Since**: `0.11.0`  
-**Context**: Any  
+**Since**: `0.11` <br>
+**Context**: Any <br>
 **Category**: Storage  
 ---
 

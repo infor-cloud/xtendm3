@@ -3,7 +3,7 @@ layout: default
 title: Interactive API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 10
+nav_order: 5
 ---
 
 # Interactive API
@@ -16,8 +16,8 @@ nav_order: 10
 {:toc}
 
 ---
-**Since**: `0.1.0`  
-**Context**: Interactive  
+**Since**: `0.1` <br>
+**Context**: Interactive <br>
 **Category**: Context Specific  
 ---
 
@@ -25,6 +25,7 @@ nav_order: 10
 The Interactive API provides the capability to display a message in the UI to the user or retrieve data from the displayed form. This API can be used also to alert the user after taking an action. There are templates and custom API methods available to be used to achieve this. 
 
 ## Features 
+Features available for the Interactive API.
 
 ### Retrieve Field from UI
 Field data can be retrieved from the form. This can be used in displaying the message, validation, logging purposes and many more. 

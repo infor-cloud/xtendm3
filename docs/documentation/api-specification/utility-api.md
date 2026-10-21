@@ -3,7 +3,7 @@ layout: default
 title: Utility API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 4
+nav_order: 16
 ---
 
 # Utility API
@@ -16,8 +16,8 @@ nav_order: 4
 {:toc}
 
 ---
-**Since**: `0.7.0`  
-**Context**: Any  
+**Since**: `0.7` <br>
+**Context**: Any <br>
 **Category**: Generic  
 ---
 

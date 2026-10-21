@@ -3,7 +3,7 @@ layout: default
 title: Transaction API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 13
+nav_order: 15
 ---
 
 # Transaction API
@@ -16,13 +16,12 @@ nav_order: 13
 {:toc}
 
 ---
-**Since**: `0.12.0`
-**Context**: API
+**Since**: `0.12` <br>
+**Context**: API <br>
 **Category**: Context specific
 ---
 
 ## Description
-
 Transaction API allows to extend MI transactions, overwrite parameters. Can be used to set, retrieve or change a parameter and skip current transaction.
 
 ## Features

@@ -3,7 +3,7 @@ layout: default
 title: MICaller API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 5
+nav_order: 11
 ---
 
 # MICaller API
@@ -16,26 +16,53 @@ nav_order: 5
 {:toc}
 
 ---
-**Since**: `0.1.0`  
-**Context**: Any  
+**Since**: `0.1` <br>
+**Context**: Any <br>
 **Category**: Integration  
 ---
 
 ## Description
-This API can be used for MI calls in XtendM3.
+This API is used for making MI calls from XtendM3 programs.
 
-## Features
-### Call Transaction
-There are two kinds of MI Call methods to be used: one with parameters and one without them.
+## Methods
+Methods available for the MICaller API.
+
+### call()
+There are two kinds of MI call methods to be used: one with parameters and one without them.
 
 1. Without parameters:
 
 ```groovy
-String customer;
-Closure<?> callback = { Map<String, String> response ->
-  logger.info("Response = ${response}");
-  if(response.CUNO != null){
-    customer = response.CUNO;
+public class TestProgram extends ExtendM3Trigger {
+  private final ProgramAPI program
+  private final ExtensionAPI extension
+  private final InteractiveAPI interactive
+  private final MICallerAPI miCaller
+  private final LoggerAPI logger
+  
+  public TestProgram(ProgramAPI program, ExtensionAPI extension, InteractiveAPI interactive, MICallerAPI miCaller, LoggerAPI logger) {
+    this.program = program
+    this.extension = extension
+    this.interactive = interactive
+    this.miCaller = miCaller
+    this.logger = logger
+  }
+  
+  public void main() {
+    String customer = null
+    Closure<?> callback = { Map<String, String> response ->
+      logger.debug("Response = ${response}")
+      if(response.error == false) {
+        if(response.CUNO != null) {
+        customer = response.CUNO  
+        }
+      } else {
+        logger.debug("Execution failed with error: ${response.toString()}");
+      }
+    }
+    miCaller.call("CRS610MI","LstBySearchKey", callback)
+    
+    interactive.showOkDialog("Customer: " + customer)
   }
 }
     
@@ -63,7 +90,7 @@ Closure<?> callback = {
 miCaller.call("CRS610MI","SearchCustomer", params, callback);  
 ```
 
-### setListMaxRecords
+### setListMaxRecords()
 This method sets the maximum amount of records to be returned by the MI Caller method when using a transaction list. <br>
 Example:
 ```groovy
@@ -86,7 +113,7 @@ miCaller.setListMaxRecords(1);
 miCaller.call("CRS610MI","SearchCustomer", params, callback);  
 ```
 
-### setDateFormat
+### setDateFormat()
 The setDateFormat method uses two parameters: character separator and date format. These are the allowed date formats: `YMD8`, `YMD6`, `MDY6`, `DMY6`, and `YWD5`. <br>
 Example:
 ```groovy

@@ -16,8 +16,8 @@ nav_order: 6
 {:toc}
 
 ---
-**Since**: `0.6.0`  
-**Context**: Any  
+**Since**: `0.6` <br>
+**Context**: Any <br>
 **Category**: Integration  
 ---
 
@@ -67,11 +67,11 @@ Map<String, String> headers = ["Accept": "application/json"];
 Map<String, String> queryParameters = (Map)null; // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
 Map<String, String> formParameters = (Map)null; // post URL encoded parameters
 IonResponse response = ion.post(endpoint, headers, queryParameters, formParameters);
+if (response.getError()) {
+  logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}");
+  return;
+}
 if (response.getStatusCode() != 200) {
-  if (response.getError()) {
-    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}");
-    exception.throwErrorMIResponseException(response.getErrorMessage());
-  }
   logger.debug("Expected status 200 but got ${response.getStatusCode()} instead");
   return;
 }
@@ -91,19 +91,18 @@ String endpoint = "/IONAttachment/supportedfile/list";
 Map<String, String> headers = ["Accept": "application/json"];
 Map<String, String> queryParameters = (Map)null; // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
 IonResponse response = ion.get(endpoint, headers, queryParameters);
-if (response.getStatusCode() != 200) {
-  if (response.getError()) {
-    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}");
-    exception.throwErrorMIResponseException(response.getErrorMessage());
-  }
-  logger.debug("Expected status 200 but got ${response.getStatusCode()} instead");
-  return;
+if (response.getError()) {
+  logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}");
+  return
 }
-
+if (response.getStatusCode() != 200) {
+  logger.debug("Expected status 200 but got ${response.getStatusCode()} instead");
+  return
+}
 String content = response.getContent();
 if (content != null) {
   logger.debug("Expected content from the request but got no content");
-  return;
+  return
 }
 ```
 
@@ -116,19 +115,19 @@ Map<String, String> headers = ["Accept": "application/json"]
 Map<String, String> queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
 Map<String, String> formParameters = (Map)null //
 IonResponse response = ion.put(endpoint, headers, queryParameters, formParameters)
+if (response.getError()) {
+  logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
+  return
+}
 if (response.getStatusCode() != 200) {
-  if (response.getError()) {
-    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}");
-    exception.throwErrorMIResponseException(response.getErrorMessage());
-  }
-  logger.debug("Expected status 200 but got ${response.getStatusCode()} instead");
-  return;
+  logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
+  return
 }
 
 String content = response.getContent()
 if (content != null) {
   logger.debug("Expected content from the request but got no content")
-  return;
+  return
 }
 ```
 
@@ -140,18 +139,20 @@ String endpoint = "/IONAttachment/supportedfile/list"
 Map<String, String> headers = ["Accept": "application/json"]
 Map<String, String> queryParameters = (Map)null // define as map if there are any query parameters e.g. ["name1": "value1", "name2": "value2"]
 IonResponse response = ion.delete(endpoint, headers, queryParameters)
-if (response.getStatusCode() != 200) {
-  if (response.getError()) {
-    logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}");
-    exception.throwErrorMIResponseException(response.getErrorMessage());
-  }
-  logger.debug("Expected status 200 but got ${response.getStatusCode()} instead");
-  return;
+if (response.getError()) {
+  logger.debug("Failed calling ION API, detailed error message: ${response.getErrorMessage()}")
+  return
 }
-
+if (response.getStatusCode() != 200) {
+  logger.debug("Expected status 200 but got ${response.getStatusCode()} instead")
+  return
+}
 String content = response.getContent()
 if (content != null) {
   logger.debug("Expected content from the request but got no content")
-  return;
+  return
 }
 ```
+
+## Considerations and Guidelines
+* It is not allowed to call IPS services from XtendM3 via IONAPI

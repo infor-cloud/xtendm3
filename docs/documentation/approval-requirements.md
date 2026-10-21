@@ -16,7 +16,7 @@ nav_order: 12
 Checklist for requesting approval for your extensions.
 {: .fs-6 .fw-300 }
 
-Once all required information is prepared and the mandatory checklist is completed, create a new ServiceNow / Concierge / Infor Customer Portal ticket under the **customer's account** and select Sold Product: **XtendM3 Review ONLY – Do Not Use for P1**.
+Once all required information is prepared and the mandatory checklist is completed, create a new ServiceNow / Concierge / Infor Customer Portal ticket under the **customer's account** and select Sold Product: **XtendM3 Review ONLY – Do Not Use for P1**. The account field should be under the customer's name.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -30,6 +30,7 @@ Once all required information is prepared and the mandatory checklist is complet
 </div>
 <br />
 Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
+For AI-assisted code reviews, please visit the XtendM3 AI Review Resources page. It contains AmazonQ & Kiro review guides, demos, README files, and usage instructions. Access the resources here:
 [Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/:f:/r/sites/XtendM3Community/Shared%20Documents/General/Amazon%20Q%20XtendM3%20Review?d=w3022b1156afc4fcca2ef83fc15d15b2e&csf=1&web=1&e=GbnV1e)
 <br />
 
@@ -44,6 +45,11 @@ Outlining the format of an XtendM3 extension request.
 
 ### Request Content
 {: .no_toc }
+
+Copy this form to your mail and answer all questions.
+Email subject format: [Project Name] [XtendM3 Extension Name].
+The questionnaire should be answered per extension;  
+Therefore, if there are three extensions sent for review, there should be three separate sections in one email answering the following for each extension:
 
 #### Submit separate requests for new extensions and previously signed extensions. ####
 {: .no_toc }
@@ -182,3 +188,4 @@ Recommendation:<br>
 As per standard practice for our projects, we include the review hours in the work estimates for development of extensions.  
 At a high level, budgeting for 5-10% of each extension development effort is enough time for the review/signing.
 
+At a high level, budgeting for 5-10% of each extension development effort is enough time for the review/signing.

@@ -3,7 +3,7 @@ layout: default
 title: Exception API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 14
+nav_order: 3
 ---
 
 # Exception API
@@ -16,16 +16,17 @@ nav_order: 14
 {:toc}
 
 ---
-**Since**: `0.5.0`
-**Context**: Any  
+**Since**: `0.24` <br>
+**Context**: Any <br>
 **Category**: Generic  
 ---
 
 ## Description
 The Exception API is used to throw various XtendM3 specific exceptions, as an alternative to throwing the exception using Groovy syntax.
+This API can be injected into any extension type. But interactive exceptions can only be thrown in interactive contexts.
 
 ## Features
-Listing each API and its features.
+Features available for the Exception API.
 
 ### Interactive Exceptions
 The following exceptions are only available to throw from interactive contexts. 
@@ -33,20 +34,30 @@ The following exceptions are only available to throw from interactive contexts.
 Code example:
 
 ```groovy
-void testingExceptionAPI() {
-	String customMessage = "Failed to perform task, exception thrown";
+public class testingExceptionAPI extends ExtendM3Trigger {
+  private final ExceptionAPI exception;
+  private final MessageAPI message;
+
+  public testingExceptionAPI(ExceptionAPI exception, MessageAPI message) {
+    this.exception = exception;
+	this.message = message;
+  }
+
+  public void main() {
+    String customMessage = "Failed to perform task, exception thrown";
 	String messageId = message.getMessage("XC00001",[]);
     if(!doWork()) {
-    	exception.throwShowOkDialogException(customMessage);
+      exception.throwShowOkDialogException(customMessage);
     }
 	if(!doOtherWork()) {
-		exception.throwShowInfoException(messageId);
+	  exception.throwShowInfoException(messageId);
 	}
+  }
 }
 ```
 
 * **throwShowOkDialogException(String message)**
-	*	Throws an exception and shows dialog window with 'Ok' button.
+	* Throws an exception and shows dialog window with 'Ok' button.
 	* Takes a custom message String as parameter.  
 <br>
 
@@ -137,7 +148,7 @@ private void validateData(int param1, int param2) {
 The adaptive exception will adapt to the situation and throw exceptions depending on the context they are being thrown from. 
 For instance, an adaptive exception thrown from a Transaction extension will adapt to a ErrorMIResponseException. But the same exception thrown from a Trigger extension will adapt to a ShowOkDialogException.
 
-* **throwAdaptiveShortCircuitException**
+* **throwAdaptiveShortCircuitException(String message)**
 	* Throws an exception, depending on context.
 	* Will default to ShowOkDialogException in interactive contexts and ErrorMIResponseException in noninteractive contexts.
 	* Takes custom message String as parameter.

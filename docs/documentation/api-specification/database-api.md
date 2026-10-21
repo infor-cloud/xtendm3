@@ -3,7 +3,7 @@ layout: default
 title: Database API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 7
+nav_order: 2
 ---
 
 # Database API
@@ -16,7 +16,7 @@ nav_order: 7
 {:toc}
 
 ---
-**Since**: `0.5.0`  
+**Since**: `0.5`  
 **Context**: Any  
 **Category**: Storage  
 ---
@@ -192,6 +192,40 @@ public void main() {
 }
 ```
 
+### Read with pagination
+Example code below illutrates how to perform paginated reads in MI extensions.<br>
+[MIAPI](../mi-api) is used to get and set the position key.<br>
+
+```groovy
+public void main() {
+  inKEY1 = mi.inData.get("KEY1") == null? "": mi.inData.get("KEY1").trim();
+  inKEY2 = mi.inData.get("KEY2") == null? "": mi.inData.get("KEY2").trim();
+  inKEY2 = mi.inData.get("KEY3") == null? "": mi.inData.get("KEY3").trim(); 
+
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("READFIELD1", "READFIELD2")
+    .position(mi.getPositionKey())
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("KEY1",inKEY1);
+  container.set("KEY2",inKEY2);
+  container.set("KEY3",inKEY3);
+
+  Closure<?> readCallback = { DBContainer readResult ->
+    if (mi.hasRemainingRecords()) {
+      mi.outData.put("outDATA1", readResult.get("READFIELD1").toString());
+      mi.outData.put("outDATA2", readResult.get("READFIELD2").toString());
+      mi.write();
+    }
+  }
+  int nrOfKeys = 3;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
+  query.readAll(container, nrOfKeys, nrOfRecords, readCallback);
+  mi.sendPositionKey(query.getPositionKey()) ;
+}
+```
+
 ### Update a specific record
 To update a table record, the record must be called and update should be performed in callback Closure.
 
@@ -295,13 +329,13 @@ Closure<?> deleterCallback = { LockedResult lockedResult ->
 The ability to work with database directly is a very tempting solution. It is extremely flexible and yet quite dangerous
 if it is not handled properly. Keep the following points in mind when working with the DatabaseAPI:
 
-* Stick to standard M3 APIs when possible, using direct record insert/update you skip all validations that are done by
-    M3 which might lead to corrupt data in the database.
-* If current program is using the table you are performing operations on, the changes will affect the record read by the
+* Stick to standard M3 APIs when possible, using direct record insert/update all validations that are done by
+    M3 are skipped which might lead to corrupt data in the database
+* If the current program is using the table you are performing operations on, the changes will affect the record read by the
     program. This might be intentional in some cases. In some other cases you might retrieve another record while the
-    program was processing the original record and it can lead to undefined behavior.
-* Avoid using ExpressionFactory and matching filters when possible and leverage defined indexes instead.
-* Avoid retrieving too many columns, only retrieve the ones you need.
+    program was processing the original record and it can lead to unexpected behaviour
+* Avoid using ExpressionFactory and matching filters when possible and leverage defined indexes instead
+* Avoid retrieving too many columns, only retrieve the ones needed
 * Avoid creating queries that affect large data set. This is not meant to be used for going through thousands of
     records.
 * Avoid performing expensive tasks and calculations while locking a record. Locking a record blocks all other programs

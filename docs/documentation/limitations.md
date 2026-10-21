@@ -2,7 +2,7 @@
 layout: default
 title: Limitations
 parent: Documentation
-nav_order: 8
+nav_order: 9
 ---
 
 # Limitations
@@ -145,6 +145,7 @@ Limitations to the XtendM3 APIs.
     * _Workaround:_ <br>
     No workaround available.
 <br>
+* It is not allowed to call IPS services from XtendM3 via IONAPI.
 
 ### M3 API
 #### Calling CMS100MI/MDBREADMI

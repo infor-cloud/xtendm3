@@ -3,7 +3,7 @@ layout: default
 title: Session API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 8
+nav_order: 13
 ---
 
 # Session API
@@ -16,8 +16,8 @@ nav_order: 8
 {:toc}
 
 ---
-**Since**: `0.2.0`  
-**Context**: Any  
+**Since**: `0.2` <br>
+**Context**: Any <br>
 **Category**: Storage  
 ---
 

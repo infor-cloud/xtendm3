@@ -3,7 +3,7 @@ layout: default
 title: Logger API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 3
+nav_order: 7
 ---
 
 # Logger API
@@ -16,8 +16,8 @@ nav_order: 3
 {:toc}
 
 ---
-**Since**: `0.1.0`  
-**Context**: Any  
+**Since**: `0.1` <br>
+**Context**: Any <br>
 **Category**: Generic  
 ---
 
