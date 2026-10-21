@@ -3,7 +3,7 @@ layout: default
 title: MI API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 12
+nav_order: 10
 ---
 
 # MI API
@@ -169,5 +169,35 @@ boolean validResponsible(String responsible) {
   }
 }
 ```
+
+### mi.getPositionKey & mi.sendPositionKey
+Methods used to implement pagination into your extension.<br>
+'getPositionKey' is used to fetch the position key from the request.<br>
+'sendPositionKey' is used to write the output position key to the response.<br>
+
+Example:
+```groovy
+void paginatedRead() {
+  Closure<?> readerCallback = { DBContainer EXTEXA ->
+    String facility = EXTEXA.get("EXFACI");
+    mi.outData.put("FACI", keyValue);
+    mi.write();
+  }
+
+  DBAction query = database.table("EXTEXA")
+    .index("00")
+    .selection("EXFACI")
+    .position(mi.getPositionKey())
+    .build();
+  DBContainer container = query.getContainer();
+  Integer maxRecs = mi.getMaxRecords();
+  query.readAll(container, 0, maxRecs, readerCallback);
+  mi.sendPositionKey(query.getPositionKey());
+}
+```
+See [DatabaseAPI](../database-api) position method and getPositionKey method for more information on those functions.
+
+It's not yet possible to test pagination from Metadata Publisher, to test your extension use API Gateway. 
+
 ## Considerations and Guidelines
 It is not possible to add extra fields to transactions using MI API.

@@ -3,7 +3,7 @@ layout: default
 title: Program API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 2
+nav_order: 12
 ---
 
 # Program API
@@ -22,15 +22,22 @@ nav_order: 2
 ---
 
 ## Description
-The Program API contains APIs that can be used to get information from the current program, such as market, program type and more. 
+The Program API contains methods that can be used to retrieve information from the current program context. <br>
+This API can be injected into all type of extensions, but methods available varies.
 
 ## Methods
+Methods available for the Program API.
 
-### Indicator(get)
-Retrieve value of indicators.<br>
-Returns boolean value of the indicator.
+### indicator.get()
+Retrieve value of specified indicator. <br>
 
-Example:
+**Parameter:**
+* Integer - indicator
+
+**Returns:**
+* Boolean - indicator value
+
+**Example:**
 ```groovy
 public class testProgram extends ExtendM3Trigger {
   private final ProgramAPI program
@@ -47,11 +54,18 @@ public class testProgram extends ExtendM3Trigger {
 }
 ```
 
-### LDAZD(get)
-Retrieve fields mapped in LDAZD.<br>
-Takes a String 'key' as parameter and returns the value of the field.
+### LDAZD.get()
+Retrieve field(s) mapped in LDAZD. <br>
+LDAZD is an object in M3 BE that contains runtime environment variables for the current user, such as company number(CONO) and division(DIVI).
 
-Example:
+
+**Parameter:**
+* String - LDAZD field name
+
+**Returns:** 
+* String/Integer - indicator field value
+
+**Example:**
 ```groovy
 public class testProgram extends ExtendM3Trigger {
   private final ProgramAPI program;
@@ -67,11 +81,19 @@ public class testProgram extends ExtendM3Trigger {
   }
 } 
 ```
-### LDAZZ(get)
-Retrieve fields mapped in LDAZZ.<br>
-Takes a String 'key' as parameter and returns the value of the field.
 
-Example:
+### LDAZZ.get()
+Retrieve fields mapped in LDAZZ. <br>
+LDAZZ is an object in M3 BE that contains runtime environment variables for the current user, such as company number(CONO) and division(DIVI).
+
+
+**Parameter:**
+* String - LDAZZ field name
+
+**Returns:**
+* String/Integer - indicator field value
+
+**Example:**
 ```groovy
 public class testProgram extends ExtendM3Trigger {
   private final ProgramAPI program;
@@ -88,10 +110,15 @@ public class testProgram extends ExtendM3Trigger {
 } 
 ```
 
-### getProgramName
-Retrieve the name of the current program.
+### getProgramName()
+Retrieve the name of the current program. <br>
+For example, if you have a Trigger extension on 'MNS100' the method will return String 'MNS100'.
 
-Example: 
+
+**Returns:**
+* String - current program
+
+**Example:**
 ```groovy
 public class exampleProgram extends ExtendM3Trigger {
   private final ProgramAPI program;
@@ -109,7 +136,12 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getMarket
-Retrieve the market of the current job. Will always return a valid system component, will never be "ALL".
+Retrieve the market of the current job. <br>
+Will always return a valid system component, will never be "ALL". 
+
+
+Returns: `String 'market'`
+<br>
 
 Example:
 ```groovy
@@ -132,7 +164,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getUser
-Retrieves the current username.
+Retrieves the current users' username.  
+
+
+Returns: `String 'user'`
+<br>
 
 Example:
 ```groovy
@@ -154,7 +190,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getProgramType
-Retrieves the current program type(e.g. interactive).
+Retrieves the current program type(e.g. INTERACTIVE).
+
+
+Returns: `String 'programType'`
+<br>
 
 Example:
 ```groovy
@@ -174,7 +214,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getNumberOfInputParameters
-Retrieves the programs' number of input parameters.
+Retrieves the programs' number of input parameters.  
+
+
+Returns: `int 'numberOfInputParameters'`
+<br>
 
 Example:
 ```groovy
@@ -194,7 +238,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getJobNumber
-Retrieves the current job number.
+Retrieves the current job number.  
+
+
+Returns: `String 'jobNumber'`
+<br>
 
 Example:
 ```groovy
@@ -206,16 +254,20 @@ public class exampleProgram extends ExtendM3Trigger {
   }
 
   public void main() {
-    int currentJobNumber = program.getJobNumber();
-
+    String currentJobNumber = program.getJobNumber();
+    
     ...
   }
 }
 ```
 
 ### getTableRecord
-Retrieves records from a specific table in the program.<br>
-Takes String 'table' as parameter and returns the table as type 'TableRecordAPI'.
+Retrieves records from a specific table in the program.  
+Only one record per column available.
+
+Parameter: `String 'table'`
+<br>
+Returns: `TableRecordAPI`
 
 Example:
 ```groovy
@@ -236,7 +288,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getMessageId
-Retrieves the current message ID(program heading).
+Retrieves the current message ID(program heading).  
+
+
+Returns: `String 'messageID'`
+<br>
 
 Example:
 ```groovy
@@ -256,7 +312,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getMessageData
-Retrieves program message data.
+Retrieve message data.  
+
+
+Returns: `String 'messageData`
+<br>
 
 Example:
 ```groovy
@@ -276,7 +336,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getMessage
-Retrieves program message.
+Retrieve message.  
+
+
+Returns: `String 'message'`
+<br>
 
 Example:
 ```groovy
@@ -296,7 +360,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### getTenantId
-Retrieve the current tenant ID.
+Retrieve the current tenant ID.  
+
+
+Returns: `String 'tenantID`
+<br>
 
 Example:
 ```groovy
@@ -316,8 +384,13 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### existsInCallStack
-Checks if the given program is in the current call stack.<br>
-Takes String 'program' as parameter and returns true if the program exists in the call stack, else false.
+Checks if the given program is in the current call stack.  
+
+
+Parameters: `String program` 
+<br>
+Returns: `boolean`
+<br>
 
 Example:
 ```groovy
@@ -337,7 +410,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### isShutdownInProgress
-Checks if program shutdown is in progress.
+Checks if program shutdown is in progress.  
+
+
+Returns: `boolean`
+<br>
 
 Example:
 ```groovy
@@ -357,7 +434,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### exitFlag
-Checks if the exit flag is active.
+Checks if the exit flag is active.  
+
+
+Returns: `boolean`
+<br>
 
 Example:
 ```groovy
@@ -377,7 +458,11 @@ public class exampleProgram extends ExtendM3Trigger {
 ```
 
 ### existsError
-Checks if the error flag is true(alternative to program.indicator.get(60)).
+Checks if the error flag is true(alternative to program.indicator.get(60)).  
+
+
+Returns: `boolean`
+<br>
 
 Example:
 ```groovy

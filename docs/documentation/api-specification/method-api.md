@@ -3,7 +3,7 @@ layout: default
 title: Method API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 11
+nav_order: 9
 ---
 
 # Method API

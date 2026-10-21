@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Support & Resources
+permalink: support-resources
 nav_order: 5
 ---
 

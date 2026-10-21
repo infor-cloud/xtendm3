@@ -30,6 +30,7 @@ Once all required information is prepared and the mandatory checklist is complet
 </div>
 <br />
 Please refer to the demo and guidelines on how to use Amazon Q for code reviews:
+For AI-assisted code reviews, please visit the XtendM3 AI Review Resources page. It contains AmazonQ & Kiro review guides, demos, README files, and usage instructions. Access the resources here:
 [Amazon Q XtendM3 Review](https://inforonline.sharepoint.com/:f:/r/sites/XtendM3Community/Shared%20Documents/General/Amazon%20Q%20XtendM3%20Review?d=w3022b1156afc4fcca2ef83fc15d15b2e&csf=1&web=1&e=GbnV1e)
 <br />
 
@@ -187,3 +188,4 @@ Recommendation:<br>
 As per standard practice for our projects, we include the review hours in the work estimates for development of extensions.  
 At a high level, budgeting for 5-10% of each extension development effort is enough time for the review/signing.
 
+At a high level, budgeting for 5-10% of each extension development effort is enough time for the review/signing.

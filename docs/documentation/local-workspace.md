@@ -2,7 +2,7 @@
 layout: default
 title: Local XtendM3 Workspace
 parent: Documentation
-nav_order: 6
+nav_order: 10
 ---
 
 # Local XtendM3 Workspace

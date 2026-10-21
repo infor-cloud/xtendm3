@@ -3,7 +3,7 @@ layout: default
 title: Message API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 3
+nav_order: 8
 ---
 
 # Message API

@@ -3,7 +3,7 @@ layout: default
 title: Session API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 8
+nav_order: 13
 ---
 
 # Session API

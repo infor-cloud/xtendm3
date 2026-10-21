@@ -3,7 +3,7 @@ layout: default
 title: MICaller API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 5
+nav_order: 11
 ---
 
 # MICaller API
@@ -31,11 +31,36 @@ There are two kinds of MI Call methods to be used: one with parameters and one w
 1. Without parameters:
 
 ```groovy
-String customer;
-Closure<?> callback = { Map<String, String> response ->
-  logger.info("Response = ${response}");
-  if(response.CUNO != null){
-    customer = response.CUNO;
+public class TestProgram extends ExtendM3Trigger {
+  private final ProgramAPI program
+  private final ExtensionAPI extension
+  private final InteractiveAPI interactive
+  private final MICallerAPI miCaller
+  private final LoggerAPI logger
+  
+  public TestProgram(ProgramAPI program, ExtensionAPI extension, InteractiveAPI interactive, MICallerAPI miCaller, LoggerAPI logger) {
+    this.program = program
+    this.extension = extension
+    this.interactive = interactive
+    this.miCaller = miCaller
+    this.logger = logger
+  }
+  
+  public void main() {
+    String customer = null
+    Closure<?> callback = { Map<String, String> response ->
+      logger.debug("Response = ${response}")
+      if(response.error == false) {
+        if(response.CUNO != null) {
+        customer = response.CUNO  
+        }
+      } else {
+        logger.debug("Execution failed with error: ${response.toString()}");
+      }
+    }
+    miCaller.call("CRS610MI","LstBySearchKey", callback)
+    
+    interactive.showOkDialog("Customer: " + customer)
   }
 }
     

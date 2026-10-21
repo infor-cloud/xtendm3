@@ -3,7 +3,7 @@ layout: default
 title: Database API
 parent: API Specification
 grand_parent: Documentation
-nav_order: 7
+nav_order: 2
 ---
 
 # Database API
@@ -189,6 +189,40 @@ public void main() {
   int nrOfKeys = 3;
   int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
   query.readAll(container, nrOfKeys, nrOfRecords, readCallback)
+}
+```
+
+### Read with pagination
+Example code below illutrates how to perform paginated reads in MI extensions.<br>
+[MIAPI](../mi-api) is used to get and set the position key.<br>
+
+```groovy
+public void main() {
+  inKEY1 = mi.inData.get("KEY1") == null? "": mi.inData.get("KEY1").trim();
+  inKEY2 = mi.inData.get("KEY2") == null? "": mi.inData.get("KEY2").trim();
+  inKEY2 = mi.inData.get("KEY3") == null? "": mi.inData.get("KEY3").trim(); 
+
+  DBAction query = database.table("TABLE")
+    .index("00")
+    .selection("READFIELD1", "READFIELD2")
+    .position(mi.getPositionKey())
+    .build();
+  DBContainer container = query.getContainer();
+  container.set("KEY1",inKEY1);
+  container.set("KEY2",inKEY2);
+  container.set("KEY3",inKEY3);
+
+  Closure<?> readCallback = { DBContainer readResult ->
+    if (mi.hasRemainingRecords()) {
+      mi.outData.put("outDATA1", readResult.get("READFIELD1").toString());
+      mi.outData.put("outDATA2", readResult.get("READFIELD2").toString());
+      mi.write();
+    }
+  }
+  int nrOfKeys = 3;
+  int nrOfRecords = mi.getMaxRecords() <= 0 || mi.getMaxRecords() >= 10000? 10000: mi.getMaxRecords();    
+  query.readAll(container, nrOfKeys, nrOfRecords, readCallback);
+  mi.sendPositionKey(query.getPositionKey()) ;
 }
 ```
 

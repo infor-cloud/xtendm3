@@ -98,7 +98,7 @@ Listing them from the left side they are used to:
 ### 7. Code example of transaction extension and APIs usage
 To start writting extension code enable editing by clicking "Edit" button.
  
-Example below shows usage of [MI API](../../../../docs/documentation/api-specification/mi-api.md) and [Program API](../../../../docs/documentation/api-specification/program-api/)to display UserID.  
+Example below shows usage of [MI API](../../../../docs/documentation/api-specification/mi-api.md) and [Program API](../../../../docs/documentation/api-specification/program-api/) to display UserID.  
 To read more documentation on [API specification](../../../docs/documentation/api-specification) click on the link.
 
 <img src="../../../assets/attachments/ex004/get_data_xtn.png" width="950">
