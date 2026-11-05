@@ -33,7 +33,7 @@ Importing an extension is possible by using the import button above the extensio
 
 Import feature has improvement of a special interface with which you can check the file before adding it to the workspace (The Review button -> it is redirecting the window to proper sheet with the extension). The main import window contains information about the file such as its creator, date of creation and additionally the message contained - in the case of a signed extension.
 
-### Different imports for diffrent extensions
+### Different imports for different extensions
 
 All imports are different depending on the type of extension. For example extensions with code input has a code type sheet to check. Dynamic Table has the whole structure of designed table presented in the review window.
 

@@ -21,7 +21,7 @@ Working with the Database Operations in XtendM3
 ---
 
 ## Description
-This document contains diffrent templates for various database operations.
+This document contains different templates for various database operations.
 
 ### CRUD Templates
 These templates outline best practices for **C**reate, **R**ead, **U**pdate and **D**elete operations.

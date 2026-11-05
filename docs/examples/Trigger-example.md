@@ -20,7 +20,7 @@ Working with Trigger Extension in XtendM3
 ---
 
 ## Description
-Trigger Extension is a simple type of extension, that consists in the execution of certain procedures in the designed extension, at the designated moment of program operation. It needs an extension point, at which methods will be executed and triggerred by M3. It is used to modify or extend M3 Business Logic. Trigger extension can use a lot of useful APIs, which have various uses depending on the user needs.
+Trigger Extension is a simple type of extension, that consists in the execution of certain procedures in the designed extension, at the designated moment of program operation. It needs an extension point, at which methods will be executed and triggered by M3. It is used to modify or extend M3 Business Logic. Trigger extension can use a lot of useful APIs, which have various uses depending on the user needs.
 
 
 ## Use cases
@@ -102,7 +102,7 @@ To implement these APIs it is needed just to include them as new objects inside 
 <br>  
 After implementing functionality it is needed to save the extension. If it is written correctly there should be a message with the proper information with success. In case of error, the appropriate error message will appear and the implementation will not be saved until the error is resolved. After saving an extension it is a good practice to use a test compilation of the program just to check if everything is working properly.
 
-### 6. Activation, Funcionality and description of designed extension
+### 6. Activation, Functionality and description of designed extension
 The next step is to activate the extension. It can be activated inside the settings panel of the extension. To activate the extension, the activate slider needs to be turned on. 
 <br><br>
 <img src="../../../assets/attachments/ex003/9.PNG" width="950">
@@ -117,7 +117,7 @@ After that it is possible to run the program with activated extension by using C
 - Data presented in the examples are random.
 
 ## Use cases and short summary
-There are many diffrent uses for a trigger extension, depending on the needs of the project. The assumptions for the implementation of an extension may relate to the data operations in the program, setting the accessibility for users or just to show specific information while performing some actions inside the program. Each assumed functionality must have its place in the program - the extension point, where it will be activated depending on the program. Trigger extensions can be very simple but they also can be much more complex. Step by step implementation is very similar with the diffrence in chosen method of the extension and usage of APIs. Designed code includes a lot of diffrent names that refer to specific data in the database. All extensions are connected to programs and their implemented methods at the extension point. These two things are very important while designing extensions with XtendM3.
+There are many different uses for a trigger extension, depending on the needs of the project. The assumptions for the implementation of an extension may relate to the data operations in the program, setting the accessibility for users or just to show specific information while performing some actions inside the program. Each assumed functionality must have its place in the program - the extension point, where it will be activated depending on the program. Trigger extensions can be very simple but they also can be much more complex. Step by step implementation is very similar with the difference in chosen method of the extension and usage of APIs. Designed code includes a lot of different names that refer to specific data in the database. All extensions are connected to programs and their implemented methods at the extension point. These two things are very important while designing extensions with XtendM3.
 
 ## Extension code example
 Here is an overview of the designed extension.

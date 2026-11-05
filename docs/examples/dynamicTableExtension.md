@@ -48,7 +48,7 @@ Opened window displays an option to select the type of extension to be designed.
 <img src="../../../assets/attachments/dynTab/3.PNG" width="950">
 <br>
 
-The next window will require to fill in the name of the dynamic table. It starts from EXT letters and its lenght has to be 6. For the purpose of the example it will be named EXT919.
+The next window will require to fill in the name of the dynamic table. It starts from EXT letters and its length has to be 6. For the purpose of the example it will be named EXT919.
 
 <br>
 <img src="../../../assets/attachments/dynTab/4.png" width="950">

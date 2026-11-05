@@ -22,7 +22,7 @@ nav_order: 16
 ---
 
 ## Description
-The Utility API is used to call Utility extensions from other XtendM3 extensions. Utility extensions allow the user to create a specific method that can be used more than once. It is useful in case of designing methods/extensions that can be executed multiple times or from diffrent locations in a running session. It is not needed to create multiple pieces of code with the same methodology by using utilities.
+The Utility API is used to call Utility extensions from other XtendM3 extensions. Utility extensions allow the user to create a specific method that can be used more than once. It is useful in case of designing methods/extensions that can be executed multiple times or from different locations in a running session. It is not needed to create multiple pieces of code with the same methodology by using utilities.
 
 ## Features
 With the Utilities a specific part of the code is created separately to execute with other extensions. This allows for multiple uses of designed utilities at various points inside the extension. Any piece of code can be considered as a Utility if it is a method or set of methods that can be called by other extensions.

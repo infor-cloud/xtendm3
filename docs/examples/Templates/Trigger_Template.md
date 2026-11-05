@@ -21,7 +21,7 @@ Working with the Trigger Extensions in XtendM3
 ---
 
 ## Description
-This document contains diffrent templates with usage of a Trigger Extension (with diffrent APIs).
+This document contains different templates with usage of a Trigger Extension (with different APIs).
 
 
 ### Check whether program should run

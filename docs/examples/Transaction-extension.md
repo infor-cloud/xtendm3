@@ -65,7 +65,7 @@ Then click "Next".
 At this point you can create fields with input or output data by clicking a plus button and filling in the information:<br>
 * Name: 4 uppercase character name of the field<br>
 * Type: text/ number (select "number" for inserting date field)<br>
-* Lenght: maximum input lenght<br>
+* Length: maximum input length<br>
 * Mandatory (option): choose if the input will be mandatory (only for input fields)<br>
 * Description: more detailed description of the field<br>
 
